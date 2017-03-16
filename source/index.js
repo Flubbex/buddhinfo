@@ -1,4 +1,1 @@
-console.log("HTML5Base initialized.");
-
-
-
+module.exports = {};

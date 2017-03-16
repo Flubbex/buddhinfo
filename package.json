@@ -1,23 +1,27 @@
 {
   "name": "html5base",
   "version": "1.0.0",
-  "description": ".",
-  "main": "index.js",
+  "description": "Basic framework for my Browserify projects.",
   "scripts": {
     "test": "mocha"
   },
   "keywords": [
     "js",
-    "framework",
-    "atom"
+    "html",
+    "skeleton"
   ],
   "author": "Flubbex",
   "license": "ISC",
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-browserify": "^0.5.1",
+    "gulp-jshint": "^2.0.4",
+    "gulp-mocha": "^4.1.0",
     "gulp-open": "^2.0.0",
     "gulp-uglify": "^2.0.1",
-    "mocha": "^3.2.0"
+    "jshint": "^2.9.4",
+    "jshint-stylish": "^2.2.1",
+    "mocha": "^3.2.0",
+    "node-inspector": "^0.12.10"
   }
 }
