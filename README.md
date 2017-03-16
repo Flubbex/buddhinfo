@@ -1,5 +1,5 @@
 # HTML5base
-*Base project for my Browserify projects.*
+*Basic framework for my Browserify projects.*
 
 ### Contains
 * node-inspector for debugging
@@ -12,39 +12,38 @@
 | Name|Task|Source|Destination|
 |-----|----|------|-----------|
 | build|Browserify|/source|/dist/dev/|
-| template|Compile|  /source/templates|/dist/dev/templates.js
 | lint|Validate|/dist/dev|Console
 | merge|Merge|/dist/dev/|/dist/dev/index.js
-| compress|Compress|/dist/dev/index.js|/dist/rel/index.js
+| compress|Uglify|/dist/dev/index.js|/dist/rel/index.js
 | publish|Publish| /dist/rel/index.js|/docs/js/index.js
-| reload|Open file|/docs/index.html|Browser
+|reload|Open file|/docs/index.html|Browser
+|watch|Auto reload|/source/|reload
 
+### Folder structure
 
-## Folder structure
-
-### source
+#### source
 Project root folder.
 
-### test
+#### test
 Unit tests for /source.
 
-### dist
+#### dist
 Distributions of /source files.
 
-### docs
+#### docs
 Public HTML files.
 
 
 ### Dependencies
-*   "gulp"              "^3.9.1"
-*   "gulp-browserify"   "^0.5.1"
-*   "gulp-jshint"       "^2.0.4"
-*   "gulp-open"         "^2.0.0"
-*   "gulp-uglify"       "^2.0.1"
-*   "jshint"            "^2.9.4"
-*   "jshint-stylish"    "^2.2.1"
-*   "mocha":            "^3.2.0"
-*   "node-inspector"    "^0.12.10"
+*   "gulp":              "^3.9.1"
+*   "gulp-browserify":   "^0.5.1"
+*   "gulp-jshint":       "^2.0.4"
+*   "gulp-open":         "^2.0.0"
+*   "gulp-uglify":       "^2.0.1"
+*   "jshint":            "^2.9.4"
+*   "jshint-stylish":    "^2.2.1"
+*   "mocha":             "^3.2.0"
+*   "node-inspector":    "^0.12.10"
 
 ## Install everything
 *npm install     gulp gulp-browserify gulp-jshint gulp-open gulp-uglify
