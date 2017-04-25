@@ -19,7 +19,7 @@ indent_mode=2
 
 [project]
 name=html5base
-base_path=/home/michael/Projects/git/html5base/
+base_path=/home/michael/Projects/git/active/buddhinfo
 description=
 file_patterns=
 
@@ -29,9 +29,6 @@ long_line_column=72
 
 [files]
 current_page=0
-FILE_NAME_0=573;Javascript;0;EUTF-8;0;1;0;%2Fhome%2Fmichael%2FProjects%2Fgit%2Fhtml5base%2Fgulpfile.js;0;4
-FILE_NAME_1=0;Javascript;0;EUTF-8;0;1;0;%2Fhome%2Fmichael%2FProjects%2Fgit%2Fhtml5base%2Fsource%2Findex.js;0;4
-FILE_NAME_2=3000;HTML;0;EUTF-8;0;1;0;%2Fhome%2Fmichael%2FProjects%2Fgit%2Fhtml5base%2Fdocs%2Findex.html;0;4
 
 [VTE]
-last_dir=/media/michael/data/Projects/git/html5base
+last_dir=/media/michael/data/Projects/git/active/buddhinfo
