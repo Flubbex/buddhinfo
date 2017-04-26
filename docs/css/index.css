@@ -40,13 +40,17 @@ h4,h5,h6
 .linklist
 {
   display: none;
-  overflow-y: scroll;
-  max-height: 90%;
+  max-height: 80%;
 }
 
 #content
 {
-  height: 80.1%;
+  height: 75%;
+}
+
+#titles
+{
+  overflow-y: scroll;
 }
 #titles,#reader
 {
@@ -60,7 +64,7 @@ h4,h5,h6
   background-color: rgba(255,255,255,0.5);
 }
 
-li
+li,ul
 {
   margin: 0px;
 }
@@ -72,4 +76,20 @@ button
   height: 50px;
   padding: 0px;
   font-size: 1em;
+}
+
+#search
+{
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  opacity: 0.75;
+}
+
+#search:hover
+{
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  opacity: 1;
 }
