@@ -80,16 +80,31 @@ button
 
 #search
 {
-  width: 100%;
+  width: 70%;
+  height: 12%;
   position: fixed;
   bottom: 0;
-  opacity: 0.75;
+  right: 0;
+  opacity: 0.9;
+  margin: 0px;
 }
 
 #search:hover
 {
-  width: 100%;
+  opacity: 1;
+}
+
+#readermode
+{
   position: fixed;
-  bottom: 0;
+  width: 30%;
+  height: 12%;
+  bottom:0px;
+  left: 0px;
+  opacity: 0.9;
+}
+
+#directurl:hover
+{
   opacity: 1;
 }

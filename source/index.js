@@ -1,10 +1,13 @@
 var $         = require('jquery');
 var Vue       = require("./vue");
 var filelist  = require("./filelist");
-
+var settings  = {directurl:false};
 function openPDF(uri)
 {
-    $("#reader")[0].src = uri;
+    if (!settings.directurl)
+      $("#reader")[0].src = uri;
+    else
+      window.location = uri;
 }
 
 function openIndex(index)
@@ -28,11 +31,11 @@ function search(e)
 {
   $(".linklist").show();
   var filter = $("button:not(:contains("+e+"))");
-  console.log(e)
+  console.log(e);
   if (e!=="")
-    filter.show();
+    filter.hide();
   else
-    $(".linktab").show();
+    $(".linklist").hide();
 }
 
 $(document).ready(function(){
@@ -45,8 +48,25 @@ $(document).ready(function(){
     }
   });
   
+  
   $('#search').keyup(function(e){
     search(e.target.value)
+  });
+  
+  $("#readermode").click(function(){
+    var mode = $(this)[0].innerHTML;
+    settings.directurl = (mode==="Reader Mode");
+    if (settings.directurl)
+    {
+      $(this)[0].innerHTML = "Direct URL";
+      $("#reader").slideUp('fast');
+    }
+    else
+    {
+      $(this)[0].innerHTML = "Reader Mode";
+      $("#reader").slideDown('fast');
+    }
+    
   });
   $('.linktab').click(function(){
     var linklist = $(this).next(".linklist");
