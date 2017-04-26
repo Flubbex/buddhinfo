@@ -542,107 +542,107 @@ filelist.push({name:"Mahayana",content:[
 
 filelist.push({name:"Children",content:[
 	{
-		"name": "files/Children/a4lifebuddha.pdf",
+		"name": "Secondary Students: Life of the Buddha",
 		"src": "files/Children/a4lifebuddha.pdf"
 	},
 	{
-		"name": "files/Children/angulimala6.pdf",
+		"name": "Angulimala",
 		"src": "files/Children/angulimala6.pdf"
 	},
 	{
-		"name": "files/Children/bmDamaStory.pdf",
+		"name": "Dhammapada Stories",
 		"src": "files/Children/bmDamaStory.pdf"
 	},
 	{
-		"name": "files/Children/children.pdf",
+		"name": "Love Your Children The Right Way",
 		"src": "files/Children/children.pdf"
 	},
 	{
-		"name": "files/Children/colouring_bodhi-buddha.pdf",
+		"name": "Colouring: Bodhi Buddha",
 		"src": "files/Children/colouring_bodhi-buddha.pdf"
 	},
 	{
-		"name": "files/Children/colouring_bodhi.pdf",
+		"name": "Colouring: Bodhi",
 		"src": "files/Children/colouring_bodhi.pdf"
 	},
 	{
-		"name": "files/Children/colouring_flag.pdf",
+		"name": "Colouring: Flag",
 		"src": "files/Children/colouring_flag.pdf"
 	},
 	{
-		"name": "files/Children/colouring_lotus.pdf",
+		"name": "Colouring: Lotus",
 		"src": "files/Children/colouring_lotus.pdf"
 	},
 	{
-		"name": "files/Children/colouring_thebuddha.pdf",
+		"name": "Colouring: The Buddha",
 		"src": "files/Children/colouring_thebuddha.pdf"
 	},
 	{
-		"name": "files/Children/colouring_wheel.pdf",
+		"name": "Colouring: The Wheel",
 		"src": "files/Children/colouring_wheel.pdf"
 	},
 	{
-		"name": "files/Children/cutout-greeting.pdf",
+		"name": "Cutout: Greeting",
 		"src": "files/Children/cutout-greeting.pdf"
 	},
 	{
-		"name": "files/Children/DeadNightEng.pdf",
+		"name": "In The Dead of Night",
 		"src": "files/Children/DeadNightEng.pdf"
 	},
 	{
-		"name": "files/Children/jataka_p.pdf",
+		"name": "Buddha's Tales for Young and Old 2",
 		"src": "files/Children/jataka_p.pdf"
 	},
 	{
-		"name": "files/Children/jataka_t.pdf",
+		"name": "Buddha's Tales for Young and Old 2 (PF)",
 		"src": "files/Children/jataka_t.pdf"
 	},
 	{
-		"name": "files/Children/jataka_tv1.pdf",
+		"name": "Buddha's Tales for Young and Old 1: Prince Goodspeaker",
 		"src": "files/Children/jataka_tv1.pdf"
 	},
 	{
-		"name": "files/Children/jtwebv1p.pdf",
+		"name": "Buddha's Tales for Young and Old 1",
 		"src": "files/Children/jtwebv1p.pdf"
 	},
 	{
-		"name": "files/Children/mahaxwords.pdf",
+		"name": "Crossword Puzzles!!",
 		"src": "files/Children/mahaxwords.pdf"
 	},
 	{
-		"name": "files/Children/med-guided2.pdf",
+		"name": "Primary Students: Guided Meditation",
 		"src": "files/Children/med-guided2.pdf"
 	},
 	{
-		"name": "files/Children/sbcolorbook.pdf",
+		"name": "Colouring: Story of the Buddha",
 		"src": "files/Children/sbcolorbook.pdf"
 	},
 	{
-		"name": "files/Children/screenrahula.pdf",
+		"name": "Rahula Leads The Way",
 		"src": "files/Children/screenrahula.pdf"
 	},
 	{
-		"name": "files/Children/seeding.pdf",
+		"name": "Seeding the Heart",
 		"src": "files/Children/seeding.pdf"
 	},
 	{
-		"name": "files/Children/storybuddha.pdf",
+		"name": "Story of Buddha Illustrated",
 		"src": "files/Children/storybuddha.pdf"
 	},
 	{
-		"name": "files/Children/UpSideDown.pdf",
+		"name": "An upside-down world",
 		"src": "files/Children/UpSideDown.pdf"
 	},
 	{
-		"name": "files/Children/vesakpdf.pdf",
+		"name": "Creating Vesak Gifts",
 		"src": "files/Children/vesakpdf.pdf"
 	},
 	{
-		"name": "files/Children/WhoBossEng.pdf",
+		"name": "Who's The Boss?",
 		"src": "files/Children/WhoBossEng.pdf"
 	},
 	{
-		"name": "files/Children/WhoSaw.pdf",
+		"name": "The One-Who-Saw",
 		"src": "files/Children/WhoSaw.pdf"
 	}
 ]});
