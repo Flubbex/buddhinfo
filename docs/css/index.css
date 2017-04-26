@@ -12,7 +12,6 @@ body
 p,ul,ol
 {
     list-style: none;
-    background-color: rgba(255,255,255,0.25);
 }
 
 h4,h5,h6
@@ -23,12 +22,6 @@ h4,h5,h6
     margin: 0px;
     padding: 4px;
 }
-
-h4,h5,h6,p,ul,ol
-{
-    box-shadow: 2px 2px rgba(0,0,0,0.15);
-}
-
 .container > div
 {
   height: 90%;
@@ -41,7 +34,7 @@ h4,h5,h6,p,ul,ol
 
 .linktab:hover
 {
-  background-color: rgba(255,255,255,0.3)
+  background-color: rgba(255,255,255,0.5)
 }
 
 .linklist
@@ -53,13 +46,18 @@ h4,h5,h6,p,ul,ol
 
 #content
 {
-  margin-top: 1%;
-  height: 80%;
+  height: 80.1%;
 }
 #titles,#reader
 {
   height: 100%;
   background-color: rgba(255,255,255,0.25);
+  border: none;
+}
+
+#footer,#header
+{
+  background-color: rgba(255,255,255,0.5);
 }
 
 li
