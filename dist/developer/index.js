@@ -10755,111 +10755,111 @@ filelist.push({name:"Meditation",content:[
 
 filelist.push({name:"Mahayana",content:[
 	{
-		"name": "files/Mahayana/3_teach.pdf",
+		"name": "Three Teachings",
 		"src": "files/Mahayana/3_teach.pdf"
 	},
 	{
-		"name": "files/Mahayana/60songs.pdf",
+		"name": "Sixty Songs of Milarepa",
 		"src": "files/Mahayana/60songs.pdf"
 	},
 	{
-		"name": "files/Mahayana/advice.pdf",
+		"name": "Advice for Monks & Nuns",
 		"src": "files/Mahayana/advice.pdf"
 	},
 	{
-		"name": "files/Mahayana/ancientsgrfx.pdf",
+		"name": "Popular Deities in Chinese Buddhism",
 		"src": "files/Mahayana/ancientsgrfx.pdf"
 	},
 	{
-		"name": "files/Mahayana/becoming1.pdf",
+		"name": "Becoming Your Own Therapist",
 		"src": "files/Mahayana/becoming1.pdf"
 	},
 	{
-		"name": "files/Mahayana/beingssutra.pdf",
+		"name": "The Sutra on the Eight Realizations",
 		"src": "files/Mahayana/beingssutra.pdf"
 	},
 	{
-		"name": "files/Mahayana/bodhic01.pdf",
+		"name": "Bodhicharyavatara",
 		"src": "files/Mahayana/bodhic01.pdf"
 	},
 	{
-		"name": "files/Mahayana/cloudwater6.pdf",
+		"name": "Cloud and Water",
 		"src": "files/Mahayana/cloudwater6.pdf"
 	},
 	{
-		"name": "files/Mahayana/heart_s2.pdf",
+		"name": "The prajna Paramita Heart Sutra",
 		"src": "files/Mahayana/heart_s2.pdf"
 	},
 	{
-		"name": "files/Mahayana/ksitigarbha.pdf",
+		"name": "The Sutra on the Original Vows",
 		"src": "files/Mahayana/ksitigarbha.pdf"
 	},
 	{
-		"name": "files/Mahayana/lamdre.pdf",
+		"name": "LAMDRE",
 		"src": "files/Mahayana/lamdre.pdf"
 	},
 	{
-		"name": "files/Mahayana/manual_zen.pdf",
+		"name": "Manual of Zen Buddhism",
 		"src": "files/Mahayana/manual_zen.pdf"
 	},
 	{
-		"name": "files/Mahayana/matrcetahymn.pdf",
+		"name": "Matrceta's Hymm to the Buddha",
 		"src": "files/Mahayana/matrcetahymn.pdf"
 	},
 	{
-		"name": "files/Mahayana/medbudsutra.pdf",
+		"name": "Sutra of the Medicine Buddha",
 		"src": "files/Mahayana/medbudsutra.pdf"
 	},
 	{
-		"name": "files/Mahayana/meritsutra.pdf",
+		"name": "The Sutra of the Master of Healing",
 		"src": "files/Mahayana/meritsutra.pdf"
 	},
 	{
-		"name": "files/Mahayana/miao_yun.pdf",
+		"name": "Teachings in Chinese Buddhism",
 		"src": "files/Mahayana/miao_yun.pdf"
 	},
 	{
-		"name": "files/Mahayana/mindocean.pdf",
+		"name": "Making Your Mind an Ocean",
 		"src": "files/Mahayana/mindocean.pdf"
 	},
 	{
-		"name": "files/Mahayana/mstrhealing.pdf",
+		"name": "The Sutra of the Master of Healing",
 		"src": "files/Mahayana/mstrhealing.pdf"
 	},
 	{
-		"name": "files/Mahayana/nagarjuna.pdf",
+		"name": "Casuality and Emptiness",
 		"src": "files/Mahayana/nagarjuna.pdf"
 	},
 	{
-		"name": "files/Mahayana/passages.pdf",
+		"name": "The Infinite Life Sutra",
 		"src": "files/Mahayana/passages.pdf"
 	},
 	{
-		"name": "files/Mahayana/prajparagen2.pdf",
+		"name": "The Diamond Sutra",
 		"src": "files/Mahayana/prajparagen2.pdf"
 	},
 	{
-		"name": "files/Mahayana/pureland.pdf",
+		"name": "Pure Land Buddhism: Dialogs with Masters",
 		"src": "files/Mahayana/pureland.pdf"
 	},
 	{
-		"name": "files/Mahayana/samantabhadra.pdf",
+		"name": "The Vows of Bodhisattva Samantabhadra Sutra",
 		"src": "files/Mahayana/samantabhadra.pdf"
 	},
 	{
-		"name": "files/Mahayana/surangama.pdf",
+		"name": "The Surangama Sutra",
 		"src": "files/Mahayana/surangama.pdf"
 	},
 	{
-		"name": "files/Mahayana/transprobs6.pdf",
+		"name": "Transforming Problems into The Dharma Path",
 		"src": "files/Mahayana/transprobs6.pdf"
 	},
 	{
-		"name": "files/Mahayana/virtue.pdf",
+		"name": "Virtue and Reality",
 		"src": "files/Mahayana/virtue.pdf"
 	},
 	{
-		"name": "files/Mahayana/yin_kuang.pdf",
+		"name": "Pure-Land Zen",
 		"src": "files/Mahayana/yin_kuang.pdf"
 	}
 ]});
