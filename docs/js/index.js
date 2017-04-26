@@ -10973,199 +10973,199 @@ filelist.push({name:"Children",content:[
 
 filelist.push({name:"General",content:[
 	{
-		"name": "files/General/4nobltru.pdf",
+		"name": "The Four Noble Truths",
 		"src": "files/General/4nobltru.pdf"
 	},
 	{
-		"name": "files/General/ananda1.pdf",
+		"name": "Venerable Ananda",
 		"src": "files/General/ananda1.pdf"
 	},
 	{
-		"name": "files/General/animagnt.pdf",
+		"name": "Animal Magnetism",
 		"src": "files/General/animagnt.pdf"
 	},
 	{
-		"name": "files/General/artliv12.pdf",
+		"name": "The Art of Living Part I & II",
 		"src": "files/General/artliv12.pdf"
 	},
 	{
-		"name": "files/General/bd_students.pdf",
+		"name": "University Students: Buddha Dharma",
 		"src": "files/General/bd_students.pdf"
 	},
 	{
-		"name": "files/General/beyond-belief02.pdf",
+		"name": "Beyond Belief",
 		"src": "files/General/beyond-belief02.pdf"
 	},
 	{
-		"name": "files/General/buddasa.pdf",
+		"name": "Handbook for Mankind",
 		"src": "files/General/buddasa.pdf"
 	},
 	{
-		"name": "files/General/buddeduc.pdf",
+		"name": "Buddhism as an Education",
 		"src": "files/General/buddeduc.pdf"
 	},
 	{
-		"name": "files/General/buddhadhammacakra.pdf",
+		"name": "Phra Buddha Dhammacakra",
 		"src": "files/General/buddhadhammacakra.pdf"
 	},
 	{
-		"name": "files/General/buddhist_funeral.pdf",
+		"name": "A Guide to a Proper Buddhist Funeral",
 		"src": "files/General/buddhist_funeral.pdf"
 	},
 	{
-		"name": "files/General/buddhistpilgrimage.pdf",
+		"name": "Buddhist Pilgrimage",
 		"src": "files/General/buddhistpilgrimage.pdf"
 	},
 	{
-		"name": "files/General/buddhistway.pdf",
+		"name": "The Buddhist Way",
 		"src": "files/General/buddhistway.pdf"
 	},
 	{
-		"name": "files/General/budglossary.pdf",
+		"name": "The Seeker's Glossary of Buddhism",
 		"src": "files/General/budglossary.pdf"
 	},
 	{
-		"name": "files/General/budrelig.pdf",
+		"name": "Buddhism as a Religion",
 		"src": "files/General/budrelig.pdf"
 	},
 	{
-		"name": "files/General/death_dying.pdf",
+		"name": "Preparing for Death and Helping the Dying",
 		"src": "files/General/death_dying.pdf"
 	},
 	{
-		"name": "files/General/deep_ecology.pdf",
+		"name": "A Manual for Buddhism and Deep Ecology",
 		"src": "files/General/deep_ecology.pdf"
 	},
 	{
-		"name": "files/General/dmind-wmind.pdf",
+		"name": "Dharma Mind Worldly Mind",
 		"src": "files/General/dmind-wmind.pdf"
 	},
 	{
-		"name": "files/General/facingfuture.pdf",
+		"name": "Facing the Future",
 		"src": "files/General/facingfuture.pdf"
 	},
 	{
-		"name": "files/General/fundbud1.pdf",
+		"name": "Fundamentals of Buddhism",
 		"src": "files/General/fundbud1.pdf"
 	},
 	{
-		"name": "files/General/futurebuddhism.pdf",
+		"name": "Buddhism for the Future",
 		"src": "files/General/futurebuddhism.pdf"
 	},
 	{
-		"name": "files/General/gqga_arabic.pdf",
+		"name": "GQGA Arabic",
 		"src": "files/General/gqga_arabic.pdf"
 	},
 	{
-		"name": "files/General/gqga_chinese.pdf",
+		"name": "GQGA Chinese",
 		"src": "files/General/gqga_chinese.pdf"
 	},
 	{
-		"name": "files/General/gqga_spanish.pdf",
+		"name": "GQGA Spanish",
 		"src": "files/General/gqga_spanish.pdf"
 	},
 	{
-		"name": "files/General/intuitive-awareness.pdf",
+		"name": "Intuitive Awareness",
 		"src": "files/General/intuitive-awareness.pdf"
 	},
 	{
-		"name": "files/General/jotleeds.pdf",
+		"name": "Snow in the Summer",
 		"src": "files/General/jotleeds.pdf"
 	},
 	{
-		"name": "files/General/liaofan.pdf",
+		"name": "Liao-Fan's Four Lessons",
 		"src": "files/General/liaofan.pdf"
 	},
 	{
-		"name": "files/General/lifebuddha.pdf",
+		"name": "The Buddha, His Life and Teachings",
 		"src": "files/General/lifebuddha.pdf"
 	},
 	{
-		"name": "files/General/lifecherish.pdf",
+		"name": "To Cherish All Life",
 		"src": "files/General/lifecherish.pdf"
 	},
 	{
-		"name": "files/General/lightasia2.pdf",
+		"name": "Light of Asia Illustrated",
 		"src": "files/General/lightasia2.pdf"
 	},
 	{
-		"name": "files/General/lightasia.pdf",
+		"name": "Light of Asia",
 		"src": "files/General/lightasia.pdf"
 	},
 	{
-		"name": "files/General/mindread.pdf",
+		"name": "Reading the Mind",
 		"src": "files/General/mindread.pdf"
 	},
 	{
-		"name": "files/General/myfacesofdeath.pdf",
+		"name": "The Many Faces of Death",
 		"src": "files/General/myfacesofdeath.pdf"
 	},
 	{
-		"name": "files/General/nat_cure.pdf",
+		"name": "The Natural Cure for Spiritual Disease",
 		"src": "files/General/nat_cure.pdf"
 	},
 	{
-		"name": "files/General/noble8path6.pdf",
+		"name": "The Noble Eightfold Path",
 		"src": "files/General/noble8path6.pdf"
 	},
 	{
-		"name": "files/General/now_know.pdf",
+		"name": "Now is the Knowing",
 		"src": "files/General/now_know.pdf"
 	},
 	{
-		"name": "files/General/nutshell.pdf",
+		"name": "Buddhism in a Nutshell",
 		"src": "files/General/nutshell.pdf"
 	},
 	{
-		"name": "files/General/one-foot-world6.pdf",
+		"name": "One Foot in the World",
 		"src": "files/General/one-foot-world6.pdf"
 	},
 	{
-		"name": "files/General/only_help.pdf",
+		"name": "Only We Can Help Ourselves",
 		"src": "files/General/only_help.pdf"
 	},
 	{
-		"name": "files/General/qanda-women.pdf",
+		"name": "Women in Buddhism",
 		"src": "files/General/qanda-women.pdf"
 	},
 	{
-		"name": "files/General/rebirthscience.pdf",
+		"name": "Scientific Acceptability of Rebirth",
 		"src": "files/General/rebirthscience.pdf"
 	},
 	{
-		"name": "files/General/ritepath.pdf",
+		"name": "The Eightfold Path for Housekeepers",
 		"src": "files/General/ritepath.pdf"
 	},
 	{
-		"name": "files/General/sujivapoems.pdf",
+		"name": "Wind In The Forest",
 		"src": "files/General/sujivapoems.pdf"
 	},
 	{
-		"name": "files/General/thittila.pdf",
+		"name": "Essential THemes of Buddhist Lectures",
 		"src": "files/General/thittila.pdf"
 	},
 	{
-		"name": "files/General/tree-enlightenment.pdf",
+		"name": "The Tree of Enlightenment",
 		"src": "files/General/tree-enlightenment.pdf"
 	},
 	{
-		"name": "files/General/tree-forest.pdf",
+		"name": "A Tree in a Forest",
 		"src": "files/General/tree-forest.pdf"
 	},
 	{
-		"name": "files/General/undrstnd.pdf",
+		"name": "To Understand Buddhism",
 		"src": "files/General/undrstnd.pdf"
 	},
 	{
-		"name": "files/General/whatbelieve.pdf",
+		"name": "What Buddhists Believe",
 		"src": "files/General/whatbelieve.pdf"
 	},
 	{
-		"name": "files/General/women-buddhism6.pdf",
+		"name": "The position of Women in Buddhism",
 		"src": "files/General/women-buddhism6.pdf"
 	},
 	{
-		"name": "files/General/womtowom.pdf",
+		"name": "From Womb to Womb",
 		"src": "files/General/womtowom.pdf"
 	}
 ]});
