@@ -88,8 +88,16 @@ button
   opacity: 0.9;
   margin: 0px;
 }
-
-#search:hover
+#clearsearch
+{
+   width: 10%;
+   height: 12%;
+   position: fixed;
+   bottom: 0;
+   right: 10px;
+   opacity: 0.9;
+}
+#clearsearch:hover,#search:hover
 {
   opacity: 1;
 }

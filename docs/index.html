@@ -43,15 +43,21 @@
       <h6 class="linktab">{{category.name}}</h6>
       <ul class="linklist">
         <li v-for="item in category.content">
-          <button v-on:click="openPDF(item.src)">
+          <button v-on:click="openPDF(item.src)" 
+                  v-show="item.name.toUpperCase()
+                          .includes(filter.toUpperCase())">
             {{item.name}}
           </button>
           </li>
       </ul>
       </div>
-      <input type="text" id="search" placeholder="Search.."/>
-		</div>
+    </div>
+    
     <button id="readermode">Reader Mode</button>
+    <input type="text" id="search" placeholder="Search.."/>
+    <button id="clearsearch">Clear Search</button>
+    
+    
     <iframe id="reader" class="eight columns"></iframe>
 	</div>
   

@@ -10254,10 +10254,13 @@ return jQuery;
 } );
 
 },{}],2:[function(require,module,exports){
-var $         = require('jquery');
-var Vue       = require("./vue");
-var filelist  = require("./filelist");
-var settings  = {directurl:false};
+var $           = require('jquery');
+var Vue         = require("./vue");
+var filelist    = require("./filelist");
+var settings    = {directurl:false};
+var searchcache = [];
+var listopen    = null;
+
 function openPDF(uri)
 {
     if (!settings.directurl)
@@ -10283,22 +10286,11 @@ function showAll()
     $(".linktab").slideDown('fast');
 }
 
-function search(e)
-{
-  $(".linklist").show();
-  var filter = $("button:not(:contains("+e+"))");
-  console.log(e);
-  if (e!=="")
-    filter.hide();
-  else
-    $(".linklist").hide();
-}
-
 $(document).ready(function(){
   
   var app = new Vue({
     el: '#titles',
-    data: {filelist:filelist},
+    data: {filelist:filelist,filter:""},
     methods:{
       openPDF:openPDF
     }
@@ -10306,10 +10298,19 @@ $(document).ready(function(){
   
   
   $('#search').keyup(function(e){
-    search(e.target.value)
+      app.filter = e.target.value;
+      if (!listopen)
+        $(".linklist").show()
   });
   
-  $("#readermode").click(function(){
+  $("#clearsearch").mouseup(function(){
+    app.filter = "";
+    $("#search").val("");
+    $(".linklist").hide();
+    $(".linktabs").show();
+  });
+  
+  $("#readermode").mouseup(function(){
     var mode = $(this)[0].innerHTML;
     settings.directurl = (mode==="Reader Mode");
     if (settings.directurl)
@@ -10325,17 +10326,18 @@ $(document).ready(function(){
     
   });
   $('.linktab').click(function(){
-    var linklist = $(this).next(".linklist");
-    if (linklist.is(':visible'))
+    listopen = $(this).next(".linklist");
+    
+    if (listopen.is(':visible'))
     {
-      linklist.slideUp('fast',function(){
+      listopen.slideUp('fast',function(){
         showAll();
       });
     }
     else
     {
       hideAllExcept($(this),function(){
-          linklist.slideDown('fast');
+          listopen.slideDown('fast');
         });
     }
   });
