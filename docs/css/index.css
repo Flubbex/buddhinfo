@@ -1,11 +1,13 @@
 html
 {
-    background: url("../images/wallpaper.jpg");
     height: 100%;
+    background-color: black;
 }
 
 body
 {
+  background: url("../images/wallpaper.jpg");
+  display: none;
 	height: 100%;
 }
 
@@ -62,6 +64,12 @@ h4,h5,h6
 #footer,#header
 {
   background-color: rgba(255,255,255,0.5);
+}
+
+#footer,#header,#titles,#reader,
+#clearsearch,#search,#directurl,#readermode
+{
+  display: none;
 }
 
 li,ul
