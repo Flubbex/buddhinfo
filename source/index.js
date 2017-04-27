@@ -9,12 +9,12 @@ var Buddhinfo = {
         data: {filelist:filelist,filter:""},
         methods:{
         openPDF:function(uri)
-                {
-                  if (!settings.directurl)
-                    $("#reader")[0].src = uri;
-                  else
-                    window.location = uri;
-                }
+        {
+          if (!settings.directurl)
+            $("#reader")[0].src = uri;
+          else
+            window.open(url, '_blank');
+        }
       }
   },
   settings:{directurl:false},
