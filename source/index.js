@@ -31,13 +31,14 @@ var Buddhinfo = {
     
     
     $('#search').keyup(function(e){
+      $(".linklist").show()
+      
       Buddhinfo.viewTitles.filter = e.target.value;
-      if (!Buddhinfo.listopen)
-        $(".linklist").show()
+       
     });
   
     $("#clearsearch").mouseup(function(){
-      app.filter = "";
+      Buddhinfo.viewTitles.filter = "";
       $("#search").val("");
       $(".linklist").hide();
       $(".linktabs").show();
