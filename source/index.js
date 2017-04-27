@@ -10,7 +10,7 @@ function openPDF(uri)
     if (!settings.directurl)
       $("#reader")[0].src = uri;
     else
-      window.location = uri;
+      window.open(url, '_blank');
 }
 
 function openIndex(index)
