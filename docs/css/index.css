@@ -1,11 +1,13 @@
 html
 {
-    background: url("../images/wallpaper.jpg");
     height: 100%;
+    background-color: black;
 }
 
 body
 {
+  background: url("../images/wallpaper.jpg");
+  display: none;
 	height: 100%;
 }
 
@@ -64,6 +66,12 @@ h4,h5,h6
   background-color: rgba(255,255,255,0.5);
 }
 
+#footer,#header,#titles,#reader,
+#clearsearch,#search,#directurl,#readermode
+{
+  display: none;
+}
+
 li,ul
 {
   margin: 0px;
@@ -90,11 +98,11 @@ button
 }
 #clearsearch
 {
-   width: 10%;
+   width: auto;
    height: 12%;
    position: fixed;
    bottom: 0;
-   right: 10px;
+   right: 0;
    opacity: 0.9;
 }
 #clearsearch:hover,#search:hover

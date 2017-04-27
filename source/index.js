@@ -2,87 +2,92 @@ var $           = require('jquery');
 var Vue         = require("./vue");
 var filelist    = require("./filelist");
 var settings    = {directurl:false};
-var searchcache = [];
-var listopen    = null;
 
-function openPDF(uri)
-{
-    if (!settings.directurl)
-      $("#reader")[0].src = uri;
-    else
-      window.open(url, '_blank');
-}
-
-function openIndex(index)
-{
-    $("#reader").html(uri);
-}
-
-function hideAllExcept(tag,callback)
-{
-    $(".linktab").slideUp('fast',function(){
-      tag.slideDown('fast',callback);
+var Buddhinfo = {
+  viewTitles:{
+        el: '#titles',
+        data: {filelist:filelist,filter:""},
+        methods:{
+        openPDF:function(uri)
+        {
+          if (!settings.directurl)
+            $("#reader")[0].src = uri;
+          else
+            window.open(url, '_blank');
+        }
+      }
+  },
+  settings:{directurl:false},
+  listopen:false,
+  searchcache:[],
+  DOMready:function()
+  {
+    Buddhinfo.viewTitles = new Vue(Buddhinfo.viewTitles);
+    
+    //Crossfading
+    $("body").fadeIn('slow');
+    $("#footer,#header,#titles,#reader,\
+      #clearsearch,#search,#directurl,#readermode").fadeIn('fast');
+    
+    
+    $('#search').keyup(function(e){
+      $(".linklist").show()
+      
+      Buddhinfo.viewTitles.filter = e.target.value;
+       
     });
-}
-
-function showAll()
-{
-    $(".linktab").slideDown('fast');
-}
-
-$(document).ready(function(){
   
-  var app = new Vue({
-    el: '#titles',
-    data: {filelist:filelist,filter:""},
-    methods:{
-      openPDF:openPDF
-    }
-  });
+    $("#clearsearch").mouseup(function(){
+      Buddhinfo.viewTitles.filter = "";
+      $("#search").val("");
+      $(".linklist").hide();
+      $(".linktabs").show();
+    });
   
-  
-  $('#search').keyup(function(e){
-      app.filter = e.target.value;
-      if (!listopen)
-        $(".linklist").show()
-  });
-  
-  $("#clearsearch").mouseup(function(){
-    app.filter = "";
-    $("#search").val("");
-    $(".linklist").hide();
-    $(".linktabs").show();
-  });
-  
-  $("#readermode").mouseup(function(){
-    var mode = $(this)[0].innerHTML;
-    settings.directurl = (mode==="Reader Mode");
-    if (settings.directurl)
-    {
-      $(this)[0].innerHTML = "Direct URL";
-      $("#reader").slideUp('fast');
-    }
-    else
-    {
-      $(this)[0].innerHTML = "Reader Mode";
-      $("#reader").slideDown('fast');
-    }
+    $("#readermode").mouseup(function(){
+      var mode = $(this)[0].innerHTML;
+      Buddhinfo.settings.directurl = (mode==="Reader Mode");
+      if (Buddhinfo.settings.directurl)
+      {
+        $(this)[0].innerHTML = "Direct URL";
+        $("#reader").slideUp('fast');
+      }
+      else
+      {
+        $(this)[0].innerHTML = "Reader Mode";
+        $("#reader").slideDown('fast');
+      }
+    });
     
-  });
   $('.linktab').click(function(){
-    listopen = $(this).next(".linklist");
-    
-    if (listopen.is(':visible'))
+    Buddhinfo.listopen = $(this).next(".linklist");
+    if (Buddhinfo.listopen.is(':visible'))
     {
-      listopen.slideUp('fast',function(){
-        showAll();
+      Buddhinfo.listopen.slideUp('fast',function(){
+      Buddhinfo.showAll();
       });
     }
     else
     {
-      hideAllExcept($(this),function(){
-          listopen.slideDown('fast');
+      Buddhinfo.hideAllExcept($(this),function(){
+          Buddhinfo.listopen.slideDown('fast');
         });
     }
-  });
-});
+    });
+  
+  },
+  hideAllExcept:function(tag,callback)
+  {
+      $(".linktab").slideUp('fast',function(){
+        tag.slideDown('fast',callback);
+      });
+  },
+  showAll:function()
+  {
+      $(".linktab").slideDown('fast');
+  }
+}
+
+$(document).ready(Buddhinfo.DOMready);
+
+module.exports = Buddhinfo;

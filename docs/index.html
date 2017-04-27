@@ -41,7 +41,7 @@
 		<div class="four columns" id="titles">
       <div v-for="category in filelist">
       <h6 class="linktab">{{category.name}}</h6>
-      <ul class="linklist">
+      <ul class="linklist" v-show="!filter">
         <li v-for="item in category.content">
           <button v-on:click="openPDF(item.src)" 
                   v-show="item.name.toUpperCase()
