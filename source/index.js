@@ -32,7 +32,7 @@ var Buddhinfo = {
     
     $('#search').keyup(function(e){
       Buddhinfo.viewTitles.filter = e.target.value;
-      if (!listopen)
+      if (!Buddhinfo.listopen)
         $(".linklist").show()
     });
   
@@ -68,9 +68,8 @@ var Buddhinfo = {
     }
     else
     {
-      Buddhinfo.listopen = false;
       Buddhinfo.hideAllExcept($(this),function(){
-          listopen.slideDown('fast');
+          Buddhinfo.listopen.slideDown('fast');
         });
     }
     });
