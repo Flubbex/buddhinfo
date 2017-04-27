@@ -1,17 +1,16 @@
 var $           = require('jquery');
 var Vue         = require("./vue");
 var filelist    = require("./filelist");
-var settings    = {directurl:false};
 
 var Buddhinfo = {
   viewTitles:{
         el: '#titles',
         data: {filelist:filelist,filter:""},
         methods:{
-        openPDF:function(uri)
+        openPDF:function(url)
         {
-          if (!settings.directurl)
-            $("#reader")[0].src = uri;
+          if (!Buddhinfo.settings.directurl)
+            $("#reader")[0].src = url;
           else
             window.open(url, '_blank');
         }
@@ -19,7 +18,6 @@ var Buddhinfo = {
   },
   settings:{directurl:false},
   listopen:false,
-  searchcache:[],
   DOMready:function()
   {
     Buddhinfo.viewTitles = new Vue(Buddhinfo.viewTitles);
