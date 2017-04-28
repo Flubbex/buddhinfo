@@ -2,6 +2,7 @@ Buddhinfo
 =========
 
 Books from Buddhanet with an inline PDF reader for easy reading.
+
 *Now actually displays half-well on mobile devices!*
 
 The only intent of this project is to make it easier to read the amazing content provided by Buddhanet. 
