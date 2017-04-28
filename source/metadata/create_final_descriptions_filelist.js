@@ -14,6 +14,18 @@ const descriptionToFilelistMap = {
 
 let promiseList = [];
 
+let bookCompare = function(bookA, bookB) {
+  let bookAName = bookA.name.trim().replace(/^The\s/, "").replace(/^A\s/, "")
+  let bookBName = bookB.name.trim().replace(/^The\s/, "").replace(/^A\s/, "")
+  if(bookAName < bookBName) {
+    return -1;
+  } else if (bookAName > bookBName) {
+    return 1;
+  } else {
+    return 0;
+  }
+}
+
 console.log("Creating final filelist.js");
 
 for(const fileSuffix of Object.keys(descriptionToFilelistMap)) {
@@ -63,6 +75,7 @@ for(const fileSuffix of Object.keys(descriptionToFilelistMap)) {
         newTargetBook["description"] = desc;
         newFilelist.push(newTargetBook);
       }
+      newFilelist.sort(bookCompare);
       let finalList = {"name": name, "content": newFilelist};
       resolve(finalList);
     })
