@@ -24,6 +24,9 @@
 
     <!-- Custom CSS
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.structure.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.theme.min.css">
     <link rel="stylesheet" href="css/index.css">
 
     <!-- Favicon
@@ -36,36 +39,86 @@
 
 </head>
 <body>
-	<h6 id="header">BuddhaNet Books</h6>
-	<div id="content">
-		<div class="four columns" id="titles">
-      <div v-for="category in filelist">
-      <h6 class="linktab">{{category.name}}</h6>
-      <ul class="linklist" v-show="!filter">
-        <li v-for="item in category.content">
-          <button v-on:click="openPDF(item.src)" 
-                  v-show="item.name.toUpperCase()
-                          .includes(filter.toUpperCase())">
-            {{item.name}}
-          </button>
-          </li>
-      </ul>
-      </div>
-    </div>
-    
-    <button id="readermode">Reader Mode</button>
-    <input type="text" id="search" placeholder="Search.."/>
-    <button id="clearsearch">Clear Search</button>
-    
-    
-    <iframe id="reader" class="eight columns"></iframe>
-	</div>
+	<h3 id="header" class="row">BuddhaNet Books</h3>
   
-  <h6 id="footer" class="twelve columns">
+  <div class="container" id="titlelist">
+      
+      <div v-for="category in titlelist" class="category">
+        <div class="linktab" 
+              v-show="opencategory === category.name 
+                      || opencategory === null
+                      || opencategory === 'all'"
+              v-on:click="opencategory = 
+                            opencategory === null 
+                                      ? category.name
+                                      : null" >
+          <h4>
+            {{category.name}} 
+            <span v-show="filter === null">
+              ({{category.content.length}} titles)
+            </span>
+            <span v-show="filter !== null">
+              ({{countEntries(category,filter)}} found)
+            </span>
+            </h4> 
+        </div>
+        
+        <ul class="linklist" v-show="opencategory===category.name ||
+                                     opencategory==='all' ">
+          
+          <li v-for="title in category.content">
+            <button v-on:click="opentitle = 
+                                opentitle === null 
+                                      ? title
+                                      : null"
+                    
+                    v-show="opentitle===null 
+                            && (filter === null || title
+                                                    .name
+                                                    .toUpperCase()
+                                                    .includes(filter
+                                                      .toUpperCase()))"
+                     
+                     >
+              {{title.name}}
+            </button>
+            <div id="titleinfo" v-show="opentitle === title">
+                <h4>{{title.name}}</h4>
+                <p class="titledescription">{{title.description}}</p>
+                
+                <button v-on:click="openInline(opentitle)">
+                  Open Inline
+                </button>
+                <button v-on:click="openDirect(opentitle)">
+                  Download Directly
+                </button>
+                <button v-on:click="openTab(opentitle)">
+                  Open in new Tab
+                </button>
+                <button v-on:click="opentitle = null">
+                  Back
+                </button>
+                
+            </div>
+            </li>
+        </ul>
+
+    </div>
+  </div>
+
+  <div class="container">
+    <input type="text" id="search" placeholder="Search.."/>
+  </div>
+  
+  <div class="container" id="readercontainer">
+    <iframe id="reader"></iframe>
+  </div>
+  
+  <div id="footer" class="row">
     All content owned by
     <a href="http://www.buddhanet.net">
     Buddhanet.net
     </a>
-  </h6>
+  </div>
 </body>
 </html>

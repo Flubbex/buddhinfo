@@ -1,126 +1,95 @@
 html
 {
-    height: 100%;
     background-color: black;
-}
-
-body
-{
-  background: url("../images/wallpaper.jpg");
-  display: none;
-	height: 100%;
-}
-
-p,ul,ol
-{
-    list-style: none;
-}
-
-h4,h5,h6
-{
-    text-align: center;
-    background-color: rgba(255,255,255,0.25);
-    font-weight: bold;
-    margin: 0px;
-    padding: 4px;
-}
-.container > div
-{
-  height: 90%;
-}
-
-.linktab
-{
-		cursor: pointer;
-}
-
-.linktab:hover
-{
-  background-color: rgba(255,255,255,0.5)
-}
-
-.linklist
-{
-  display: none;
-  max-height: 80%;
-}
-
-#content
-{
-  height: 75%;
-}
-
-#titles
-{
-  overflow-y: scroll;
-}
-#titles,#reader
-{
-  height: 100%;
-  background-color: rgba(255,255,255,0.25);
-  border: none;
-}
-
-#footer,#header
-{
-  background-color: rgba(255,255,255,0.5);
-}
-
-#footer,#header,#titles,#reader,
-#clearsearch,#search,#directurl,#readermode
-{
-  display: none;
-}
-
-li,ul
-{
-  margin: 0px;
-}
-button
-{
-  background-color: rgba(255,255,255,0.5);
-  width: 100%;
-  margin: 0px;
-  height: 50px;
-  padding: 0px;
-  font-size: 1em;
+    height: 100%;
 }
 
 #search
 {
-  width: 70%;
-  height: 12%;
+  width: 100%;
+  margin-top: 2%;
+}
+
+body
+{
+  background: url('../images/wallpaper.jpg');
+  height: 100%;
+}
+
+#readercontainer
+{
+  display: none;
+}
+
+#footer
+{
   position: fixed;
   bottom: 0;
-  right: 0;
-  opacity: 0.9;
-  margin: 0px;
+  width: 100%;
 }
-#clearsearch
+
+#titlelist
 {
-   width: auto;
-   height: 12%;
-   position: fixed;
-   bottom: 0;
-   right: 0;
-   opacity: 0.9;
+  height: 60%;
+  overflow-y: auto;
 }
-#clearsearch:hover,#search:hover
+
+
+.linklist li
+{
+  display: inline-block;
+}
+
+.linklist li button
+{
+  height: 50px;
+  margin: 0;
+  opacity: 0.75;
+}
+
+.linklist li button:hover
 {
   opacity: 1;
 }
 
-#readermode
+.linktab h4
 {
-  position: fixed;
-  width: 30%;
-  height: 12%;
-  bottom:0px;
-  left: 0px;
-  opacity: 0.9;
+  text-align: center;
 }
 
-#directurl:hover
+.linktab:hover
 {
-  opacity: 1;
+  background-color: rgba(255,255,255,0.5);
+  cursor: pointer;
 }
+
+.container
+{
+  background-color: rgba(255,255,255,0.25);
+  margin-bottom: 1%;
+}
+
+.row
+{
+  background-color: rgba(255,255,255,0.75);
+}
+button
+{
+  background-color: snow;
+}
+
+ul,ol,li
+{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.blurred
+{
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+}
+

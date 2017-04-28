@@ -1,5 +1,740 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 /*!
+ * jQuery UI Widget 1.12.1
+ * http://jqueryui.com
+ *
+ * Copyright jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ */
+
+//>>label: Widget
+//>>group: Core
+//>>description: Provides a factory for creating stateful widgets with a common API.
+//>>docs: http://api.jqueryui.com/jQuery.widget/
+//>>demos: http://jqueryui.com/widget/
+
+( function( factory ) {
+	if ( typeof define === "function" && define.amd ) {
+
+		// AMD. Register as an anonymous module.
+		define( [ "jquery", "./version" ], factory );
+	} else {
+
+		// Browser globals
+		factory( jQuery );
+	}
+}( function( $ ) {
+
+var widgetUuid = 0;
+var widgetSlice = Array.prototype.slice;
+
+$.cleanData = ( function( orig ) {
+	return function( elems ) {
+		var events, elem, i;
+		for ( i = 0; ( elem = elems[ i ] ) != null; i++ ) {
+			try {
+
+				// Only trigger remove when necessary to save time
+				events = $._data( elem, "events" );
+				if ( events && events.remove ) {
+					$( elem ).triggerHandler( "remove" );
+				}
+
+			// Http://bugs.jquery.com/ticket/8235
+			} catch ( e ) {}
+		}
+		orig( elems );
+	};
+} )( $.cleanData );
+
+$.widget = function( name, base, prototype ) {
+	var existingConstructor, constructor, basePrototype;
+
+	// ProxiedPrototype allows the provided prototype to remain unmodified
+	// so that it can be used as a mixin for multiple widgets (#8876)
+	var proxiedPrototype = {};
+
+	var namespace = name.split( "." )[ 0 ];
+	name = name.split( "." )[ 1 ];
+	var fullName = namespace + "-" + name;
+
+	if ( !prototype ) {
+		prototype = base;
+		base = $.Widget;
+	}
+
+	if ( $.isArray( prototype ) ) {
+		prototype = $.extend.apply( null, [ {} ].concat( prototype ) );
+	}
+
+	// Create selector for plugin
+	$.expr[ ":" ][ fullName.toLowerCase() ] = function( elem ) {
+		return !!$.data( elem, fullName );
+	};
+
+	$[ namespace ] = $[ namespace ] || {};
+	existingConstructor = $[ namespace ][ name ];
+	constructor = $[ namespace ][ name ] = function( options, element ) {
+
+		// Allow instantiation without "new" keyword
+		if ( !this._createWidget ) {
+			return new constructor( options, element );
+		}
+
+		// Allow instantiation without initializing for simple inheritance
+		// must use "new" keyword (the code above always passes args)
+		if ( arguments.length ) {
+			this._createWidget( options, element );
+		}
+	};
+
+	// Extend with the existing constructor to carry over any static properties
+	$.extend( constructor, existingConstructor, {
+		version: prototype.version,
+
+		// Copy the object used to create the prototype in case we need to
+		// redefine the widget later
+		_proto: $.extend( {}, prototype ),
+
+		// Track widgets that inherit from this widget in case this widget is
+		// redefined after a widget inherits from it
+		_childConstructors: []
+	} );
+
+	basePrototype = new base();
+
+	// We need to make the options hash a property directly on the new instance
+	// otherwise we'll modify the options hash on the prototype that we're
+	// inheriting from
+	basePrototype.options = $.widget.extend( {}, basePrototype.options );
+	$.each( prototype, function( prop, value ) {
+		if ( !$.isFunction( value ) ) {
+			proxiedPrototype[ prop ] = value;
+			return;
+		}
+		proxiedPrototype[ prop ] = ( function() {
+			function _super() {
+				return base.prototype[ prop ].apply( this, arguments );
+			}
+
+			function _superApply( args ) {
+				return base.prototype[ prop ].apply( this, args );
+			}
+
+			return function() {
+				var __super = this._super;
+				var __superApply = this._superApply;
+				var returnValue;
+
+				this._super = _super;
+				this._superApply = _superApply;
+
+				returnValue = value.apply( this, arguments );
+
+				this._super = __super;
+				this._superApply = __superApply;
+
+				return returnValue;
+			};
+		} )();
+	} );
+	constructor.prototype = $.widget.extend( basePrototype, {
+
+		// TODO: remove support for widgetEventPrefix
+		// always use the name + a colon as the prefix, e.g., draggable:start
+		// don't prefix for widgets that aren't DOM-based
+		widgetEventPrefix: existingConstructor ? ( basePrototype.widgetEventPrefix || name ) : name
+	}, proxiedPrototype, {
+		constructor: constructor,
+		namespace: namespace,
+		widgetName: name,
+		widgetFullName: fullName
+	} );
+
+	// If this widget is being redefined then we need to find all widgets that
+	// are inheriting from it and redefine all of them so that they inherit from
+	// the new version of this widget. We're essentially trying to replace one
+	// level in the prototype chain.
+	if ( existingConstructor ) {
+		$.each( existingConstructor._childConstructors, function( i, child ) {
+			var childPrototype = child.prototype;
+
+			// Redefine the child widget using the same prototype that was
+			// originally used, but inherit from the new version of the base
+			$.widget( childPrototype.namespace + "." + childPrototype.widgetName, constructor,
+				child._proto );
+		} );
+
+		// Remove the list of existing child constructors from the old constructor
+		// so the old child constructors can be garbage collected
+		delete existingConstructor._childConstructors;
+	} else {
+		base._childConstructors.push( constructor );
+	}
+
+	$.widget.bridge( name, constructor );
+
+	return constructor;
+};
+
+$.widget.extend = function( target ) {
+	var input = widgetSlice.call( arguments, 1 );
+	var inputIndex = 0;
+	var inputLength = input.length;
+	var key;
+	var value;
+
+	for ( ; inputIndex < inputLength; inputIndex++ ) {
+		for ( key in input[ inputIndex ] ) {
+			value = input[ inputIndex ][ key ];
+			if ( input[ inputIndex ].hasOwnProperty( key ) && value !== undefined ) {
+
+				// Clone objects
+				if ( $.isPlainObject( value ) ) {
+					target[ key ] = $.isPlainObject( target[ key ] ) ?
+						$.widget.extend( {}, target[ key ], value ) :
+
+						// Don't extend strings, arrays, etc. with objects
+						$.widget.extend( {}, value );
+
+				// Copy everything else by reference
+				} else {
+					target[ key ] = value;
+				}
+			}
+		}
+	}
+	return target;
+};
+
+$.widget.bridge = function( name, object ) {
+	var fullName = object.prototype.widgetFullName || name;
+	$.fn[ name ] = function( options ) {
+		var isMethodCall = typeof options === "string";
+		var args = widgetSlice.call( arguments, 1 );
+		var returnValue = this;
+
+		if ( isMethodCall ) {
+
+			// If this is an empty collection, we need to have the instance method
+			// return undefined instead of the jQuery instance
+			if ( !this.length && options === "instance" ) {
+				returnValue = undefined;
+			} else {
+				this.each( function() {
+					var methodValue;
+					var instance = $.data( this, fullName );
+
+					if ( options === "instance" ) {
+						returnValue = instance;
+						return false;
+					}
+
+					if ( !instance ) {
+						return $.error( "cannot call methods on " + name +
+							" prior to initialization; " +
+							"attempted to call method '" + options + "'" );
+					}
+
+					if ( !$.isFunction( instance[ options ] ) || options.charAt( 0 ) === "_" ) {
+						return $.error( "no such method '" + options + "' for " + name +
+							" widget instance" );
+					}
+
+					methodValue = instance[ options ].apply( instance, args );
+
+					if ( methodValue !== instance && methodValue !== undefined ) {
+						returnValue = methodValue && methodValue.jquery ?
+							returnValue.pushStack( methodValue.get() ) :
+							methodValue;
+						return false;
+					}
+				} );
+			}
+		} else {
+
+			// Allow multiple hashes to be passed on init
+			if ( args.length ) {
+				options = $.widget.extend.apply( null, [ options ].concat( args ) );
+			}
+
+			this.each( function() {
+				var instance = $.data( this, fullName );
+				if ( instance ) {
+					instance.option( options || {} );
+					if ( instance._init ) {
+						instance._init();
+					}
+				} else {
+					$.data( this, fullName, new object( options, this ) );
+				}
+			} );
+		}
+
+		return returnValue;
+	};
+};
+
+$.Widget = function( /* options, element */ ) {};
+$.Widget._childConstructors = [];
+
+$.Widget.prototype = {
+	widgetName: "widget",
+	widgetEventPrefix: "",
+	defaultElement: "<div>",
+
+	options: {
+		classes: {},
+		disabled: false,
+
+		// Callbacks
+		create: null
+	},
+
+	_createWidget: function( options, element ) {
+		element = $( element || this.defaultElement || this )[ 0 ];
+		this.element = $( element );
+		this.uuid = widgetUuid++;
+		this.eventNamespace = "." + this.widgetName + this.uuid;
+
+		this.bindings = $();
+		this.hoverable = $();
+		this.focusable = $();
+		this.classesElementLookup = {};
+
+		if ( element !== this ) {
+			$.data( element, this.widgetFullName, this );
+			this._on( true, this.element, {
+				remove: function( event ) {
+					if ( event.target === element ) {
+						this.destroy();
+					}
+				}
+			} );
+			this.document = $( element.style ?
+
+				// Element within the document
+				element.ownerDocument :
+
+				// Element is window or document
+				element.document || element );
+			this.window = $( this.document[ 0 ].defaultView || this.document[ 0 ].parentWindow );
+		}
+
+		this.options = $.widget.extend( {},
+			this.options,
+			this._getCreateOptions(),
+			options );
+
+		this._create();
+
+		if ( this.options.disabled ) {
+			this._setOptionDisabled( this.options.disabled );
+		}
+
+		this._trigger( "create", null, this._getCreateEventData() );
+		this._init();
+	},
+
+	_getCreateOptions: function() {
+		return {};
+	},
+
+	_getCreateEventData: $.noop,
+
+	_create: $.noop,
+
+	_init: $.noop,
+
+	destroy: function() {
+		var that = this;
+
+		this._destroy();
+		$.each( this.classesElementLookup, function( key, value ) {
+			that._removeClass( value, key );
+		} );
+
+		// We can probably remove the unbind calls in 2.0
+		// all event bindings should go through this._on()
+		this.element
+			.off( this.eventNamespace )
+			.removeData( this.widgetFullName );
+		this.widget()
+			.off( this.eventNamespace )
+			.removeAttr( "aria-disabled" );
+
+		// Clean up events and states
+		this.bindings.off( this.eventNamespace );
+	},
+
+	_destroy: $.noop,
+
+	widget: function() {
+		return this.element;
+	},
+
+	option: function( key, value ) {
+		var options = key;
+		var parts;
+		var curOption;
+		var i;
+
+		if ( arguments.length === 0 ) {
+
+			// Don't return a reference to the internal hash
+			return $.widget.extend( {}, this.options );
+		}
+
+		if ( typeof key === "string" ) {
+
+			// Handle nested keys, e.g., "foo.bar" => { foo: { bar: ___ } }
+			options = {};
+			parts = key.split( "." );
+			key = parts.shift();
+			if ( parts.length ) {
+				curOption = options[ key ] = $.widget.extend( {}, this.options[ key ] );
+				for ( i = 0; i < parts.length - 1; i++ ) {
+					curOption[ parts[ i ] ] = curOption[ parts[ i ] ] || {};
+					curOption = curOption[ parts[ i ] ];
+				}
+				key = parts.pop();
+				if ( arguments.length === 1 ) {
+					return curOption[ key ] === undefined ? null : curOption[ key ];
+				}
+				curOption[ key ] = value;
+			} else {
+				if ( arguments.length === 1 ) {
+					return this.options[ key ] === undefined ? null : this.options[ key ];
+				}
+				options[ key ] = value;
+			}
+		}
+
+		this._setOptions( options );
+
+		return this;
+	},
+
+	_setOptions: function( options ) {
+		var key;
+
+		for ( key in options ) {
+			this._setOption( key, options[ key ] );
+		}
+
+		return this;
+	},
+
+	_setOption: function( key, value ) {
+		if ( key === "classes" ) {
+			this._setOptionClasses( value );
+		}
+
+		this.options[ key ] = value;
+
+		if ( key === "disabled" ) {
+			this._setOptionDisabled( value );
+		}
+
+		return this;
+	},
+
+	_setOptionClasses: function( value ) {
+		var classKey, elements, currentElements;
+
+		for ( classKey in value ) {
+			currentElements = this.classesElementLookup[ classKey ];
+			if ( value[ classKey ] === this.options.classes[ classKey ] ||
+					!currentElements ||
+					!currentElements.length ) {
+				continue;
+			}
+
+			// We are doing this to create a new jQuery object because the _removeClass() call
+			// on the next line is going to destroy the reference to the current elements being
+			// tracked. We need to save a copy of this collection so that we can add the new classes
+			// below.
+			elements = $( currentElements.get() );
+			this._removeClass( currentElements, classKey );
+
+			// We don't use _addClass() here, because that uses this.options.classes
+			// for generating the string of classes. We want to use the value passed in from
+			// _setOption(), this is the new value of the classes option which was passed to
+			// _setOption(). We pass this value directly to _classes().
+			elements.addClass( this._classes( {
+				element: elements,
+				keys: classKey,
+				classes: value,
+				add: true
+			} ) );
+		}
+	},
+
+	_setOptionDisabled: function( value ) {
+		this._toggleClass( this.widget(), this.widgetFullName + "-disabled", null, !!value );
+
+		// If the widget is becoming disabled, then nothing is interactive
+		if ( value ) {
+			this._removeClass( this.hoverable, null, "ui-state-hover" );
+			this._removeClass( this.focusable, null, "ui-state-focus" );
+		}
+	},
+
+	enable: function() {
+		return this._setOptions( { disabled: false } );
+	},
+
+	disable: function() {
+		return this._setOptions( { disabled: true } );
+	},
+
+	_classes: function( options ) {
+		var full = [];
+		var that = this;
+
+		options = $.extend( {
+			element: this.element,
+			classes: this.options.classes || {}
+		}, options );
+
+		function processClassString( classes, checkOption ) {
+			var current, i;
+			for ( i = 0; i < classes.length; i++ ) {
+				current = that.classesElementLookup[ classes[ i ] ] || $();
+				if ( options.add ) {
+					current = $( $.unique( current.get().concat( options.element.get() ) ) );
+				} else {
+					current = $( current.not( options.element ).get() );
+				}
+				that.classesElementLookup[ classes[ i ] ] = current;
+				full.push( classes[ i ] );
+				if ( checkOption && options.classes[ classes[ i ] ] ) {
+					full.push( options.classes[ classes[ i ] ] );
+				}
+			}
+		}
+
+		this._on( options.element, {
+			"remove": "_untrackClassesElement"
+		} );
+
+		if ( options.keys ) {
+			processClassString( options.keys.match( /\S+/g ) || [], true );
+		}
+		if ( options.extra ) {
+			processClassString( options.extra.match( /\S+/g ) || [] );
+		}
+
+		return full.join( " " );
+	},
+
+	_untrackClassesElement: function( event ) {
+		var that = this;
+		$.each( that.classesElementLookup, function( key, value ) {
+			if ( $.inArray( event.target, value ) !== -1 ) {
+				that.classesElementLookup[ key ] = $( value.not( event.target ).get() );
+			}
+		} );
+	},
+
+	_removeClass: function( element, keys, extra ) {
+		return this._toggleClass( element, keys, extra, false );
+	},
+
+	_addClass: function( element, keys, extra ) {
+		return this._toggleClass( element, keys, extra, true );
+	},
+
+	_toggleClass: function( element, keys, extra, add ) {
+		add = ( typeof add === "boolean" ) ? add : extra;
+		var shift = ( typeof element === "string" || element === null ),
+			options = {
+				extra: shift ? keys : extra,
+				keys: shift ? element : keys,
+				element: shift ? this.element : element,
+				add: add
+			};
+		options.element.toggleClass( this._classes( options ), add );
+		return this;
+	},
+
+	_on: function( suppressDisabledCheck, element, handlers ) {
+		var delegateElement;
+		var instance = this;
+
+		// No suppressDisabledCheck flag, shuffle arguments
+		if ( typeof suppressDisabledCheck !== "boolean" ) {
+			handlers = element;
+			element = suppressDisabledCheck;
+			suppressDisabledCheck = false;
+		}
+
+		// No element argument, shuffle and use this.element
+		if ( !handlers ) {
+			handlers = element;
+			element = this.element;
+			delegateElement = this.widget();
+		} else {
+			element = delegateElement = $( element );
+			this.bindings = this.bindings.add( element );
+		}
+
+		$.each( handlers, function( event, handler ) {
+			function handlerProxy() {
+
+				// Allow widgets to customize the disabled handling
+				// - disabled as an array instead of boolean
+				// - disabled class as method for disabling individual parts
+				if ( !suppressDisabledCheck &&
+						( instance.options.disabled === true ||
+						$( this ).hasClass( "ui-state-disabled" ) ) ) {
+					return;
+				}
+				return ( typeof handler === "string" ? instance[ handler ] : handler )
+					.apply( instance, arguments );
+			}
+
+			// Copy the guid so direct unbinding works
+			if ( typeof handler !== "string" ) {
+				handlerProxy.guid = handler.guid =
+					handler.guid || handlerProxy.guid || $.guid++;
+			}
+
+			var match = event.match( /^([\w:-]*)\s*(.*)$/ );
+			var eventName = match[ 1 ] + instance.eventNamespace;
+			var selector = match[ 2 ];
+
+			if ( selector ) {
+				delegateElement.on( eventName, selector, handlerProxy );
+			} else {
+				element.on( eventName, handlerProxy );
+			}
+		} );
+	},
+
+	_off: function( element, eventName ) {
+		eventName = ( eventName || "" ).split( " " ).join( this.eventNamespace + " " ) +
+			this.eventNamespace;
+		element.off( eventName ).off( eventName );
+
+		// Clear the stack to avoid memory leaks (#10056)
+		this.bindings = $( this.bindings.not( element ).get() );
+		this.focusable = $( this.focusable.not( element ).get() );
+		this.hoverable = $( this.hoverable.not( element ).get() );
+	},
+
+	_delay: function( handler, delay ) {
+		function handlerProxy() {
+			return ( typeof handler === "string" ? instance[ handler ] : handler )
+				.apply( instance, arguments );
+		}
+		var instance = this;
+		return setTimeout( handlerProxy, delay || 0 );
+	},
+
+	_hoverable: function( element ) {
+		this.hoverable = this.hoverable.add( element );
+		this._on( element, {
+			mouseenter: function( event ) {
+				this._addClass( $( event.currentTarget ), null, "ui-state-hover" );
+			},
+			mouseleave: function( event ) {
+				this._removeClass( $( event.currentTarget ), null, "ui-state-hover" );
+			}
+		} );
+	},
+
+	_focusable: function( element ) {
+		this.focusable = this.focusable.add( element );
+		this._on( element, {
+			focusin: function( event ) {
+				this._addClass( $( event.currentTarget ), null, "ui-state-focus" );
+			},
+			focusout: function( event ) {
+				this._removeClass( $( event.currentTarget ), null, "ui-state-focus" );
+			}
+		} );
+	},
+
+	_trigger: function( type, event, data ) {
+		var prop, orig;
+		var callback = this.options[ type ];
+
+		data = data || {};
+		event = $.Event( event );
+		event.type = ( type === this.widgetEventPrefix ?
+			type :
+			this.widgetEventPrefix + type ).toLowerCase();
+
+		// The original event may come from any element
+		// so we need to reset the target on the new event
+		event.target = this.element[ 0 ];
+
+		// Copy original event properties over to the new event
+		orig = event.originalEvent;
+		if ( orig ) {
+			for ( prop in orig ) {
+				if ( !( prop in event ) ) {
+					event[ prop ] = orig[ prop ];
+				}
+			}
+		}
+
+		this.element.trigger( event, data );
+		return !( $.isFunction( callback ) &&
+			callback.apply( this.element[ 0 ], [ event ].concat( data ) ) === false ||
+			event.isDefaultPrevented() );
+	}
+};
+
+$.each( { show: "fadeIn", hide: "fadeOut" }, function( method, defaultEffect ) {
+	$.Widget.prototype[ "_" + method ] = function( element, options, callback ) {
+		if ( typeof options === "string" ) {
+			options = { effect: options };
+		}
+
+		var hasOptions;
+		var effectName = !options ?
+			method :
+			options === true || typeof options === "number" ?
+				defaultEffect :
+				options.effect || defaultEffect;
+
+		options = options || {};
+		if ( typeof options === "number" ) {
+			options = { duration: options };
+		}
+
+		hasOptions = !$.isEmptyObject( options );
+		options.complete = callback;
+
+		if ( options.delay ) {
+			element.delay( options.delay );
+		}
+
+		if ( hasOptions && $.effects && $.effects.effect[ effectName ] ) {
+			element[ method ]( options );
+		} else if ( effectName !== method && element[ effectName ] ) {
+			element[ effectName ]( options.duration, options.easing, callback );
+		} else {
+			element.queue( function( next ) {
+				$( this )[ method ]();
+				if ( callback ) {
+					callback.call( element[ 0 ] );
+				}
+				next();
+			} );
+		}
+	};
+} );
+
+return $.widget;
+
+} ) );
+
+},{}],2:[function(require,module,exports){
+/*!
  * jQuery JavaScript Library v3.2.1
  * https://jquery.com/
  *
@@ -10253,100 +10988,54 @@ if ( !noGlobal ) {
 return jQuery;
 } );
 
-},{}],2:[function(require,module,exports){
-var $           = require('jquery');
-var Vue         = require("./vue");
-var filelist    = require("./filelist");
+},{}],3:[function(require,module,exports){
+var Titlelist_View = require("../view/titlelist");
+var Titleinfo_View = require("../view/titleinfo");
 
-var Buddhinfo = {
-  viewTitles:{
-        el: '#titles',
-        data: {filelist:filelist,filter:""},
-        methods:{
-        openPDF:function(url)
-        {
-          if (!Buddhinfo.settings.directurl)
-            $("#reader")[0].src = url;
-          else
-            window.open(url, '_blank');
-        }
-      }
-  },
-  settings:{directurl:false},
-  listopen:false,
-  DOMready:function()
-  {
-    Buddhinfo.viewTitles = new Vue(Buddhinfo.viewTitles);
-    
-    //Crossfading
-    $("body").fadeIn('slow');
-    $("#footer,#header,#titles,#reader,\
-      #clearsearch,#search,#directurl,#readermode").fadeIn('fast');
-    
-    
-    $('#search').keyup(function(e){
-      $(".linklist").show()
-      
-      Buddhinfo.viewTitles.filter = e.target.value;
-       
-    });
+function Buddhinfo_Controller(titles)
+{
+  this.titles         = titles;
+  this.settings       = {directurl:false};
+  this.titlelist_view = Titlelist_View;
+  this.titleinfo_view = Titleinfo_View;
   
-    $("#clearsearch").mouseup(function(){
-      Buddhinfo.viewTitles.filter = "";
-      $("#search").val("");
-      $(".linklist").hide();
-      $(".linktabs").show();
-    });
-  
-    $("#readermode").mouseup(function(){
-      var mode = $(this)[0].innerHTML;
-      Buddhinfo.settings.directurl = (mode==="Reader Mode");
-      if (Buddhinfo.settings.directurl)
-      {
-        $(this)[0].innerHTML = "Direct URL";
-        $("#reader").slideUp('fast');
-      }
-      else
-      {
-        $(this)[0].innerHTML = "Reader Mode";
-        $("#reader").slideDown('fast');
-      }
-    });
-    
-  $('.linktab').click(function(){
-    Buddhinfo.listopen = $(this).next(".linklist");
-    if (Buddhinfo.listopen.is(':visible'))
-    {
-      Buddhinfo.listopen.slideUp('fast',function(){
-      Buddhinfo.showAll();
-      });
-    }
-    else
-    {
-      Buddhinfo.hideAllExcept($(this),function(){
-          Buddhinfo.listopen.slideDown('fast');
-        });
-    }
-    });
-  
-  },
-  hideAllExcept:function(tag,callback)
-  {
-      $(".linktab").slideUp('fast',function(){
-        tag.slideDown('fast',callback);
-      });
-  },
-  showAll:function()
-  {
-      $(".linktab").slideDown('fast');
-  }
 }
 
-$(document).ready(Buddhinfo.DOMready);
+Buddhinfo_Controller.prototype.start = function()
+{
+  this.titlelist_view.vue.titlelist = this.titles;
+  console.log("CRAZY BUS ♪ CRAZY BUS ♬ ");
+};
 
-module.exports = Buddhinfo;
+module.exports =  Buddhinfo_Controller;
 
-},{"./filelist":3,"./vue":4,"jquery":1}],3:[function(require,module,exports){
+},{"../view/titleinfo":9,"../view/titlelist":10}],4:[function(require,module,exports){
+var $     
+    = window.jQuery 
+    = window.$
+    = require('jquery');
+var UI
+    = window.$.UI
+    = require("jquery-ui");
+    
+//Globals :(
+
+var Buddhinfo_Controller  = require("./controller/buddhinfo");
+var filelist              = require("./filelist");
+var fluxview              = require("./lib/fluxview");
+
+var buddhinfo = new Buddhinfo_Controller(filelist);
+
+$(document).ready(function(){
+  
+    fluxview.ready(window);
+    buddhinfo.start();
+    
+});
+
+module.exports = buddhinfo;
+
+},{"./controller/buddhinfo":3,"./filelist":5,"./lib/fluxview":7,"jquery":2,"jquery-ui":1}],5:[function(require,module,exports){
 var filelist = [
   {
     "name": "Children",
@@ -11415,7 +12104,190 @@ var filelist = [
   }
 ];
 module.exports = filelist;
-},{}],4:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
+
+// Extend an objects prototype with fluxmitter
+// Returns an empty object with fluxmitter as prototype if root===null
+var fluxmitter = function(root)
+{
+    root = root || {};
+    
+    Object.setPrototypeOf(root,fluxmitter);
+    
+    //don't clobber existing event tables
+    if (!root.events)
+        root.events = {}
+
+    return root;
+}
+
+//Emit an event to the fluxmitter
+// Arguments
+//      event (string, name of event chain to trigger)
+//      [...] (objects as parameters for the event)
+fluxmitter.emit = function() //event,data,args[0],...
+{
+    var args        = [].slice.call(arguments);
+    var event       = args.shift();
+
+    if (!this.events[event])
+        if (fluxmitter.strict)
+            throw new Error("fluxmitter violation: No such event "+event);
+        else
+            return null
+
+    var events = this.events[event];
+
+    return events.map(function(eventinfo)
+    {
+        var argsextended = eventinfo.args.concat(args);
+        return {eventinfo:eventinfo,
+                result:eventinfo.callback.apply(eventinfo.parent,argsextended)
+            };
+    });
+
+}
+
+// Add function to event chain
+// Arguments
+//  event       (string, name of event chain to add callback to)
+//  callback    (function, method to add to event chain)
+//  parent      (object, will be passed as 'this' to callback)
+//  [...]       (objects as primary arguments
+fluxmitter.on = function() //event,callback,asThis,arg[0],...
+{
+    //convert arguments to array
+    var args        = [].slice.call(arguments);
+    var event       = args.shift();
+    var callback    = args.shift();
+    var parent      = args.shift();
+    //Return null if missing arguments
+    if (!callback || !event)
+      return null;
+      
+    var neweventinfo = {callback:callback,
+                        parent:parent,
+                        args:args};
+
+    if (!this.events[event])
+        this.events[event] = [];
+
+    return this.events[event].push(neweventinfo);
+};
+
+//Removes callback from event chain
+fluxmitter.off = function()
+{
+    var args        = [].slice.call(arguments);
+    var event       = args.shift();
+    var callback    = args.shift();
+
+    //Return null if missing arguments
+    if (!callback || !event)
+      return null;
+      
+    this.events[event] = this.events[event].filter(function(e){
+            return !e.callback===callback;
+    });
+    
+    return this.events[event];
+};
+
+//Throws during an emit if no callbacks are found.
+//if strict === false then stay quiet.
+fluxmitter.strict = false;
+
+module.exports = fluxmitter;
+
+
+},{}],7:[function(require,module,exports){
+var Fluxmitter = require("./fluxmitter");
+
+function Fluxview(attributes)
+{
+    var view = Object.create(Fluxmitter());
+
+    view.hook = function()
+    {
+        var arguments   = [].slice.call(arguments);
+        var domelement  = arguments.shift();
+        var event       = arguments.shift();
+        var callback    = arguments.shift();
+        var parent      = arguments.shift();
+
+        var self        = this;
+        if (!domelement)
+            throw new Error("Fluxview: No DOM element specified (DOM ready?)");
+        if (!event)
+            throw new Error("Fluxview: Invalid argument to view.hook (event)");
+        if (!callback)
+            throw new Error("Fluxview: Invalid argument to view.hook (callback)");
+
+        domelement.addEventListener(event,function(){
+            callback.apply(parent||self||this,arguments);
+        });
+    };
+
+    view.properties = {};
+
+    for (var attr in attributes)
+    {
+        switch(typeof(attributes[attr]))
+        {
+            case "function":
+                view[attr] = attributes[attr];
+                view.on("call_"+attr,view[attr],view);
+                break
+            default:
+                view.properties[attr] = attributes[attr];
+                break;
+        };
+    };
+
+    //Runs when DOM is ready
+    Fluxview.domloaders.push(function(window)
+    {
+        view.el =   window
+                    .document
+                    .getElementById(view.properties.el);
+
+        if (view.el === null)
+            throw new Error("Fluxview: No element with id '"
+                +view.properties.el
+                +"' found");
+
+        //Run initialize as method or emit as an event
+        if (view.initialize)
+            switch (typeof(view.initialize))
+            {
+                case "function":
+                    view.initialize.apply(view,arguments);
+                    break;
+                case "string":
+                    view.emit(view.initialize,arguments)
+                    break;
+                default:
+                    break;
+            }
+    });
+
+    return view;
+}
+
+Fluxview.domloaders = [];
+
+Fluxview.ready = function(window)
+{
+    Fluxview.domloaders.map(function(loader)
+    {
+        loader(window);
+    });
+
+}
+
+module.exports = Fluxview;
+
+},{"./fluxmitter":6}],8:[function(require,module,exports){
 (function (global){
 /*!
  * Vue.js v2.2.6
@@ -20735,4 +21607,92 @@ return Vue$3;
 })));
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}]},{},[2])
+},{}],9:[function(require,module,exports){
+//obsoleted
+
+},{}],10:[function(require,module,exports){
+var Vue         = require("../lib/vue");
+var fluxview    = require("../lib/fluxview");
+
+var Titlelist_View = fluxview({
+    el:"titlelist",
+    vue:null,
+    initialize:function(){
+      
+      $("body").animate({opacity:1},500);
+      
+      $("#search").keyup(function(e){
+        if (e.target.value==="")
+        {
+          
+          Titlelist_View.vue.opencategory = null;
+          Titlelist_View.vue.filter = null;
+          
+        }
+        else
+        {
+          Titlelist_View.vue.opencategory = 'all';
+          Titlelist_View.vue.filter = e.target.value;
+        }
+        
+      });
+      this.vue = new Vue({
+                          el:"#titlelist",
+                          data:{
+                                titlelist:null,
+                                opencategory:null,
+                                opentitle:null,
+                                filter:null},
+                          methods:{
+                                openInline:function(title){
+                                  
+                                },
+                                openDirect:function(title){
+                                  window.location = title.src;
+                                },
+                                openTab:function(title){
+                                  window.open(title.src,'_blank');
+                                },
+                                Share:function(title){
+                                
+                                },
+                                countEntries:function(category,filter)
+                                {
+                                  if (filter===null)
+                                    return 0
+                                    
+                                  var count = 0;
+                                  category.content.map(function(title)
+                                  {
+                                    if (title.name.toUpperCase().
+                                          includes(filter.toUpperCase()))
+                                          count++
+                                  });
+                                  return count;
+                                  
+                                },
+                            
+                                }
+                          });
+    },
+    openCategory:function(category){
+      Titlelist_View.vue.category = category;
+    },
+    openTitle:function(title){
+      Titlelist_View.vue.title = title;
+    },
+    openPDF:function(url){
+      Titleinfo_View.emit("openPDF",url);
+    },
+    hideAllExcept:function(tag,callback)
+    {
+      Titleinfo_View.emit("hideAllExcept",{tag:tag,callback:callback});
+    },
+    showAll:function()
+    {
+      Titleinfo_View.emit("showAll");
+    }
+});
+module.exports = Titlelist_View;
+
+},{"../lib/fluxview":7,"../lib/vue":8}]},{},[4])
