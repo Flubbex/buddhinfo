@@ -26,35 +26,48 @@ body
 
 #titlelist
 {
-  height: 75%;
+    height: 75%;
+    width: 100%;
+}
+.titleinfo
+{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,0.1);
+    position: relative;
+}
+
+.titleinfo h5
+{
+  padding-left: 20px;
+  background-color: rgba(255,255,255,0.9);
+}
+
+.titleinfo p
+{
+  background-color: rgba(255,255,255,0.9);
+  padding: 25px;
+  padding-left: 100px;
+  height: 25%;
   overflow-y: auto;
 }
 
-#titlelist h5
+.linklist
 {
-  padding-left: 20px;
+    height: 85%;
+    width: 100%;
+    overflow-y: auto;
 }
-
-#titlelist p
-{
-  background-color: rgba(255,255,255,0.5);
-  padding: 25px;
-  padding-left: 100px;
-}
-
-.linklist li
-{
-  display: inline-block;
-}
-
-.linklist li button
+.linklist button
 {
   height: 50px;
   margin: 0;
-  opacity: 0.75;
+  padding: 8px;
+  opacity: 0.6;
+  font-size: 1.05em;
 }
 
-.linklist li button:hover
+.linklist button:hover
 {
   opacity: 1;
 }
@@ -78,7 +91,7 @@ body
 
 .row
 {
-  background-color: rgba(255,255,255,0.75);
+  background-color: rgba(255,255,255,0.25);
 }
 button
 {
@@ -99,6 +112,7 @@ ul,ol,li
   -o-filter: blur(5px);
   -ms-filter: blur(5px);
 }
+
 
 #reader
 {

@@ -43,6 +43,13 @@ var Titlelist_View = fluxview({
                                 Share:function(title){
 
                                 },
+                                clearSearch:function(){
+                                  $("#search").val('');
+                                  Titlelist_View
+                                    .vue
+                                    .filter
+                                    = null;
+                                },
                                 countEntries:function(category,filter)
                                 {
                                   if (filter===null)

@@ -43,8 +43,8 @@
 
   <div class="row" id="titlelist">
 
-      <div v-for="category in titlelist" class="category">
         <div class="linktab"
+              v-for="category in titlelist"
               v-show="opencategory === category.name
                       || opencategory === null
                       || opencategory === 'all'"
@@ -63,47 +63,53 @@
             </h4>
         </div>
 
-        <ul class="linklist" v-show="opencategory===category.name ||
+        <div class="linklist"
+                v-for="category in titlelist"
+                v-show="opencategory===category.name ||
                                      opencategory==='all' ">
 
-          <li v-for="title in category.content">
-            <button v-on:click="opentitle =
+            <button v-for="title in category.content"
+                    v-on:click="opentitle =
                                 opentitle === null
                                       ? title
                                       : null"
 
-                    v-show="opentitle===null
-                            && (filter === null || title
-                                                    .name
-                                                    .toUpperCase()
-                                                    .includes(filter
-                                                      .toUpperCase()))"
+                        v-show="opentitle===null
+                                && (filter === null || title
+                                                        .name
+                                                        .toUpperCase()
+                                                        .includes(filter
+                                                          .toUpperCase()))"
 
-                     >
-              {{title.name}}
-            </button>
-            <div id="titleinfo" v-show="opentitle === title">
-                <h5>{{title.name}}</h5>
-                <p class="titledescription">{{title.description}}</p>
+                         >
+                  {{title.name}}
+                </button>
+                <div class="titleinfo"
+                     v-for="title in category.content"
+                    v-show="opentitle === title">
+                    <h5>{{title.name}}</h5>
+                    <p class="titledescription">{{title.description}}</p>
 
-                <button v-on:click="openInline(opentitle)">
-                  Open Inline
-                </button>
-                <button v-on:click="openDirect(opentitle)">
-                  Download Directly
-                </button>
-                <button v-on:click="openTab(opentitle)">
-                  Open in new Tab
-                </button>
-                <button v-on:click="opentitle = null">
-                  Back
-                </button>
+                    <button v-on:click="openInline(opentitle)">
+                      Open Inline
+                    </button>
+                    <button v-on:click="openDirect(opentitle)">
+                      Download Directly
+                    </button>
+                    <button v-on:click="openTab(opentitle)">
+                      Open in new Tab
+                    </button>
+                    <button v-on:click="opentitle = null">
+                      Back
+                    </button>
+                </div>
 
+            <button v-on:click="opencategory = null;
+                                clearSearch();"
+                    style="background-color: black;color:white;">
+                      Back
+                    </button>
             </div>
-            </li>
-        </ul>
-
-    </div>
   </div>
 
   <div class="row">
