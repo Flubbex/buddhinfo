@@ -1,13 +1,12 @@
 var Vue         = require("../lib/vue");
 var fluxview    = require("../lib/fluxview");
 
-var Titlelist_View = fluxview({
-    el:"readercontrols",
+var Reader_View = fluxview({
+    el:"readercontainer",
     vue:null,
     initialize:function(){
-      console.log("Setting up reader");
       this.vue = new Vue({
-                          el:"#readercontrols",
+                          el:"#readercontainer",
                           data:{
                                 title:null
                               },
@@ -20,11 +19,11 @@ var Titlelist_View = fluxview({
                                 setBookmark:function(){},
                                 saveTitle:function(){},
                                 complain:function(){}
-                                
+
                               }}
                               );
                             }
 
 });
-module.exports = Titlelist_View;
+module.exports = Reader_View;
 

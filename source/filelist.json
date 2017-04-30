@@ -1,7 +1,4 @@
-//Oh okay, no descriptions? 
-//.. #BackingTheWrongThing?
-
-var filelist = [
+[
   {
     "name": "Children",
     "content": [
@@ -361,26 +358,56 @@ var filelist = [
         "description": "This book is an elaboration of Dr Santina \"Fundamentals of Buddhism\". In keeping with the original objectives of the study of basic Buddhism, this book is - as far as possible - non-technical. It is intended for the ordinary readers not having any special expertise in Buddhist studies or in Buddhist canonical languages. This book can supply a general introduction to the major traditions of Buddhism, but does not pretend to be complete or definitive. This book will serve as the beginning of its readers' Buddhist education and not the end of it."
       },
       {
+        "0": null,
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": null,
+        "5": null,
         "name": "A Tree in a Forest",
         "src": "files/General/tree-forest.pdf",
         "description": "\"People have asked me about my practice. How do I prepare my mind for meditation? There is nothing special. I just keep it where it always is. They ask. \"Then are you an Arahant? Do I know? I am like a tree in the forest, full of leaves, blossoms and fruit. Birds come to eat and nest, and animals seek rest in the shade. Yet the tree does not know itself. It follows its own nature. It is as it is\". - Ajahn Chah."
       },
       {
+        "0": null,
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": null,
+        "5": null,
         "name": "To Understand Buddhism",
         "src": "files/General/undrstnd.pdf",
         "description": "These are Dharma Talks given in Australia by Ven. Master Chin Kung. The teachings of Master Chin Kung are based on true sincerity towards others; purity of mind; equality in everything we see; proper understanding of ourselves and our environment; compassion by helping others in a wise and unconditional way. See through to the truth of impermanence; let go of all wandering thoughts and attachments; accord with conditions to go along with the environment. Be mindful of Amitabha Buddha - wishing to reach the Pure Land and follow His Teachings."
       },
       {
+        "0": null,
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": null,
+        "5": null,
         "name": "What Buddhists Believe",
         "src": "files/General/whatbelieve.pdf",
         "description": ""
       },
       {
+        "0": null,
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": null,
+        "5": null,
         "name": "The position of Women in Buddhism",
         "src": "files/General/women-buddhism6.pdf",
         "description": ""
       },
       {
+        "0": null,
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": null,
+        "5": null,
         "name": "From Womb to Womb",
         "src": "files/General/womtowom.pdf",
         "description": "Metamorphosis of a Mother. For twenty-five years Francis Story lived in Asian countries, where he deeply studied the Buddha's philosophy of life. His research into the teachings on rebirth started while in Myanmar (Burma) and was later continued with careful investigation of spontaneous rebirth recollections. This book includes 'A Reading Guide to Death and Rebirth', by Ven. Bodhisara which offers an overview on some topics of death and rebirth: near death experiences, past life experiences, dying and caring for the dying, etc."
@@ -461,11 +488,23 @@ var filelist = [
         "description": "Fa-Hien was a Chinese monk of the Eastern dynasty (4th-5th Century). In 399 he left China for India, finally arriving there after six years of hard travel. After studying Sanskrit and obtaining many Sanskrit texts of the Tripitaka (Buddhist canon), he returned to China by sea in 414. This text is an Account by Fa-Hien of his travels in India and Ceylon (A.D. 399-414) in Search of the Buddhist Books of Discipline. Translated and annotated with a Corean recension of the Chinese text by James Legge."
       },
       {
+        "0": null,
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": null,
+        "5": null,
         "name": "Biographies of Sachen Kunga Nyingpo",
         "src": "files/History/sakya_bios.pdf",
         "description": "This book on the biographies of the Great Sachen Kunga Nyingpo and the current lineage holder of the Sakya sect in Tibetan Buddhism, His Holiness the 41st Sakya Trizin, has been compiled by Ratna Vajra Sakya, Dolma Lhama and Lama Jampa Losel. It includes photographic material of the His Holiness Sakya Trizin."
       },
       {
+        "0": null,
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": null,
+        "5": null,
         "name": "Thai - Cambodian Culture",
         "src": "files/History/thai_cambodian_art.pdf",
         "description": "Thailand and Cambodia are very close neighbours with common borders and cultural relations. The Thai people received and adopted some arts and culture from ancient Cambodia. The pre-Thai scripts and spoken words were adopted from Khmer native language. The development of Cambodian arts can be seen in the Thai art of the Lopburi period (11th to 15th century A.D.) It was occupied by the Khmers and as such the art of this period is known locally as Khmer art which deals with Mahayana elements, as in the Sri-Vijaya school of art. This school of Buddhist art marks the last stage of the growth of Buddhist art in Thailand before the rise of the Thai people to power in the land which is now called Thailand.<end of file>"
@@ -606,6 +645,12 @@ var filelist = [
         "description": "Method and Wisdom in the practice of Dharma by Lama Thubten Zopa Rinpoche. The teachings of the Buddha can be divided into two categories - extensive method and profound wisdom. In this series of talks, Lama Zopa Rinpoche, spiritual director of the Foundation for the Preservation of the Mahayana Tradition (FPMT), offers a practical explanation of these two paths. As presented here, method is the loving, compassionate Bodhicitta and wisdom is the realisation of ultimate reality, the right view of emptiness. Through practicing method, we attain the holy body of a Buddha; through developing wisdom we attain the enlightened mind. Recognizing the workaday world reality in which most of his students live, Rinpoche shows us how to think and act so that every moment of our lives will be of maximum benefit to both others and ourselves."
       },
       {
+        "0": null,
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": null,
+        "5": null,
         "name": "Pure-Land Zen",
         "src": "files/Mahayana/yin_kuang.pdf",
         "description": "Note to the reader. This is an electronic version of the book \u001cPure-Land Zen, Zen Pure-Land\u001d (second edition 1993*), which is a translation of selected passages from the letters of Elder Master Yin Kuang, the Thirteenth Patriarch of Pure Land. The original Chinese titles are Yin Kuang Fa Shih Wen Chao and Yin Kuang Ta Shih Chia Yen Lu. Except for the two pictures of Master Yin Kuang, nothing has been added or changed. However, the notes to the letters and the Glossary prepared by the Van Hien Study Group as well as the Appendix (The Practices and Vows of the Bodhisattva Samantabhadra) were left out, but will hopefully be added later on. T.G., May 2005, * Reprinted and donated for free distribution by The Corporate Body of the Buddha Educational Foundation, Taipei, Taiwan, R.O.C."
@@ -791,21 +836,45 @@ var filelist = [
         "description": "This is short explanation on how to practise Metta Bhavana or Loving-kindness Meditation given as a three-day weekend retreat at Dhammodaya Meditation Centre in Nakhon Pathom in Thailand, by an Australian monk, Ven. Dhammarakkhita (Jeff Oliver)."
       },
       {
+        "0": null,
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": null,
+        "5": null,
         "name": "Seeding the Heart",
         "src": "files/Meditation/seeding.pdf",
         "description": "Loving-kindness Meditation with Children. The practice of loving-kindness, or metta, can be done in one of two ways: either in intensive prolonged meditation to develop deep states of concentration, or in daily life at any time one meets with people and animals or thinks about them. To learn about the radiating of metta to all beings with children, we have to tap into the store of knowledge accumulated by lay people and parents. It must be knowledge which has grown out of years of living and loving with children and young adults. Gregory Kramer, father of three boys, shows us here with what subtle but precise adjustments in the standard practice of loving-kindness he was able to anchor it in the lives of his children."
       },
       {
+        "0": null,
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": null,
+        "5": null,
         "name": "Teaching and Training: Pa-Auk Monastery",
         "src": "files/Meditation/teach-train3rd.pdf",
         "description": ""
       },
       {
+        "0": null,
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": null,
+        "5": null,
         "name": "For the Stilling of Volcanoes",
         "src": "files/Meditation/volcanos.pdf",
         "description": "Insight Meditation as explained by Ven. Sujiva: \"It is not an task easy to approach such a profound topic as Insight Meditation in simple terms. But we have got to start somewhere. After some years of introducing this type of meditation, I still find that there is a lack of introductory material for those without knowledge of Buddhism. What is available is often extremely technical and loaded with ancient Indian terminology. There are some words in the English vocabulary which we can never hope to substitute perfectly. Even in this booklet I have used some English words such as conditioned and suffering which need special explanation when used in a Buddhist sense - but I have tried to come up with something easier to read and understand.\""
       },
       {
+        "0": null,
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": null,
+        "5": null,
         "name": "The Vipassana Retreat",
         "src": "files/Meditation/v_retreat6.pdf",
         "description": "Vipassana meditation requires long-term commitment. While it can be done to some extent in everyday life, realistically for the practice to deepen it needs to be done intensively in a supportive retreat situation. Vipassana meditation is developmental, so to realise its ultimate benefit it has to be sustained with appropriate intensity under supportive conditions. Ven. Pannyavaro, a practitioner of over 30 years, guides you through the vipassana experience in a retreat situation, in a systematic and practical way."
@@ -1056,16 +1125,27 @@ var filelist = [
         "description": ""
       },
       {
+        "0": null,
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": null,
+        "5": null,
         "name": "Volition: An Introduction to KAMMA",
         "src": "files/Theravada/volition.pdf",
         "description": "What is kamma? The Buddha said: \u001cOh monks, it is volition that I call kamma.\u001d The popular meaning of kamma is action or doing, but as a technical term, kamma means volition or will. When you do something, there is volition behind it, and that volition, that mental effort, is called kamma. The Buddha explained that, having willed, one then acts through body, speech, and mind. Whatever you do, there is some kind of kamma, mental effort, will, and volition. Volition is one of the fifty-two mental states which arise together with consciousness."
       },
       {
+        "0": null,
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": null,
+        "5": null,
         "name": "Daily Readings from the Buddha's WOW",
         "src": "files/Theravada/words_of_buddha.pdf",
         "description": "For over two millennium the discourses of the Buddha have nourished the spiritual lives of countless millions of people in India, Sri Lanka, Burma and Thailand. This book contains extracts from some of these discourses selected from the Pali Tipitaka and also from some post-canonical writings. Rendered into readable English, presented so that one extract can be read and reflected upon each day of the year and provided with a Readers Guide, this book is an indispensable companion for anyone trying to apply the Buddha's gentle message to their daily life."
       }
     ]
   }
-];
-module.exports = filelist;
+]

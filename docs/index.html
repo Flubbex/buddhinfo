@@ -39,53 +39,53 @@
 
 </head>
 <body>
-	<h3 id="header" class="row">BuddhaNet Books</h3>
-  
+    <h3 id="header" class="row">BuddhaNet Books</h3>
+
   <div class="row" id="titlelist">
-      
+
       <div v-for="category in titlelist" class="category">
-        <div class="linktab" 
-              v-show="opencategory === category.name 
+        <div class="linktab"
+              v-show="opencategory === category.name
                       || opencategory === null
                       || opencategory === 'all'"
-              v-on:click="opencategory = 
-                            opencategory === null 
+              v-on:click="opencategory =
+                            opencategory === null
                                       ? category.name
                                       : opentitle = null" >
           <h4>
-            {{category.name}} 
+            {{category.name}}
             <span v-show="filter === null">
               ({{category.content.length}} titles)
             </span>
             <span v-show="filter !== null">
               ({{countEntries(category,filter)}} found)
             </span>
-            </h4> 
+            </h4>
         </div>
-        
+
         <ul class="linklist" v-show="opencategory===category.name ||
                                      opencategory==='all' ">
-          
+
           <li v-for="title in category.content">
-            <button v-on:click="opentitle = 
-                                opentitle === null 
+            <button v-on:click="opentitle =
+                                opentitle === null
                                       ? title
                                       : null"
-                    
-                    v-show="opentitle===null 
+
+                    v-show="opentitle===null
                             && (filter === null || title
                                                     .name
                                                     .toUpperCase()
                                                     .includes(filter
                                                       .toUpperCase()))"
-                     
+
                      >
               {{title.name}}
             </button>
             <div id="titleinfo" v-show="opentitle === title">
                 <h5>{{title.name}}</h5>
                 <p class="titledescription">{{title.description}}</p>
-                
+
                 <button v-on:click="openInline(opentitle)">
                   Open Inline
                 </button>
@@ -98,7 +98,7 @@
                 <button v-on:click="opentitle = null">
                   Back
                 </button>
-                
+
             </div>
             </li>
         </ul>
@@ -109,19 +109,19 @@
   <div class="row">
     <input type="text" id="search" placeholder="Search.."/>
   </div>
-  
-  <div class="row" id="readercontainer">    
+
+  <div class="row" id="readercontainer"  draggable="true">
     <div class="row" id="readercontrols">
       <button v-on:click="saveTitle()">Save Title</button>
       <button v-on:click="setBookmark()">Set Bookmark</button>
       <button v-on:click="gotoBookmark()">Goto bookmark</button>
-      <button v-on:click="complain()">Complain to dev about unused buttons</button>    
+      <button v-on:click="complain()">Complain to dev about unused buttons</button>
       <button v-on:click="closeReader()">Close</button>
     </div>
     <iframe id="reader" class="row"></iframe>
   </div>
-  
-  <div id="footer" class="row" draggable="true">
+
+  <div id="footer" class="row">
     All content owned by
     <a href="http://www.buddhanet.net">
     Buddhanet.net

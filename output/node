@@ -1,0 +1,15 @@
+* Buddhinfo content generator 1.0.0 * 
+Using ' sources.json ' as input filelist.
+Using ' source/filelist.json ' as output filelist.
+Using ' contentgen/json ' as title source.
+ Directory was given, found 6 categories:
+1:	 children 	( 13 titles)
+2:	 general 	( 12 titles)
+3:	 history-art 	( 16 titles)
+4:	 mahayana 	( 13 titles)
+5:	 meditation 	( 15 titles)
+6:	 theravada 	( 14 titles)
+Creating final filelist.js
+Expanding  6  files with metadata.
+Succes: Filelist ' source/filelist.json written.
+Finished

@@ -10306,7 +10306,7 @@ $(document).ready(function(){
 module.exports = buddhinfo;
 
 },{"./controller/buddhinfo":2,"./filelist":4,"./lib/fluxview":6,"jquery":1}],4:[function(require,module,exports){
-module.exports = [
+module.exports=[
   {
     "name": "Children",
     "content": [
@@ -11457,7 +11457,6 @@ module.exports = [
     ]
   }
 ]
-
 },{}],5:[function(require,module,exports){
 
 // Extend an objects prototype with fluxmitter
@@ -20965,13 +20964,12 @@ return Vue$3;
 var Vue         = require("../lib/vue");
 var fluxview    = require("../lib/fluxview");
 
-var Titlelist_View = fluxview({
-    el:"readercontrols",
+var Reader_View = fluxview({
+    el:"readercontainer",
     vue:null,
     initialize:function(){
-      console.log("Setting up reader");
       this.vue = new Vue({
-                          el:"#readercontrols",
+                          el:"#readercontainer",
                           data:{
                                 title:null
                               },
@@ -20984,13 +20982,13 @@ var Titlelist_View = fluxview({
                                 setBookmark:function(){},
                                 saveTitle:function(){},
                                 complain:function(){}
-                                
+
                               }}
                               );
                             }
 
 });
-module.exports = Titlelist_View;
+module.exports = Reader_View;
 
 
 },{"../lib/fluxview":6,"../lib/vue":7}],9:[function(require,module,exports){
@@ -21004,17 +21002,17 @@ var Titlelist_View = fluxview({
       $("#search").keyup(function(e){
         if (e.target.value==="")
         {
-          
+
           Titlelist_View.vue.opencategory = null;
           Titlelist_View.vue.filter = null;
-          
+
         }
         else
         {
           Titlelist_View.vue.opencategory = 'all';
           Titlelist_View.vue.filter = e.target.value;
         }
-        
+
       });
       this.vue = new Vue({
                           el:"#titlelist",
@@ -21026,7 +21024,7 @@ var Titlelist_View = fluxview({
                           methods:{
                                 openInline:function(title)
                                 {
-                                    $("#reader")[0].src = 
+                                    $("#reader")[0].src =
                                       title.src;
                                     $("#reader").parent().fadeIn();
                                 },
@@ -21037,13 +21035,13 @@ var Titlelist_View = fluxview({
                                   window.open(title.src,'_blank');
                                 },
                                 Share:function(title){
-                                
+
                                 },
                                 countEntries:function(category,filter)
                                 {
                                   if (filter===null)
                                     return 0
-                                    
+
                                   var count = 0;
                                   category.content.map(function(title)
                                   {
@@ -21052,13 +21050,13 @@ var Titlelist_View = fluxview({
                                           count++
                                   });
                                   return count;
-                                  
+
                                 },
-                            
+
                                 }
                           });
     },
-    openCategory:function(category){
+    /*openCategory:function(category){
       Titlelist_View.vue.category = category;
     },
     openTitle:function(title){
@@ -21074,7 +21072,7 @@ var Titlelist_View = fluxview({
     showAll:function()
     {
       Titleinfo_View.emit("showAll");
-    }
+    }*/
 });
 module.exports = Titlelist_View;
 

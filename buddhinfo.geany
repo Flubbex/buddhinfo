@@ -18,8 +18,8 @@ detect_indent_width=false
 indent_mode=2
 
 [project]
-name=html5base
-base_path=/home/michael/Projects/git/active/buddhinfo
+name=buddhinfo
+base_path=/home/michael/Projects/active/buddhinfo
 description=
 file_patterns=
 
@@ -31,4 +31,4 @@ long_line_column=72
 current_page=0
 
 [VTE]
-last_dir=/media/michael/data/Projects/git/active/buddhinfo
+last_dir=/media/michael/data/Projects/active/buddhinfo

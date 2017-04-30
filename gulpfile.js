@@ -3,13 +3,24 @@ var gulp        = require("gulp"),
     browserify  = require("gulp-browserify"),
     jshint      = require("gulp-jshint"),
     open        = require("gulp-open"),
-    mocha       = require('gulp-mocha');
+    mocha       = require('gulp-mocha'),
+    run         = require('gulp-run');
 
 var package = require("./package.json");
 
 var app = {
         name:package.name //used as main namespace name
 };
+
+//Inspired by TamSanh
+gulp.task('generate-content',function()
+{
+  return run("node contentgen    -i='sources.json'     \
+                                 -t='contentgen/json' \
+                                 -o='source/filelist.json' ").exec()
+    .pipe(gulp.dest('output'))
+});
+
 
 //Test /source using /test and write a HTML report to /docs
 //TODO; write a JSON report to /docs
