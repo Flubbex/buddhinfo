@@ -10306,7 +10306,8 @@ $(document).ready(function(){
 module.exports = buddhinfo;
 
 },{"./controller/buddhinfo":2,"./filelist":4,"./lib/fluxview":6,"jquery":1}],4:[function(require,module,exports){
-module.exports=[{
+module.exports=[
+  {
     "name": "Children",
     "content": [
       {
@@ -10340,38 +10341,38 @@ module.exports=[{
         "description": "This is the second volume of fifty stories from the Jataka Tales - Buddhist Tales for Young and Old, interpreted by Ven. Kurunegoda Piyatissa, Maha Thera and told by Todd Anderson. These stories are not scholarly word-for-word translations as have been done by others. Rather these tales have been rewritten in modern English understandable by western readers. By reading these stories, children and adults can develop their knowledge and learn how to face the difficulties of modern life."
       },
       {
-        "name": "Colouring: Bodhi",
+        "name": "Colour in a Bodhi Leaf",
         "src": "files/Children/colouring_bodhi.pdf",
-        "description": ""
+        "description": "Art and Craft for Primary students [A4 Size Cut-out Bodhi leaf]."
       },
       {
-        "name": "Colouring: Bodhi Buddha",
+        "name": "Colour in a Buddha Picture",
         "src": "files/Children/colouring_bodhi-buddha.pdf",
-        "description": ""
+        "description": "Art and Craft for Primary students. [A4 Size Cut-out Buddha image]."
       },
       {
-        "name": "Colouring: Flag",
+        "name": "Colour in a Buddha Picture",
+        "src": "files/Children/colouring_thebuddha.pdf",
+        "description": "Art and Craft for Primary students. [A4 Size Cut-out Buddha image]."
+      },
+      {
+        "name": "Colour in a Buddhist Flag",
         "src": "files/Children/colouring_flag.pdf",
-        "description": ""
+        "description": "Art and Craft for Primary students [A4 Size Cut-out Buddhist flag]."
       },
       {
-        "name": "Colouring: Lotus",
+        "name": "Colour in a Dharma Wheel",
+        "src": "files/Children/colouring_wheel.pdf",
+        "description": "Art and Craft for Primary students [A4 Size Cut-out Dharma wheel]."
+      },
+      {
+        "name": "Colour in a Lotus Flower",
         "src": "files/Children/colouring_lotus.pdf",
-        "description": ""
+        "description": "Art and Craft for Primary students [A4 Size Cut-out Lotus flower]."
       },
       {
         "name": "Colouring: Story of the Buddha",
         "src": "files/Children/sbcolorbook.pdf",
-        "description": ""
-      },
-      {
-        "name": "Colouring: The Buddha",
-        "src": "files/Children/colouring_thebuddha.pdf",
-        "description": ""
-      },
-      {
-        "name": "Colouring: The Wheel",
-        "src": "files/Children/colouring_wheel.pdf",
         "description": ""
       },
       {
@@ -10715,9 +10716,9 @@ module.exports=[{
         "description": "This work presents facts and figures about the current condition of Buddhism in Thailand, historical background sketches of the establishment and growth of the Buddhist community in Thailand and information on Buddhist education in Thailand. (9-10 December, 2002)"
       },
       {
-        "name": "Buddhism in Thailand",
+        "name": "Buddhist Arts in Thailand",
         "src": "files/History/buddhinthai.pdf",
-        "description": "This work presents facts and figures about the current condition of Buddhism in Thailand, historical background sketches of the establishment and growth of the Buddhist community in Thailand and information on Buddhist education in Thailand. (9-10 December, 2002)"
+        "description": "This is a study of the development of Art and Architecture in Thailand with Buddhism. The Culture of Thailand has two important sources of origin  indigenous and foreign. The indigenous source comes directly from the ideas and inspiration of the people while the foreign sources came through its cultural contact with other great civilized nations such as India and China. In the field of art, it mainly deals with religions such as Buddhism and the cultural and artistic relationship with India, and other countries. Thai art served religion, which formed the national ideal and conception of life."
       },
       {
         "name": "Buddhist Arts of Thailand",
@@ -10733,6 +10734,11 @@ module.exports=[{
         "name": "Charisma in Buddhism",
         "src": "files/History/charisma6.pdf",
         "description": "A sociological and doctrinal study of charisma, this book discusses three past Buddhist workers  Father Sumangalo, Ananda Mangala Maha nayaka Thera, Dr. Wong Phui Weng  and a living master, the charismatic Ajahn Yantra Amaro of Thailand. Among other topics discussed are:  Types of charisma  Genius, leadership and charisma  The Buddha as a charismatic leader  The Sangha and the routinization of charismaExploiting charisma  The disadvantages of charisma  Buddhist Suttas relating to charisma [being a preprint of Buddhism, Society and History: towards a postmodern perspective]"
+      },
+      {
+        "name": "The Edicts of King Asoka",
+        "src": "files/History/edicts-asoka6.pdf",
+        "description": "This rendering of King Asokas Edicts is based heavily on Amulyachandra Sens English translation, which includes the original Magadhi and a Sanskrit and English translation of the text. However, many parts of the edicts are far from clear in meaning and the numerous translations of them differ widely. Therefore, I have also consulted the translations of C. D. Sircar and D. R. Bhandarkar and in parts favored their interpretations. Any credit this small book deserves is due entirely to the labors and learning of these scholars. - S. Dhammika."
       },
       {
         "name": "A Guide to Japanese Buddhism",
@@ -10753,6 +10759,11 @@ module.exports=[{
         "name": "Iconography of Nepalse Buddhism: Text",
         "src": "files/History/icon_nepbud_txt.pdf",
         "description": ""
+      },
+      {
+        "name": "King Asoka and Buddhism",
+        "src": "files/History/king_asoka.pdf",
+        "description": "King Asoka, the third monarch of the Mauryan dynasty in the third century B.C., was the first ruler of a unified India and one of the greatest political figures of all time. After he embraced the teachings of the Buddha, he transformed his polity from one of military conquest to one of Dharmavijaya  victory by righteousness and truth. By providing royal patronage for the propagation of Buddhism both within and beyond his empire, he helped promote the metamorphosis of Buddhism into a world religion that spread peacefully across the face of Asia. This collection of essays by leading Indological scholars draws upon both the inscriptions and the literary traditions to explore the relationship between King Asoka and the religion he embraced. In highlighting the ways in which Asoka tapped the ethical and spiritual potentials of rulership."
       },
       {
         "name": "MASKS: Anthropology on the Sinhalese Belief System",
@@ -10780,9 +10791,9 @@ module.exports=[{
     "name": "Mahayana",
     "content": [
       {
-        "name": "Advice for Monks & Nuns",
+        "name": "Advice for Monks and Nuns",
         "src": "files/Mahayana/advice.pdf",
-        "description": ""
+        "description": "The continued existence of the Buddha Dharma depends upon the continued existence of the Sangha - the community of ordained practitioners, monks and nuns - one of the three Buddhist Refuges. In these talks, Lama Yeshe and Lama Zopa Rinpoche explain the great benefits of practicing Dharma as an ordained person, how to keep the ordination pure, the purpose of the monastic community, how to live together as monks and nuns, and much more. The necessity for the lay community to support the Sangha is also made clear, and not only monks and nuns but lay practitioners, too, will gain much by reading this book."
       },
       {
         "name": "Becoming Your Own Therapist",
@@ -10793,11 +10804,6 @@ module.exports=[{
         "name": "Bodhicharyavatara",
         "src": "files/Mahayana/bodhic01.pdf",
         "description": "This is the Tibetan text with romanization of Shantideva's The Way of the Bodhisattva. Shantideva is representative of the Madhyamika school of Mahayana Buddhism. Shantideva was a king's son from South India. He flourished in the 7th to 8th centuries and was a monk at the monastic university Nalanda. He was the author of two surviving works, the Collection of Rules and Entering the Path of Enlightenment."
-      },
-      {
-        "name": "Casuality and Emptiness",
-        "src": "files/Mahayana/nagarjuna.pdf",
-        "description": ""
       },
       {
         "name": "Cloud and Water",
@@ -10875,14 +10881,14 @@ module.exports=[{
         "description": "In the Mahayana tradition of East Asia, particularly China, Japan, Vietnam and Tibet, Bhaishajya-guru, the Medicine Buddha, occupied a special place in the hearts of the devout. Specialising in curing diseases, both physical and mental - of which delusion is the root cause. His healing acts are but the prelude to Supreme Enlightenment for those seekers who have the good fortune to learn of his vows or merely to hear his name!"
       },
       {
-        "name": "The Sutra on the Eight Realizations",
-        "src": "files/Mahayana/beingssutra.pdf",
-        "description": ""
+        "name": "Sutra on Ksitigarbha Bodhisatta",
+        "src": "files/Mahayana/ksitigarbha.pdf",
+        "description": "Sutra on the Original Vows and the Attainment of Merits of Ksitigarbha Bodhisattva, translated from Chinese into English by Ms Pitt Chin Hui, President of the Singapore Regional Centre of the World Fellowship of Buddhist."
       },
       {
-        "name": "The Sutra on the Original Vows",
-        "src": "files/Mahayana/ksitigarbha.pdf",
-        "description": ""
+        "name": "Sutra on the Eight Great Realization of Great Beings",
+        "src": "files/Mahayana/beingssutra.pdf",
+        "description": "Wholeheartedly, day and night, a disciple of the Buddha should recite and meditate on the Eight Realizations discovered by the Mahasattvas, the Great Beings - Commentary by Venerable Thich Nhat Hanh."
       },
       {
         "name": "Teachings in Chinese Buddhism",
@@ -10908,6 +10914,11 @@ module.exports=[{
         "name": "The Vows of Bodhisattva Samantabhadra Sutra",
         "src": "files/Mahayana/samantabhadra.pdf",
         "description": "On Entering into the Inconceivable State of Emancipation by the Practice and Vows of the Bodhisattva Samantabhadra of the Mahavaipulya Buddha Avatamsaka Sutra."
+      },
+      {
+        "name": "The Wisdom of Nagarjuna",
+        "src": "files/Mahayana/nagarjuna.pdf",
+        "description": "Nagarjuna holds an almost unequaled place among the ranks of those Buddhist saints who expounded the teaching of the Buddha Sakyamuni for the benefit of the world. Nagarjuna revolutionized the interpretation of the doctrine of the Enlightened One which was current at his time and lent it a vitality and dynamism which has continued to sustain it even to our day among the votaries of the Mahayana. The revolution which Nagarjuna accomplished within the fold of Buddhism was not a radical departure from the original doctrine of the Buddha Sakyamuni. On the contrary, the adherents of the Madhyamaka school are undoubtedly justified in asserting that their interpretation represents the true import of the doctrine of the Buddha and the essence of Buddhism."
       },
       {
         "name": "The prajna Paramita Heart Sutra",
@@ -11045,9 +11056,9 @@ module.exports=[{
         "description": "This is short explanation on how to practise Metta Bhavana or Loving-kindness Meditation given as a three-day weekend retreat at Dhammodaya Meditation Centre in Nakhon Pathom in Thailand, by an Australian monk, Ven. Dhammarakkhita (Jeff Oliver)."
       },
       {
-        "name": "Mindfulness of Breathing",
+        "name": "Mindfulness of Breathing & Four Elements Meditation",
         "src": "files/Meditation/fourelements.pdf",
-        "description": ""
+        "description": "This book contains the instructions for mindfulness-of-breathing meditation, the four-elements meditation, and the subsequent detailed discernment of materiality. The last section of this book covers some of the relevant theory. Several pages have been added by the Sayadaw covering the balancing of the five controlling faculties and seven factors of enlightenment. There is also the addition of his explanation of the difference between the experience of Nibb�na and the experience of life-continuum (bhavanga)."
       },
       {
         "name": "Mindfulness: The path to the Deathless",
@@ -11083,6 +11094,11 @@ module.exports=[{
         "name": "Seeding the Heart",
         "src": "files/Meditation/seeding.pdf",
         "description": "Loving-kindness Meditation with Children. The practice of loving-kindness, or metta, can be done in one of two ways: either in intensive prolonged meditation to develop deep states of concentration, or in daily life at any time one meets with people and animals or thinks about them. To learn about the radiating of metta to all beings with children, we have to tap into the store of knowledge accumulated by lay people and parents. It must be knowledge which has grown out of years of living and loving with children and young adults. Gregory Kramer, father of three boys, shows us here with what subtle but precise adjustments in the standard practice of loving-kindness he was able to anchor it in the lives of his children."
+      },
+      {
+        "name": "Settling back into the moment",
+        "src": "files/Meditation/Joseph_Goldstein-Settling_Back_into_the_Moment.pdf",
+        "description": "A selection of verses from the book 'Experience of Insight' , by Joseph Goldstein. This book belongs to a different genre, not a book in the sense of having a beginning and an end. It is a compilation of excerpts that stand alone in meaning whichever way your finger may flip open the page. Readers are strongly encouraged to read Joseph Goldstein's \"Experience of Insight - a simple and direct guide to Buddhist Meditation\" (Published by Shambala Publications, Inc.) from whose book this compilation is attributed."
       },
       {
         "name": "The Seven Stages of Purification",
