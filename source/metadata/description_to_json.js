@@ -43,7 +43,9 @@ for(const fileSuffix of descriptionFiles) {
         inDescription = true;
         continue;
       }
-      currentDescription += line.trim();
+      if(fullTitle) {
+        currentDescription += line.trim();
+      }
     }
 
     if(fullTitle) {
