@@ -1,740 +1,5 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 /*!
- * jQuery UI Widget 1.12.1
- * http://jqueryui.com
- *
- * Copyright jQuery Foundation and other contributors
- * Released under the MIT license.
- * http://jquery.org/license
- */
-
-//>>label: Widget
-//>>group: Core
-//>>description: Provides a factory for creating stateful widgets with a common API.
-//>>docs: http://api.jqueryui.com/jQuery.widget/
-//>>demos: http://jqueryui.com/widget/
-
-( function( factory ) {
-	if ( typeof define === "function" && define.amd ) {
-
-		// AMD. Register as an anonymous module.
-		define( [ "jquery", "./version" ], factory );
-	} else {
-
-		// Browser globals
-		factory( jQuery );
-	}
-}( function( $ ) {
-
-var widgetUuid = 0;
-var widgetSlice = Array.prototype.slice;
-
-$.cleanData = ( function( orig ) {
-	return function( elems ) {
-		var events, elem, i;
-		for ( i = 0; ( elem = elems[ i ] ) != null; i++ ) {
-			try {
-
-				// Only trigger remove when necessary to save time
-				events = $._data( elem, "events" );
-				if ( events && events.remove ) {
-					$( elem ).triggerHandler( "remove" );
-				}
-
-			// Http://bugs.jquery.com/ticket/8235
-			} catch ( e ) {}
-		}
-		orig( elems );
-	};
-} )( $.cleanData );
-
-$.widget = function( name, base, prototype ) {
-	var existingConstructor, constructor, basePrototype;
-
-	// ProxiedPrototype allows the provided prototype to remain unmodified
-	// so that it can be used as a mixin for multiple widgets (#8876)
-	var proxiedPrototype = {};
-
-	var namespace = name.split( "." )[ 0 ];
-	name = name.split( "." )[ 1 ];
-	var fullName = namespace + "-" + name;
-
-	if ( !prototype ) {
-		prototype = base;
-		base = $.Widget;
-	}
-
-	if ( $.isArray( prototype ) ) {
-		prototype = $.extend.apply( null, [ {} ].concat( prototype ) );
-	}
-
-	// Create selector for plugin
-	$.expr[ ":" ][ fullName.toLowerCase() ] = function( elem ) {
-		return !!$.data( elem, fullName );
-	};
-
-	$[ namespace ] = $[ namespace ] || {};
-	existingConstructor = $[ namespace ][ name ];
-	constructor = $[ namespace ][ name ] = function( options, element ) {
-
-		// Allow instantiation without "new" keyword
-		if ( !this._createWidget ) {
-			return new constructor( options, element );
-		}
-
-		// Allow instantiation without initializing for simple inheritance
-		// must use "new" keyword (the code above always passes args)
-		if ( arguments.length ) {
-			this._createWidget( options, element );
-		}
-	};
-
-	// Extend with the existing constructor to carry over any static properties
-	$.extend( constructor, existingConstructor, {
-		version: prototype.version,
-
-		// Copy the object used to create the prototype in case we need to
-		// redefine the widget later
-		_proto: $.extend( {}, prototype ),
-
-		// Track widgets that inherit from this widget in case this widget is
-		// redefined after a widget inherits from it
-		_childConstructors: []
-	} );
-
-	basePrototype = new base();
-
-	// We need to make the options hash a property directly on the new instance
-	// otherwise we'll modify the options hash on the prototype that we're
-	// inheriting from
-	basePrototype.options = $.widget.extend( {}, basePrototype.options );
-	$.each( prototype, function( prop, value ) {
-		if ( !$.isFunction( value ) ) {
-			proxiedPrototype[ prop ] = value;
-			return;
-		}
-		proxiedPrototype[ prop ] = ( function() {
-			function _super() {
-				return base.prototype[ prop ].apply( this, arguments );
-			}
-
-			function _superApply( args ) {
-				return base.prototype[ prop ].apply( this, args );
-			}
-
-			return function() {
-				var __super = this._super;
-				var __superApply = this._superApply;
-				var returnValue;
-
-				this._super = _super;
-				this._superApply = _superApply;
-
-				returnValue = value.apply( this, arguments );
-
-				this._super = __super;
-				this._superApply = __superApply;
-
-				return returnValue;
-			};
-		} )();
-	} );
-	constructor.prototype = $.widget.extend( basePrototype, {
-
-		// TODO: remove support for widgetEventPrefix
-		// always use the name + a colon as the prefix, e.g., draggable:start
-		// don't prefix for widgets that aren't DOM-based
-		widgetEventPrefix: existingConstructor ? ( basePrototype.widgetEventPrefix || name ) : name
-	}, proxiedPrototype, {
-		constructor: constructor,
-		namespace: namespace,
-		widgetName: name,
-		widgetFullName: fullName
-	} );
-
-	// If this widget is being redefined then we need to find all widgets that
-	// are inheriting from it and redefine all of them so that they inherit from
-	// the new version of this widget. We're essentially trying to replace one
-	// level in the prototype chain.
-	if ( existingConstructor ) {
-		$.each( existingConstructor._childConstructors, function( i, child ) {
-			var childPrototype = child.prototype;
-
-			// Redefine the child widget using the same prototype that was
-			// originally used, but inherit from the new version of the base
-			$.widget( childPrototype.namespace + "." + childPrototype.widgetName, constructor,
-				child._proto );
-		} );
-
-		// Remove the list of existing child constructors from the old constructor
-		// so the old child constructors can be garbage collected
-		delete existingConstructor._childConstructors;
-	} else {
-		base._childConstructors.push( constructor );
-	}
-
-	$.widget.bridge( name, constructor );
-
-	return constructor;
-};
-
-$.widget.extend = function( target ) {
-	var input = widgetSlice.call( arguments, 1 );
-	var inputIndex = 0;
-	var inputLength = input.length;
-	var key;
-	var value;
-
-	for ( ; inputIndex < inputLength; inputIndex++ ) {
-		for ( key in input[ inputIndex ] ) {
-			value = input[ inputIndex ][ key ];
-			if ( input[ inputIndex ].hasOwnProperty( key ) && value !== undefined ) {
-
-				// Clone objects
-				if ( $.isPlainObject( value ) ) {
-					target[ key ] = $.isPlainObject( target[ key ] ) ?
-						$.widget.extend( {}, target[ key ], value ) :
-
-						// Don't extend strings, arrays, etc. with objects
-						$.widget.extend( {}, value );
-
-				// Copy everything else by reference
-				} else {
-					target[ key ] = value;
-				}
-			}
-		}
-	}
-	return target;
-};
-
-$.widget.bridge = function( name, object ) {
-	var fullName = object.prototype.widgetFullName || name;
-	$.fn[ name ] = function( options ) {
-		var isMethodCall = typeof options === "string";
-		var args = widgetSlice.call( arguments, 1 );
-		var returnValue = this;
-
-		if ( isMethodCall ) {
-
-			// If this is an empty collection, we need to have the instance method
-			// return undefined instead of the jQuery instance
-			if ( !this.length && options === "instance" ) {
-				returnValue = undefined;
-			} else {
-				this.each( function() {
-					var methodValue;
-					var instance = $.data( this, fullName );
-
-					if ( options === "instance" ) {
-						returnValue = instance;
-						return false;
-					}
-
-					if ( !instance ) {
-						return $.error( "cannot call methods on " + name +
-							" prior to initialization; " +
-							"attempted to call method '" + options + "'" );
-					}
-
-					if ( !$.isFunction( instance[ options ] ) || options.charAt( 0 ) === "_" ) {
-						return $.error( "no such method '" + options + "' for " + name +
-							" widget instance" );
-					}
-
-					methodValue = instance[ options ].apply( instance, args );
-
-					if ( methodValue !== instance && methodValue !== undefined ) {
-						returnValue = methodValue && methodValue.jquery ?
-							returnValue.pushStack( methodValue.get() ) :
-							methodValue;
-						return false;
-					}
-				} );
-			}
-		} else {
-
-			// Allow multiple hashes to be passed on init
-			if ( args.length ) {
-				options = $.widget.extend.apply( null, [ options ].concat( args ) );
-			}
-
-			this.each( function() {
-				var instance = $.data( this, fullName );
-				if ( instance ) {
-					instance.option( options || {} );
-					if ( instance._init ) {
-						instance._init();
-					}
-				} else {
-					$.data( this, fullName, new object( options, this ) );
-				}
-			} );
-		}
-
-		return returnValue;
-	};
-};
-
-$.Widget = function( /* options, element */ ) {};
-$.Widget._childConstructors = [];
-
-$.Widget.prototype = {
-	widgetName: "widget",
-	widgetEventPrefix: "",
-	defaultElement: "<div>",
-
-	options: {
-		classes: {},
-		disabled: false,
-
-		// Callbacks
-		create: null
-	},
-
-	_createWidget: function( options, element ) {
-		element = $( element || this.defaultElement || this )[ 0 ];
-		this.element = $( element );
-		this.uuid = widgetUuid++;
-		this.eventNamespace = "." + this.widgetName + this.uuid;
-
-		this.bindings = $();
-		this.hoverable = $();
-		this.focusable = $();
-		this.classesElementLookup = {};
-
-		if ( element !== this ) {
-			$.data( element, this.widgetFullName, this );
-			this._on( true, this.element, {
-				remove: function( event ) {
-					if ( event.target === element ) {
-						this.destroy();
-					}
-				}
-			} );
-			this.document = $( element.style ?
-
-				// Element within the document
-				element.ownerDocument :
-
-				// Element is window or document
-				element.document || element );
-			this.window = $( this.document[ 0 ].defaultView || this.document[ 0 ].parentWindow );
-		}
-
-		this.options = $.widget.extend( {},
-			this.options,
-			this._getCreateOptions(),
-			options );
-
-		this._create();
-
-		if ( this.options.disabled ) {
-			this._setOptionDisabled( this.options.disabled );
-		}
-
-		this._trigger( "create", null, this._getCreateEventData() );
-		this._init();
-	},
-
-	_getCreateOptions: function() {
-		return {};
-	},
-
-	_getCreateEventData: $.noop,
-
-	_create: $.noop,
-
-	_init: $.noop,
-
-	destroy: function() {
-		var that = this;
-
-		this._destroy();
-		$.each( this.classesElementLookup, function( key, value ) {
-			that._removeClass( value, key );
-		} );
-
-		// We can probably remove the unbind calls in 2.0
-		// all event bindings should go through this._on()
-		this.element
-			.off( this.eventNamespace )
-			.removeData( this.widgetFullName );
-		this.widget()
-			.off( this.eventNamespace )
-			.removeAttr( "aria-disabled" );
-
-		// Clean up events and states
-		this.bindings.off( this.eventNamespace );
-	},
-
-	_destroy: $.noop,
-
-	widget: function() {
-		return this.element;
-	},
-
-	option: function( key, value ) {
-		var options = key;
-		var parts;
-		var curOption;
-		var i;
-
-		if ( arguments.length === 0 ) {
-
-			// Don't return a reference to the internal hash
-			return $.widget.extend( {}, this.options );
-		}
-
-		if ( typeof key === "string" ) {
-
-			// Handle nested keys, e.g., "foo.bar" => { foo: { bar: ___ } }
-			options = {};
-			parts = key.split( "." );
-			key = parts.shift();
-			if ( parts.length ) {
-				curOption = options[ key ] = $.widget.extend( {}, this.options[ key ] );
-				for ( i = 0; i < parts.length - 1; i++ ) {
-					curOption[ parts[ i ] ] = curOption[ parts[ i ] ] || {};
-					curOption = curOption[ parts[ i ] ];
-				}
-				key = parts.pop();
-				if ( arguments.length === 1 ) {
-					return curOption[ key ] === undefined ? null : curOption[ key ];
-				}
-				curOption[ key ] = value;
-			} else {
-				if ( arguments.length === 1 ) {
-					return this.options[ key ] === undefined ? null : this.options[ key ];
-				}
-				options[ key ] = value;
-			}
-		}
-
-		this._setOptions( options );
-
-		return this;
-	},
-
-	_setOptions: function( options ) {
-		var key;
-
-		for ( key in options ) {
-			this._setOption( key, options[ key ] );
-		}
-
-		return this;
-	},
-
-	_setOption: function( key, value ) {
-		if ( key === "classes" ) {
-			this._setOptionClasses( value );
-		}
-
-		this.options[ key ] = value;
-
-		if ( key === "disabled" ) {
-			this._setOptionDisabled( value );
-		}
-
-		return this;
-	},
-
-	_setOptionClasses: function( value ) {
-		var classKey, elements, currentElements;
-
-		for ( classKey in value ) {
-			currentElements = this.classesElementLookup[ classKey ];
-			if ( value[ classKey ] === this.options.classes[ classKey ] ||
-					!currentElements ||
-					!currentElements.length ) {
-				continue;
-			}
-
-			// We are doing this to create a new jQuery object because the _removeClass() call
-			// on the next line is going to destroy the reference to the current elements being
-			// tracked. We need to save a copy of this collection so that we can add the new classes
-			// below.
-			elements = $( currentElements.get() );
-			this._removeClass( currentElements, classKey );
-
-			// We don't use _addClass() here, because that uses this.options.classes
-			// for generating the string of classes. We want to use the value passed in from
-			// _setOption(), this is the new value of the classes option which was passed to
-			// _setOption(). We pass this value directly to _classes().
-			elements.addClass( this._classes( {
-				element: elements,
-				keys: classKey,
-				classes: value,
-				add: true
-			} ) );
-		}
-	},
-
-	_setOptionDisabled: function( value ) {
-		this._toggleClass( this.widget(), this.widgetFullName + "-disabled", null, !!value );
-
-		// If the widget is becoming disabled, then nothing is interactive
-		if ( value ) {
-			this._removeClass( this.hoverable, null, "ui-state-hover" );
-			this._removeClass( this.focusable, null, "ui-state-focus" );
-		}
-	},
-
-	enable: function() {
-		return this._setOptions( { disabled: false } );
-	},
-
-	disable: function() {
-		return this._setOptions( { disabled: true } );
-	},
-
-	_classes: function( options ) {
-		var full = [];
-		var that = this;
-
-		options = $.extend( {
-			element: this.element,
-			classes: this.options.classes || {}
-		}, options );
-
-		function processClassString( classes, checkOption ) {
-			var current, i;
-			for ( i = 0; i < classes.length; i++ ) {
-				current = that.classesElementLookup[ classes[ i ] ] || $();
-				if ( options.add ) {
-					current = $( $.unique( current.get().concat( options.element.get() ) ) );
-				} else {
-					current = $( current.not( options.element ).get() );
-				}
-				that.classesElementLookup[ classes[ i ] ] = current;
-				full.push( classes[ i ] );
-				if ( checkOption && options.classes[ classes[ i ] ] ) {
-					full.push( options.classes[ classes[ i ] ] );
-				}
-			}
-		}
-
-		this._on( options.element, {
-			"remove": "_untrackClassesElement"
-		} );
-
-		if ( options.keys ) {
-			processClassString( options.keys.match( /\S+/g ) || [], true );
-		}
-		if ( options.extra ) {
-			processClassString( options.extra.match( /\S+/g ) || [] );
-		}
-
-		return full.join( " " );
-	},
-
-	_untrackClassesElement: function( event ) {
-		var that = this;
-		$.each( that.classesElementLookup, function( key, value ) {
-			if ( $.inArray( event.target, value ) !== -1 ) {
-				that.classesElementLookup[ key ] = $( value.not( event.target ).get() );
-			}
-		} );
-	},
-
-	_removeClass: function( element, keys, extra ) {
-		return this._toggleClass( element, keys, extra, false );
-	},
-
-	_addClass: function( element, keys, extra ) {
-		return this._toggleClass( element, keys, extra, true );
-	},
-
-	_toggleClass: function( element, keys, extra, add ) {
-		add = ( typeof add === "boolean" ) ? add : extra;
-		var shift = ( typeof element === "string" || element === null ),
-			options = {
-				extra: shift ? keys : extra,
-				keys: shift ? element : keys,
-				element: shift ? this.element : element,
-				add: add
-			};
-		options.element.toggleClass( this._classes( options ), add );
-		return this;
-	},
-
-	_on: function( suppressDisabledCheck, element, handlers ) {
-		var delegateElement;
-		var instance = this;
-
-		// No suppressDisabledCheck flag, shuffle arguments
-		if ( typeof suppressDisabledCheck !== "boolean" ) {
-			handlers = element;
-			element = suppressDisabledCheck;
-			suppressDisabledCheck = false;
-		}
-
-		// No element argument, shuffle and use this.element
-		if ( !handlers ) {
-			handlers = element;
-			element = this.element;
-			delegateElement = this.widget();
-		} else {
-			element = delegateElement = $( element );
-			this.bindings = this.bindings.add( element );
-		}
-
-		$.each( handlers, function( event, handler ) {
-			function handlerProxy() {
-
-				// Allow widgets to customize the disabled handling
-				// - disabled as an array instead of boolean
-				// - disabled class as method for disabling individual parts
-				if ( !suppressDisabledCheck &&
-						( instance.options.disabled === true ||
-						$( this ).hasClass( "ui-state-disabled" ) ) ) {
-					return;
-				}
-				return ( typeof handler === "string" ? instance[ handler ] : handler )
-					.apply( instance, arguments );
-			}
-
-			// Copy the guid so direct unbinding works
-			if ( typeof handler !== "string" ) {
-				handlerProxy.guid = handler.guid =
-					handler.guid || handlerProxy.guid || $.guid++;
-			}
-
-			var match = event.match( /^([\w:-]*)\s*(.*)$/ );
-			var eventName = match[ 1 ] + instance.eventNamespace;
-			var selector = match[ 2 ];
-
-			if ( selector ) {
-				delegateElement.on( eventName, selector, handlerProxy );
-			} else {
-				element.on( eventName, handlerProxy );
-			}
-		} );
-	},
-
-	_off: function( element, eventName ) {
-		eventName = ( eventName || "" ).split( " " ).join( this.eventNamespace + " " ) +
-			this.eventNamespace;
-		element.off( eventName ).off( eventName );
-
-		// Clear the stack to avoid memory leaks (#10056)
-		this.bindings = $( this.bindings.not( element ).get() );
-		this.focusable = $( this.focusable.not( element ).get() );
-		this.hoverable = $( this.hoverable.not( element ).get() );
-	},
-
-	_delay: function( handler, delay ) {
-		function handlerProxy() {
-			return ( typeof handler === "string" ? instance[ handler ] : handler )
-				.apply( instance, arguments );
-		}
-		var instance = this;
-		return setTimeout( handlerProxy, delay || 0 );
-	},
-
-	_hoverable: function( element ) {
-		this.hoverable = this.hoverable.add( element );
-		this._on( element, {
-			mouseenter: function( event ) {
-				this._addClass( $( event.currentTarget ), null, "ui-state-hover" );
-			},
-			mouseleave: function( event ) {
-				this._removeClass( $( event.currentTarget ), null, "ui-state-hover" );
-			}
-		} );
-	},
-
-	_focusable: function( element ) {
-		this.focusable = this.focusable.add( element );
-		this._on( element, {
-			focusin: function( event ) {
-				this._addClass( $( event.currentTarget ), null, "ui-state-focus" );
-			},
-			focusout: function( event ) {
-				this._removeClass( $( event.currentTarget ), null, "ui-state-focus" );
-			}
-		} );
-	},
-
-	_trigger: function( type, event, data ) {
-		var prop, orig;
-		var callback = this.options[ type ];
-
-		data = data || {};
-		event = $.Event( event );
-		event.type = ( type === this.widgetEventPrefix ?
-			type :
-			this.widgetEventPrefix + type ).toLowerCase();
-
-		// The original event may come from any element
-		// so we need to reset the target on the new event
-		event.target = this.element[ 0 ];
-
-		// Copy original event properties over to the new event
-		orig = event.originalEvent;
-		if ( orig ) {
-			for ( prop in orig ) {
-				if ( !( prop in event ) ) {
-					event[ prop ] = orig[ prop ];
-				}
-			}
-		}
-
-		this.element.trigger( event, data );
-		return !( $.isFunction( callback ) &&
-			callback.apply( this.element[ 0 ], [ event ].concat( data ) ) === false ||
-			event.isDefaultPrevented() );
-	}
-};
-
-$.each( { show: "fadeIn", hide: "fadeOut" }, function( method, defaultEffect ) {
-	$.Widget.prototype[ "_" + method ] = function( element, options, callback ) {
-		if ( typeof options === "string" ) {
-			options = { effect: options };
-		}
-
-		var hasOptions;
-		var effectName = !options ?
-			method :
-			options === true || typeof options === "number" ?
-				defaultEffect :
-				options.effect || defaultEffect;
-
-		options = options || {};
-		if ( typeof options === "number" ) {
-			options = { duration: options };
-		}
-
-		hasOptions = !$.isEmptyObject( options );
-		options.complete = callback;
-
-		if ( options.delay ) {
-			element.delay( options.delay );
-		}
-
-		if ( hasOptions && $.effects && $.effects.effect[ effectName ] ) {
-			element[ method ]( options );
-		} else if ( effectName !== method && element[ effectName ] ) {
-			element[ effectName ]( options.duration, options.easing, callback );
-		} else {
-			element.queue( function( next ) {
-				$( this )[ method ]();
-				if ( callback ) {
-					callback.call( element[ 0 ] );
-				}
-				next();
-			} );
-		}
-	};
-} );
-
-return $.widget;
-
-} ) );
-
-},{}],2:[function(require,module,exports){
-/*!
  * jQuery JavaScript Library v3.2.1
  * https://jquery.com/
  *
@@ -10988,35 +10253,32 @@ if ( !noGlobal ) {
 return jQuery;
 } );
 
-},{}],3:[function(require,module,exports){
+},{}],2:[function(require,module,exports){
 var Titlelist_View = require("../view/titlelist");
-var Titleinfo_View = require("../view/titleinfo");
+var Reader_View = require("../view/reader");
 
 function Buddhinfo_Controller(titles)
 {
   this.titles         = titles;
   this.settings       = {directurl:false};
   this.titlelist_view = Titlelist_View;
-  this.titleinfo_view = Titleinfo_View;
+  this.reader_view    =  Reader_View;
   
 }
 
 Buddhinfo_Controller.prototype.start = function()
 {
   this.titlelist_view.vue.titlelist = this.titles;
-  console.log("CRAZY BUS ♪ CRAZY BUS ♬ ");
+  console.log("Yup, still works. ");
 };
 
 module.exports =  Buddhinfo_Controller;
 
-},{"../view/titleinfo":9,"../view/titlelist":10}],4:[function(require,module,exports){
+},{"../view/reader":8,"../view/titlelist":9}],3:[function(require,module,exports){
 var $     
     = window.jQuery 
     = window.$
     = require('jquery');
-var UI
-    = window.$.UI
-    = require("jquery-ui");
     
 //Globals :(
 
@@ -11030,13 +10292,21 @@ $(document).ready(function(){
   
     fluxview.ready(window);
     buddhinfo.start();
+    $("#header,#footer").fadeIn()
+    
+    $("#search").parent().fadeIn('slow',function(){
+        
+          $("#search").fadeIn();
+          $("#titlelist").slideDown();
+      
+    });
     
 });
 
 module.exports = buddhinfo;
 
-},{"./controller/buddhinfo":3,"./filelist":5,"./lib/fluxview":7,"jquery":2,"jquery-ui":1}],5:[function(require,module,exports){
-var filelist = [
+},{"./controller/buddhinfo":2,"./filelist":4,"./lib/fluxview":6,"jquery":1}],4:[function(require,module,exports){
+module.exports = [
   {
     "name": "Children",
     "content": [
@@ -11396,26 +10666,56 @@ var filelist = [
         "description": "This book is an elaboration of Dr Santina \"Fundamentals of Buddhism\". In keeping with the original objectives of the study of basic Buddhism, this book is - as far as possible - non-technical. It is intended for the ordinary readers not having any special expertise in Buddhist studies or in Buddhist canonical languages. This book can supply a general introduction to the major traditions of Buddhism, but does not pretend to be complete or definitive. This book will serve as the beginning of its readers' Buddhist education and not the end of it."
       },
       {
+        "0": null,
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": null,
+        "5": null,
         "name": "A Tree in a Forest",
         "src": "files/General/tree-forest.pdf",
         "description": "\"People have asked me about my practice. How do I prepare my mind for meditation? There is nothing special. I just keep it where it always is. They ask. \"Then are you an Arahant? Do I know? I am like a tree in the forest, full of leaves, blossoms and fruit. Birds come to eat and nest, and animals seek rest in the shade. Yet the tree does not know itself. It follows its own nature. It is as it is\". - Ajahn Chah."
       },
       {
+        "0": null,
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": null,
+        "5": null,
         "name": "To Understand Buddhism",
         "src": "files/General/undrstnd.pdf",
         "description": "These are Dharma Talks given in Australia by Ven. Master Chin Kung. The teachings of Master Chin Kung are based on true sincerity towards others; purity of mind; equality in everything we see; proper understanding of ourselves and our environment; compassion by helping others in a wise and unconditional way. See through to the truth of impermanence; let go of all wandering thoughts and attachments; accord with conditions to go along with the environment. Be mindful of Amitabha Buddha - wishing to reach the Pure Land and follow His Teachings."
       },
       {
+        "0": null,
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": null,
+        "5": null,
         "name": "What Buddhists Believe",
         "src": "files/General/whatbelieve.pdf",
         "description": ""
       },
       {
+        "0": null,
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": null,
+        "5": null,
         "name": "The position of Women in Buddhism",
         "src": "files/General/women-buddhism6.pdf",
         "description": ""
       },
       {
+        "0": null,
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": null,
+        "5": null,
         "name": "From Womb to Womb",
         "src": "files/General/womtowom.pdf",
         "description": "Metamorphosis of a Mother. For twenty-five years Francis Story lived in Asian countries, where he deeply studied the Buddha's philosophy of life. His research into the teachings on rebirth started while in Myanmar (Burma) and was later continued with careful investigation of spontaneous rebirth recollections. This book includes 'A Reading Guide to Death and Rebirth', by Ven. Bodhisara which offers an overview on some topics of death and rebirth: near death experiences, past life experiences, dying and caring for the dying, etc."
@@ -11496,11 +10796,23 @@ var filelist = [
         "description": "Fa-Hien was a Chinese monk of the Eastern dynasty (4th-5th Century). In 399 he left China for India, finally arriving there after six years of hard travel. After studying Sanskrit and obtaining many Sanskrit texts of the Tripitaka (Buddhist canon), he returned to China by sea in 414. This text is an Account by Fa-Hien of his travels in India and Ceylon (A.D. 399-414) in Search of the Buddhist Books of Discipline. Translated and annotated with a Corean recension of the Chinese text by James Legge."
       },
       {
+        "0": null,
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": null,
+        "5": null,
         "name": "Biographies of Sachen Kunga Nyingpo",
         "src": "files/History/sakya_bios.pdf",
         "description": "This book on the biographies of the Great Sachen Kunga Nyingpo and the current lineage holder of the Sakya sect in Tibetan Buddhism, His Holiness the 41st Sakya Trizin, has been compiled by Ratna Vajra Sakya, Dolma Lhama and Lama Jampa Losel. It includes photographic material of the His Holiness Sakya Trizin."
       },
       {
+        "0": null,
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": null,
+        "5": null,
         "name": "Thai - Cambodian Culture",
         "src": "files/History/thai_cambodian_art.pdf",
         "description": "Thailand and Cambodia are very close neighbours with common borders and cultural relations. The Thai people received and adopted some arts and culture from ancient Cambodia. The pre-Thai scripts and spoken words were adopted from Khmer native language. The development of Cambodian arts can be seen in the Thai art of the Lopburi period (11th to 15th century A.D.) It was occupied by the Khmers and as such the art of this period is known locally as Khmer art which deals with Mahayana elements, as in the Sri-Vijaya school of art. This school of Buddhist art marks the last stage of the growth of Buddhist art in Thailand before the rise of the Thai people to power in the land which is now called Thailand.<end of file>"
@@ -11641,6 +10953,12 @@ var filelist = [
         "description": "Method and Wisdom in the practice of Dharma by Lama Thubten Zopa Rinpoche. The teachings of the Buddha can be divided into two categories - extensive method and profound wisdom. In this series of talks, Lama Zopa Rinpoche, spiritual director of the Foundation for the Preservation of the Mahayana Tradition (FPMT), offers a practical explanation of these two paths. As presented here, method is the loving, compassionate Bodhicitta and wisdom is the realisation of ultimate reality, the right view of emptiness. Through practicing method, we attain the holy body of a Buddha; through developing wisdom we attain the enlightened mind. Recognizing the workaday world reality in which most of his students live, Rinpoche shows us how to think and act so that every moment of our lives will be of maximum benefit to both others and ourselves."
       },
       {
+        "0": null,
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": null,
+        "5": null,
         "name": "Pure-Land Zen",
         "src": "files/Mahayana/yin_kuang.pdf",
         "description": "Note to the reader. This is an electronic version of the book \u001cPure-Land Zen, Zen Pure-Land\u001d (second edition 1993*), which is a translation of selected passages from the letters of Elder Master Yin Kuang, the Thirteenth Patriarch of Pure Land. The original Chinese titles are Yin Kuang Fa Shih Wen Chao and Yin Kuang Ta Shih Chia Yen Lu. Except for the two pictures of Master Yin Kuang, nothing has been added or changed. However, the notes to the letters and the Glossary prepared by the Van Hien Study Group as well as the Appendix (The Practices and Vows of the Bodhisattva Samantabhadra) were left out, but will hopefully be added later on. T.G., May 2005, * Reprinted and donated for free distribution by The Corporate Body of the Buddha Educational Foundation, Taipei, Taiwan, R.O.C."
@@ -11826,21 +11144,45 @@ var filelist = [
         "description": "This is short explanation on how to practise Metta Bhavana or Loving-kindness Meditation given as a three-day weekend retreat at Dhammodaya Meditation Centre in Nakhon Pathom in Thailand, by an Australian monk, Ven. Dhammarakkhita (Jeff Oliver)."
       },
       {
+        "0": null,
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": null,
+        "5": null,
         "name": "Seeding the Heart",
         "src": "files/Meditation/seeding.pdf",
         "description": "Loving-kindness Meditation with Children. The practice of loving-kindness, or metta, can be done in one of two ways: either in intensive prolonged meditation to develop deep states of concentration, or in daily life at any time one meets with people and animals or thinks about them. To learn about the radiating of metta to all beings with children, we have to tap into the store of knowledge accumulated by lay people and parents. It must be knowledge which has grown out of years of living and loving with children and young adults. Gregory Kramer, father of three boys, shows us here with what subtle but precise adjustments in the standard practice of loving-kindness he was able to anchor it in the lives of his children."
       },
       {
+        "0": null,
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": null,
+        "5": null,
         "name": "Teaching and Training: Pa-Auk Monastery",
         "src": "files/Meditation/teach-train3rd.pdf",
         "description": ""
       },
       {
+        "0": null,
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": null,
+        "5": null,
         "name": "For the Stilling of Volcanoes",
         "src": "files/Meditation/volcanos.pdf",
         "description": "Insight Meditation as explained by Ven. Sujiva: \"It is not an task easy to approach such a profound topic as Insight Meditation in simple terms. But we have got to start somewhere. After some years of introducing this type of meditation, I still find that there is a lack of introductory material for those without knowledge of Buddhism. What is available is often extremely technical and loaded with ancient Indian terminology. There are some words in the English vocabulary which we can never hope to substitute perfectly. Even in this booklet I have used some English words such as conditioned and suffering which need special explanation when used in a Buddhist sense - but I have tried to come up with something easier to read and understand.\""
       },
       {
+        "0": null,
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": null,
+        "5": null,
         "name": "The Vipassana Retreat",
         "src": "files/Meditation/v_retreat6.pdf",
         "description": "Vipassana meditation requires long-term commitment. While it can be done to some extent in everyday life, realistically for the practice to deepen it needs to be done intensively in a supportive retreat situation. Vipassana meditation is developmental, so to realise its ultimate benefit it has to be sustained with appropriate intensity under supportive conditions. Ven. Pannyavaro, a practitioner of over 30 years, guides you through the vipassana experience in a retreat situation, in a systematic and practical way."
@@ -12091,20 +11433,32 @@ var filelist = [
         "description": ""
       },
       {
+        "0": null,
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": null,
+        "5": null,
         "name": "Volition: An Introduction to KAMMA",
         "src": "files/Theravada/volition.pdf",
         "description": "What is kamma? The Buddha said: \u001cOh monks, it is volition that I call kamma.\u001d The popular meaning of kamma is action or doing, but as a technical term, kamma means volition or will. When you do something, there is volition behind it, and that volition, that mental effort, is called kamma. The Buddha explained that, having willed, one then acts through body, speech, and mind. Whatever you do, there is some kind of kamma, mental effort, will, and volition. Volition is one of the fifty-two mental states which arise together with consciousness."
       },
       {
+        "0": null,
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": null,
+        "5": null,
         "name": "Daily Readings from the Buddha's WOW",
         "src": "files/Theravada/words_of_buddha.pdf",
         "description": "For over two millennium the discourses of the Buddha have nourished the spiritual lives of countless millions of people in India, Sri Lanka, Burma and Thailand. This book contains extracts from some of these discourses selected from the Pali Tipitaka and also from some post-canonical writings. Rendered into readable English, presented so that one extract can be read and reflected upon each day of the year and provided with a Readers Guide, this book is an indispensable companion for anyone trying to apply the Buddha's gentle message to their daily life."
       }
     ]
   }
-];
-module.exports = filelist;
-},{}],6:[function(require,module,exports){
+]
+
+},{}],5:[function(require,module,exports){
 
 // Extend an objects prototype with fluxmitter
 // Returns an empty object with fluxmitter as prototype if root===null
@@ -12200,7 +11554,7 @@ fluxmitter.strict = false;
 module.exports = fluxmitter;
 
 
-},{}],7:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 var Fluxmitter = require("./fluxmitter");
 
 function Fluxview(attributes)
@@ -12287,7 +11641,7 @@ Fluxview.ready = function(window)
 
 module.exports = Fluxview;
 
-},{"./fluxmitter":6}],8:[function(require,module,exports){
+},{"./fluxmitter":5}],7:[function(require,module,exports){
 (function (global){
 /*!
  * Vue.js v2.2.6
@@ -21607,10 +20961,39 @@ return Vue$3;
 })));
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],9:[function(require,module,exports){
-//obsoleted
+},{}],8:[function(require,module,exports){
+var Vue         = require("../lib/vue");
+var fluxview    = require("../lib/fluxview");
 
-},{}],10:[function(require,module,exports){
+var Titlelist_View = fluxview({
+    el:"readercontrols",
+    vue:null,
+    initialize:function(){
+      console.log("Setting up reader");
+      this.vue = new Vue({
+                          el:"#readercontrols",
+                          data:{
+                                title:null
+                              },
+                          methods:{
+                                closeReader:function()
+                                {
+                                    $("#reader").parent().fadeOut();
+                                  },
+                                gotoBookmark:function(){},
+                                setBookmark:function(){},
+                                saveTitle:function(){},
+                                complain:function(){}
+                                
+                              }}
+                              );
+                            }
+
+});
+module.exports = Titlelist_View;
+
+
+},{"../lib/fluxview":6,"../lib/vue":7}],9:[function(require,module,exports){
 var Vue         = require("../lib/vue");
 var fluxview    = require("../lib/fluxview");
 
@@ -21618,9 +21001,6 @@ var Titlelist_View = fluxview({
     el:"titlelist",
     vue:null,
     initialize:function(){
-      
-      $("body").animate({opacity:1},500);
-      
       $("#search").keyup(function(e){
         if (e.target.value==="")
         {
@@ -21644,8 +21024,11 @@ var Titlelist_View = fluxview({
                                 opentitle:null,
                                 filter:null},
                           methods:{
-                                openInline:function(title){
-                                  
+                                openInline:function(title)
+                                {
+                                    $("#reader")[0].src = 
+                                      title.src;
+                                    $("#reader").parent().fadeIn();
                                 },
                                 openDirect:function(title){
                                   window.location = title.src;
@@ -21695,4 +21078,4 @@ var Titlelist_View = fluxview({
 });
 module.exports = Titlelist_View;
 
-},{"../lib/fluxview":7,"../lib/vue":8}]},{},[4])
+},{"../lib/fluxview":6,"../lib/vue":7}]},{},[3])

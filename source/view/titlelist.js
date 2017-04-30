@@ -5,9 +5,6 @@ var Titlelist_View = fluxview({
     el:"titlelist",
     vue:null,
     initialize:function(){
-      
-      $("body").animate({opacity:1},500);
-      
       $("#search").keyup(function(e){
         if (e.target.value==="")
         {
@@ -31,8 +28,11 @@ var Titlelist_View = fluxview({
                                 opentitle:null,
                                 filter:null},
                           methods:{
-                                openInline:function(title){
-                                  
+                                openInline:function(title)
+                                {
+                                    $("#reader")[0].src = 
+                                      title.src;
+                                    $("#reader").parent().fadeIn();
                                 },
                                 openDirect:function(title){
                                   window.location = title.src;

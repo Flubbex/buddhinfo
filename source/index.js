@@ -2,9 +2,6 @@ var $
     = window.jQuery 
     = window.$
     = require('jquery');
-var UI
-    = window.$.UI
-    = require("jquery-ui");
     
 //Globals :(
 
@@ -18,6 +15,14 @@ $(document).ready(function(){
   
     fluxview.ready(window);
     buddhinfo.start();
+    $("#header,#footer").fadeIn()
+    
+    $("#search").parent().fadeIn('slow',function(){
+        
+          $("#search").fadeIn();
+          $("#titlelist").slideDown();
+      
+    });
     
 });
 

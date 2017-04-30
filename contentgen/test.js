@@ -1,0 +1,812 @@
+[
+  {
+    "name": "children",
+    "content": [
+      {
+        "name": "Angulimala",
+        "description": "The dramatic story of Angulimalas dual transformation from a diligent, virtuous student to a notorious serial killer, and once again, into a compassionate, spiritually perfect Arahant has been retold millions of times for over two thousand six hundred years. It has never failed to evoke powerful emotions in the reader or listener, both young and old. This presentation of \u001cAngulimala\u001d is designed to cater to a wide readership, ranging from young children, teenagers to adults. Parents can introduce the moral lessons of the story of Angulimala to their children as young as three years old, by reading, in sequence, the captions under each of the illustrations. The illustrations themselves unfold the life-episode of Angulimala to the child."
+      },
+      {
+        "name": "Love Your Children the Right Way",
+        "description": "I composed this book when I was in Chiang Mai, where I lived for 10 years. In my work there, I observed many parents who had children but knew nothing about how to raise there beloved children properly so that they would grow to be good citizens of the nation. When I thought about this matter, I started writing an article concerning parents responsibility in raising their children - Panyananda Bhikkhu."
+      },
+      {
+        "name": "Who's the Boss",
+        "description": "Who do you think the boss of the Body is? Well the heart thinks HE is. But is he? The other organs certainly don't agree. Find out how each one of them tried to convince the others, and you, why they are the boss. This is a great story about the nature of the body, with Illustrations by Joel Israel. [36 pages]"
+      },
+      {
+        "name": "In the Dead of Night",
+        "description": "\"I had been driving all day on a long, lonely, dusty road. Night had already fallen when I decided to rest. I still had a long way to go and I felt very tired.\" This book deals with people's fear and emotions with some scary, but humorous illustrations by Joel Israel. [42 pages]"
+      },
+      {
+        "name": "Dhammapada Stories",
+        "description": "Selected verses from the Dhammapada, all depicted with thirty-two beautiful illustrations. This collection is a great introduction to the Dhammapada and has been carefully compiled and edited for the younger reader by Gambhiro Bhikkhu. [126 pages]"
+      },
+      {
+        "name": "An Upside Down World",
+        "description": "Find out how the sad upside down world of four unhappy wanderers go the right side up again in this wonderful illustrated story book. Suitable for younger children, it includes some fun activities to do as you read along. This book has both colour and black & white Illustrations. [30 pages]"
+      },
+      {
+        "name": "The One-Who-Saw",
+        "description": "\"There once was a happy land where the inhabitants lived a happy and harmonious life. They were kind to one another and their ways were simple. Their wants were few...\" An illustrated Buddhist story about the \"One Who Saw\" combines Buddhist themes into a children's book. [42 pages]"
+      },
+      {
+        "name": "Rahula Leads the Way",
+        "description": "Rahula leads the Way [Print version only]."
+      },
+      {
+        "name": "Buddhist Tales for Young & Old (Vol. 1) 'Prince Goodspeaker' (Text Version)",
+        "description": "Fifty stories from the Jataka Tales - Prince Goodspeaker. Interpreted by Ven. Kurunegoda Piyatissa, Maha Thera and told by Todd Anderson. The Jataka stories, over millennia, have been seminal to the development of many civilisations, the cultivation of moral conduct and good behaviour, the growth of a rich and varied literature in diverse parts of the world and the inspiration for paintings, sculpture and architecture of enduring aesthetic value. The Buddha himself used Jataka stories to explain concepts like karma and rebirth and to emphasize the importance of moral values."
+      },
+      {
+        "name": "Buddhist Tales for Young & Old (Vol. 1) 'Prince Goodspeaker' (Illustrated Version)",
+        "description": "This is an illustrated version of Buddhist Tales for Young and Old (volume 1), with line drawings by John Patterson, which are suitable for colouring in."
+      },
+      {
+        "name": "Buddhist Tales for Young & Old (Vol. 2) 'King Fruitful' (Text Version)",
+        "description": "This is the second volume of fifty stories from the Jataka Tales - Buddhist Tales for Young and Old, interpreted by Ven. Kurunegoda Piyatissa, Maha Thera and told by Todd Anderson. These stories are not scholarly word-for-word translations as have been done by others. Rather these tales have been rewritten in modern English understandable by western readers. By reading these stories, children and adults can develop their knowledge and learn how to face the difficulties of modern life."
+      },
+      {
+        "name": "Buddhist Tales for Young & Old (Vol. 2) 'King Fruitful' (Illustrated Version)",
+        "description": "This is the illustrated version of Buddhist Tales for Young and Old (volume 2), with line drawings by John Patterson, which are suitable for colouring in."
+      },
+      {
+        "name": "Seeding the Heart",
+        "description": "This is a guide for teaching loving-kindness meditation to children. To learn about the radiating of loving-kindness to all beings with children, we have to tap into the store of knowledge accumulated by lay people and parents. It must be knowledge which has grown out of years of living and loving with children and young adults. Gregory Kramer, father of three boys, shows us here with subtle but precise adjustments in the standard practice of loving-kindness meditation he was able to anchor it in the lives of his children.BuddhaNet's Buddhist Studies for Schools eBooksThis is a selection of text and artwork from BuddhaNet's Buddhist Studies for Primary and Secondary students."
+      },
+      {
+        "name": "Story of the Buddha Text Book - Primary Students",
+        "description": "Illustrated Biography of the Buddha, with each page including a line drawing with text in A4 size."
+      },
+      {
+        "name": "Story of the Buddha Colouring Book -Primary Students",
+        "description": ".Colouring Book: Ninety-three A4 size line drawings of the \"Story of the Buddha\" suitable for colouring in."
+      },
+      {
+        "name": "Guided Meditation for Primary Students",
+        "description": "This is a series of guided meditations with instruction for teachers for primary school students. This file is from BuddhaNet's Buddhist Studies for Primary Students section. The text includes seven guided meditations for students, with detailed instructions for teachers."
+      },
+      {
+        "name": "Life of the Buddha for Secondary Students [A4 Size, Print Quality Only].",
+        "description": ".Life of the Buddha for Secondary Students with, sixty-four stories with linked exercises."
+      },
+      {
+        "name": "Colour in a Buddha Picture",
+        "description": "Art and Craft for Primary students. [A4 Size Cut-out Buddha image]."
+      },
+      {
+        "name": "Colour in a Dharma Wheel",
+        "description": "Art and Craft for Primary students [A4 Size Cut-out Dharma wheel]."
+      },
+      {
+        "name": "Colour in a Lotus Flower",
+        "description": "Art and Craft for Primary students [A4 Size Cut-out Lotus flower]."
+      },
+      {
+        "name": "Colour in a Bodhi Leaf",
+        "description": "Art and Craft for Primary students [A4 Size Cut-out Bodhi leaf]."
+      },
+      {
+        "name": "Colour in a Buddhist Flag",
+        "description": "Art and Craft for Primary students [A4 Size Cut-out Buddhist flag]."
+      },
+      {
+        "name": "Colour in a Bodhi Leaf Painting for Vesak",
+        "description": "Art and Craft for Primary students [A4 Size Cut-out Vesak Bodhi leaf]."
+      },
+      {
+        "name": "Buddhist Greeting",
+        "description": "Art and Craft for Primary students [A4 Size Cut-out Buddhist greeting]."
+      },
+      {
+        "name": "Creating Vesak Gifts",
+        "description": "Art and Craft for Primary students [A4 Size Cut-out Vesak Cards and Gifts]."
+      },
+      {
+        "name": "Maha (Great) Buddhist Crossword Puzzles",
+        "description": "Test your Buddhist vocabulary with these Maha (great) crosswords. (Secondary level)Download Textbooks by the Buddhist Education Foundation (UK)"
+      },
+      {
+        "name": "Key Stage 1: Illustrated Textbook on Buddhism for children aged between 5-7.",
+        "description": ""
+      },
+      {
+        "name": "Key Stage 2: Illustrated Textbook on Buddhism for children aged between 7-11.",
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "general",
+    "content": [
+      {
+        "name": "The Four Noble Truths",
+        "description": "The Four Noble Truths are the central Teaching of the Buddha. This booklet was compiled and edited from talks given by Venerable Ajahn Sumedho on the teaching of the Buddha: that the unhappiness of humanity can be overcome through spiritual means. The teaching is conveyed through the Buddhas Four Noble Truths, first expounded in 528 BC in the Deer Park at Sarnath near Varanasi, India and kept alive in the Buddhist world ever since."
+      },
+      {
+        "name": "Now is the Knowing",
+        "description": "This small book represents the wish of some of those fortunate enough to have received Dhamma teachings from Venerable Ajahn Sumedho to share them with others. The first section describes what taking the Three Refuges in the Buddha, Dhamma and Sangha means; and the second section is composed of passages from three or four different talks on the subject of Mindfulness of Breathing. Lastly, the book discusses happiness, unhappiness and Nibanna."
+      },
+      {
+        "name": "Intuitive Awareness",
+        "description": "This book is a small sample of the talks that Ajahn Sumedho offered during the winter retreat of 2001. The aim of the editors in compiling this book has been explicitly to maintain the style and spirit of the spoken word. As Ajahn Sumedho himself commented, \"The book is meant to be suggestions of ways to investigate conscious experience. It's not meant to be a didactic treatise on Pali Buddhism.\""
+      },
+      {
+        "name": "The Noble Eightfold Path - The Way to the End of Suffering",
+        "description": "The essence of the Buddhas teaching can be summed up in two principles: the Four Noble Truths and the Noble Eightfold Path. The first covers the side of doctrine, and the primary response it elicits is understanding; the second covers the side of discipline, in the broadest sense of that word, and the primary response it calls for is practice. In the structure of the teaching these two principles lock together into an indivisible unity called the dhamma-vinaya, the doctrine-and-discipline, or, in brief, the Dhamma."
+      },
+      {
+        "name": "The Eightfold Path for the Householder",
+        "description": "This text is a transcript of teachings given by Jack Kornfeld on the Eightfold Path. These teachings are aimed at the householder. Each part of the Eightfold Path is explained in a separate chapter. The tone of the teaching is contemporary and non-technical. The universality and relevance of the Buddha's teaching are illustrated by numerous quotations from more recent luminaries. There are also some useful exercises which enable the reader to experience the truth of these teachings."
+      },
+      {
+        "name": "Fundamentals of Buddhism",
+        "description": "Dr Santina covers what we might call the basic Buddhist teachings over a series of twelve lectures. The basic teachings outlined here include: the Life of the Buddha, the Four Noble Truths, the Noble Eightfold Path, Karma, Rebirth, Dependent Origination, The Three Universal Characteristics and The Five Aggregates. Dr Santina also puts Buddhism into its context by describing the pre-Buddhist background and gives an overview of Buddhism from a modern perspective in a very readable way."
+      },
+      {
+        "name": "The Tree of Enlightenment",
+        "description": "This book is an elaboration of Dr Santina \"Fundamentals of Buddhism\". In keeping with the original objectives of the study of basic Buddhism, this book is - as far as possible - non-technical. It is intended for the ordinary readers not having any special expertise in Buddhist studies or in Buddhist canonical languages. This book can supply a general introduction to the major traditions of Buddhism, but does not pretend to be complete or definitive. This book will serve as the beginning of its readers' Buddhist education and not the end of it."
+      },
+      {
+        "name": "The Buddha, His Life and Teachings",
+        "description": "This is a comprehensive and authentic book on the Buddha and his Teachings by Piyadassi. The author, Venerable Mahathera Piyadassi is one of the world's most eminent Buddhist monks, a highly revered teacher of great renown, a indefatigable worker for the Buddha Dhamma. \"The ages roll by and the Buddha seems not so far away after all; his voice whispers in our ears and tells us not to run away from the struggle but, calm-eyed, to face it, and to see in life ever greater opportunities for growth and advancement\"."
+      },
+      {
+        "name": "Buddhism in a Nutshell",
+        "description": "This is a classic on the basics of Buddhism by the late Ven. Narada Thera: The Story of the Buddha; The Teachings (Dhamma) is it a philosophy? Is Buddhism a religion? Is Buddhism as Ethical system? Some salient features of Buddhism. Karma or the Law of Moral Causation. Rebirth. Dependent Arising (Paticca Samuppada). Anatta or Soul-lessness. Nibanna and The Path to Nibbana."
+      },
+      {
+        "name": "Essential Themes of Buddhist Lectures",
+        "description": "The contents of this book comprise a collection of expanded notes on talks on Buddhism given by this famous Burmese Buddhist master, Venerable Sayadaw U Thittilla in the west over the period 1938-1983. Some of the themes are: 'What is Buddhism', 'Likes and Dislikes', 'A Short History of Buddhism', 'What Kamma Is', 'The Path to Nibbana' and 'The Abhidhamma Philosophy'."
+      },
+      {
+        "name": "Reading the Mind",
+        "description": "These are insightful teachings by a Lay Thai women teacher, Kee Nanayon (1901-1978); who established a Dhamma centre, Khao-Suan-Luang in 1945. Upasika Kee attracted Dhamma students, and residents came to include both female lay devotees and white-robed nuns. These Dhamma talks were mainly given to the women who stayed at her centre to practice meditation. After listening with calm and centred mind, they would all sit in meditation together."
+      },
+      {
+        "name": "Scientific Acceptability of Rebirth",
+        "description": "Dr. Dharmawardena points out that the reason why classical science cannot explain rebirth is due to inherent limitations in classical science. Modern science has transcended these limitations, and therefore rebirth is within the scope of modern science. Modern science accepts rebirth as a scientifically acceptable phenomenon through the same tests used to prove scientific acceptability of generally accepted modern science phenomena."
+      },
+      {
+        "name": "A Tree in the Forest",
+        "description": "\"People have asked me about my practice. How do I prepare my mind for meditation? There is nothing special. I just keep it where it always is. They ask. \"Then are you an Arahant? Do I know? I am like a tree in the forest, full of leaves, blossoms and fruit. Birds come to eat and nest, and animals seek rest in the shade. Yet the tree does not know itself. It follows its own nature. It is as it is\". - Ajahn Chah."
+      },
+      {
+        "name": "Wind in the Forest",
+        "description": "This book is a unique collection of poems, write-ups, illustrations and photos. In Venerable Sujiva's sincere and heartfelt writings, readers may find many touching incidents related by him in his many years of teaching. They will also come to understand him, his compassion and loving-kindness as well as the Dhamma by simply flowing with his pen."
+      },
+      {
+        "name": "Dharma Mind, Worldly Mind",
+        "description": "The first part of the book tells us what we need to put in place for complete Dharma practice - the Eightfold Path, going for refuge, and the Bodhisattva spirit. In the second half the book shows us how to turn those requisites into a genuine living practice that embraces the whole of our life thus surely leading to the profound transformation that we all desire."
+      },
+      {
+        "name": "Buddhism as a Religion",
+        "description": "The contents of this popular publication are a simple exposition of Buddhism as a modern way of life. This highly qualified Sri Lankan Buddhist scholar has a special gift of interpreting the Buddha's Teachings for people from every walk of life. His whole approach to the exposition of the Dhamma is governed by his deep concern for giving the ancient teachings a contemporary relevance, and has a meaning that cuts across the boundaries of time, space, race, culture and even religious beliefs."
+      },
+      {
+        "name": "What Buddhists Believe (Expanded 4th edition)",
+        "description": "This expanded 4th edition of \"What Buddhists Believe\" answers many questions which are asked about Buddhism by Buddhists and non-Buddhists alike. There are so many misconceptions regarding superstitions and misinterpretations which are associated with this noble religion that it has become imperative to explain the Teachings in a manner which has contemporary relevance."
+      },
+      {
+        "name": "The Buddhist Way",
+        "description": "Dr K. Sri Dhammananda explains some Buddhist cultural practices: Going for Refuges, Religious Rites, Alms Giving, Marriage, Buddhist Education and Cultural Practices, Images, Holy Water, Holy Thread, Talismans and Amulets, Blessing Services for Children, Death, Post Mortem, Funerals, Burial and Cremation, Disposal of the Ashes, Period of Mourning, Post-Funeral Rites and Memorial Services."
+      },
+      {
+        "name": "Buddhism for the Future",
+        "description": "Some of the topics Dr K. Sri Dhammananda addresses here are: Buddhism as a Force Against War; Unity in Buddhist Schools of Thought; Ecumenism, Role of the Sangha, The Bhikkhuni Order, Proselytization, Buddhist Values, The Third Millennium, The Lay Person, Social Concerns."
+      },
+      {
+        "name": "Facing the Future",
+        "description": "Four essays on the social relevance of Buddhism: A Buddhist Social Ethic for the New Century; A Buddhist Approach to Economic and Social development; The Changing Face of Buddhism; Sangha at the Crossroads. In this collection of essays, Ven. Bhikkhu Bodhi uses the Buddha's teaching as a lens through which to examine some of the confusions about social values that have engulfed us at the dawn of the new century."
+      },
+      {
+        "name": "Snow in the Summer",
+        "description": "This book is a compilation of extracts from letters written by Sayadaw U Jotika, a Burmese Buddhist monk, to his Western students ten to fifteen years ago. These letters have been collated under the topics indicated by these chapter headings: Mind, Mindfulness and Meditation; Solitude; Parental Love and Guidance; Life, Living and Death; Learning and Teaching; Value and Philosophy; Friendship, Relationships and Loving-kindness."
+      },
+      {
+        "name": "Animal Magnetism",
+        "description": "Subtitled: The Attraction of Spiritual Leaders by Francis Story. This booklet is a good reminder to us, so that we always strive in the right direction. Practice is the only way. Even though faith and devotion to one's teacher can be a positive thing, we must always remember that \"an excessive faith is accompanied by corresponding deficiency of wisdom\"."
+      },
+      {
+        "name": "From Womb to Womb",
+        "description": "Metamorphosis of a Mother. For twenty-five years Francis Story lived in Asian countries, where he deeply studied the Buddha's philosophy of life. His research into the teachings on rebirth started while in Myanmar (Burma) and was later continued with careful investigation of spontaneous rebirth recollections. This book includes 'A Reading Guide to Death and Rebirth', by Ven. Bodhisara which offers an overview on some topics of death and rebirth: near death experiences, past life experiences, dying and caring for the dying, etc."
+      },
+      {
+        "name": "Handbook For Mankind",
+        "description": "The Principles of Buddhism explained by Buddhadasa, Bhikkhu. As a guide for newcomers to the Buddha Dhamma (the Truth which the Buddha awakened to and subsequently taught), this book is an invaluable guide. In it are contained the essential teachings of Buddhism. The Handbook is especially useful for those who approach the Buddha's teaching not as a subject for scholarly study but as a means to understand and ennoble their lives. It includes chapters on 'Looking at Buddhism' and the 'True Nature of Things'."
+      },
+      {
+        "name": "The Natural Cure for Spiritual Disease",
+        "description": "The Natural Cure for Spiritual Disease is a guide to Buddhist science, it includes three talks given in 1986 by this world-renowned Thai Buddhist teacher: 'The Scientific Cure of Spiritual Disease', 'The Use of Dhamma' and 'New Life of Peace'. Venerable Buddhadasa is well known for the readiness with which he gives non-literal interpretations of Buddhist texts. He does not hesitate to reject as naive a word-for-word interpretation that has no bearing on real life."
+      },
+      {
+        "name": "Buddha Dhamma for University Students",
+        "description": "The format to \"Buddha Dhamma for Students\" is as answers to questions a non-Buddhist is likely to ask about the fundamentals of Buddhism. It is the results of two talks given by Ajahn Buddhadasa in January 1966 to students at Thammasat University, Bangkok. Ajahn Buddhadasa always has tried to set both young and old straight as to what Buddhism really teaches. He goes back to the original principles pointed out by the Buddha, explaining these simply and directly, and showing that their relevance is timeless."
+      },
+      {
+        "name": "Only We Can Help Ourselves",
+        "description": "Kamma is an interesting subject because it concerns everyone and there are many different aspects of it. There are many natural laws that govern our lives but the most important is the law of kamma-vipaka. In a discourse (A.N. 6.63) the Buddha said, \"Intention, monks, is kamma I say. Having willed, one acts through body, speech and mind\". This means that intentional action is kamma, and vipaka is the result or effects of it. The result may ripen immediately, later in this life or in a future life."
+      },
+      {
+        "name": "The Art of Living",
+        "description": "The Art of Living with Ven. Master Chin Kung, a Master of the Pure Land School of Buddhism. The Art of Living has chapters on: The Education of Buddha Shakyamuni, our Original Teacher; The Four Kinds of Buddhism Today; How Homemakers Can Cultivate the Bodhisattva Way in Daily Life, and an excellent Question and Answer section. Included is a glossary and a contact list of Ven. Master Chin Kung's teaching centres around the world."
+      },
+      {
+        "name": "To Understand Buddhism",
+        "description": "These are Dharma Talks given in Australia by Ven. Master Chin Kung. The teachings of Master Chin Kung are based on true sincerity towards others; purity of mind; equality in everything we see; proper understanding of ourselves and our environment; compassion by helping others in a wise and unconditional way. See through to the truth of impermanence; let go of all wandering thoughts and attachments; accord with conditions to go along with the environment. Be mindful of Amitabha Buddha - wishing to reach the Pure Land and follow His Teachings."
+      },
+      {
+        "name": "Buddhism as an Education",
+        "description": "A Dharma Talk given by Ven. Master Chin Kung at An-Kang Elementary School, Taipei 1989. Transcribed and translated into English by the Dallas Buddhist Association. In this talk Venerable Master Chin Kung gives us an explanation of his understanding of Buddhism as an education rather than as a religion. There are chapters on the author's own experience of Buddhism and the methodology and symbolism of the Buddhist Educational System."
+      },
+      {
+        "name": "The Light of Asia",
+        "description": "An Illustrated version of the 'Light of Asia', with text."
+      },
+      {
+        "name": "Buddha's Constant Companion - Ven. Ananda",
+        "description": "In this life of the Buddha's personal attendant, Venerable Ananda, we see that in his character and outlook, Ananda was touchingly and movingly human. This was partly because of his simple and charming behaviour, and his ever-present readiness to help anyone who was in distress or difficulty. In spite of his administrative and organisational responsibilities as the Buddha's attendant, Ananda displayed a deep intellectuality and a profound grasp of abstruse philosophic concepts."
+      },
+      {
+        "name": "Women in Buddhism - Question & Answers",
+        "description": "Ven. Chatsumarn Kabilsingh provides answers to questions often asked about women and the ordination issue and related topics. She responds to such questions as: In the Buddha's time what role did women play in Buddhism? Why cannot women become buddhas? What is the Buddhist attitude towards prostitution? What is an attitude of a Buddhist towards abortion? What is the unique characteristic in American Buddhism which might interest a feminist?"
+      },
+      {
+        "name": "The Position of Women in Buddhism",
+        "description": "Today, when the role of Women in Society is an issue of worldwide interest it is opportune that we should pause to look at it from a Buddhist perspective. In the recent past, a number of books have been written on the changing status of women in Hindu and Islamic societies, but with regard to women in Buddhism, ever since the distinguished Pali scholar, Miss I.B. Horner, wrote her book on Women under Primitive Buddhism, as far back as 1930, very little interest has been taken in the subject. It seems, therefore, justified to raise again the question whether the position of women in Buddhist societies was better than that in non-Buddhist societies of Asia. We will look briefly into the position in Sri Lanka, Thailand, Burma and Tibet, at a time before the impact of the West was ever felt."
+      },
+      {
+        "name": "One Foot in the World",
+        "description": "While walking along the path to liberation a Buddhist has to live in the world and deal with the conditions of worldly existence. This problem is likely to be felt especially acutely by the lay Buddhist, who may find that the demands and attractions of secular life tend to pull him or her away from the path to deliverance. However, the Buddha was not unaware of or unconcerned about this dilemma confronted by his lay disciples, but gave it his careful attention. He taught his lay followers how to organize lay life in accordance with the ethical principles of the Dhamma and how to lead successful lay lives without deviating from the path of rectitude."
+      },
+      {
+        "name": "Preparing for Death & Helping the Dying",
+        "description": "This booklet is based on material used during a seminar that I have taught in Singapore and elsewhere, entitled \u001cPreparing for Death and Helping the Dying.\u001d This seminar answers a genuine need in todays world, as expressed by one participant: \u001cI am interested to know more about death and how to help dying people, but its very difficult to find anyone willing to talk about these things.\u001d The material for the seminar is taken mainly from two sources: traditional Buddhist teachings, and contemporary writings in the field of caring for the dying. This booklet is meant as a brief introduction to the subject rather than a detailed explanation."
+      },
+      {
+        "name": "A Guide to a Proper Buddhist Funeral",
+        "description": "This is a hand book on Buddhist Funerals, with sections on practical advice as to what is to be done when a family member is critically ill; the final moments; when death takes place; preparing for the funeral; paying last respects; the final rites; verses for contemplation; the burial / cremation ceremony and the memorial service."
+      },
+      {
+        "name": "The Many Faces of Death",
+        "description": "Imagine a life partner, a family member or a close friend of yours is dying. How might she or he be feeling - facing death, being in pain maybe? What are her or his intimate needs and wishes? What happens to us when staying with a dying person? How can we deal with the sorrow, the confusing thoughts and the trying situation? How should we communicate with her or him and with the family members and friends? When a beloved person is dying we are touched to our deepest core. Difficult, painful emotions may rush up, stirring in our hearts. Dying and death becomes a great challenger, breaking into our lives  which we try so hard to keep smooth and under control."
+      },
+      {
+        "name": "To Cherish All Life",
+        "description": "A Buddhist View of Animal Slaughter and Meat Eating. \"No discussion of animal welfare would be meaningful that did not deal with the morality of flesh eating. Since I have chosen to put this subject in the context of Buddhism, it seems desirable, first of all, to discuss the significance of the first precept in Buddhism of not taking life. This in turn raises two fundamental questions: Can the first precept be fairly construed to prohibit meat eating? and second, Is there reliable evidence that the Buddha sanctioned flesh eating? . . . \" Philip Kapleau, Roshi."
+      },
+      {
+        "name": "Buddhist Pilgrimage",
+        "description": "The idea of a pilgrimage came from the Buddha himself. Before He passed into Mahaparinibbana, the Buddha advised pious disciples to visit four places that may be for their inspiration after He was gone. They are Lumbini, where He was born; Buddhagaya, where He attained Supreme Enlightenment; Deer Park in Sarnath, where He preached the First Sermon; and Kusinara, where He passed into Mahaparinibbana."
+      },
+      {
+        "name": "Beyond Belief: A Buddhist Critique of Fundamental Christianity",
+        "description": "The purpose of this book is threefold. Firstly it aims to critically examine the fundamentalist approach to Christianity and thereby highlight its many logical, philosophical and ethical problems. The second aim of this book is to help fundamentalist Christians who might read it to understand why some people are not and will never be Christians. The third aim of this book is to awaken in Buddhists a deeper appreciation for their own religion."
+      },
+      {
+        "name": "Phra Buddha Dhammacakra",
+        "description": "This is an account of the process of casting a Buddha statue: a case study of the making of Phra Buddha Dhammacakra. The process of casting explained and illustrated. An Introduction of Buddhism. Rudiments of Mental-collectiveness. Dhammacakra Mudra: the meaning. Chanting for the Phra Buddha Dhammacakra. The placement and inauguration ceremony of the Phra Buddha statue."
+      },
+      {
+        "name": "Liao-Fan's Four Lessons",
+        "description": "Liao-Fan Yuan originally wrote Liao-Fans Four Lessons in the sixteenth century in China. The book was intended to teach his son, Tian-Chi Yuan, how to recognize the true face of destiny, tell good from bad, correct ones faults and practice kind deeds. It also provided living proof of the rewards and outcomes of people who practiced kind deeds and cultivated virtue and humility. Relating from his own experience at changing destiny, Mr. Yuan himself was a living embodiment of his teachings."
+      },
+      {
+        "name": "The Seeker's Glossary of Buddhism",
+        "description": "NOTE: This is a revised and expanded edition of The Seekers Glossary of Buddhism. The text is a compendium of excerpts and quotations from some 350 works by monks, nuns, professors, scholars and other laypersons from nine different countries, in their own words or in translation. The editors have merely organized the material, adding a few connecting thoughts of their own for ease in reading."
+      }
+    ]
+  },
+  {
+    "name": "history-art",
+    "content": [
+      {
+        "name": "Buddhism in Sri Lanka - A Short History",
+        "description": "This book deals with Buddhism in Sri Lanka from the time of its introduction in 250 B.C. in the reign of King Devanampiya Tissa, up to Buddhism in Sri Lanka in the first half of the twentieth century, and the Buddha Jayanti, that is when the 2500th Buddha Jayanti (anniversary) was celebrated and after."
+      },
+      {
+        "name": "Buddhist Ceremonies and Ritual of Sri Lanka",
+        "description": "The purpose of the present study is to highlight this often neglected face of popular Buddhism. Though the study focuses on Buddhism as practiced in Sri Lanka, the same basic round of rituals and ceremonies, with minor variations, can be found in the other countries following Theravada Buddhism, such as Burma and Thailand. I also hope that this survey will demonstrate that the expression of Buddhist piety in devotional forms is a necessity if Buddhism is to survive at the popular level as a vital and vibrant force in the daily life of its adherents."
+      },
+      {
+        "name": "Buddhism in Myanmar - A Short History",
+        "description": "This book traces the earliest contact with Buddhism in Mayanmar (Burma); the Mon and Pyu Kingdoms. Theravada Buddhism comes to Pagan. Pagan: its flowering and decline. The Shan rule. The Mayanmar build an Empire. The Eighteenth and Nineteenth Centuries."
+      },
+      {
+        "name": "Buddhism in Thailand",
+        "description": "This work presents facts and figures about the current condition of Buddhism in Thailand, historical background sketches of the establishment and growth of the Buddhist community in Thailand and information on Buddhist education in Thailand. (9-10 December, 2002)"
+      },
+      {
+        "name": "The Edicts of King Asoka",
+        "description": "This rendering of King Asokas Edicts is based heavily on Amulyachandra Sens English translation, which includes the original Magadhi and a Sanskrit and English translation of the text. However, many parts of the edicts are far from clear in meaning and the numerous translations of them differ widely. Therefore, I have also consulted the translations of C. D. Sircar and D. R. Bhandarkar and in parts favored their interpretations. Any credit this small book deserves is due entirely to the labors and learning of these scholars. - S. Dhammika."
+      },
+      {
+        "name": "King Asoka and Buddhism",
+        "description": "King Asoka, the third monarch of the Mauryan dynasty in the third century B.C., was the first ruler of a unified India and one of the greatest political figures of all time. After he embraced the teachings of the Buddha, he transformed his polity from one of military conquest to one of Dharmavijaya  victory by righteousness and truth. By providing royal patronage for the propagation of Buddhism both within and beyond his empire, he helped promote the metamorphosis of Buddhism into a world religion that spread peacefully across the face of Asia. This collection of essays by leading Indological scholars draws upon both the inscriptions and the literary traditions to explore the relationship between King Asoka and the religion he embraced. In highlighting the ways in which Asoka tapped the ethical and spiritual potentials of rulership."
+      },
+      {
+        "name": "Biographies of Sachen Kunga Nyingpo & H.H. The 41st Sakya Trizin",
+        "description": "This book on the biographies of the Great Sachen Kunga Nyingpo and the current lineage holder of the Sakya sect in Tibetan Buddhism, His Holiness the 41st Sakya Trizin, has been compiled by Ratna Vajra Sakya, Dolma Lhama and Lama Jampa Losel. It includes photographic material of the His Holiness Sakya Trizin."
+      },
+      {
+        "name": "Charisma in Buddhism",
+        "description": "A sociological and doctrinal study of charisma, this book discusses three past Buddhist workers  Father Sumangalo, Ananda Mangala Maha nayaka Thera, Dr. Wong Phui Weng  and a living master, the charismatic Ajahn Yantra Amaro of Thailand. Among other topics discussed are:  Types of charisma  Genius, leadership and charisma  The Buddha as a charismatic leader  The Sangha and the routinization of charismaExploiting charisma  The disadvantages of charisma  Buddhist Suttas relating to charisma [being a preprint of Buddhism, Society and History: towards a postmodern perspective]"
+      },
+      {
+        "name": "Honour Thy Fathers",
+        "description": "This book is intended primarily as a tribute to the late Venerable Kapilavaddho Bhikkhu (William August Purfurst, known later as Richard Randall) for whom the English Sangha Trust was formed. He stands out as a man who started and developed the founding of the first English Theravada Sangha in the Western world. For the sake of context it includes a very brief history of the development of Theravada Buddhism in the UK. Only the major steps of this development have been recorded here, though many other groups have contributed to the spreading of Buddhism in the UK."
+      },
+      {
+        "name": "Acariya Mun Bhuridatta - A Spiritual Biography",
+        "description": "A Spiritual Biography by Acariya Maha Boowa Nanasampanno. Translated from the Thai by Bhikkhu Dick S�laratano. �cariya Mun Bh�ridatta Thera was a vipassan� meditation master of the highest caliber of this present age. He taught the profound nature of Dhamma with such authority and persuasion that he left no doubts among his students about the exalted level of his spiritual attainment. His devoted followers consist of numerous monks and laity from virtually every region of Thailand. His story is truly a magnificent one throughout: from his early years in lay life through his long endeavor as a Buddhist monk to the day he finally passed away."
+      },
+      {
+        "name": "Record of Buddhistic Kingdoms",
+        "description": "Fa-Hien was a Chinese monk of the Eastern dynasty (4th-5th Century). In 399 he left China for India, finally arriving there after six years of hard travel. After studying Sanskrit and obtaining many Sanskrit texts of the Tripitaka (Buddhist canon), he returned to China by sea in 414. This text is an Account by Fa-Hien of his travels in India and Ceylon (A.D. 399-414) in Search of the Buddhist Books of Discipline. Translated and annotated with a Corean recension of the Chinese text by James Legge."
+      },
+      {
+        "name": "The Iconography of Nepalese Buddhism",
+        "description": "The illustrated version of \"The Iconography of Nepalese Buddhism\"."
+      },
+      {
+        "name": "Buddhist Arts in Thailand",
+        "description": "This is a study of the development of Art and Architecture in Thailand with Buddhism. The Culture of Thailand has two important sources of origin  indigenous and foreign. The indigenous source comes directly from the ideas and inspiration of the people while the foreign sources came through its cultural contact with other great civilized nations such as India and China. In the field of art, it mainly deals with religions such as Buddhism and the cultural and artistic relationship with India, and other countries. Thai art served religion, which formed the national ideal and conception of life."
+      },
+      {
+        "name": "Thai-Cambodian Culture - Relationship through Arts",
+        "description": "Thailand and Cambodia are very close neighbours with common borders and cultural relations. The Thai people received and adopted some arts and culture from ancient Cambodia. The pre-Thai scripts and spoken words were adopted from Khmer native language. The development of Cambodian arts can be seen in the Thai art of the Lopburi period (11th to 15th century A.D.) It was occupied by the Khmers and as such the art of this period is known locally as Khmer art which deals with Mahayana elements, as in the Sri-Vijaya school of art. This school of Buddhist art marks the last stage of the growth of Buddhist art in Thailand before the rise of the Thai people to power in the land which is now called Thailand.<end of file>"
+      }
+    ]
+  },
+  {
+    "name": "mahayana",
+    "content": [
+      {
+        "name": "Teachings in Chinese Buddhism",
+        "description": "The Most Venerable Yin Shuns expertise and writings in Buddhism have been widely acknowledged by Chinese Buddhists this century. The \"Miao Yun Collection\" (Teachings in Chinese Buddhism) provides us with important information and a systematic approach to Buddhism. These teachings give us a clear insight into, and a deep understanding of Chinese Mahayana Buddhism. This book also includes a section on the position of the Chinese Tripitaka in World Buddhism."
+      },
+      {
+        "name": "Popular Deities of Chinese Buddhism",
+        "description": "\"This elementary book on Chinese Buddhism and its more popularly worshipped Deities, has been written for the benefit of Buddhists amongst the Chinese community. Apart from giving a general outline of Buddhism and its entry into China, I have also attempted to provide brief accounts on the important doctrines that the Buddha has taught, prayers that one may recite to the Buddhas and Bodhisattvas, how to become a Buddhist, and a number of interesting articles that are related to Chinese Buddhism\" - Kuan Ming."
+      },
+      {
+        "name": "Pure Land Buddhism",
+        "description": "This book presents the teachings and major tenets of the Pure Land school of Buddhism ,a s seen from the perspective of two major sister schools: Zen and Tien Tai (Lotus School). Further insights,from the viewpoint of a contemporary Pure Land Master are included in the Appendix. The principal teachings of the Pure Land School are summarized for the benefit of readers."
+      },
+      {
+        "name": "Pure-Land Zen, Zen Pure-land",
+        "description": "Note to the reader. This is an electronic version of the book \u001cPure-Land Zen, Zen Pure-Land\u001d (second edition 1993*), which is a translation of selected passages from the letters of Elder Master Yin Kuang, the Thirteenth Patriarch of Pure Land. The original Chinese titles are Yin Kuang Fa Shih Wen Chao and Yin Kuang Ta Shih Chia Yen Lu. Except for the two pictures of Master Yin Kuang, nothing has been added or changed. However, the notes to the letters and the Glossary prepared by the Van Hien Study Group as well as the Appendix (The Practices and Vows of the Bodhisattva Samantabhadra) were left out, but will hopefully be added later on. T.G., May 2005, * Reprinted and donated for free distribution by The Corporate Body of the Buddha Educational Foundation, Taipei, Taiwan, R.O.C."
+      },
+      {
+        "name": "The Prajna Paramita Heart Sutra (2nd Edition)",
+        "description": "The Prajna Paramita Heart Sutra Translated from Sanskrit into Chinese by Tripitaka Master Hsuan Tsang Commentary by Grand Master T'an Hsu Translated into English by Ven. Dharma Master Lok To. The Prajna Paramita Hrydaya Sutra is the core of the Maha Prajna Paramita in six hundred scrolls. This book is based on a nine-day teaching in which Grand Master T'an Hsu went through the sutra line by line, giving a clear and extensive commentary on each one, using many carefully chosen examples along the way to make his discourse more relevant in terms of everyday life. [French Sutra Translation Committee of the United States and Canada New York - San Francisco - Toronto 2000. First published 1995. Second Edition 2000. Sutra Translation Committee of the United States and Canada]."
+      },
+      {
+        "name": "The Surangama Sutra",
+        "description": "The Suragama Sutra (Leng Yen Ching). Chinese Rendering by Master Paramiti of Central North India at Chih Chih Monastery, Canton, China, A.D. 705. Commentary (abridged) by Chan Master Han Shan (1546-1623). Translated by Up�saka Lu K'uan Yu (Charles Luk). The Suragama Sutra is the text used in the Cha'n school or meditation tradition in Chinese Buddhism."
+      },
+      {
+        "name": "Commentary on the Infinite Life Sutra",
+        "description": "Passages from the Commentary on The Infinite Life Sutra. The full name of this sutra is: The Buddha Speaks of the Infinite Life Sutra of Adornment, Purity, Equality and Enlightenment of the Mahayana School. Mahayana sutras, such as The Lotus Flower Sutra and The Flower Adornment Sutra, explain the way of becoming enlightened. Nevertheless, both of them are difficult to comprehend and even more so to practice. The Infinite Life Sutra provides a convenient method while it aims for the highest goal - to become a Buddha."
+      },
+      {
+        "name": "The Diamond Sutra",
+        "description": "A general explanation of the Vajra Prajna Paramita Sutra. This sutra says, \"One should produce a heart without dwelling anywhere.\" The Sixth Patriarch, the Great Master Hui, heard that sentence and awakened to the Way. \"Any dwelling of the heart is no dwelling.\" Therefore, the Larger Chapters say, \"If one dwells in dharmas, he does not dwell in prajna paramita. If one does not dwell in dharmas, he dwells in prajna paramita.\" That is why every one of the Great Prajna assemblies begins with an explanation of \"not dwelling\"."
+      },
+      {
+        "name": "Sutra of the Medicine Buddha",
+        "description": "In the Mahayana tradition of East Asia, particularly China, Japan, Vietnam and Tibet, Bhaishajya-guru, the Medicine Buddha, occupied a special place in the hearts of the devout. Specialising in curing diseases, both physical and mental - of which delusion is the root cause. His healing acts are but the prelude to Supreme Enlightenment for those seekers who have the good fortune to learn of his vows or merely to hear his name!"
+      },
+      {
+        "name": "The Sutra of the Master of Healing",
+        "description": "Translated into Chinese from Sanskrit by Master Hsuan Tsang; Translated into English from the Chinese. This version by Professor Chow Su-Chia Ph.D., and revised by Upasaka Shen Shou-Liang."
+      },
+      {
+        "name": "Sutra on Ksitigarbha Bodhisatta",
+        "description": "Sutra on the Original Vows and the Attainment of Merits of Ksitigarbha Bodhisattva, translated from Chinese into English by Ms Pitt Chin Hui, President of the Singapore Regional Centre of the World Fellowship of Buddhist."
+      },
+      {
+        "name": "Sutra on the Eight Great Realization of Great Beings",
+        "description": "Wholeheartedly, day and night, a disciple of the Buddha should recite and meditate on the Eight Realizations discovered by the Mahasattvas, the Great Beings - Commentary by Venerable Thich Nhat Hanh."
+      },
+      {
+        "name": "Sutra on the Merits of the Master of Healing",
+        "description": "Sutra on the Merits of the Fundamental Vows of the Master of Healing, The Lapis Lazuli Radiance Tathagata; Sutra of the Sacred Formula of the Binding Vows of the Twelve Deva Generals to Enrich All Sentient Beings; Sutra of Tearing Away All Karma Veils. From the Chinese version of the Tripitaka Master Hsuan-tsang (T'ang, 650 C.E.) T. XIV, 450."
+      },
+      {
+        "name": "The Vows of Bodhisattva Samantabhadra Sutra",
+        "description": "On Entering into the Inconceivable State of Emancipation by the Practice and Vows of the Bodhisattva Samantabhadra of the Mahavaipulya Buddha Avatamsaka Sutra."
+      },
+      {
+        "name": "Lamdre - Dawn of Enlightenment",
+        "description": "This is a series of lectures on the precious Lamdre teachings of the Sakya tradition of Tibetan Buddhism, given by Lama Choedak Yuthok. Lamdre is a complete path to enlightenment. The extraordinary qualities of Lamdre teachings are based on the Hevajra Tantra. They were initially received by the 7th century Indian Mahasiddha Virupa, who founded the lineage and transmitted the teachings to a line of disciples in India. Virupa also wrote pith instructions known as Vajragatha."
+      },
+      {
+        "name": "Bodhicharyavatara",
+        "description": "This is the Tibetan text with romanization of Shantideva's The Way of the Bodhisattva. Shantideva is representative of the Madhyamika school of Mahayana Buddhism. Shantideva was a king's son from South India. He flourished in the 7th to 8th centuries and was a monk at the monastic university Nalanda. He was the author of two surviving works, the Collection of Rules and Entering the Path of Enlightenment."
+      },
+      {
+        "name": "The Wisdom of Nagarjuna",
+        "description": "Nagarjuna holds an almost unequaled place among the ranks of those Buddhist saints who expounded the teaching of the Buddha Sakyamuni for the benefit of the world. Nagarjuna revolutionized the interpretation of the doctrine of the Enlightened One which was current at his time and lent it a vitality and dynamism which has continued to sustain it even to our day among the votaries of the Mahayana. The revolution which Nagarjuna accomplished within the fold of Buddhism was not a radical departure from the original doctrine of the Buddha Sakyamuni. On the contrary, the adherents of the Madhyamaka school are undoubtedly justified in asserting that their interpretation represents the true import of the doctrine of the Buddha and the essence of Buddhism."
+      },
+      {
+        "name": "Sixty Songs of Milarepa",
+        "description": "The songs printed here all concern that Dharma which is common to the whole Buddhist tradition. Among the Bhikkhus living in the Buddha's time, Vangisa Thera was outstanding for his inspired utterances (see Samyutta Nik.I.viii; Theragatha 395). The mind inspired and illumined with the knowledge of liberation pours forth its wisdom with ease in the shape of verses of great beauty and deep significance. Such was the case with Lord Buddha and some of his immediate disciples, and later, such was the case with Milarepa."
+      },
+      {
+        "name": "Manual of Zen Buddhism",
+        "description": "Daisetz Teitaro Suzuki, D.Litt., Professor of Buddhist Philosophy in the Otani University, Kyoto, was born in 1870. He is probably now the greatest living authority on Buddhist philosophy, and is certainly the greatest authority on Zen Buddhism. Dr. Suzuki writes with authority. Not only has he studied original works in Sanskrit, Pali, Chinese and Japanese, but he has an up-to-date knowledge of Western thought in German and French as well as in the English which he speaks and writes so fluently. He is, moreover, more than a scholar; he is a Buddhist. Though not a priest of any Buddhist sect, he is honoured in every temple in Japan, for his knowledge of spiritual things, as all who have sat at his feet bear witness, is direct and profound."
+      },
+      {
+        "name": "M�trceta's Hymn to the Buddha",
+        "description": "An English rendering of the Satp�nc�satka by the 1st century Indian poet, M�trceta. I-tsing, the Chinese pilgrim who travelled through India in the 7th century AD, says of M�trceta's poems: These charming compositions are equal in beauty to the heavenly flowers and rival in dignity the lofty peaks of a mountain. Consequently in India all who compose hymns imitate his style, considering him the father of literature. Even men like Bodhisattvas Asanga and Vasubandhu admired him greatly."
+      },
+      {
+        "name": "Three Teachings",
+        "description": "Tenzin Palmo's Teachings on Retreat, Mahamudra and Mindfulness are a delight to read. Transcribed from talks she gave in Singapore in May 1999, the teachings are delivered in plain language, seasoned with plenty of audience participation. Each subject is discussed with humour, liveliness and compassion. She has the great gift of showing how to put the Dharma into every part of our everyday lives. Born in London in 1993, Tenzin Palmo traveled to India and was ordained as a Buddhist nun in 1964. Her 12-year retreat in a cave high in the Himalayas, described in the book 'Cave in the Snow', focused international attention on the role of women and their spirituality in the Buddhist context."
+      },
+      {
+        "name": "Make Your Mind an Ocean",
+        "description": "Aspects of Buddhist Psychology by the late Ven. Lama Thubten Yeshe. \"To enter the spiritual path, you must begin to understand your own mental attitude and how your mind perceives things. If you're all caught up in attachment to tiny atoms, your limited, craving mind will make it impossible for you to enjoy life's pleasures. External energy is so incredibly limited that if you allow yourself to be bound by it, your mind itself will become just as limited. When your mind is narrow, small things easily agitate you.\" In this series of lectures, Lama speaks on the nature of mind and the Buddhist approach to mental health. Of particular interest here is 'A Buddhist Approach to Mental Illness', a talk Lama gave to a group of Western mental health practitioners, and which highlights the differences between the two approaches to mental health and perhaps lays the foundation for a greater understanding between the two."
+      },
+      {
+        "name": "Becoming Your Own Therapist",
+        "description": "Lord Buddha's timeless teachings are as universally relevant today as they were when they were first given, over 2,500 years ago, as Lama explains in these three general talks on the philosophy, psychology and practice of Buddhism. Although called lectures, these talks are not intended to be didactic, but rather for us to use as a mirror for our minds, to allow us to look beyond the words, find ourselves, and become our own psychologist. Each lecture is followed by an informative question and answer session, where Lama expands upon aspects of the talks in further detail."
+      },
+      {
+        "name": "Virtue and Reality",
+        "description": "Method and Wisdom in the practice of Dharma by Lama Thubten Zopa Rinpoche. The teachings of the Buddha can be divided into two categories - extensive method and profound wisdom. In this series of talks, Lama Zopa Rinpoche, spiritual director of the Foundation for the Preservation of the Mahayana Tradition (FPMT), offers a practical explanation of these two paths. As presented here, method is the loving, compassionate Bodhicitta and wisdom is the realisation of ultimate reality, the right view of emptiness. Through practicing method, we attain the holy body of a Buddha; through developing wisdom we attain the enlightened mind. Recognizing the workaday world reality in which most of his students live, Rinpoche shows us how to think and act so that every moment of our lives will be of maximum benefit to both others and ourselves."
+      },
+      {
+        "name": "Advice for Monks and Nuns",
+        "description": "The continued existence of the Buddha Dharma depends upon the continued existence of the Sangha - the community of ordained practitioners, monks and nuns - one of the three Buddhist Refuges. In these talks, Lama Yeshe and Lama Zopa Rinpoche explain the great benefits of practicing Dharma as an ordained person, how to keep the ordination pure, the purpose of the monastic community, how to live together as monks and nuns, and much more. The necessity for the lay community to support the Sangha is also made clear, and not only monks and nuns but lay practitioners, too, will gain much by reading this book."
+      },
+      {
+        "name": "Transforming Problems Into the Dharma Path",
+        "description": "These lessons will help us to understand how to transform both adverse and happy situations into the Dharma Path with skill, to make them worthwhile and beneficial to ourselves and others. The whole Path, all of the teachings of Shakyamuni Buddha, leads towards the understanding of our situation in the world, by which I mean understanding how we relate to others. Especially knowing we have a great connection with each other, that in previous lives we have been very close to each other. We have experienced kindness from all other living beings, in so many ways  when others have been our parents, our husbands and wives, our teachers. They have looked after us so much. Each individual is merely part of the great universal family of sentient beings  living beings with minds.<end of file>"
+      }
+    ]
+  },
+  {
+    "name": "meditation",
+    "content": [
+      {
+        "name": "Fundamentals of Ch'an Meditation Practice",
+        "description": "The Fundamentals of (Ch'an) Meditation Practice by Ting Chen. \"Originally, one's own mind and nature are pure, and there is nothing to accept and nothing to refuse; there is neither existence nor non-existence; there is only clear understanding without attachment and with no dwelling. One who wants to know the no-attachment, no-dwelling mind can find it through meditation, because it is only then that the mind does not think of right and wrong, of good and evil or of self and others\"."
+      },
+      {
+        "name": "The Gates of Chan Buddhism",
+        "description": "BODHIDHARMAS GATE: \"Chan (Zen) in fact is an \u001cimpregnable fortress\u001d, without a gate to enter. Suppose there is really a gate, that gate would simply be a method of training to be taken up in the Chan tradition. That is why when a monk asked Master Zhao Zhou (778 - 897): \u001cHas a dog Buddha-nature or not?\u001d Master Zhao Zhou retorted: \u001cWu.\u001d Later on, this Gongan (koan) formed part of a specific approach in the Chan School.\" The author, Venerable Jing Hui is a Chan Master and a vicepresident of the Buddhist Association of China."
+      },
+      {
+        "name": "The Sweet Dews of Ch'an",
+        "description": "Chan or Zen is the outcome of meditation. There are two \u001cright\u001d or \u001chighest\u001d purposes of Chan. The first purpose is to achieve \u001cDhyana.\u001d Dhyana is a combination of relaxation, concentration and calmness or tranquility. The second purpose is, using your very composed and tranquil mind, to observe clearly all the dharmas or phenomena externally and internally. As an outcome of Dhyana, you will be able to observe these phenomena very clearly because your \u001cmental mirror\u001d is very clear, for there are no more disturbances to veil it. Out of these observations will come Transcendental Wisdom, which in Sanskrit is called \u001cPrajna.\u001d"
+      },
+      {
+        "name": "Taming the Monkey Mind",
+        "description": "\"Taming the Monkey Mind\" is a guide to Pure Land practice. It deals specifically with the main practice of the Pure Land School - Buddha Recitation - and covers both the noumenal and phenomenal aspects of that practice. The treatise is accompanied by the detailed commentary of an Elder Master of the Zen and Pure Land lineages. Readers not familiar with Pure Land theory may wish to begin with Dr. J.C. Cleary's introduction."
+      },
+      {
+        "name": "Practical Vipassana Exercises",
+        "description": "The late Mahasi Sayadaw was responsible for the modern revival of Vipassana or Insight meditation in Myanmar (Burma). This text is his basic instruction on the practice: the preparatory stages with a series of basic exercises. Part two, deals with the deals with the progressive practice and the practical vipassana exercises. The appendix explains the techniques involved in the Mahasi Sayadaw tradition."
+      },
+      {
+        "name": "Seven Stages of Purification & Insight Knowledges",
+        "description": "A guide to the progressive stages of Buddhist meditation. The seven stages of purification provide the framework for the practising disciples gradual progress from the cultivation of virtue up to the attainment of the final goal. Integral to the higher stages of purification are the nine types of insight-knowledge, by which the disciple breaks through the delusions covering his mental vision and penetrates through to the real nature of phenomena."
+      },
+      {
+        "name": "Keeping the Breath in Mind & Lessons in Samadhi",
+        "description": "This is a 'how to' book. It teaches the liberation of the mind, not as a mind-boggling theory, but as a very basic skill that starts with keeping the breath in mind. The teachings here are drawn from the works of Ajaan Lee Dhammadharo (1906-61), one of Thailand's most renowned teachers of Buddhist meditation practices. Ajaan Lee was a forest monk - one who prefers to live in the seclusion of the forest and makes his meditation the central theme of his practice - so his teachings grow out of personal, practical experience, although he also makes a point of relating them to standard Buddhist doctrine."
+      },
+      {
+        "name": "Frames of Reference",
+        "description": "\"This book on the frames of reference is based to some extent on my own thoughts and opinions. In some spots it may not be directly in line with the original text (Satipatth�na Sutta), because my primary aim has been to get to the heart of the matter, so that it can be conveniently put into practice. The eBook also includes a section on the \"Duties of the Sangha\", that is, the laws and regulations and disciplinary standards (Vinaya)."
+      },
+      {
+        "name": "Dhamma Discourses on Vipassana Meditation",
+        "description": "Sayadaw U Kundala is a renowned meditation master in the Mahasi Sayadaw tradition of Burma, noted for his loving-kindness. In these Dhamma talks the stages of the practice and the Insight Knowledges are explained. The method of meditation is given with detailed instruction. There is a detailed explanation of the Contemplation of Feelings, the second foundation of mindfulness, which, in the Theravada tradition, is the key to the Insight Knowledges. Overall, in the Sayadaw's teachings, there is much for the Vipassana or insight meditator to be inspired by."
+      },
+      {
+        "name": "Living Meditation, Living Insight",
+        "description": "The Path of Mindfulness in Daily Life. I wrote this book to encourage practitioners learning to meditate in daily life. In this sense, the articles are presented as a \"hands-on\" or, more accurately, a \"minds-on\" training manual. Although I discuss meditation in general, the real focus is on how the Dhamma brings us into spontaneous, wholesome and creative living. My objective in presenting the articles is to help the aspirant build up a solid foundation of mindfulness as a way of life rather than as a practice separated from daily living - Dr. Thynn Thynn."
+      },
+      {
+        "name": "A Guide to Awareness",
+        "description": "The Foundations of Mindfulness (Satipatth�na Sutta). This is a series of twenty-two talks given at Wat Bovornives, Bangkok by H.H.Somdet Phra �anasamvara, Supreme Patriarch of Thailand. The Four Foundations of Mindfulness is the Buddha's explanation of the practice of mindfulness meditation within the framework of four foundations of awareness: body, feelings, mind-states and the mental content. If you read this book, you will discover the truth of the 'knots' and problems that exist within you. In short, this can be described as the 'knot of suffering'. You may also then see the method to unravel and safeguard against this suffering."
+      },
+      {
+        "name": "On The Path To Freedom",
+        "description": "On The Path to Freedom - a mind of wise discernment and openness - by Burmese Meditation Master, Sayadaw U Pandita. This is a compilation of Dhamma discourses to foreign meditators at the Mahasi Meditation Centre, Rangoon, Myanmar, who came to practise under him in Yangon (formerly Rangoon) between August 1986 to March 1987. Translated from Myanmar by the late Mya Thaung."
+      },
+      {
+        "name": "Mindfulness: The Path of the Deathless",
+        "description": "The aim of this book is to provide a clear instruction in and reflection on Buddhist meditation as taught by Ajahn Sumedho, a bhikkhu (monk) of the Theravadin tradition. It has been edited from talks Ajahn Sumedho has given to meditators as a practical approach to the wisdom of Buddhism. This wisdom is otherwise known as Dhamma or 'the way things are'. It is a step-by-step manual on the practice of meditation."
+      },
+      {
+        "name": "Invitation to Insight Meditation",
+        "description": "This book contains two sections: 1. Invitation to Vipassana and 2. Basic Instructions. In the first part, I have endeavoured to explain: a) the basic principles underlying the Vipassana practice, how it is essentially the observation of physical and mental processes that occur in the body and mind, b) how this observation leads to the understanding of the truths of impermanence, suffering and not-self as taught by the Buddha, c) how the application of mindfulness is required for this observation, d) how the Wisdom of impermanence, etc. is important, making us wiser, stronger, etc.  i.e. how it helps us in our daily life, and shape our whole outlook and attitude towards life, and e) various other aspects of the benefits of mindfulness and living in the present, such as the curtailment of worries and anxieties, improvement in health, concentration and memory."
+      },
+      {
+        "name": "The Vipassana Retreat",
+        "description": "Vipassana meditation requires long-term commitment. While it can be done to some extent in everyday life, realistically for the practice to deepen it needs to be done intensively in a supportive retreat situation. Vipassana meditation is developmental, so to realise its ultimate benefit it has to be sustained with appropriate intensity under supportive conditions. Ven. Pannyavaro, a practitioner of over 30 years, guides you through the vipassana experience in a retreat situation, in a systematic and practical way."
+      },
+      {
+        "name": "Insight Meditation Workshop Online",
+        "description": "Meditation is the intelligent heart of the Buddha's way; the only criterion is that you should apply it to daily life. The purpose of this meditation course is not to create a system of beliefs, but rather to give guidance on how to see clearly into the nature of the mind. In this way, you can have firsthand understanding of the way things are, without reliance on opinions or theories - a direct experience, which has its own vitality. This course has been prepared with both beginners and experienced practitioners in mind."
+      },
+      {
+        "name": "The Art of Attention",
+        "description": "This is a handbook on the art of meditative attention or meditating for insight. It deals with the basics of awareness meditation. There is practical instruction on how to do sitting and walking meditation and how to apply awareness in daily activities based on the Insight Meditation (Vipassana) tradition. The purpose of this handbook is to give the beginner to awareness meditation a guide to the basics of the practice, with the emphasis on its practical application to daily life.  Arabic version: The Art of Attention (564KB)"
+      },
+      {
+        "name": "For the Stilling of Volcanoes",
+        "description": "Insight Meditation as explained by Ven. Sujiva: \"It is not an task easy to approach such a profound topic as Insight Meditation in simple terms. But we have got to start somewhere. After some years of introducing this type of meditation, I still find that there is a lack of introductory material for those without knowledge of Buddhism. What is available is often extremely technical and loaded with ancient Indian terminology. There are some words in the English vocabulary which we can never hope to substitute perfectly. Even in this booklet I have used some English words such as conditioned and suffering which need special explanation when used in a Buddhist sense - but I have tried to come up with something easier to read and understand.\""
+      },
+      {
+        "name": "Essentials of Insight Meditation Practice",
+        "description": "The ultimate aim of insight meditation is to \u001cfree\u001d one from the unsatisfactoriness of cyclic existence. Readers may also find numerous quotations of the Buddhas teaching on mindfulness, detachment and liberation throughout the entire book. Those verses act as a source of inspiration and purpose to put vipassana into practice  a practice that brings about insight into the three universal characteristics of unsatisfactoriness, impermanence and non-self which leads one into detachment and ultimate liberation."
+      },
+      {
+        "name": "Loving-kindness Meditation",
+        "description": "Loving-kindness Meditation or Metta Bhavana and other Sublime States by Ven. Sujiva is a clear and comprehensive step-by-step explanation of the systematic practice. It is based on the Visuddhimagga or The Path of Purification by Buddhagosha. The texts describe metta as characterised by promoting the aspect of welfare. Amity, goodwill, friendliness and loving-kindness are some words used to describe this mental state. There is no better way to know it than to study it as it occurs in one's own and others' minds. It is a totally unselfish and pure state of mind that brings profit to oneself and others now and hereafter."
+      },
+      {
+        "name": "The Power of Mindfulness",
+        "description": "\"In the case of mindfulness, it required a genius like the Buddha to discover the \u001chidden talent\u001d in the modest garb, and to develop the vast inherent power of that potent seed. It is, indeed, the mark of a genius to perceive and to harness the power of the seemingly small. Here, truly, it happens that, what is little becomes much. A revaluation of values takes place. The standards of greatness and smallness change. Through the master mind of the Buddha, mindfulness is finally revealed as the point where the vast revolving mass of world suffering is levered out of its twofold anchorage in ignorance and craving\"."
+      },
+      {
+        "name": "The Four Sublime States",
+        "description": "Four sublime states of mind have been taught by the Buddha: Loving-kindness (metta), Compassion (karuna), Sympathetic Joy (mudita), Equanimity (upekkha) These four attitudes are said to be excellent or sublime because they are the right or ideal way of conduct towards living beings They provide, in fact, the answer to all situations arising from social contact. They are the great removers of tension, the great peacemakers in social conflict, and the great healers of wounds suffered in the struggle of existence. They level social barriers, build harmonious communities, awaken slumbering magnanimity long forgotten, revive joy and hope long abandoned, and promote human brotherhood against the forces of egotism."
+      },
+      {
+        "name": "Brahmavihara Dhamma",
+        "description": "This \"Brahmavihara Dhamma\" (Divine Abidings) expounded by the late Venerable Mahasi Sayadaw, reveals the systematic method of developing Metta, loving-kindness towards all beings and the way to lead a life of holiness. The style of presentation and the informative materials contained therein stand witness to the depth and wealth of spiritual and scriptural knowledge of the eminent author. A careful reading of this Dhamma or teachings, followed by an unfailing practice of meditation that has been clearly presented in this text will, I believe, amount to storing a fortune in the shape of happiness in the present lifetime as well as higher spiritual attainment."
+      },
+      {
+        "name": "Hello - with Love & Other Meditations",
+        "description": "The three most important things in life are love, kindness and wisdom. If we have made these three values the priorities of our life, then our life will have been well-lived. When we die we can only have happiness when we look back and not regrets. Wealth, fame, power, status, worldly success and pleasures  these are insignificant compared to love, kindness and wisdom. Cultivate the latter. If we spend our life cultivating this trio, our birth and life will have been worthwhile; it will not have been in vain. In this booklet, Ven. Visuddh�c�ra shares his understanding of this practice of mindfulness and loving-kindness with a view to encourage all of us to walk the path."
+      },
+      {
+        "name": "Metta Bhavana, Loving-kindness Meditation",
+        "description": "This is short explanation on how to practise Metta Bhavana or Loving-kindness Meditation given as a three-day weekend retreat at Dhammodaya Meditation Centre in Nakhon Pathom in Thailand, by an Australian monk, Ven. Dhammarakkhita (Jeff Oliver)."
+      },
+      {
+        "name": "Guided Meditation for Primary Students",
+        "description": "This is a series of guided meditations with instruction for teachers for primary students. This file is part of BuddhaNet's Buddhist Studies for Schools. It has seven guided meditations for students, with detailed instructions for teachers."
+      },
+      {
+        "name": "Seeding the Heart",
+        "description": "Loving-kindness Meditation with Children. The practice of loving-kindness, or metta, can be done in one of two ways: either in intensive prolonged meditation to develop deep states of concentration, or in daily life at any time one meets with people and animals or thinks about them. To learn about the radiating of metta to all beings with children, we have to tap into the store of knowledge accumulated by lay people and parents. It must be knowledge which has grown out of years of living and loving with children and young adults. Gregory Kramer, father of three boys, shows us here with what subtle but precise adjustments in the standard practice of loving-kindness he was able to anchor it in the lives of his children."
+      },
+      {
+        "name": "Settling back into the moment",
+        "description": "A selection of verses from the book 'Experience of Insight' , by Joseph Goldstein. This book belongs to a different genre, not a book in the sense of having a beginning and an end. It is a compilation of excerpts that stand alone in meaning whichever way your finger may flip open the page. Readers are strongly encouraged to read Joseph Goldstein's \"Experience of Insight - a simple and direct guide to Buddhist Meditation\" (Published by Shambala Publications, Inc.) from whose book this compilation is attributed."
+      },
+      {
+        "name": "Knowing and Seeing",
+        "description": "Talks and Questions and Answers at a meditation retreat in Taiwan by Venerable Pa-Auk Sayadaw. This book details two approaches to insight meditation, namely, \"tranquility and insight\" and \"bare-insight\" meditation. These two methods are essentially identical, starting from four-elements meditation and continuing into insight meditation. In this book the reader has an explanation of the classic instructions for both methods. The talks in this book were given by the Sayadaw (teacher), from Pa-Auk, Mawlamyine, Myanmar, while he conducted a two-month meditation retreat at Yi-Tung Temple, Sing Choo City, Taiwan."
+      },
+      {
+        "name": "The Practice which Leads to Nibbana",
+        "description": "Translated by Greg Kleiman. This is the method of practising meditation that is taught at Pa Auk Tawya Monastery, (Myanmar) Burma. It is based on the explanation of meditation found in the Visuddhimagga commentary. Because of that the method involves several stages of practice which are complex, and involved. These stages include a detailed analysis of both mentality and matter, according to all the categories enumerated in the Abhidhamma, and the further use of this understanding to discern the process of Dependent Origination as it occurs in the Past, Present, and Future. Therefore people who are unfamiliar with the Visuddhimagga and the Abhidhamma will have difficulty in understanding and developing a clear picture of the practice of meditation at Pa Auk Tawya. For foreigners who cannot speak Burmese this problem is made even more difficult. This introduction has been written to help alleviate these difficulties by presenting a simplified example of a successful meditator's path of progress as he develops his meditation at Pa Auk Tawya."
+      },
+      {
+        "name": "Mindfulness of Breathing & Four Elements Meditation",
+        "description": "This book contains the instructions for mindfulness-of-breathing meditation, the four-elements meditation, and the subsequent detailed discernment of materiality. The last section of this book covers some of the relevant theory. Several pages have been added by the Sayadaw covering the balancing of the five controlling faculties and seven factors of enlightenment. There is also the addition of his explanation of the difference between the experience of Nibb�na and the experience of life-continuum (bhavanga)."
+      },
+      {
+        "name": "Anapanasati - Mindfulness of Breathing",
+        "description": "For the first time in the English language a comprehensive manual of Buddhist meditation known as �n�p�nasati (the development of mindfulness of breathing ) is available. Although this manual is primarily intended for the benefit of monks, it will greatly assist laymen, too, who wish to undertake a course of meditation but who do not have the guidance of a teacher. Originally published in Thai, this manual is one of the major works of the Ven. Buddhad�sa Bhikkhu and delivered in 1959 in the form of a series of lectures to monks of Suanmokkha Monastery, Chaiya, Thailand. Ven. Buddhad�sa Bhikkhu, a major voice in the Buddhist world, is an accepted master of Buddhist meditation. In constructive positive language, the manual guides the meditator through the 16 steps of �n�p�nasati."
+      },
+      {
+        "name": "Buddhist Meditation and Depth Psychology",
+        "description": "This essay is concerned with only one aspect of Buddhism, the practice of meditation. The ethical, practical, and logical facets of the Teaching are covered in other publications. If the cause of suffering is primarily psychological, then it must follow that the cure, also, is psychological. Therefore, we find in Buddhism a series of \u001cmental exercises\u001d or meditations designed to uncover and cure our psychic aberrations. Mistakenly, Buddhist meditation is frequently confused with yogic meditation, which often includes physical contortions, autohypnosis, quests for occult powers, and an attempted union with God. None of these are concerns or practices of the Eightfold Path. There are in Buddhism no drugs or stimulants, no secret teachings, and no mystical formulae. Buddhist meditation deals exclusively with the everyday phenomena of human consciousness."
+      },
+      {
+        "name": "A Critical Analysis of the Jh�nas in Therav�da Buddhist Meditation",
+        "description": "This work, by Ven. Henepola Gunaratana, provides an analytical study of the Jh�nas, as they are an important set of meditative attainments in the contemplative discipline of Therav�da Buddhism. Despite their frequent appearance in the texts, the exact role of the Jh�nas in the Buddhist path has not been settled with unanimity by Therav�da scholars, who are still divided over the question as to whether they are necessary for attaining Nibbana. The primary purpose of this dissertation is to determine the precise role of the Jh�nas in the Therav�da Buddhist presentation of the way to liberation.For source material the work relies upon the three principal classes of authoritative Therav�da texts: the Pali Tipitaka, its commentaries, and its sub-commentaries. To traditional canonical investigations modern methods of philosophical and psychological analysis are applied in order to clarify the meanings implicit in the original sources. The examination covers two major areas: first the dynamics of Jh�na attainment, and second, the function of the Jh�nas in realizing the ultimate goal of Buddhism, Nibbana or final liberation from suffering.Print version only (1,387KB, PDF) This print version is suitable for people who can print the pages duplex and they will have 2 A5 size pages on every Landscape oriented A4 page.xxxx"
+      },
+      {
+        "name": "Sri Lakan Monasteries-Monastics.(76 KB) Sri Lankan Monasteries-Laypeople.",
+        "description": "Information about Meditation Centres and other important places in Sri Lanka for visiting Western Buddhist lay practitioners. Also Information about Meditation Centers, Forest Monasteries, and other important places in Sri Lanka for Western bhikkhus and serious lay practitioners. Updated: January 2005.<end of file>"
+      }
+    ]
+  },
+  {
+    "name": "theravada",
+    "content": [
+      {
+        "name": "Guide to Tipitaka",
+        "description": "The Guide to the Tipitaka is an outline of the Pali Buddhist Canonical Scriptures of Theravada Buddhism from Burma. This is a unique work, as it is probably the only material that deals in outline with the whole of the Pali Buddhist Tipitaka. The Tipitaka includes all the teachings of the Buddha, grouped into three divisions: the Soutane Patch, or general discourses; the Vane Patch, or moral code for monks and nuns; and the Abhidhamma Pitaka, or philosophical teachings. An excellent reference work which gives an overview of the Pali Buddhist texts.  It is recommended that you download the print version below as it is of higher quality.Print Version (1,314KB, zipped file) This print version is suitable for people who can print the pages duplex and they will have 2 A5 size pages on every Landscape oriented A4 page. This file is of higher quality with bookmarks and a hyper linked series of \"contents\" pages."
+      },
+      {
+        "name": "Daily Readings from Buddha's Words of Wisdom",
+        "description": "For over two millennium the discourses of the Buddha have nourished the spiritual lives of countless millions of people in India, Sri Lanka, Burma and Thailand. This book contains extracts from some of these discourses selected from the Pali Tipitaka and also from some post-canonical writings. Rendered into readable English, presented so that one extract can be read and reflected upon each day of the year and provided with a Readers Guide, this book is an indispensable companion for anyone trying to apply the Buddha's gentle message to their daily life."
+      },
+      {
+        "name": "Essentials of Buddhism",
+        "description": "This book can be used as a textbook on basic Buddhism. It is based on the Theravada Buddhism syllabus of the Postgraduate Diploma Examination in Buddhist Studies course of the Buddhist and Pali University of Sri Lanka. Since the work is meant for students, every chapter appears as a unit by itself and is confined to a few pages. Ven. Pategama Ganarama is the Principal of the Buddhist and Pali College of Singapore."
+      },
+      {
+        "name": "Aspects of Early Buddhist Thought",
+        "description": "\u001cAll the chapters are enlightening and sociologically important. Particularly the discussion on Dhamma, medicine and sociology deserves special praise, for the novel and refreshing interpretation offered.\u001d Prof. Chandima Wijebandara. \u001cEarly Buddhist redefinition of womans social role is well documented and discussed, shedding light on the subject, so it can be viewed in a broader perspective.\u001d Senarat Wijavasundara Lecturer in Philosophy Buddhist and Pali College of Singapore"
+      },
+      {
+        "name": "The Book of Protection (Paritta)",
+        "description": "This is an anthology of selected discourses of the Buddha originally compiled by teachers of the past. The introductory essay is informative and stimulating to the scholar and general reader alike. It is this ancient anthology that has now been translated from the original Pali by Piyadassi, Thera. These discourses have a special appeal not only to Theravada Buddhists but also to Mahayana Buddhists. It is interesting to find in this anthology the simpler side as well as the deeper side of the Buddha's teaching. Apart from their doctrinal value, the selected discourses, when recited, afford a protection against fear, misfortune and ill health."
+      },
+      {
+        "name": "The Dhammapada, Buddha's Path of Wisdom",
+        "description": "Translated from the Pali by Acharya Buddharakkhita and with an introduction by Bhikkhu Bodhi. The Dhammapada is the best known and most widely esteemed text in the Pali Tipitaka, the sacred scriptures of Theravada Buddhism. The work is included in the Khuddaka Nikaya (\"Minor Collection\") of the Sutta Pitaka, but its popularity has raised it far above the single niche it occupies in the scriptures to the ranks of a world religious classic. Composed in the ancient Pali language, this slim anthology of verses constitutes a perfect compendium of the Buddha's teaching, comprising between its covers all the essential principles elaborated at length in the forty-odd volumes of the Pali Canon.�� Print Version Only (176KB)"
+      },
+      {
+        "name": "The Dhammapada, a Translation",
+        "description": "The Dhammapada, an anthology of verses attributed to the Buddha, has long been recognized as one of the masterpieces of early Buddhist literature. Only more recently have scholars realized that it is also one of the early masterpieces of the Indian tradition of Kavya, or belles lettres. This translation is an attempt to render the verses into English in a way that does justice to both of the traditions to which the text belongs. Although it is tempting to view these traditions as distinct, dealing with form (Kavya) and content (Buddhism), the ideals of Kavya aimed at combining form and content into a seamless whole."
+      },
+      {
+        "name": "Treasury of Truth - Dhammapada (Text Version)",
+        "description": "This work lends itself readily to an in-depth study of this religious classic of mankind, to the great delight of both the scholar and the student. This PDF file is the text version only of the Illustrated Dhammapada by Ven. Sarada Maha Thero. The Pali text has explanatory translation of the verses with commentary in English.(21, 511 KB) Treasury of Truth - Illustrated Dhammapada  Ven. W. Sarada Maha Thero.This archived zipped file (21,511KB) is the Illustrated version of the Dhammapada or Treasury of Truth, compiled by Venerable Weragoda Sarada Maha Thero. [ PLEASE NOTE: LARGE FILE SIZE ]"
+      },
+      {
+        "name": "Dhammacakkappavattana Sutta",
+        "description": "The First Discourse of the Buddha, namely the Dhammacakkappavattana Sutta, commonly known as the Great Discourse on the Wheel of Dhamma. This is a series of discourses on the Dhammacakka Sutta by the late Venerable Mahasi Sayadaw, a Questioner at the Sixth Buddhist Council in Myanmar, (Burma) 1954. Translated by U Ko Lay."
+      },
+      {
+        "name": "Transcendental Dependent Arising",
+        "description": "An Exposition of the Upanisa Sutta. Dependent Arising (paticcasamuppada) is the central principle of the Buddha's teaching, constituting both the objective content of its liberating insight and the germinative source for its vast network of doctrines and disciplines. So crucial is this principle to the body of the Buddhas doctrine that an insight into dependent arising is held to be sufficient to yield an understanding of the entire teaching. In the words of the Buddha: \"He who sees dependent arising sees the Dhamma; he who sees the Dhamma sees dependent arising.\""
+      },
+      {
+        "name": "Sigalovada Sutta - Illustrated",
+        "description": "The Sigalovada in Pictures. A Pictorial presentation of the Buddha's advice to the layman, Sigala on the duties of the householder. Compiled by Venerable K. Dhammasiri. Artwork by K. W. Janaranjana."
+      },
+      {
+        "name": "Maha Satipatthana Sutta",
+        "description": "Practise in accordance with this Mahasatipatthana Sutta so that you can see why it is acknowledged as the most important Sutta that the Buddha taught. Try to practise all the different sections from time to time as they are all useful, but in the beginning start with something simple such as being mindful while walking, or the mindfulness of in and out breathing. Then as you practise these you will be able to practise the other sections contained within this Sutta and you will find that all the four satipatthanas can be practised concurrently. A Sutta should be read again and again as you will tend to forget its message. The message here in this Sutta is that you should be mindful of whatever is occurring in the body and mind, whether it be good or bad, and thus you will become aware that all conditioned phenomena are impermanent, unsatisfactory and not self.High quality: Print Version - Maha Satipatthana Sutta for downloading (1,626 KB zipped file)"
+      },
+      {
+        "name": "The Mission Accomplished",
+        "description": "A historical analysis of the Mahaparinibbana Sutta of the Digha Nikaya of the Pali Canon. \"The Mission Accomplished is undoubtedly an eye opening contribution to Buddhist analytical Pali studies. In this analytical and critical work Ven. Dr. Pategama Gnanarama enlightens us in many areas of subjects hitherto unexplored by scholars. His views on the beginnings of the Bhikkhuni Order are interesting and refreshing. They might even be provocative to traditional readers, yet be challenging to the feminists to adopt a most positive attitude to the problem\". Prof. Chandima Wijebandara, University of Sri Jayawardhanapura, Sri Lanka."
+      },
+      {
+        "name": "The Debate of King Milinda",
+        "description": "The Milanda Panna is a famous work of Buddhist literature, probably compiled in the 1st century B.C. It presents Buddhist doctrine in a very attractive and memorable form as a dialogue between a Bactrian Greek king, Milinda, who plays the 'Devil's Advocate' and a Buddhist sage, Nagasena. The topics covered include most of the questions commonly asked by Westerners. This abridgment provides a concise presentation of this masterpiece of Buddhist literature. The introduction outlines the historical background against which the dialogues took place, indicating the meeting of two great cultures that of ancient Greece and the Buddhism of the Indus valley, which was the legacy of the great Emperor Asoka."
+      },
+      {
+        "name": "The Buddha and His Teachings",
+        "description": "Many valuable books have been written by Eastern and Western scholars, Buddhists and non-Buddhists alike, to present the life and teachings of the Buddha to those who are interested in Buddhism. This treatise is another humble attempt made by a member of the Order of the Sangha, based on the Pali Texts, commentaries, and traditions prevailing in Buddhist countries, especially in Sri Lanka. The first part of the book deals with the Life of the Buddha, the second with the Dhamma, the Pali term for His Doctrine."
+      },
+      {
+        "name": "A Manual of Abhidhamma",
+        "description": "Abhidhamma is the Higher Teaching of the Buddha. It expounds the quintessence of His profound doctrine. The Dhamma, embodied in the Sutta Pi�aka, is the conventional teaching, and the Abhidhamma is the ultimate teaching. In the Abhidhamma both mind and matter, which constitute this complex machinery of man, are microscopically analysed. Chief events connected with the process of birth and death are explained in detail. Intricate points of the Dhamma are clarified. The Path of Emancipation is set forth in clear terms."
+      },
+      {
+        "name": "Abhidhamma Studies (Buddhist Psychology)",
+        "description": "The content of these studies is rather varied: they include philosophical and psychological investigations, references to the practical application of the teachings concerned, pointers to neglected or unnoticed aspects of the Abhidhamma, textual research etc. This variety of contents serves to show that wherever we dig deep enough into that inexhaustible mine, the Abhidhamma literature, we shall meet with valuable contributions to the theoretical understanding and practical realization of Buddhist doctrine."
+      },
+      {
+        "name": "Buddha Abhidhamma - Ultimate Science",
+        "description": "The Buddha's ultimate teaching, known as the Abhidhamma, describes in detail the natures of the ultimate realities that really exist in nature but are unknown to scientists. His method of verification is superior to scientific methods which depend on instruments. He used his divine-eye to penetrate the coverings that hide the true nature of things. He also taught others how to develop concentration and how to observe with their mind-eyes the true nature of all things and finally the four Noble Truths which can enlighten one to achieve one's liberation from all miseries for ever!"
+      },
+      {
+        "name": "Practising Dhamma with a View to Nibbana",
+        "description": "Radhika Abeysekera began teaching and writing books on the Dhamma to help reintroduce Buddhism to immigrants in non-Buddhist countries. The books are designed in such a manner that a parent or educator can use them to teach Buddhism to a child. Mrs. Abeysekera feels strongly that parents should first study and practise the Dhamma to the best of their ability to obtain maximum benefits, because what you do not possess you cannot give to your child. The books were also designed to foster understanding of the Dhamma among non-Buddhists, so that there can be peace and harmony through understanding and respect for the philosophies and faiths of others."
+      },
+      {
+        "name": "The Teachings of Ajahn Chah",
+        "description": "The following Dhamma books of Ajahn Chah have been included in this collection of Ajahn Chah's Dhamma talks: Bodhinyana (1982); A Taste of Freedom (fifth impression.2002); Living Dhamma (1992); Food for the Heart (1992); The Path to Peace (1996); Clarity of Insight (2000); Unshakeable Peace (2003); Everything is Teaching Us (2004). Also some as yet unpublished talks have been included in the last section called `More Dhamma Talks'. We hope our efforts in compiling this collection of Dhamma talks of Ajahn Chah will be of benefit. (Wat Pah Nanachat)"
+      },
+      {
+        "name": "A Taste of Freedom",
+        "description": "Venerable Ajahn Chah always gave his talks in simple, everyday language. His objective was to clarify theDhamma, not to confuse his listeners with an overload of information. Consequently the talks presented here have been rendered into correspondingly simple English. The aim has been to present Ajahn Chahs teaching in both the spirit and the letter. In 1976 Venerable Ajahn Chah was invited to England together with Ajahn Sumedho, the outcome of which was eventually the establishment of the first branch monastery of Wat Pa Pong outside of Thailand. Since then, further branch monasteries have been established in England, Switzerland, Australia, New Zealand and Italy."
+      },
+      {
+        "name": "Bhavana Vandana - Book of Devotion",
+        "description": "The purpose of this book is manifold. One is to teach the users of this Vandana book how to pronounce Pali words correctly. By the daily repetition of these Pali verses and Suttas people can learn the Pali pronunciation without much effort. Secondly we intend to teach people the Pali language without much toil. Therefore we made one half of our chanting in English, so people learn the meaning of what they chant in Pali and later on they can compare the English with the Pali. Thirdly, we intend to teach people Dhamma through devotional service. In order to fulfill all these purposes we decided to include certain Suttas which are not normally used in Viharas for vandana service."
+      },
+      {
+        "name": "Ordination Procedure",
+        "description": "Ordination Procedure, was composed by Somdet Phra Sanghar�ja Pussadeva of Wat R�japratis�hasthita Mah�s�m�r�ma. His Eminence reformed some of the text and procedure for Pabbajj� and Upasampad� from the original text. The method of Pabbajj� (Going-forth) and Upasampad� (Acceptance) in the Southern School (that is, Therav�da) uses the original Magadha (P�li) language."
+      },
+      {
+        "name": "Chanting Book",
+        "description": "This is the standard Morning and Evening Chanting Book, with Protective Discourses, commonly chanted in many Theravadin temples and monasteries. The text is in both Pali and English."
+      },
+      {
+        "name": "A Pali Word A Day",
+        "description": "A selection of Pali words for daily reflection. This booklet aims to assist new Buddhist students who are unfamiliar with some of the Pali words often used in the study of Buddhism. As the title suggests, it encourages the learning and use of Pali words by learning one word a day. This booklet can serve both as a dictionary and a glossary of terms for your reference."
+      },
+      {
+        "name": "Pali Buddhist Dictionary [4th Edition]",
+        "description": "This is an authentic dictionary of Buddhist doctrinal terms, used in the Pali Canon and its Commentaries. It provides the reader not with a mere enumeration of Pali terms and their English equivalents, but offers precise and authentic definitions and explanations of canonical and post-canonical terms and doctrines, based on the Suttas, Abhidhamma and the Commentaries."
+      },
+      {
+        "name": "Elementary Pali Course",
+        "description": "This Elementary Pali Course by the late Venerable Narada Thera, the renowned Buddhist scholar of the Vjirarama Vihara, Colombo, Sri Lanka, is the standard work for the study of the elementary level of Pali. Pali was the language spoken by the Buddha, and employed by him to expound his teachings. It is also the scriptural language used by the Theravada school of Buddhism."
+      },
+      {
+        "name": "A Grammar of the Pali Language",
+        "description": "Most introductory Pali grammar books consist of lessons that teach the elements of the language in stages, but because of that they are also very difficult to use as a reference when you need to look up a noun's declension, or a verb's conjugation. Because of its practical and comprehensive coverage of the elements of the Pali language in complete chapters, this book is a very useful reference. It was not written for linguistics experts, but for students with little experience studying Pali grammar."
+      },
+      {
+        "name": "With Robes & Bowl - Glimpses of the Thudong Bhikkhu Life",
+        "description": "As much as can easily be written of the thudong bhikkhus life is contained in these sketches. Just as the flavor of soup is not to be told even in one thousand pages, so the real flavor of this Ancient Way cannot be conveyed by words. Soup is to be tasted: the thudong life is to be lived. If it sounds hard, one must remember that its rewards are great, and in the field of Dhamma-endeavor, nothing is gained without effort. The world wants everything quick-and-easy but the fruits of the holy life are thus only for those who have already put forth their energy, already striven hard for the goal."
+      },
+      {
+        "name": "The Bhikkhus' Rules - Guide for Laypeople",
+        "description": "The Theravadin Buddhist Monk's Rules by compiled and explained by Bhikkhu Ariyesako. This compilation is for anyone interested about bhikkhus and about how to relate to them. Some may think that this lineage follows an overly traditionalist approach but then, it does happen to be the oldest living tradition. A slight caution therefore to anyone completely new to the ways of monasticism, which may appear quite radical for the modern day and age. The best introduction, perhaps essential for a true understanding, is meeting with a practising bhikkhu who should manifest and reflect the peaceful and joyous qualities of the bhikkhu's way of life."
+      },
+      {
+        "name": "The Bhikkhuni Patimokkha of the Six Schools",
+        "description": "Dr. Chatsumarn Kabilsingh has translated the monastic rules of Buddhist nuns or the Patimokkha of the Six Schools, which will help us to learn and compare Theravada, Mahasanghika, Mahisasaka, Sarvastivada, Dhamagupta and Mula-Sarvastivada. The study of the patimokkha also provides insight into the historical context from which the rules took place. This translation will also provide valuable material for concerned Buddhist scholars."
+      },
+      {
+        "name": "Inspiration from Enlightened Nuns",
+        "description": "In this booklet we will be exploring poems composed by the arahant bhikkhunis or enlightened Buddhist nuns of old, looking at these poems as springs of inspiration for contemporary Buddhists. From the poems of the enlightened nuns of the Buddhas time contemporary followers of the Noble Eightfold Path can receive a great deal of instruction, help and encouragement. These verses can assist us in developing morality, concentration and wisdom, the three sections of the path. With their aid we will be able to work more effectively towards eliminating our mental defilements and towards finding lasting peace and happiness."
+      },
+      {
+        "name": "Buddhist Women at the Time of the Buddha",
+        "description": "The following stories of Buddhist women at the time of the Buddha, written by Hellmuth Hecker, have been translated from the German. While every effort has been made by the translator to conform to the original writing, some changes had to be made for the sake of clarity. The stories of Bhadda Kundalakesa and Patacara have been enlarged and filled in. It is hoped that this booklet will serve as an inspiration to all those who are endeavoring to tread in the Buddhas footsteps - Sister Khema (translator)."
+      },
+      {
+        "name": "The Buddha and His Disciples",
+        "description": "Taking a different perspective from the usual biographies of the Buddha, the author retells the great man's story using the society of the time as the backdrop and the Buddha's interactions with his contemporaries as the main theme. We discover what the Buddha was like as a person, how he taught and how he changed the lives of all who were blessed enough to come into contact with him."
+      },
+      {
+        "name": "No Inner Core: An Introduction to the Doctrine of Anatta",
+        "description": "Anatt� is a P�li word consisting of a negative prefix, an meaning not, plus atta, soul, and is most literally translated as no-soul. The word atta, however, has a wide range of meanings, and some of those meanings cross over into the fields of psychology, philosophy, and everyday terminology, as, for example, when atta can mean self, being, ego, and personality. Therefore, we will examine and elucidate the wide range of meanings which atta can signify in order to determine exactly what the Buddha denied when He proclaimed that He teaches anatt�, that is, when He denied the existence of atta. We will examine both Buddhist and non-Buddhist definitions of the term soul, and we will also examine modern definitions of terms such as ego and self."
+      },
+      {
+        "name": "Volition: An Introduction of the Law of Kamma",
+        "description": "What is kamma? The Buddha said: \u001cOh monks, it is volition that I call kamma.\u001d The popular meaning of kamma is action or doing, but as a technical term, kamma means volition or will. When you do something, there is volition behind it, and that volition, that mental effort, is called kamma. The Buddha explained that, having willed, one then acts through body, speech, and mind. Whatever you do, there is some kind of kamma, mental effort, will, and volition. Volition is one of the fifty-two mental states which arise together with consciousness."
+      },
+      {
+        "name": "The 31 Planes of Existence",
+        "description": "The suttas describe the 31distinct \"planes\" or \"realms\" of existence into which beings can be reborn during their long wanderings through samsara. These range from the extraordinarily dark, grim, and painful hell realms all the way up to the most sublime, refined and exquisitely blissful heavenly realms. Existence in every realm is impermanent; in the cosmology taught by the Buddha there is no eternal heaven or hell. Beings are born into a particular realm according to both their past kamma and their kamma at the moment of death."
+      },
+      {
+        "name": "The Roots of Good and Evil",
+        "description": "Greed, hatred, and delusion - these are the three bad roots in us. Conversely the good ones are non-greed (i.e generosity), non-hatred (love), and non-delusion (wisdom). All our troubles and suffering stem essentially from the bad roots while our joy and happiness comes from the good ones. It is important to know and understand these roots if we are going to make an end of suffering and attain true peace and happiness. This book explains in a penetrative way the nature of these six roots. It contains discourses of the Buddha on the subject together with traditional commentarial explanations."
+      },
+      {
+        "name": "Good, Evil & Beyond: Kamma in the Buddha's Teachings",
+        "description": "For the modern Westerner, the teaching of kamma offers a path of practice based not on fear of a higher authority, nor dogma, but rather founded on a clear understanding of the natural law of cause and effect as it relates to human behaviour. It is a teaching to be not so much believed as understood and seen in operation."
+      },
+      {
+        "name": "Dying to Live: The Role of Kamma in Dying & Rebirth",
+        "description": "There are different views and beliefs about what happens after death. Tibetan (Vajray�na) and Chinese (Mah�y�na) Buddhists believe that after death, the spirit of the dead person passes through an intermediate period (bardo in Tibetan, zhong yin in Mandarin)  which may last for as long as forty-nine days  during which it undergoes a series of unearthly, extraordinary experiences, including a \u001csmall death\u001d at the end of each week, before it is finally reborn into another realm of existence. In contrast, orthodox Theravada Buddhism, which is the earliest extant record of Gotama Buddhas teaching, asserts that rebirth takes place immediately after death."
+      },
+      {
+        "name": "Kathina: Then and Now",
+        "description": "The kathina ceremony is now an internationally established celebration where the Sangha and the laity meet to participate in mutually rewarding, meritorious activities. Throughout the centuries, the way of carrying out the ceremony has changed with local interpretations, practices and customs. How much has deviated from the original scriptural tradition  how much is in accordance with the scriptures and how much is mere invention? In this booklet, Venerable Aggacitta Bhikkhu combines his scriptural knowledge and practical experience to scrutinise the kathina ceremony through two articles: The Scriptural Tradition of Kathina; Kathina Benefits  Illusion, Delusion and Resolution."
+      },
+      {
+        "name": "Acariya Mun Bhuridatta - A Spiritual Biography",
+        "description": "A Spiritual Biography by Acariya Maha Boowa Nanasampanno. Translated from the Thai by Bhikkhu Dick S�laratano. Acariya Mun Bh�ridatta Thera was a vipassan� meditation master of the highest caliber of this present age. He taught the profound nature of Dhamma with such authority and persuasion that he left no doubts among his students about the exalted level of his spiritual attainment. His devoted followers consist of numerous monks and laity from virtually every region of Thailand. His story is truly a magnificent one throughout: from his early years in lay life through his long endeavor as a Buddhist monk to the day he finally passed away. [This eBook is also available with photographs ]"
+      },
+      {
+        "name": "Acariya Mun Bhuridatta - Screen Version",
+        "description": "A high quality screen version of the above. This edition is made with InDesign 2. Please note: Large file size."
+      },
+      {
+        "name": "Clearing the Path",
+        "description": "NOTE: The primary book version was made for printing as a book so it was not optimised for onscreen viewing or personal printout. This version \"2upbookctpv1.PDF\" has been reprinted (Distilled) via Acrobat so that there are now 2 pages per A4 page in Landscape orientation (rather than usual Portrait orientation) so as to make personal printouts for reading much easier. The same effect could be obtained by using the original \"CtPbookv1.pdf\" and printing that via your desktop printer driver so as to have 2 pages per page (if possible)."
+      },
+      {
+        "name": "Vandana: Pali Devotional Chanting",
+        "description": "Pali Devotional Chanting and Hymns - It is beneficial for every Buddhist to recite daily at least a few verses from the Vandana, recalling to mind the sublime qualities of the Buddha, Dhamma and the Sangha. Contemplation on these great qualities will make our minds calm, peaceful and serene.Audio files of the chanting are available in BuddhaNet's Audio section."
+      },
+      {
+        "name": "Theravadin Buddhist Chinese Funeral",
+        "description": "Generally, a Chinese funeral is a mixture of Taoist, Confucian and Buddhist rites. How then should a Theravadin Buddhist funeral be conducted? Venerable Suvanno, a respected and senior Theravadin Buddhist monk of Chinese descent explains how a Theravadin Buddhist Chinese funeral may be conducted."
+      },
+      {
+        "name": "Forest Path",
+        "description": "This book provides a present-moment snapshot of the International community of Wat Pah Nanachat, Thailand. The articles come from a broad cross-section of the community from the abbot to the most newly ordained novice. It opens with excerpts from two chapters of 'Water Still, Water Flowing', Ajan Jayasaro's forthcoming biography of Ajan Cha's life and teachings. To give a visual impression of monastic life, the book also contains a number of photographs and a selection of illustrations by Ajan Abhinano."
+      },
+      {
+        "name": "Introduction to Basic Pathana",
+        "description": "This is a commentary on the seventh Book of the Abhidhamma: Patthana - \"The Book of Causal Relations\". Which is the most important and voluminous book of the Abhidhamma Pitaka, by the late renowned Burmese scholar monk, Ashin Janakabhivamsa. (Please note the text is in Burmese script )<end of file>"
+      }
+    ]
+  }
+]

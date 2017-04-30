@@ -1,3 +1,11 @@
+# Content Generator for Buddhinfo
+
+# Usage
+node contentgen -n -o='test.js' -t='json'
+
+
+# Original Helpfile by TamSahn
+
 # Create Descriptions
 
 This metadata section is meant to extract descriptions from the rtf files from http://buddhanet.net/pdf_file/pdf_filelist12.zip and merge them with the current filelist.
@@ -19,7 +27,7 @@ These all should be run via command prompt, using `node`
 
 ### Step 1: Extract the descriptions
 
-    node description_to_json.js
+    node description_to_json.js 
 
 ### Step 2: Attempt to resolve book names
 

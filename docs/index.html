@@ -41,7 +41,7 @@
 <body>
 	<h3 id="header" class="row">BuddhaNet Books</h3>
   
-  <div class="container" id="titlelist">
+  <div class="row" id="titlelist">
       
       <div v-for="category in titlelist" class="category">
         <div class="linktab" 
@@ -83,7 +83,7 @@
               {{title.name}}
             </button>
             <div id="titleinfo" v-show="opentitle === title">
-                <h4>{{title.name}}</h4>
+                <h5>{{title.name}}</h5>
                 <p class="titledescription">{{title.description}}</p>
                 
                 <button v-on:click="openInline(opentitle)">
@@ -106,15 +106,22 @@
     </div>
   </div>
 
-  <div class="container">
+  <div class="row">
     <input type="text" id="search" placeholder="Search.."/>
   </div>
   
-  <div class="container" id="readercontainer">
-    <iframe id="reader"></iframe>
+  <div class="row" id="readercontainer">    
+    <div class="row" id="readercontrols">
+      <button v-on:click="saveTitle()">Save Title</button>
+      <button v-on:click="setBookmark()">Set Bookmark</button>
+      <button v-on:click="gotoBookmark()">Goto bookmark</button>
+      <button v-on:click="complain()">Complain to dev about unused buttons</button>    
+      <button v-on:click="closeReader()">Close</button>
+    </div>
+    <iframe id="reader" class="row"></iframe>
   </div>
   
-  <div id="footer" class="row">
+  <div id="footer" class="row" draggable="true">
     All content owned by
     <a href="http://www.buddhanet.net">
     Buddhanet.net
