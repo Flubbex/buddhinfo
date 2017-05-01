@@ -33,9 +33,9 @@ var filelist = [
         "description": "This is the second volume of fifty stories from the Jataka Tales - Buddhist Tales for Young and Old, interpreted by Ven. Kurunegoda Piyatissa, Maha Thera and told by Todd Anderson. These stories are not scholarly word-for-word translations as have been done by others. Rather these tales have been rewritten in modern English understandable by western readers. By reading these stories, children and adults can develop their knowledge and learn how to face the difficulties of modern life."
       },
       {
-        "name": "Colour in a Bodhi Leaf",
+        "name": "Colour in a Bodhi Leaf Painting for a Vesak Gift",
         "src": "files/Children/colouring_bodhi.pdf",
-        "description": "Art and Craft for Primary students [A4 Size Cut-out Bodhi leaf]."
+        "description": "Art and Craft for Primary students [A4 Size Cut-out Vesak Bodhi leaf]."
       },
       {
         "name": "Colour in a Buddha Picture",
@@ -63,11 +63,6 @@ var filelist = [
         "description": "Art and Craft for Primary students [A4 Size Cut-out Lotus flower]."
       },
       {
-        "name": "Colouring: Story of the Buddha",
-        "src": "files/Children/sbcolorbook.pdf",
-        "description": ""
-      },
-      {
         "name": "Creating Vesak Gifts",
         "src": "files/Children/vesakpdf.pdf",
         "description": "Art and Craft for Primary students [A4 Size Cut-out Vesak Cards and Gifts]."
@@ -93,6 +88,21 @@ var filelist = [
         "description": ""
       },
       {
+        "name": "Key Stage 1: Illustrated Textbook on Buddhism [5-7]",
+        "src": "files/Children/keystageone.pdf",
+        "description": ""
+      },
+      {
+        "name": "Key Stage 2: Illustrated Textbook on Buddhis [7-11]",
+        "src": "files/Children/keystagetwo.pdf",
+        "description": ""
+      },
+      {
+        "name": "Life of the Buddha for Secondary Students",
+        "src": "files/Children/a4lifebuddha.pdf",
+        "description": ".Life of the Buddha for Secondary Students with, sixty-four stories with linked exercises."
+      },
+      {
         "name": "Love Your Children The Right Way",
         "src": "files/Children/children.pdf",
         "description": ""
@@ -113,24 +123,24 @@ var filelist = [
         "description": ""
       },
       {
-        "name": "Secondary Students: Life of the Buddha",
-        "src": "files/Children/a4lifebuddha.pdf",
-        "description": ""
-      },
-      {
         "name": "Seeding the Heart",
         "src": "files/Children/seeding.pdf",
         "description": "This is a guide for teaching loving-kindness meditation to children. To learn about the radiating of loving-kindness to all beings with children, we have to tap into the store of knowledge accumulated by lay people and parents. It must be knowledge which has grown out of years of living and loving with children and young adults. Gregory Kramer, father of three boys, shows us here with subtle but precise adjustments in the standard practice of loving-kindness meditation he was able to anchor it in the lives of his children.BuddhaNet's Buddhist Studies for Schools eBooksThis is a selection of text and artwork from BuddhaNet's Buddhist Studies for Primary and Secondary students."
       },
       {
-        "name": "Story of Buddha Illustrated",
-        "src": "files/Children/storybuddha.pdf",
-        "description": ""
+        "name": "Story of the Buddha Colouring Book -Primary Students",
+        "src": "files/Children/sbcolorbook.pdf",
+        "description": ".Colouring Book: Ninety-three A4 size line drawings of the \"Story of the Buddha\" suitable for colouring in."
       },
       {
-        "name": "Who's The Boss?",
+        "name": "Story of the Buddha Text Book - Primary Students",
+        "src": "files/Children/storybuddha.pdf",
+        "description": "Illustrated Biography of the Buddha, with each page including a line drawing with text in A4 size."
+      },
+      {
+        "name": "Who's The Boss",
         "src": "files/Children/WhoBossEng.pdf",
-        "description": "Who do you think the boss of the Body is? Well the heart thinks HE is. But is he? The other organs certainly don't agree. Find out how each one of them tried to convince the others, and you, why they are the boss. This is a great story about the nature of the body, with Illustrations by Joel Israel. [36 pages]"
+        "description": ""
       }
     ]
   },
@@ -625,7 +635,7 @@ var filelist = [
       {
         "name": "Anapanasati",
         "src": "files/Meditation/anapanasati.pdf",
-        "description": "For the first time in the English language a comprehensive manual of Buddhist meditation known as �n�p�nasati (the development of mindfulness of breathing ) is available. Although this manual is primarily intended for the benefit of monks, it will greatly assist laymen, too, who wish to undertake a course of meditation but who do not have the guidance of a teacher. Originally published in Thai, this manual is one of the major works of the Ven. Buddhad�sa Bhikkhu and delivered in 1959 in the form of a series of lectures to monks of Suanmokkha Monastery, Chaiya, Thailand. Ven. Buddhad�sa Bhikkhu, a major voice in the Buddhist world, is an accepted master of Buddhist meditation. In constructive positive language, the manual guides the meditator through the 16 steps of �n�p�nasati."
+        "description": ""
       },
       {
         "name": "The Art of Attention",
@@ -650,7 +660,7 @@ var filelist = [
       {
         "name": "A Critical Analysis of the Jhanas (PF)",
         "src": "files/Meditation/printguna.pdf",
-        "description": "This work, by Ven. Henepola Gunaratana, provides an analytical study of the Jh�nas, as they are an important set of meditative attainments in the contemplative discipline of Therav�da Buddhism. Despite their frequent appearance in the texts, the exact role of the Jh�nas in the Buddhist path has not been settled with unanimity by Therav�da scholars, who are still divided over the question as to whether they are necessary for attaining Nibbana. The primary purpose of this dissertation is to determine the precise role of the Jh�nas in the Therav�da Buddhist presentation of the way to liberation.For source material the work relies upon the three principal classes of authoritative Therav�da texts: the Pali Tipitaka, its commentaries, and its sub-commentaries. To traditional canonical investigations modern methods of philosophical and psychological analysis are applied in order to clarify the meanings implicit in the original sources. The examination covers two major areas: first the dynamics of Jh�na attainment, and second, the function of the Jh�nas in realizing the ultimate goal of Buddhism, Nibbana or final liberation from suffering.Print version only (1,387KB, PDF) This print version is suitable for people who can print the pages duplex and they will have 2 A5 size pages on every Landscape oriented A4 page.xxxx"
+        "description": ""
       },
       {
         "name": "Dhamma Discourses on Vipassana Meditation",
@@ -660,7 +670,7 @@ var filelist = [
       {
         "name": "Essentials of Insight: Meditation Practice",
         "src": "files/Meditation/essentials.pdf",
-        "description": "The ultimate aim of insight meditation is to \u001cfree\u001d one from the unsatisfactoriness of cyclic existence. Readers may also find numerous quotations of the Buddhas teaching on mindfulness, detachment and liberation throughout the entire book. Those verses act as a source of inspiration and purpose to put vipassana into practice  a practice that brings about insight into the three universal characteristics of unsatisfactoriness, impermanence and non-self which leads one into detachment and ultimate liberation."
+        "description": ""
       },
       {
         "name": "For the Stilling of Volcanoes",
@@ -680,7 +690,7 @@ var filelist = [
       {
         "name": "Fundamentals of Meditation Practice",
         "src": "files/Meditation/chanmed1.pdf",
-        "description": "The Fundamentals of (Ch'an) Meditation Practice by Ting Chen. \"Originally, one's own mind and nature are pure, and there is nothing to accept and nothing to refuse; there is neither existence nor non-existence; there is only clear understanding without attachment and with no dwelling. One who wants to know the no-attachment, no-dwelling mind can find it through meditation, because it is only then that the mind does not think of right and wrong, of good and evil or of self and others\"."
+        "description": ""
       },
       {
         "name": "The Gates of Chan Buddhism",
@@ -705,7 +715,7 @@ var filelist = [
       {
         "name": "Insight Meditation Workshop",
         "src": "files/Meditation/medwshop.pdf",
-        "description": "Meditation is the intelligent heart of the Buddha's way; the only criterion is that you should apply it to daily life. The purpose of this meditation course is not to create a system of beliefs, but rather to give guidance on how to see clearly into the nature of the mind. In this way, you can have firsthand understanding of the way things are, without reliance on opinions or theories - a direct experience, which has its own vitality. This course has been prepared with both beginners and experienced practitioners in mind."
+        "description": ""
       },
       {
         "name": "Invitation to Insight Meditation",
@@ -715,7 +725,7 @@ var filelist = [
       {
         "name": "Keeping the Breath in Mind",
         "src": "files/Meditation/breathmind.pdf",
-        "description": "This is a 'how to' book. It teaches the liberation of the mind, not as a mind-boggling theory, but as a very basic skill that starts with keeping the breath in mind. The teachings here are drawn from the works of Ajaan Lee Dhammadharo (1906-61), one of Thailand's most renowned teachers of Buddhist meditation practices. Ajaan Lee was a forest monk - one who prefers to live in the seclusion of the forest and makes his meditation the central theme of his practice - so his teachings grow out of personal, practical experience, although he also makes a point of relating them to standard Buddhist doctrine."
+        "description": ""
       },
       {
         "name": "Knowing and Seeing",
@@ -740,12 +750,12 @@ var filelist = [
       {
         "name": "Meditation Centers in Sri Lanka",
         "src": "files/Meditation/Info-Meditation-Centers-Sri-Lanka2013.pdf",
-        "description": "Information about Meditation Centres and other important places in Sri Lanka for visiting Western Buddhist lay practitioners. Also Information about Meditation Centers, Forest Monasteries, and other important places in Sri Lanka for Western bhikkhus and serious lay practitioners. Updated: January 2005.<end of file>"
+        "description": ""
       },
       {
         "name": "Metta Bhavana: Loving Kindness Meditation",
         "src": "files/Meditation/scrn_metta.pdf",
-        "description": "This is short explanation on how to practise Metta Bhavana or Loving-kindness Meditation given as a three-day weekend retreat at Dhammodaya Meditation Centre in Nakhon Pathom in Thailand, by an Australian monk, Ven. Dhammarakkhita (Jeff Oliver)."
+        "description": ""
       },
       {
         "name": "Mindfulness of Breathing & Four Elements Meditation",
@@ -755,7 +765,7 @@ var filelist = [
       {
         "name": "Mindfulness: The path to the Deathless",
         "src": "files/Meditation/deathless.pdf",
-        "description": "The aim of this book is to provide a clear instruction in and reflection on Buddhist meditation as taught by Ajahn Sumedho, a bhikkhu (monk) of the Theravadin tradition. It has been edited from talks Ajahn Sumedho has given to meditators as a practical approach to the wisdom of Buddhism. This wisdom is otherwise known as Dhamma or 'the way things are'. It is a step-by-step manual on the practice of meditation."
+        "description": ""
       },
       {
         "name": "Monastries and Meditation Centres in Sri Lanka",
@@ -800,7 +810,7 @@ var filelist = [
       {
         "name": "The Sweet Drew of Ch'an",
         "src": "files/Meditation/chandew.pdf",
-        "description": "Chan or Zen is the outcome of meditation. There are two \u001cright\u001d or \u001chighest\u001d purposes of Chan. The first purpose is to achieve \u001cDhyana.\u001d Dhyana is a combination of relaxation, concentration and calmness or tranquility. The second purpose is, using your very composed and tranquil mind, to observe clearly all the dharmas or phenomena externally and internally. As an outcome of Dhyana, you will be able to observe these phenomena very clearly because your \u001cmental mirror\u001d is very clear, for there are no more disturbances to veil it. Out of these observations will come Transcendental Wisdom, which in Sanskrit is called \u001cPrajna.\u001d"
+        "description": ""
       },
       {
         "name": "Taming the Monkey Mind",
@@ -831,6 +841,11 @@ var filelist = [
         "name": "The 31 Planes of Existance",
         "src": "files/Theravada/allexistence.pdf",
         "description": "The suttas describe the 31distinct \"planes\" or \"realms\" of existence into which beings can be reborn during their long wanderings through samsara. These range from the extraordinarily dark, grim, and painful hell realms all the way up to the most sublime, refined and exquisitely blissful heavenly realms. Existence in every realm is impermanent; in the cosmology taught by the Buddha there is no eternal heaven or hell. Beings are born into a particular realm according to both their past kamma and their kamma at the moment of death."
+      },
+      {
+        "name": "Abhidhamma Studies (Buddhist Psychology)",
+        "src": "files/Theravada/abhistudy.pdf",
+        "description": "The content of these studies is rather varied: they include philosophical and psychological investigations, references to the practical application of the teachings concerned, pointers to neglected or unnoticed aspects of the Abhidhamma, textual research etc. This variety of contents serves to show that wherever we dig deep enough into that inexhaustible mine, the Abhidhamma literature, we shall meet with valuable contributions to the theoretical understanding and practical realization of Buddhist doctrine."
       },
       {
         "name": "An Elementary Pali Course",
@@ -868,6 +883,11 @@ var filelist = [
         "description": "A high quality screen version of the above. This edition is made with InDesign 2. Please note: Large file size."
       },
       {
+        "name": "The Book of Protection (Paritta)",
+        "src": "files/Theravada/protect.pdf",
+        "description": "This is an anthology of selected discourses of the Buddha originally compiled by teachers of the past. The introductory essay is informative and stimulating to the scholar and general reader alike. It is this ancient anthology that has now been translated from the original Pali by Piyadassi, Thera. These discourses have a special appeal not only to Theravada Buddhists but also to Mahayana Buddhists. It is interesting to find in this anthology the simpler side as well as the deeper side of the Buddha's teaching. Apart from their doctrinal value, the selected discourses, when recited, afford a protection against fear, misfortune and ill health."
+      },
+      {
         "name": "Buddha Abhidhamma",
         "src": "files/Theravada/abhidhaultsci.pdf",
         "description": "The Buddha's ultimate teaching, known as the Abhidhamma, describes in detail the natures of the ultimate realities that really exist in nature but are unknown to scientists. His method of verification is superior to scientific methods which depend on instruments. He used his divine-eye to penetrate the coverings that hide the true nature of things. He also taught others how to develop concentration and how to observe with their mind-eyes the true nature of all things and finally the four Noble Truths which can enlighten one to achieve one's liberation from all miseries for ever!"
@@ -893,13 +913,13 @@ var filelist = [
         "description": "Pali Devotional Chanting and Hymns - It is beneficial for every Buddhist to recite daily at least a few verses from the Vandana, recalling to mind the sublime qualities of the Buddha, Dhamma and the Sangha. Contemplation on these great qualities will make our minds calm, peaceful and serene.Audio files of the chanting are available in BuddhaNet's Audio section."
       },
       {
-        "name": "Clearing the Path (rev 1)",
-        "src": "files/Theravada/ctp_book_v1.pdf",
-        "description": ""
+        "name": "Clearing the Path",
+        "src": "files/Theravada/ctp_screen-view_v1.pdf",
+        "description": "NOTE: The primary book version was made for printing as a book so it was not optimised for onscreen viewing or personal printout. This version \"2upbookctpv1.PDF\" has been reprinted (Distilled) via Acrobat so that there are now 2 pages per A4 page in Landscape orientation (rather than usual Portrait orientation) so as to make personal printouts for reading much easier. The same effect could be obtained by using the original \"CtPbookv1.pdf\" and printing that via your desktop printer driver so as to have 2 pages per page (if possible)."
       },
       {
-        "name": "Clearing the Path (rev 1,PF)",
-        "src": "files/Theravada/ctp_screen-view_v1.pdf",
+        "name": "Clearing the Path (rev 1)",
+        "src": "files/Theravada/ctp_book_v1.pdf",
         "description": ""
       },
       {
@@ -923,14 +943,14 @@ var filelist = [
         "description": "The First Discourse of the Buddha, namely the Dhammacakkappavattana Sutta, commonly known as the Great Discourse on the Wheel of Dhamma. This is a series of discourses on the Dhammacakka Sutta by the late Venerable Mahasi Sayadaw, a Questioner at the Sixth Buddhist Council in Myanmar, (Burma) 1954. Translated by U Ko Lay."
       },
       {
+        "name": "The Dhammapada, Buddha's Path of Wisdom",
+        "src": "files/Theravada/scrndhamma.pdf",
+        "description": "Translated from the Pali by Acharya Buddharakkhita and with an introduction by Bhikkhu Bodhi. The Dhammapada is the best known and most widely esteemed text in the Pali Tipitaka, the sacred scriptures of Theravada Buddhism. The work is included in the Khuddaka Nikaya (\"Minor Collection\") of the Sutta Pitaka, but its popularity has raised it far above the single niche it occupies in the scriptures to the ranks of a world religious classic. Composed in the ancient Pali language, this slim anthology of verses constitutes a perfect compendium of the Buddha's teaching, comprising between its covers all the essential principles elaborated at length in the forty-odd volumes of the Pali Canon.�� Print Version Only (176KB)"
+      },
+      {
         "name": "Dhammapada: A Translation",
         "src": "files/Theravada/damapada.pdf",
         "description": "The Dhammapada, an anthology of verses attributed to the Buddha, has long been recognized as one of the masterpieces of early Buddhist literature. Only more recently have scholars realized that it is also one of the early masterpieces of the Indian tradition of Kavya, or belles lettres. This translation is an attempt to render the verses into English in a way that does justice to both of the traditions to which the text belongs. Although it is tempting to view these traditions as distinct, dealing with form (Kavya) and content (Buddhism), the ideals of Kavya aimed at combining form and content into a seamless whole."
-      },
-      {
-        "name": "The Dhammapada: TBPOW",
-        "src": "files/Theravada/scrndhamma.pdf",
-        "description": ""
       },
       {
         "name": "The Dhammapada: TBPOW (PF)",
@@ -973,9 +993,9 @@ var filelist = [
         "description": "In this booklet we will be exploring poems composed by the arahant bhikkhunis or enlightened Buddhist nuns of old, looking at these poems as springs of inspiration for contemporary Buddhists. From the poems of the enlightened nuns of the Buddhas time contemporary followers of the Noble Eightfold Path can receive a great deal of instruction, help and encouragement. These verses can assist us in developing morality, concentration and wisdom, the three sections of the path. With their aid we will be able to work more effectively towards eliminating our mental defilements and towards finding lasting peace and happiness."
       },
       {
-        "name": "Introduction to Basic Patthana",
+        "name": "Introduction to Basic Pathana",
         "src": "files/Theravada/patthana.pdf",
-        "description": ""
+        "description": "This is a commentary on the seventh Book of the Abhidhamma: Patthana - \"The Book of Causal Relations\". Which is the most important and voluminous book of the Abhidhamma Pitaka, by the late renowned Burmese scholar monk, Ashin Janakabhivamsa. (Please note the text is in Burmese script )<end of file>"
       },
       {
         "name": "Kathina",
@@ -1006,6 +1026,11 @@ var filelist = [
         "name": "Ordination Procedure",
         "src": "files/Theravada/ordination.pdf",
         "description": "Ordination Procedure, was composed by Somdet Phra Sanghar�ja Pussadeva of Wat R�japratis�hasthita Mah�s�m�r�ma. His Eminence reformed some of the text and procedure for Pabbajj� and Upasampad� from the original text. The method of Pabbajj� (Going-forth) and Upasampad� (Acceptance) in the Southern School (that is, Therav�da) uses the original Magadha (P�li) language."
+      },
+      {
+        "name": "Pali Buddhist Dictionary [4th Edition]",
+        "src": "files/Theravada/palidict.pdf",
+        "description": "This is an authentic dictionary of Buddhist doctrinal terms, used in the Pali Canon and its Commentaries. It provides the reader not with a mere enumeration of Pali terms and their English equivalents, but offers precise and authentic definitions and explanations of canonical and post-canonical terms and doctrines, based on the Suttas, Abhidhamma and the Commentaries."
       },
       {
         "name": "Pali Language: Word of the Day",
@@ -1048,9 +1073,9 @@ var filelist = [
         "description": "The following Dhamma books of Ajahn Chah have been included in this collection of Ajahn Chah's Dhamma talks: Bodhinyana (1982); A Taste of Freedom (fifth impression.2002); Living Dhamma (1992); Food for the Heart (1992); The Path to Peace (1996); Clarity of Insight (2000); Unshakeable Peace (2003); Everything is Teaching Us (2004). Also some as yet unpublished talks have been included in the last section called `More Dhamma Talks'. We hope our efforts in compiling this collection of Dhamma talks of Ajahn Chah will be of benefit. (Wat Pah Nanachat)"
       },
       {
-        "name": "Theravadin Buddhism Burial Conduction",
+        "name": "Theravadin Buddhist Chinese Funeral",
         "src": "files/Theravada/thera-chifuner.pdf",
-        "description": ""
+        "description": "Generally, a Chinese funeral is a mixture of Taoist, Confucian and Buddhist rites. How then should a Theravadin Buddhist funeral be conducted? Venerable Suvanno, a respected and senior Theravadin Buddhist monk of Chinese descent explains how a Theravadin Buddhist Chinese funeral may be conducted."
       },
       {
         "name": "Three Texts",
