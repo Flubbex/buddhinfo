@@ -43,14 +43,15 @@ Studied the metadata generator. Gonna do some manual labor to fetch a bunch of d
 
 Descriptions not coming tonight, sorry. Poorly interpreted the metadata generator. Fixed the layout bug though.
 
-Update 30/4 18:15
+**Update 30/4 18:15**
 
 Snowman update. Not much different in the front, lot's of change in the back. Inline-reading is now a thing again, don't mind the buttons there yet though (except close). Cleaned out my ugly titles for the default ones. Fixed some layout issues. Session storage is gonna be a thing. Also better metadata still (missing descriptions are still rampant). Enjoy.
 
-Update 30/4 21:14
+**Update 30/4 21:14**
 
 Previous update skipped over some important changes provided by TamSanh, reincorporated those. Metadata looks great and generation goes well. Still puzzling with missing descriptions though.. somehow.
 
-Update 30/4 23:34
+**Update 30/4 23:34**
 
 No more missing descriptions :) (I hope). Big cleanups. UI is prettier and a lot less wonky. Next week.. sessions.
+

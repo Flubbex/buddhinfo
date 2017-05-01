@@ -633,7 +633,7 @@
     "name": "Meditation",
     "content": [
       {
-        "name": "Anapanasati",
+        "name": "Anapanasati - Mindfulness of Breathing",
         "src": "files/Meditation/anapanasati.pdf",
         "description": ""
       },
@@ -658,7 +658,7 @@
         "description": ""
       },
       {
-        "name": "A Critical Analysis of the Jhanas (PF)",
+        "name": "A Critical Analysis of the Jhonas in Theravoda Buddhist Meditation",
         "src": "files/Meditation/printguna.pdf",
         "description": ""
       },
@@ -668,7 +668,7 @@
         "description": "Sayadaw U Kundala is a renowned meditation master in the Mahasi Sayadaw tradition of Burma, noted for his loving-kindness. In these Dhamma talks the stages of the practice and the Insight Knowledges are explained. The method of meditation is given with detailed instruction. There is a detailed explanation of the Contemplation of Feelings, the second foundation of mindfulness, which, in the Theravada tradition, is the key to the Insight Knowledges. Overall, in the Sayadaw's teachings, there is much for the Vipassana or insight meditator to be inspired by."
       },
       {
-        "name": "Essentials of Insight: Meditation Practice",
+        "name": "Essentials of Insight Meditation Practice",
         "src": "files/Meditation/essentials.pdf",
         "description": ""
       },
@@ -688,7 +688,7 @@
         "description": "\"This book on the frames of reference is based to some extent on my own thoughts and opinions. In some spots it may not be directly in line with the original text (Satipatth�na Sutta), because my primary aim has been to get to the heart of the matter, so that it can be conveniently put into practice. The eBook also includes a section on the \"Duties of the Sangha\", that is, the laws and regulations and disciplinary standards (Vinaya)."
       },
       {
-        "name": "Fundamentals of Meditation Practice",
+        "name": "Fundamentals of Ch'an Meditation Practice",
         "src": "files/Meditation/chanmed1.pdf",
         "description": ""
       },
@@ -713,7 +713,7 @@
         "description": ""
       },
       {
-        "name": "Insight Meditation Workshop",
+        "name": "Insight Meditation Workshop Online",
         "src": "files/Meditation/medwshop.pdf",
         "description": ""
       },
@@ -723,7 +723,7 @@
         "description": "This book contains two sections: 1. Invitation to Vipassana and 2. Basic Instructions. In the first part, I have endeavoured to explain: a) the basic principles underlying the Vipassana practice, how it is essentially the observation of physical and mental processes that occur in the body and mind, b) how this observation leads to the understanding of the truths of impermanence, suffering and not-self as taught by the Buddha, c) how the application of mindfulness is required for this observation, d) how the Wisdom of impermanence, etc. is important, making us wiser, stronger, etc.  i.e. how it helps us in our daily life, and shape our whole outlook and attitude towards life, and e) various other aspects of the benefits of mindfulness and living in the present, such as the curtailment of worries and anxieties, improvement in health, concentration and memory."
       },
       {
-        "name": "Keeping the Breath in Mind",
+        "name": "Keeping the Breath in Mind & Lessons in Samadhi",
         "src": "files/Meditation/breathmind.pdf",
         "description": ""
       },
@@ -753,7 +753,7 @@
         "description": ""
       },
       {
-        "name": "Metta Bhavana: Loving Kindness Meditation",
+        "name": "Metta Bhavana, Loving-kindness Meditation",
         "src": "files/Meditation/scrn_metta.pdf",
         "description": ""
       },
@@ -763,7 +763,7 @@
         "description": "This book contains the instructions for mindfulness-of-breathing meditation, the four-elements meditation, and the subsequent detailed discernment of materiality. The last section of this book covers some of the relevant theory. Several pages have been added by the Sayadaw covering the balancing of the five controlling faculties and seven factors of enlightenment. There is also the addition of his explanation of the difference between the experience of Nibb�na and the experience of life-continuum (bhavanga)."
       },
       {
-        "name": "Mindfulness: The path to the Deathless",
+        "name": "Mindfulness: The Path of the Deathless",
         "src": "files/Meditation/deathless.pdf",
         "description": ""
       },
@@ -803,12 +803,17 @@
         "description": "A selection of verses from the book 'Experience of Insight' , by Joseph Goldstein. This book belongs to a different genre, not a book in the sense of having a beginning and an end. It is a compilation of excerpts that stand alone in meaning whichever way your finger may flip open the page. Readers are strongly encouraged to read Joseph Goldstein's \"Experience of Insight - a simple and direct guide to Buddhist Meditation\" (Published by Shambala Publications, Inc.) from whose book this compilation is attributed."
       },
       {
-        "name": "The Seven Stages of Purification",
+        "name": "Seven Stages of Purification & Insight Knowledges",
         "src": "files/Meditation/bm7insight.pdf",
         "description": ""
       },
       {
-        "name": "The Sweet Drew of Ch'an",
+        "name":"Sri Lakan Monasteries-Monastics.",
+        "src":"files/Meditation/sri-lanka-monasteries.pdf",
+        "description":""
+      },
+      {
+        "name": "The Sweet Dews of Ch'an",
         "src": "files/Meditation/chandew.pdf",
         "description": ""
       },

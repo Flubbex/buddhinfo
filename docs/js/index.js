@@ -10393,17 +10393,17 @@ module.exports=[
       {
         "name": "In The Dead of Night",
         "src": "files/Children/DeadNightEng.pdf",
-        "description":"A description for this title is coming soon."
+        "description": "A description for this title is coming soon."
       },
       {
         "name": "Key Stage 1: Illustrated Textbook on Buddhism [5-7]",
         "src": "files/Children/keystageone.pdf",
-        "description":"A description for this title is coming soon."
+        "description": "A description for this title is coming soon."
       },
       {
         "name": "Key Stage 2: Illustrated Textbook on Buddhis [7-11]",
         "src": "files/Children/keystagetwo.pdf",
-        "description":"A description for this title is coming soon."
+        "description": "A description for this title is coming soon."
       },
       {
         "name": "Life of the Buddha for Secondary Students",
@@ -10413,7 +10413,7 @@ module.exports=[
       {
         "name": "Love Your Children The Right Way",
         "src": "files/Children/children.pdf",
-        "description":"A description for this title is coming soon."
+        "description": "A description for this title is coming soon."
       },
       {
         "name": "The One-Who-Saw",
@@ -10428,7 +10428,7 @@ module.exports=[
       {
         "name": "Rahula Leads The Way",
         "src": "files/Children/screenrahula.pdf",
-        "description":"A description for this title is coming soon."
+        "description": "A description for this title is coming soon."
       },
       {
         "name": "Seeding the Heart",
@@ -10448,7 +10448,7 @@ module.exports=[
       {
         "name": "Who's The Boss",
         "src": "files/Children/WhoBossEng.pdf",
-        "description":"A description for this title is coming soon."
+        "description": "A description for this title is coming soon."
       }
     ]
   },
@@ -10508,7 +10508,7 @@ module.exports=[
       {
         "name": "Dharma Mind Worldly Mind",
         "src": "files/General/dmind-wmind.pdf",
-        "description":"A description for this title is coming soon."
+        "description": "A description for this title is coming soon."
       },
       {
         "name": "The Eightfold Path for Housekeepers",
@@ -10518,7 +10518,7 @@ module.exports=[
       {
         "name": "Essential THemes of Buddhist Lectures",
         "src": "files/General/thittila.pdf",
-        "description":"A description for this title is coming soon."
+        "description": "A description for this title is coming soon."
       },
       {
         "name": "Facing the Future",
@@ -10543,17 +10543,17 @@ module.exports=[
       {
         "name": "GQGA Arabic",
         "src": "files/General/gqga_arabic.pdf",
-        "description":"A description for this title is coming soon."
+        "description": "A description for this title is coming soon."
       },
       {
         "name": "GQGA Chinese",
         "src": "files/General/gqga_chinese.pdf",
-        "description":"A description for this title is coming soon."
+        "description": "A description for this title is coming soon."
       },
       {
         "name": "GQGA Spanish",
         "src": "files/General/gqga_spanish.pdf",
-        "description":"A description for this title is coming soon."
+        "description": "A description for this title is coming soon."
       },
       {
         "name": "A Guide to a Proper Buddhist Funeral",
@@ -10563,7 +10563,7 @@ module.exports=[
       {
         "name": "Handbook for Mankind",
         "src": "files/General/buddasa.pdf",
-        "description":"A description for this title is coming soon."
+        "description": "A description for this title is coming soon."
       },
       {
         "name": "Intuitive Awareness",
@@ -10578,17 +10578,17 @@ module.exports=[
       {
         "name": "Light of Asia",
         "src": "files/General/lightasia.pdf",
-        "description":"A description for this title is coming soon."
+        "description": "A description for this title is coming soon."
       },
       {
         "name": "Light of Asia Illustrated",
         "src": "files/General/lightasia2.pdf",
-        "description":"A description for this title is coming soon."
+        "description": "A description for this title is coming soon."
       },
       {
         "name": "A Manual for Buddhism and Deep Ecology",
         "src": "files/General/deep_ecology.pdf",
-        "description":"A description for this title is coming soon."
+        "description": "A description for this title is coming soon."
       },
       {
         "name": "The Many Faces of Death",
@@ -10683,12 +10683,12 @@ module.exports=[
       {
         "name": "What Buddhists Believe",
         "src": "files/General/whatbelieve.pdf",
-        "description":"A description for this title is coming soon."
+        "description": "A description for this title is coming soon."
       },
       {
         "name": "Wind In The Forest",
         "src": "files/General/sujivapoems.pdf",
-        "description":"A description for this title is coming soon."
+        "description": "A description for this title is coming soon."
       },
       {
         "name": "Women in Buddhism",
@@ -10698,7 +10698,7 @@ module.exports=[
       {
         "name": "The position of Women in Buddhism",
         "src": "files/General/women-buddhism6.pdf",
-        "description":"A description for this title is coming soon."
+        "description": "A description for this title is coming soon."
       }
     ]
   },
@@ -10733,7 +10733,7 @@ module.exports=[
       {
         "name": "Buddhist Arts of Thailand",
         "src": "files/History/budartthai2.pdf",
-        "description":"A description for this title is coming soon."
+        "description": "A description for this title is coming soon."
       },
       {
         "name": "Buddhist Ceremonies of Sri Lanka",
@@ -10753,7 +10753,7 @@ module.exports=[
       {
         "name": "A Guide to Japanese Buddhism",
         "src": "files/History/guidejapanbuddhismbm6.pdf",
-        "description":"A description for this title is coming soon."
+        "description": "A description for this title is coming soon."
       },
       {
         "name": "Honour Thy Fathers",
@@ -10768,7 +10768,7 @@ module.exports=[
       {
         "name": "Iconography of Nepalse Buddhism: Text",
         "src": "files/History/icon_nepbud_txt.pdf",
-        "description":"A description for this title is coming soon."
+        "description": "A description for this title is coming soon."
       },
       {
         "name": "King Asoka and Buddhism",
@@ -10778,7 +10778,7 @@ module.exports=[
       {
         "name": "MASKS: Anthropology on the Sinhalese Belief System",
         "src": "files/History/MASKSbm6.pdf",
-        "description":"A description for this title is coming soon."
+        "description": "A description for this title is coming soon."
       },
       {
         "name": "Record of Buddhistic Kingdoms",
@@ -10818,7 +10818,7 @@ module.exports=[
       {
         "name": "Cloud and Water",
         "src": "files/Mahayana/cloudwater6.pdf",
-        "description":"A description for this title is coming soon."
+        "description": "A description for this title is coming soon."
       },
       {
         "name": "The Diamond Sutra",
@@ -10913,7 +10913,7 @@ module.exports=[
       {
         "name": "Transforming Problems into The Dharma Path",
         "src": "files/Mahayana/transprobs6.pdf",
-        "description":"A description for this title is coming soon."
+        "description": "A description for this title is coming soon."
       },
       {
         "name": "Virtue and Reality",
@@ -10941,9 +10941,9 @@ module.exports=[
     "name": "Meditation",
     "content": [
       {
-        "name": "Anapanasati",
+        "name": "Anapanasati - Mindfulness of Breathing",
         "src": "files/Meditation/anapanasati.pdf",
-        "description":"A description for this title is coming soon."
+        "description": "For the first time in the English language a comprehensive manual of Buddhist meditation known as �n�p�nasati (the development of mindfulness of breathing ) is available. Although this manual is primarily intended for the benefit of monks, it will greatly assist laymen, too, who wish to undertake a course of meditation but who do not have the guidance of a teacher. Originally published in Thai, this manual is one of the major works of the Ven. Buddhad�sa Bhikkhu and delivered in 1959 in the form of a series of lectures to monks of Suanmokkha Monastery, Chaiya, Thailand. Ven. Buddhad�sa Bhikkhu, a major voice in the Buddhist world, is an accepted master of Buddhist meditation. In constructive positive language, the manual guides the meditator through the 16 steps of �n�p�nasati."
       },
       {
         "name": "The Art of Attention",
@@ -10963,12 +10963,12 @@ module.exports=[
       {
         "name": "A Critical Analysis of the Jhanas",
         "src": "files/Meditation/scrnguna.pdf",
-        "description":"A description for this title is coming soon."
+        "description": "A description for this title is coming soon."
       },
       {
-        "name": "A Critical Analysis of the Jhanas (PF)",
+        "name": "A Critical Analysis of the Jhonas in Theravoda Buddhist Meditation",
         "src": "files/Meditation/printguna.pdf",
-        "description":"A description for this title is coming soon."
+        "description": "This work, by Ven. Henepola Gunaratana, provides an analytical study of the Jh�nas, as they are an important set of meditative attainments in the contemplative discipline of Therav�da Buddhism. Despite their frequent appearance in the texts, the exact role of the Jh�nas in the Buddhist path has not been settled with unanimity by Therav�da scholars, who are still divided over the question as to whether they are necessary for attaining Nibbana. The primary purpose of this dissertation is to determine the precise role of the Jh�nas in the Therav�da Buddhist presentation of the way to liberation.For source material the work relies upon the three principal classes of authoritative Therav�da texts: the Pali Tipitaka, its commentaries, and its sub-commentaries. To traditional canonical investigations modern methods of philosophical and psychological analysis are applied in order to clarify the meanings implicit in the original sources. The examination covers two major areas: first the dynamics of Jh�na attainment, and second, the function of the Jh�nas in realizing the ultimate goal of Buddhism, Nibbana or final liberation from suffering.Print version only (1,387KB, PDF) This print version is suitable for people who can print the pages duplex and they will have 2 A5 size pages on every Landscape oriented A4 page.xxxx"
       },
       {
         "name": "Dhamma Discourses on Vipassana Meditation",
@@ -10976,9 +10976,9 @@ module.exports=[
         "description": "Sayadaw U Kundala is a renowned meditation master in the Mahasi Sayadaw tradition of Burma, noted for his loving-kindness. In these Dhamma talks the stages of the practice and the Insight Knowledges are explained. The method of meditation is given with detailed instruction. There is a detailed explanation of the Contemplation of Feelings, the second foundation of mindfulness, which, in the Theravada tradition, is the key to the Insight Knowledges. Overall, in the Sayadaw's teachings, there is much for the Vipassana or insight meditator to be inspired by."
       },
       {
-        "name": "Essentials of Insight: Meditation Practice",
+        "name": "Essentials of Insight Meditation Practice",
         "src": "files/Meditation/essentials.pdf",
-        "description":"A description for this title is coming soon."
+        "description": "The ultimate aim of insight meditation is to \u001cfree\u001d one from the unsatisfactoriness of cyclic existence. Readers may also find numerous quotations of the Buddhas teaching on mindfulness, detachment and liberation throughout the entire book. Those verses act as a source of inspiration and purpose to put vipassana into practice  a practice that brings about insight into the three universal characteristics of unsatisfactoriness, impermanence and non-self which leads one into detachment and ultimate liberation."
       },
       {
         "name": "For the Stilling of Volcanoes",
@@ -10996,9 +10996,9 @@ module.exports=[
         "description": "\"This book on the frames of reference is based to some extent on my own thoughts and opinions. In some spots it may not be directly in line with the original text (Satipatth�na Sutta), because my primary aim has been to get to the heart of the matter, so that it can be conveniently put into practice. The eBook also includes a section on the \"Duties of the Sangha\", that is, the laws and regulations and disciplinary standards (Vinaya)."
       },
       {
-        "name": "Fundamentals of Meditation Practice",
+        "name": "Fundamentals of Ch'an Meditation Practice",
         "src": "files/Meditation/chanmed1.pdf",
-        "description":"A description for this title is coming soon."
+        "description": "The Fundamentals of (Ch'an) Meditation Practice by Ting Chen. \"Originally, one's own mind and nature are pure, and there is nothing to accept and nothing to refuse; there is neither existence nor non-existence; there is only clear understanding without attachment and with no dwelling. One who wants to know the no-attachment, no-dwelling mind can find it through meditation, because it is only then that the mind does not think of right and wrong, of good and evil or of self and others\"."
       },
       {
         "name": "The Gates of Chan Buddhism",
@@ -11018,12 +11018,12 @@ module.exports=[
       {
         "name": "Hello - With Love & Other Meditations",
         "src": "files/Meditation/hello_with_love.pdf",
-        "description":"A description for this title is coming soon."
+        "description": "A description for this title is coming soon."
       },
       {
-        "name": "Insight Meditation Workshop",
+        "name": "Insight Meditation Workshop Online",
         "src": "files/Meditation/medwshop.pdf",
-        "description":"A description for this title is coming soon."
+        "description": "Meditation is the intelligent heart of the Buddha's way; the only criterion is that you should apply it to daily life. The purpose of this meditation course is not to create a system of beliefs, but rather to give guidance on how to see clearly into the nature of the mind. In this way, you can have firsthand understanding of the way things are, without reliance on opinions or theories - a direct experience, which has its own vitality. This course has been prepared with both beginners and experienced practitioners in mind."
       },
       {
         "name": "Invitation to Insight Meditation",
@@ -11031,9 +11031,9 @@ module.exports=[
         "description": "This book contains two sections: 1. Invitation to Vipassana and 2. Basic Instructions. In the first part, I have endeavoured to explain: a) the basic principles underlying the Vipassana practice, how it is essentially the observation of physical and mental processes that occur in the body and mind, b) how this observation leads to the understanding of the truths of impermanence, suffering and not-self as taught by the Buddha, c) how the application of mindfulness is required for this observation, d) how the Wisdom of impermanence, etc. is important, making us wiser, stronger, etc.  i.e. how it helps us in our daily life, and shape our whole outlook and attitude towards life, and e) various other aspects of the benefits of mindfulness and living in the present, such as the curtailment of worries and anxieties, improvement in health, concentration and memory."
       },
       {
-        "name": "Keeping the Breath in Mind",
+        "name": "Keeping the Breath in Mind & Lessons in Samadhi",
         "src": "files/Meditation/breathmind.pdf",
-        "description":"A description for this title is coming soon."
+        "description": "This is a 'how to' book. It teaches the liberation of the mind, not as a mind-boggling theory, but as a very basic skill that starts with keeping the breath in mind. The teachings here are drawn from the works of Ajaan Lee Dhammadharo (1906-61), one of Thailand's most renowned teachers of Buddhist meditation practices. Ajaan Lee was a forest monk - one who prefers to live in the seclusion of the forest and makes his meditation the central theme of his practice - so his teachings grow out of personal, practical experience, although he also makes a point of relating them to standard Buddhist doctrine."
       },
       {
         "name": "Knowing and Seeing",
@@ -11053,17 +11053,17 @@ module.exports=[
       {
         "name": "A Map of the Journey",
         "src": "files/Meditation/mapjourney6.pdf",
-        "description":"A description for this title is coming soon."
+        "description": "A description for this title is coming soon."
       },
       {
         "name": "Meditation Centers in Sri Lanka",
         "src": "files/Meditation/Info-Meditation-Centers-Sri-Lanka2013.pdf",
-        "description":"A description for this title is coming soon."
+        "description": "A description for this title is coming soon."
       },
       {
-        "name": "Metta Bhavana: Loving Kindness Meditation",
+        "name": "Metta Bhavana, Loving-kindness Meditation",
         "src": "files/Meditation/scrn_metta.pdf",
-        "description":"A description for this title is coming soon."
+        "description": "This is short explanation on how to practise Metta Bhavana or Loving-kindness Meditation given as a three-day weekend retreat at Dhammodaya Meditation Centre in Nakhon Pathom in Thailand, by an Australian monk, Ven. Dhammarakkhita (Jeff Oliver)."
       },
       {
         "name": "Mindfulness of Breathing & Four Elements Meditation",
@@ -11071,14 +11071,14 @@ module.exports=[
         "description": "This book contains the instructions for mindfulness-of-breathing meditation, the four-elements meditation, and the subsequent detailed discernment of materiality. The last section of this book covers some of the relevant theory. Several pages have been added by the Sayadaw covering the balancing of the five controlling faculties and seven factors of enlightenment. There is also the addition of his explanation of the difference between the experience of Nibb�na and the experience of life-continuum (bhavanga)."
       },
       {
-        "name": "Mindfulness: The path to the Deathless",
+        "name": "Mindfulness: The Path of the Deathless",
         "src": "files/Meditation/deathless.pdf",
-        "description":"A description for this title is coming soon."
+        "description": "The aim of this book is to provide a clear instruction in and reflection on Buddhist meditation as taught by Ajahn Sumedho, a bhikkhu (monk) of the Theravadin tradition. It has been edited from talks Ajahn Sumedho has given to meditators as a practical approach to the wisdom of Buddhism. This wisdom is otherwise known as Dhamma or 'the way things are'. It is a step-by-step manual on the practice of meditation."
       },
       {
         "name": "Monastries and Meditation Centres in Sri Lanka",
         "src": "files/Meditation/Monasteries-Meditation-Sri-Lanka2013.pdf",
-        "description":"A description for this title is coming soon."
+        "description": "A description for this title is coming soon."
       },
       {
         "name": "On The Path To Freedom",
@@ -11098,7 +11098,7 @@ module.exports=[
       {
         "name": "The Practice Which Leads to Nibbana",
         "src": "files/Meditation/nibbana1.pdf",
-        "description":"A description for this title is coming soon."
+        "description": "A description for this title is coming soon."
       },
       {
         "name": "Seeding the Heart",
@@ -11111,14 +11111,19 @@ module.exports=[
         "description": "A selection of verses from the book 'Experience of Insight' , by Joseph Goldstein. This book belongs to a different genre, not a book in the sense of having a beginning and an end. It is a compilation of excerpts that stand alone in meaning whichever way your finger may flip open the page. Readers are strongly encouraged to read Joseph Goldstein's \"Experience of Insight - a simple and direct guide to Buddhist Meditation\" (Published by Shambala Publications, Inc.) from whose book this compilation is attributed."
       },
       {
-        "name": "The Seven Stages of Purification",
+        "name": "Seven Stages of Purification & Insight Knowledges",
         "src": "files/Meditation/bm7insight.pdf",
-        "description":"A description for this title is coming soon."
+        "description": "A guide to the progressive stages of Buddhist meditation. The seven stages of purification provide the framework for the practising disciples gradual progress from the cultivation of virtue up to the attainment of the final goal. Integral to the higher stages of purification are the nine types of insight-knowledge, by which the disciple breaks through the delusions covering his mental vision and penetrates through to the real nature of phenomena."
       },
       {
-        "name": "The Sweet Drew of Ch'an",
+        "name": "Sri Lakan Monasteries-Monastics.",
+        "src": "files/Meditation/sri-lanka-monasteries.pdf",
+        "description": "Information about Meditation Centres and other important places in Sri Lanka for visiting Western Buddhist lay practitioners. Also Information about Meditation Centers, Forest Monasteries, and other important places in Sri Lanka for Western bhikkhus and serious lay practitioners. Updated: January 2005.<end of file>"
+      },
+      {
+        "name": "The Sweet Dews of Ch'an",
         "src": "files/Meditation/chandew.pdf",
-        "description":"A description for this title is coming soon."
+        "description": "Chan or Zen is the outcome of meditation. There are two \u001cright\u001d or \u001chighest\u001d purposes of Chan. The first purpose is to achieve \u001cDhyana.\u001d Dhyana is a combination of relaxation, concentration and calmness or tranquility. The second purpose is, using your very composed and tranquil mind, to observe clearly all the dharmas or phenomena externally and internally. As an outcome of Dhyana, you will be able to observe these phenomena very clearly because your \u001cmental mirror\u001d is very clear, for there are no more disturbances to veil it. Out of these observations will come Transcendental Wisdom, which in Sanskrit is called \u001cPrajna.\u001d"
       },
       {
         "name": "Taming the Monkey Mind",
@@ -11128,7 +11133,7 @@ module.exports=[
       {
         "name": "Teaching and Training: Pa-Auk Monastery",
         "src": "files/Meditation/teach-train3rd.pdf",
-        "description":"A description for this title is coming soon."
+        "description": "A description for this title is coming soon."
       },
       {
         "name": "The Vipassana Retreat",
@@ -11138,7 +11143,7 @@ module.exports=[
       {
         "name": "فن الإنتباه",
         "src": "files/Meditation/artofatt_arabic.pdf",
-        "description":"A description for this title is coming soon."
+        "description": "A description for this title is coming soon."
       }
     ]
   },
@@ -11168,7 +11173,7 @@ module.exports=[
       {
         "name": "Bhavana Vanda",
         "src": "files/Theravada/vandana.pdf",
-        "description":"A description for this title is coming soon."
+        "description": "A description for this title is coming soon."
       },
       {
         "name": "The Bhikkhuni Patismokkha of the Six Schools",
@@ -11208,7 +11213,7 @@ module.exports=[
       {
         "name": "The Buddha and his Teachings",
         "src": "files/Theravada/buddha-teachingsurw6.pdf",
-        "description":"A description for this title is coming soon."
+        "description": "A description for this title is coming soon."
       },
       {
         "name": "Buddhist Women at the Time of the Buddha",
@@ -11228,12 +11233,12 @@ module.exports=[
       {
         "name": "Clearing the Path (rev 1)",
         "src": "files/Theravada/ctp_book_v1.pdf",
-        "description":"A description for this title is coming soon."
+        "description": "A description for this title is coming soon."
       },
       {
         "name": "Clearing the Path (rev 2)",
         "src": "files/Theravada/ctp_book-2up_v1.pdf",
-        "description":"A description for this title is coming soon."
+        "description": "A description for this title is coming soon."
       },
       {
         "name": "Daily Readings from the Buddha's WOW",
@@ -11263,7 +11268,7 @@ module.exports=[
       {
         "name": "The Dhammapada: TBPOW (PF)",
         "src": "files/Theravada/prn1dhamma.pdf",
-        "description":"A description for this title is coming soon."
+        "description": "A description for this title is coming soon."
       },
       {
         "name": "Dhammapada: Treasury of Truth",
@@ -11363,7 +11368,7 @@ module.exports=[
       {
         "name": "SUTTA-NIPATA",
         "src": "files/Theravada/Sutta-nipataBM6.pdf",
-        "description":"A description for this title is coming soon."
+        "description": "A description for this title is coming soon."
       },
       {
         "name": "The Sigalovada in Pictures",
@@ -11388,7 +11393,7 @@ module.exports=[
       {
         "name": "Three Texts",
         "src": "files/Theravada/Three-Texts-5.pdf",
-        "description":"A description for this title is coming soon."
+        "description": "A description for this title is coming soon."
       },
       {
         "name": "Transcendental Dependant Arising",
@@ -11398,7 +11403,7 @@ module.exports=[
       {
         "name": "Vandana",
         "src": "files/Theravada/vandana02.pdf",
-        "description":"A description for this title is coming soon."
+        "description": "A description for this title is coming soon."
       },
       {
         "name": "Volition: An Introduction to KAMMA",
