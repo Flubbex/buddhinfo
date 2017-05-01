@@ -12,6 +12,12 @@ html
   width: 100%;
   margin-top: 2%;
   font-size: 1.5em;
+  opacity: 0.75;
+}
+
+#search:hover
+{
+ opacity: 1;
 }
 
 body
@@ -46,10 +52,21 @@ body
 .titleinfo p
 {
   background-color: rgba(255,255,255,0.9);
-  padding: 25px;
-  padding-left: 100px;
-  height: 25%;
+  padding: 20px;
+  padding-left: 75px;
+  height: 50%;
   overflow-y: auto;
+  font-family: Verdana;
+  font-size: 1.1em;
+}
+
+.titleinfo p:first-letter
+{
+ line-height: 0.5;
+ font-size: 2.1em;
+ font-family: Times new roman;
+ font-weight: bold;
+ text-shadow: 5px 5px 5px gray;
 }
 
 .linklist

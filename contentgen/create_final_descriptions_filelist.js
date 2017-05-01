@@ -85,7 +85,20 @@ for(const fileSuffix of Object.keys(descriptionToFilelistMap)) {
 
 }
 
+
+
+
+//Slighty modified to just output a JSON file (and to the right dir)
 Promise.all(promiseList).then(function(values) {
-  let finalJavascript = "var filelist = " + JSON.stringify(values, null, 2) + ";\nmodule.exports = filelist;\n";
-  fs.writeFile(path.join(__dirname, '..', 'filelist.js'), finalJavascript, 'utf8', () => console.log('Finished'));
+  let finalJavascript = JSON.stringify(values, null, 2);
+
+  //Keep the cycle alive (prints a copy of filelist.json to /contentgen/)
+  fs.writeFileSync('filelist.json',finalJavascript,'utf8');
+
+  fs.writeFile(path.join(__dirname, '../source', 'filelist.json'),
+   finalJavascript, 'utf8', () => console.log('Finished'));
 });
+
+
+//Lazy
+require("./list_missing_metadata");

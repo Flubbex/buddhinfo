@@ -10,7 +10,7 @@ strip_trailing_spaces=true
 replace_tabs=true
 
 [indentation]
-indent_width=4
+indent_width=1
 indent_type=0
 indent_hard_tab_width=8
 detect_indent=false
@@ -29,7 +29,9 @@ long_line_column=72
 
 [files]
 current_page=0
-FILE_NAME_0=109747;JSON;0;EUTF-8;0;1;0;%2Fhome%2Fmichael%2FProjects%2Factive%2Fbuddhinfo%2Fsource%2Ffilelist.json;0;4
+FILE_NAME_0=21692;JSON;0;EUTF-8;0;1;0;%2Fhome%2Fmichael%2FProjects%2Factive%2Fbuddhinfo%2Fcontentgen%2Fjson%2Fgeneral.json;0;4
+FILE_NAME_1=17759;JSON;0;EUTF-8;0;1;0;%2Fhome%2Fmichael%2FProjects%2Factive%2Fbuddhinfo%2Fcontentgen%2Ffilelist.json;0;4
+FILE_NAME_2=1207;Javascript;0;EUTF-8;0;1;0;%2Fhome%2Fmichael%2FProjects%2Factive%2Fbuddhinfo%2Fcontentgen%2Flist_missing_metadata.js;0;4
 
 [VTE]
-last_dir=/media/michael/data/Projects/active/buddhinfo
+last_dir=/media/michael/data/Projects/active/buddhinfo/contentgen

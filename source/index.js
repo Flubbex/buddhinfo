@@ -1,8 +1,10 @@
-var $     
-    = window.jQuery 
+var $
+    = window.jQuery
     = window.$
     = require('jquery');
-    
+var UI
+    = window.$.UI
+    = require('jquery-ui');
 //Globals :(
 
 var Buddhinfo_Controller  = require("./controller/buddhinfo");
@@ -12,18 +14,18 @@ var fluxview              = require("./lib/fluxview");
 var buddhinfo = new Buddhinfo_Controller(filelist);
 
 $(document).ready(function(){
-  
+
     fluxview.ready(window);
     buddhinfo.start();
     $("#header,#footer").fadeIn()
-    
+
     $("#search").parent().fadeIn('slow',function(){
-        
+
           $("#search").fadeIn();
           $("#titlelist").slideDown();
-      
+
     });
-    
+
 });
 
 module.exports = buddhinfo;

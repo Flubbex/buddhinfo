@@ -1,5 +1,740 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 /*!
+ * jQuery UI Widget 1.12.1
+ * http://jqueryui.com
+ *
+ * Copyright jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ */
+
+//>>label: Widget
+//>>group: Core
+//>>description: Provides a factory for creating stateful widgets with a common API.
+//>>docs: http://api.jqueryui.com/jQuery.widget/
+//>>demos: http://jqueryui.com/widget/
+
+( function( factory ) {
+	if ( typeof define === "function" && define.amd ) {
+
+		// AMD. Register as an anonymous module.
+		define( [ "jquery", "./version" ], factory );
+	} else {
+
+		// Browser globals
+		factory( jQuery );
+	}
+}( function( $ ) {
+
+var widgetUuid = 0;
+var widgetSlice = Array.prototype.slice;
+
+$.cleanData = ( function( orig ) {
+	return function( elems ) {
+		var events, elem, i;
+		for ( i = 0; ( elem = elems[ i ] ) != null; i++ ) {
+			try {
+
+				// Only trigger remove when necessary to save time
+				events = $._data( elem, "events" );
+				if ( events && events.remove ) {
+					$( elem ).triggerHandler( "remove" );
+				}
+
+			// Http://bugs.jquery.com/ticket/8235
+			} catch ( e ) {}
+		}
+		orig( elems );
+	};
+} )( $.cleanData );
+
+$.widget = function( name, base, prototype ) {
+	var existingConstructor, constructor, basePrototype;
+
+	// ProxiedPrototype allows the provided prototype to remain unmodified
+	// so that it can be used as a mixin for multiple widgets (#8876)
+	var proxiedPrototype = {};
+
+	var namespace = name.split( "." )[ 0 ];
+	name = name.split( "." )[ 1 ];
+	var fullName = namespace + "-" + name;
+
+	if ( !prototype ) {
+		prototype = base;
+		base = $.Widget;
+	}
+
+	if ( $.isArray( prototype ) ) {
+		prototype = $.extend.apply( null, [ {} ].concat( prototype ) );
+	}
+
+	// Create selector for plugin
+	$.expr[ ":" ][ fullName.toLowerCase() ] = function( elem ) {
+		return !!$.data( elem, fullName );
+	};
+
+	$[ namespace ] = $[ namespace ] || {};
+	existingConstructor = $[ namespace ][ name ];
+	constructor = $[ namespace ][ name ] = function( options, element ) {
+
+		// Allow instantiation without "new" keyword
+		if ( !this._createWidget ) {
+			return new constructor( options, element );
+		}
+
+		// Allow instantiation without initializing for simple inheritance
+		// must use "new" keyword (the code above always passes args)
+		if ( arguments.length ) {
+			this._createWidget( options, element );
+		}
+	};
+
+	// Extend with the existing constructor to carry over any static properties
+	$.extend( constructor, existingConstructor, {
+		version: prototype.version,
+
+		// Copy the object used to create the prototype in case we need to
+		// redefine the widget later
+		_proto: $.extend( {}, prototype ),
+
+		// Track widgets that inherit from this widget in case this widget is
+		// redefined after a widget inherits from it
+		_childConstructors: []
+	} );
+
+	basePrototype = new base();
+
+	// We need to make the options hash a property directly on the new instance
+	// otherwise we'll modify the options hash on the prototype that we're
+	// inheriting from
+	basePrototype.options = $.widget.extend( {}, basePrototype.options );
+	$.each( prototype, function( prop, value ) {
+		if ( !$.isFunction( value ) ) {
+			proxiedPrototype[ prop ] = value;
+			return;
+		}
+		proxiedPrototype[ prop ] = ( function() {
+			function _super() {
+				return base.prototype[ prop ].apply( this, arguments );
+			}
+
+			function _superApply( args ) {
+				return base.prototype[ prop ].apply( this, args );
+			}
+
+			return function() {
+				var __super = this._super;
+				var __superApply = this._superApply;
+				var returnValue;
+
+				this._super = _super;
+				this._superApply = _superApply;
+
+				returnValue = value.apply( this, arguments );
+
+				this._super = __super;
+				this._superApply = __superApply;
+
+				return returnValue;
+			};
+		} )();
+	} );
+	constructor.prototype = $.widget.extend( basePrototype, {
+
+		// TODO: remove support for widgetEventPrefix
+		// always use the name + a colon as the prefix, e.g., draggable:start
+		// don't prefix for widgets that aren't DOM-based
+		widgetEventPrefix: existingConstructor ? ( basePrototype.widgetEventPrefix || name ) : name
+	}, proxiedPrototype, {
+		constructor: constructor,
+		namespace: namespace,
+		widgetName: name,
+		widgetFullName: fullName
+	} );
+
+	// If this widget is being redefined then we need to find all widgets that
+	// are inheriting from it and redefine all of them so that they inherit from
+	// the new version of this widget. We're essentially trying to replace one
+	// level in the prototype chain.
+	if ( existingConstructor ) {
+		$.each( existingConstructor._childConstructors, function( i, child ) {
+			var childPrototype = child.prototype;
+
+			// Redefine the child widget using the same prototype that was
+			// originally used, but inherit from the new version of the base
+			$.widget( childPrototype.namespace + "." + childPrototype.widgetName, constructor,
+				child._proto );
+		} );
+
+		// Remove the list of existing child constructors from the old constructor
+		// so the old child constructors can be garbage collected
+		delete existingConstructor._childConstructors;
+	} else {
+		base._childConstructors.push( constructor );
+	}
+
+	$.widget.bridge( name, constructor );
+
+	return constructor;
+};
+
+$.widget.extend = function( target ) {
+	var input = widgetSlice.call( arguments, 1 );
+	var inputIndex = 0;
+	var inputLength = input.length;
+	var key;
+	var value;
+
+	for ( ; inputIndex < inputLength; inputIndex++ ) {
+		for ( key in input[ inputIndex ] ) {
+			value = input[ inputIndex ][ key ];
+			if ( input[ inputIndex ].hasOwnProperty( key ) && value !== undefined ) {
+
+				// Clone objects
+				if ( $.isPlainObject( value ) ) {
+					target[ key ] = $.isPlainObject( target[ key ] ) ?
+						$.widget.extend( {}, target[ key ], value ) :
+
+						// Don't extend strings, arrays, etc. with objects
+						$.widget.extend( {}, value );
+
+				// Copy everything else by reference
+				} else {
+					target[ key ] = value;
+				}
+			}
+		}
+	}
+	return target;
+};
+
+$.widget.bridge = function( name, object ) {
+	var fullName = object.prototype.widgetFullName || name;
+	$.fn[ name ] = function( options ) {
+		var isMethodCall = typeof options === "string";
+		var args = widgetSlice.call( arguments, 1 );
+		var returnValue = this;
+
+		if ( isMethodCall ) {
+
+			// If this is an empty collection, we need to have the instance method
+			// return undefined instead of the jQuery instance
+			if ( !this.length && options === "instance" ) {
+				returnValue = undefined;
+			} else {
+				this.each( function() {
+					var methodValue;
+					var instance = $.data( this, fullName );
+
+					if ( options === "instance" ) {
+						returnValue = instance;
+						return false;
+					}
+
+					if ( !instance ) {
+						return $.error( "cannot call methods on " + name +
+							" prior to initialization; " +
+							"attempted to call method '" + options + "'" );
+					}
+
+					if ( !$.isFunction( instance[ options ] ) || options.charAt( 0 ) === "_" ) {
+						return $.error( "no such method '" + options + "' for " + name +
+							" widget instance" );
+					}
+
+					methodValue = instance[ options ].apply( instance, args );
+
+					if ( methodValue !== instance && methodValue !== undefined ) {
+						returnValue = methodValue && methodValue.jquery ?
+							returnValue.pushStack( methodValue.get() ) :
+							methodValue;
+						return false;
+					}
+				} );
+			}
+		} else {
+
+			// Allow multiple hashes to be passed on init
+			if ( args.length ) {
+				options = $.widget.extend.apply( null, [ options ].concat( args ) );
+			}
+
+			this.each( function() {
+				var instance = $.data( this, fullName );
+				if ( instance ) {
+					instance.option( options || {} );
+					if ( instance._init ) {
+						instance._init();
+					}
+				} else {
+					$.data( this, fullName, new object( options, this ) );
+				}
+			} );
+		}
+
+		return returnValue;
+	};
+};
+
+$.Widget = function( /* options, element */ ) {};
+$.Widget._childConstructors = [];
+
+$.Widget.prototype = {
+	widgetName: "widget",
+	widgetEventPrefix: "",
+	defaultElement: "<div>",
+
+	options: {
+		classes: {},
+		disabled: false,
+
+		// Callbacks
+		create: null
+	},
+
+	_createWidget: function( options, element ) {
+		element = $( element || this.defaultElement || this )[ 0 ];
+		this.element = $( element );
+		this.uuid = widgetUuid++;
+		this.eventNamespace = "." + this.widgetName + this.uuid;
+
+		this.bindings = $();
+		this.hoverable = $();
+		this.focusable = $();
+		this.classesElementLookup = {};
+
+		if ( element !== this ) {
+			$.data( element, this.widgetFullName, this );
+			this._on( true, this.element, {
+				remove: function( event ) {
+					if ( event.target === element ) {
+						this.destroy();
+					}
+				}
+			} );
+			this.document = $( element.style ?
+
+				// Element within the document
+				element.ownerDocument :
+
+				// Element is window or document
+				element.document || element );
+			this.window = $( this.document[ 0 ].defaultView || this.document[ 0 ].parentWindow );
+		}
+
+		this.options = $.widget.extend( {},
+			this.options,
+			this._getCreateOptions(),
+			options );
+
+		this._create();
+
+		if ( this.options.disabled ) {
+			this._setOptionDisabled( this.options.disabled );
+		}
+
+		this._trigger( "create", null, this._getCreateEventData() );
+		this._init();
+	},
+
+	_getCreateOptions: function() {
+		return {};
+	},
+
+	_getCreateEventData: $.noop,
+
+	_create: $.noop,
+
+	_init: $.noop,
+
+	destroy: function() {
+		var that = this;
+
+		this._destroy();
+		$.each( this.classesElementLookup, function( key, value ) {
+			that._removeClass( value, key );
+		} );
+
+		// We can probably remove the unbind calls in 2.0
+		// all event bindings should go through this._on()
+		this.element
+			.off( this.eventNamespace )
+			.removeData( this.widgetFullName );
+		this.widget()
+			.off( this.eventNamespace )
+			.removeAttr( "aria-disabled" );
+
+		// Clean up events and states
+		this.bindings.off( this.eventNamespace );
+	},
+
+	_destroy: $.noop,
+
+	widget: function() {
+		return this.element;
+	},
+
+	option: function( key, value ) {
+		var options = key;
+		var parts;
+		var curOption;
+		var i;
+
+		if ( arguments.length === 0 ) {
+
+			// Don't return a reference to the internal hash
+			return $.widget.extend( {}, this.options );
+		}
+
+		if ( typeof key === "string" ) {
+
+			// Handle nested keys, e.g., "foo.bar" => { foo: { bar: ___ } }
+			options = {};
+			parts = key.split( "." );
+			key = parts.shift();
+			if ( parts.length ) {
+				curOption = options[ key ] = $.widget.extend( {}, this.options[ key ] );
+				for ( i = 0; i < parts.length - 1; i++ ) {
+					curOption[ parts[ i ] ] = curOption[ parts[ i ] ] || {};
+					curOption = curOption[ parts[ i ] ];
+				}
+				key = parts.pop();
+				if ( arguments.length === 1 ) {
+					return curOption[ key ] === undefined ? null : curOption[ key ];
+				}
+				curOption[ key ] = value;
+			} else {
+				if ( arguments.length === 1 ) {
+					return this.options[ key ] === undefined ? null : this.options[ key ];
+				}
+				options[ key ] = value;
+			}
+		}
+
+		this._setOptions( options );
+
+		return this;
+	},
+
+	_setOptions: function( options ) {
+		var key;
+
+		for ( key in options ) {
+			this._setOption( key, options[ key ] );
+		}
+
+		return this;
+	},
+
+	_setOption: function( key, value ) {
+		if ( key === "classes" ) {
+			this._setOptionClasses( value );
+		}
+
+		this.options[ key ] = value;
+
+		if ( key === "disabled" ) {
+			this._setOptionDisabled( value );
+		}
+
+		return this;
+	},
+
+	_setOptionClasses: function( value ) {
+		var classKey, elements, currentElements;
+
+		for ( classKey in value ) {
+			currentElements = this.classesElementLookup[ classKey ];
+			if ( value[ classKey ] === this.options.classes[ classKey ] ||
+					!currentElements ||
+					!currentElements.length ) {
+				continue;
+			}
+
+			// We are doing this to create a new jQuery object because the _removeClass() call
+			// on the next line is going to destroy the reference to the current elements being
+			// tracked. We need to save a copy of this collection so that we can add the new classes
+			// below.
+			elements = $( currentElements.get() );
+			this._removeClass( currentElements, classKey );
+
+			// We don't use _addClass() here, because that uses this.options.classes
+			// for generating the string of classes. We want to use the value passed in from
+			// _setOption(), this is the new value of the classes option which was passed to
+			// _setOption(). We pass this value directly to _classes().
+			elements.addClass( this._classes( {
+				element: elements,
+				keys: classKey,
+				classes: value,
+				add: true
+			} ) );
+		}
+	},
+
+	_setOptionDisabled: function( value ) {
+		this._toggleClass( this.widget(), this.widgetFullName + "-disabled", null, !!value );
+
+		// If the widget is becoming disabled, then nothing is interactive
+		if ( value ) {
+			this._removeClass( this.hoverable, null, "ui-state-hover" );
+			this._removeClass( this.focusable, null, "ui-state-focus" );
+		}
+	},
+
+	enable: function() {
+		return this._setOptions( { disabled: false } );
+	},
+
+	disable: function() {
+		return this._setOptions( { disabled: true } );
+	},
+
+	_classes: function( options ) {
+		var full = [];
+		var that = this;
+
+		options = $.extend( {
+			element: this.element,
+			classes: this.options.classes || {}
+		}, options );
+
+		function processClassString( classes, checkOption ) {
+			var current, i;
+			for ( i = 0; i < classes.length; i++ ) {
+				current = that.classesElementLookup[ classes[ i ] ] || $();
+				if ( options.add ) {
+					current = $( $.unique( current.get().concat( options.element.get() ) ) );
+				} else {
+					current = $( current.not( options.element ).get() );
+				}
+				that.classesElementLookup[ classes[ i ] ] = current;
+				full.push( classes[ i ] );
+				if ( checkOption && options.classes[ classes[ i ] ] ) {
+					full.push( options.classes[ classes[ i ] ] );
+				}
+			}
+		}
+
+		this._on( options.element, {
+			"remove": "_untrackClassesElement"
+		} );
+
+		if ( options.keys ) {
+			processClassString( options.keys.match( /\S+/g ) || [], true );
+		}
+		if ( options.extra ) {
+			processClassString( options.extra.match( /\S+/g ) || [] );
+		}
+
+		return full.join( " " );
+	},
+
+	_untrackClassesElement: function( event ) {
+		var that = this;
+		$.each( that.classesElementLookup, function( key, value ) {
+			if ( $.inArray( event.target, value ) !== -1 ) {
+				that.classesElementLookup[ key ] = $( value.not( event.target ).get() );
+			}
+		} );
+	},
+
+	_removeClass: function( element, keys, extra ) {
+		return this._toggleClass( element, keys, extra, false );
+	},
+
+	_addClass: function( element, keys, extra ) {
+		return this._toggleClass( element, keys, extra, true );
+	},
+
+	_toggleClass: function( element, keys, extra, add ) {
+		add = ( typeof add === "boolean" ) ? add : extra;
+		var shift = ( typeof element === "string" || element === null ),
+			options = {
+				extra: shift ? keys : extra,
+				keys: shift ? element : keys,
+				element: shift ? this.element : element,
+				add: add
+			};
+		options.element.toggleClass( this._classes( options ), add );
+		return this;
+	},
+
+	_on: function( suppressDisabledCheck, element, handlers ) {
+		var delegateElement;
+		var instance = this;
+
+		// No suppressDisabledCheck flag, shuffle arguments
+		if ( typeof suppressDisabledCheck !== "boolean" ) {
+			handlers = element;
+			element = suppressDisabledCheck;
+			suppressDisabledCheck = false;
+		}
+
+		// No element argument, shuffle and use this.element
+		if ( !handlers ) {
+			handlers = element;
+			element = this.element;
+			delegateElement = this.widget();
+		} else {
+			element = delegateElement = $( element );
+			this.bindings = this.bindings.add( element );
+		}
+
+		$.each( handlers, function( event, handler ) {
+			function handlerProxy() {
+
+				// Allow widgets to customize the disabled handling
+				// - disabled as an array instead of boolean
+				// - disabled class as method for disabling individual parts
+				if ( !suppressDisabledCheck &&
+						( instance.options.disabled === true ||
+						$( this ).hasClass( "ui-state-disabled" ) ) ) {
+					return;
+				}
+				return ( typeof handler === "string" ? instance[ handler ] : handler )
+					.apply( instance, arguments );
+			}
+
+			// Copy the guid so direct unbinding works
+			if ( typeof handler !== "string" ) {
+				handlerProxy.guid = handler.guid =
+					handler.guid || handlerProxy.guid || $.guid++;
+			}
+
+			var match = event.match( /^([\w:-]*)\s*(.*)$/ );
+			var eventName = match[ 1 ] + instance.eventNamespace;
+			var selector = match[ 2 ];
+
+			if ( selector ) {
+				delegateElement.on( eventName, selector, handlerProxy );
+			} else {
+				element.on( eventName, handlerProxy );
+			}
+		} );
+	},
+
+	_off: function( element, eventName ) {
+		eventName = ( eventName || "" ).split( " " ).join( this.eventNamespace + " " ) +
+			this.eventNamespace;
+		element.off( eventName ).off( eventName );
+
+		// Clear the stack to avoid memory leaks (#10056)
+		this.bindings = $( this.bindings.not( element ).get() );
+		this.focusable = $( this.focusable.not( element ).get() );
+		this.hoverable = $( this.hoverable.not( element ).get() );
+	},
+
+	_delay: function( handler, delay ) {
+		function handlerProxy() {
+			return ( typeof handler === "string" ? instance[ handler ] : handler )
+				.apply( instance, arguments );
+		}
+		var instance = this;
+		return setTimeout( handlerProxy, delay || 0 );
+	},
+
+	_hoverable: function( element ) {
+		this.hoverable = this.hoverable.add( element );
+		this._on( element, {
+			mouseenter: function( event ) {
+				this._addClass( $( event.currentTarget ), null, "ui-state-hover" );
+			},
+			mouseleave: function( event ) {
+				this._removeClass( $( event.currentTarget ), null, "ui-state-hover" );
+			}
+		} );
+	},
+
+	_focusable: function( element ) {
+		this.focusable = this.focusable.add( element );
+		this._on( element, {
+			focusin: function( event ) {
+				this._addClass( $( event.currentTarget ), null, "ui-state-focus" );
+			},
+			focusout: function( event ) {
+				this._removeClass( $( event.currentTarget ), null, "ui-state-focus" );
+			}
+		} );
+	},
+
+	_trigger: function( type, event, data ) {
+		var prop, orig;
+		var callback = this.options[ type ];
+
+		data = data || {};
+		event = $.Event( event );
+		event.type = ( type === this.widgetEventPrefix ?
+			type :
+			this.widgetEventPrefix + type ).toLowerCase();
+
+		// The original event may come from any element
+		// so we need to reset the target on the new event
+		event.target = this.element[ 0 ];
+
+		// Copy original event properties over to the new event
+		orig = event.originalEvent;
+		if ( orig ) {
+			for ( prop in orig ) {
+				if ( !( prop in event ) ) {
+					event[ prop ] = orig[ prop ];
+				}
+			}
+		}
+
+		this.element.trigger( event, data );
+		return !( $.isFunction( callback ) &&
+			callback.apply( this.element[ 0 ], [ event ].concat( data ) ) === false ||
+			event.isDefaultPrevented() );
+	}
+};
+
+$.each( { show: "fadeIn", hide: "fadeOut" }, function( method, defaultEffect ) {
+	$.Widget.prototype[ "_" + method ] = function( element, options, callback ) {
+		if ( typeof options === "string" ) {
+			options = { effect: options };
+		}
+
+		var hasOptions;
+		var effectName = !options ?
+			method :
+			options === true || typeof options === "number" ?
+				defaultEffect :
+				options.effect || defaultEffect;
+
+		options = options || {};
+		if ( typeof options === "number" ) {
+			options = { duration: options };
+		}
+
+		hasOptions = !$.isEmptyObject( options );
+		options.complete = callback;
+
+		if ( options.delay ) {
+			element.delay( options.delay );
+		}
+
+		if ( hasOptions && $.effects && $.effects.effect[ effectName ] ) {
+			element[ method ]( options );
+		} else if ( effectName !== method && element[ effectName ] ) {
+			element[ effectName ]( options.duration, options.easing, callback );
+		} else {
+			element.queue( function( next ) {
+				$( this )[ method ]();
+				if ( callback ) {
+					callback.call( element[ 0 ] );
+				}
+				next();
+			} );
+		}
+	};
+} );
+
+return $.widget;
+
+} ) );
+
+},{}],2:[function(require,module,exports){
+/*!
  * jQuery JavaScript Library v3.2.1
  * https://jquery.com/
  *
@@ -10253,7 +10988,7 @@ if ( !noGlobal ) {
 return jQuery;
 } );
 
-},{}],2:[function(require,module,exports){
+},{}],3:[function(require,module,exports){
 var Titlelist_View = require("../view/titlelist");
 var Reader_View = require("../view/reader");
 
@@ -10274,12 +11009,14 @@ Buddhinfo_Controller.prototype.start = function()
 
 module.exports =  Buddhinfo_Controller;
 
-},{"../view/reader":8,"../view/titlelist":9}],3:[function(require,module,exports){
-var $     
-    = window.jQuery 
+},{"../view/reader":9,"../view/titlelist":10}],4:[function(require,module,exports){
+var $
+    = window.jQuery
     = window.$
     = require('jquery');
-    
+var UI
+    = window.$.UI
+    = require('jquery-ui');
 //Globals :(
 
 var Buddhinfo_Controller  = require("./controller/buddhinfo");
@@ -10289,23 +11026,23 @@ var fluxview              = require("./lib/fluxview");
 var buddhinfo = new Buddhinfo_Controller(filelist);
 
 $(document).ready(function(){
-  
+
     fluxview.ready(window);
     buddhinfo.start();
     $("#header,#footer").fadeIn()
-    
+
     $("#search").parent().fadeIn('slow',function(){
-        
+
           $("#search").fadeIn();
           $("#titlelist").slideDown();
-      
+
     });
-    
+
 });
 
 module.exports = buddhinfo;
 
-},{"./controller/buddhinfo":2,"./filelist":4,"./lib/fluxview":6,"jquery":1}],4:[function(require,module,exports){
+},{"./controller/buddhinfo":3,"./filelist":5,"./lib/fluxview":7,"jquery":2,"jquery-ui":1}],5:[function(require,module,exports){
 module.exports=[
   {
     "name": "Children",
@@ -10347,12 +11084,12 @@ module.exports=[
       },
       {
         "name": "Colour in a Buddha Picture",
-        "src": "files/Children/colouring_bodhi-buddha.pdf",
+        "src": "files/Children/colouring_thebuddha.pdf",
         "description": "Art and Craft for Primary students. [A4 Size Cut-out Buddha image]."
       },
       {
         "name": "Colour in a Buddha Picture",
-        "src": "files/Children/colouring_thebuddha.pdf",
+        "src": "files/Children/colouring_bodhi-buddha.pdf",
         "description": "Art and Craft for Primary students. [A4 Size Cut-out Buddha image]."
       },
       {
@@ -10391,19 +11128,19 @@ module.exports=[
         "description": "Selected verses from the Dhammapada, all depicted with thirty-two beautiful illustrations. This collection is a great introduction to the Dhammapada and has been carefully compiled and edited for the younger reader by Gambhiro Bhikkhu. [126 pages]"
       },
       {
-        "name": "In The Dead of Night",
+        "name": "In the Dead of Night",
         "src": "files/Children/DeadNightEng.pdf",
-        "description": "A description for this title is coming soon."
+        "description": "\"I had been driving all day on a long, lonely, dusty road. Night had already fallen when I decided to rest. I still had a long way to go and I felt very tired.\" This book deals with people's fear and emotions with some scary, but humorous illustrations by Joel Israel. [42 pages]"
       },
       {
         "name": "Key Stage 1: Illustrated Textbook on Buddhism [5-7]",
         "src": "files/Children/keystageone.pdf",
-        "description": "A description for this title is coming soon."
+        "description": "Buddhism for Key Stage One provides an introduction to the basic concept of the Triple Gem, namely the Buddha, the Dharma and the Sangha. These three elements constitute the three pillars of Buddhism. The Buddha is the founder and teacher, the Dharma represents the Buddha’s teachings, and the Sangha denotes the Buddhist community as a whole, living in accordance with the Buddha’s teachings. In addition to these three elements covered in separate chapters, the textbook also includes ten selected Buddhist stories, which are to serve as additional aids to help the pupils gain a better grasp of Buddhist principles and see their application in various contexts."
       },
       {
-        "name": "Key Stage 2: Illustrated Textbook on Buddhis [7-11]",
+        "name": "Key Stage 2: Illustrated Textbook on Buddhism [7-11]",
         "src": "files/Children/keystagetwo.pdf",
-        "description": "A description for this title is coming soon."
+        "description": "The subjects covered in this book are an extension of the theme on the Triple Gem presented in Buddhism Key Stage 1, with the contents augmented to include additional information on the life of the Buddha, his teachings, the development of Buddhism and its characteristics as a religion. Although Buddhist thoughts are formally introduced at this Key Stage, their meaning is confined to an elementary level and explained in the context of everyday experience of pupils in this age group. The brief Introduction is intended to bring into context the spirit behind what the pupils are about to learn, and the selection of Buddhist stories to illustrate the Dharma and Precepts covered in the main contents. As both Pali and Sanskrit words appear in the text, a list of their equivalents is provided at the end of the book for easy reference."
       },
       {
         "name": "Life of the Buddha for Secondary Students",
@@ -10411,9 +11148,9 @@ module.exports=[
         "description": ".Life of the Buddha for Secondary Students with, sixty-four stories with linked exercises."
       },
       {
-        "name": "Love Your Children The Right Way",
+        "name": "Love Your Children the Right Way",
         "src": "files/Children/children.pdf",
-        "description": "A description for this title is coming soon."
+        "description": "I composed this book when I was in Chiang Mai, where I lived for 10 years. In my work there, I observed many parents who had children but knew nothing about how to raise there beloved children properly so that they would grow to be good citizens of the nation. When I thought about this matter, I started writing an article concerning parents responsibility in raising their children - Panyananda Bhikkhu."
       },
       {
         "name": "The One-Who-Saw",
@@ -10426,9 +11163,9 @@ module.exports=[
         "description": "This is a series of guided meditations with instruction for teachers for primary school students. This file is from BuddhaNet's Buddhist Studies for Primary Students section. The text includes seven guided meditations for students, with detailed instructions for teachers."
       },
       {
-        "name": "Rahula Leads The Way",
+        "name": "Rahula Leads the Way",
         "src": "files/Children/screenrahula.pdf",
-        "description": "A description for this title is coming soon."
+        "description": "Rahula leads the Way [Print version only]."
       },
       {
         "name": "Seeding the Heart",
@@ -10446,9 +11183,9 @@ module.exports=[
         "description": "Illustrated Biography of the Buddha, with each page including a line drawing with text in A4 size."
       },
       {
-        "name": "Who's The Boss",
+        "name": "Who's the Boss",
         "src": "files/Children/WhoBossEng.pdf",
-        "description": "A description for this title is coming soon."
+        "description": "Who do you think the boss of the Body is? Well the heart thinks HE is. But is he? The other organs certainly don't agree. Find out how each one of them tried to convince the others, and you, why they are the boss. This is a great story about the nature of the body, with Illustrations by Joel Israel. [36 pages]"
       }
     ]
   },
@@ -10506,9 +11243,9 @@ module.exports=[
         "description": "Dr K. Sri Dhammananda explains some Buddhist cultural practices: Going for Refuges, Religious Rites, Alms Giving, Marriage, Buddhist Education and Cultural Practices, Images, Holy Water, Holy Thread, Talismans and Amulets, Blessing Services for Children, Death, Post Mortem, Funerals, Burial and Cremation, Disposal of the Ashes, Period of Mourning, Post-Funeral Rites and Memorial Services."
       },
       {
-        "name": "Dharma Mind Worldly Mind",
+        "name": "Dharma Mind, Worldly Mind",
         "src": "files/General/dmind-wmind.pdf",
-        "description": "A description for this title is coming soon."
+        "description": "The first part of the book tells us what we need to put in place for complete Dharma practice - the Eightfold Path, going for refuge, and the Bodhisattva spirit. In the second half the book shows us how to turn those requisites into a genuine living practice that embraces the whole of our life thus surely leading to the profound transformation that we all desire."
       },
       {
         "name": "The Eightfold Path for Housekeepers",
@@ -10516,9 +11253,9 @@ module.exports=[
         "description": "This text is a transcript of teachings given by Jack Kornfeld on the Eightfold Path. These teachings are aimed at the householder. Each part of the Eightfold Path is explained in a separate chapter. The tone of the teaching is contemporary and non-technical. The universality and relevance of the Buddha's teaching are illustrated by numerous quotations from more recent luminaries. There are also some useful exercises which enable the reader to experience the truth of these teachings."
       },
       {
-        "name": "Essential THemes of Buddhist Lectures",
+        "name": "Essential Themes of Buddhist Lectures",
         "src": "files/General/thittila.pdf",
-        "description": "A description for this title is coming soon."
+        "description": "The contents of this book comprise a collection of expanded notes on talks on Buddhism given by this famous Burmese Buddhist master, Venerable Sayadaw U Thittilla in the west over the period 1938-1983. Some of the themes are: 'What is Buddhism', 'Likes and Dislikes', 'A Short History of Buddhism', 'What Kamma Is', 'The Path to Nibbana' and 'The Abhidhamma Philosophy'."
       },
       {
         "name": "Facing the Future",
@@ -10541,19 +11278,34 @@ module.exports=[
         "description": "Dr Santina covers what we might call the basic Buddhist teachings over a series of twelve lectures. The basic teachings outlined here include: the Life of the Buddha, the Four Noble Truths, the Noble Eightfold Path, Karma, Rebirth, Dependent Origination, The Three Universal Characteristics and The Five Aggregates. Dr Santina also puts Buddhism into its context by describing the pre-Buddhist background and gives an overview of Buddhism from a modern perspective in a very readable way."
       },
       {
-        "name": "GQGA Arabic",
-        "src": "files/General/gqga_arabic.pdf",
-        "description": "A description for this title is coming soon."
+        "name": "Good Question, Good Answer (Cambodian)",
+        "src": "files/General/gqga_khamer.pdf",
+        "description": "Khmer (Cambodian) edition of Ven. Dhammika's Good Question, Good Answer. Translator: Bhikkhu S. Vodano."
       },
       {
-        "name": "GQGA Chinese",
+        "name": "Good Question, Good Answer (Chinese)",
         "src": "files/General/gqga_chinese.pdf",
-        "description": "A description for this title is coming soon."
+        "description": "Good Question, Good Answer (Chinese)"
       },
       {
-        "name": "GQGA Spanish",
+        "name": "Good Question, Good Answer (Sinhala)",
+        "src": "files/General/gqga_sinhala.pdf",
+        "description": "Good Question, Good Answer (Sinhala version)"
+      },
+      {
+        "name": "Good Question, Good Answer (Spanish)",
         "src": "files/General/gqga_spanish.pdf",
-        "description": "A description for this title is coming soon."
+        "description": "Good Question, Good Answer (Spanish)"
+      },
+      {
+        "name": "Good Questions, Good Answers (Arabic)",
+        "src": "files/General/gqga_arabic.pdf",
+        "description": "Questions and answers on basic Buddhism (Arabic version)"
+      },
+      {
+        "name": "Good Questions, Good Answers (English)",
+        "src": "files/General/gqga2.pdf",
+        "description": "This is a very popular book on questions and answers on basic Buddhism. Read the answers to questions that people often ask about the Buddha's Teachings with Venerable S. Dhammika. The book covers topics such as What is Buddhism? Basic Buddhist Concepts, Buddhism and the god Idea, The Five Precepts, Rebirth, Meditation, Wisdom and Compassion, Vegetarianism, Good Luck and Fate and Becoming a Buddhist."
       },
       {
         "name": "A Guide to a Proper Buddhist Funeral",
@@ -10561,9 +11313,9 @@ module.exports=[
         "description": "This is a hand book on Buddhist Funerals, with sections on practical advice as to what is to be done when a family member is critically ill; the final moments; when death takes place; preparing for the funeral; paying last respects; the final rites; verses for contemplation; the burial / cremation ceremony and the memorial service."
       },
       {
-        "name": "Handbook for Mankind",
+        "name": "Handbook For Mankind",
         "src": "files/General/buddasa.pdf",
-        "description": "A description for this title is coming soon."
+        "description": "The Principles of Buddhism explained by Buddhadasa, Bhikkhu. As a guide for newcomers to the Buddha Dhamma (the Truth which the Buddha awakened to and subsequently taught), this book is an invaluable guide. In it are contained the essential teachings of Buddhism. The Handbook is especially useful for those who approach the Buddha's teaching not as a subject for scholarly study but as a means to understand and ennoble their lives. It includes chapters on 'Looking at Buddhism' and the 'True Nature of Things'."
       },
       {
         "name": "Intuitive Awareness",
@@ -10576,19 +11328,19 @@ module.exports=[
         "description": "Liao-Fan Yuan originally wrote Liao-Fans Four Lessons in the sixteenth century in China. The book was intended to teach his son, Tian-Chi Yuan, how to recognize the true face of destiny, tell good from bad, correct ones faults and practice kind deeds. It also provided living proof of the rewards and outcomes of people who practiced kind deeds and cultivated virtue and humility. Relating from his own experience at changing destiny, Mr. Yuan himself was a living embodiment of his teachings."
       },
       {
-        "name": "Light of Asia",
+        "name": "The Light of Asia",
         "src": "files/General/lightasia.pdf",
-        "description": "A description for this title is coming soon."
+        "description": "In the sumptuous Buddhist literature of the world, The Light of Asia, by Sir Edwin Arnold, is without any doubt, a unique work. It is primarily because, this is the only original poem written in English on the Buddha, throughout the long history of Buddhism. This distinction is quite necessary to be established, because there are translations of original Pali works into English and other languages. Some of these are outstanding instances of spiritual poetry. Sir Edwin Arnold, the Author of this epic poem, was initially persuaded to compose this sacred work, as a result of his deep and abiding desire to aid in the better and mutual understanding between East and West."
       },
       {
-        "name": "Light of Asia Illustrated",
+        "name": "The Light of Asia Illustrated",
         "src": "files/General/lightasia2.pdf",
-        "description": "A description for this title is coming soon."
+        "description": "An Illustrated version of the 'Light of Asia', with text."
       },
       {
         "name": "A Manual for Buddhism and Deep Ecology",
         "src": "files/General/deep_ecology.pdf",
-        "description": "A description for this title is coming soon."
+        "description": ""
       },
       {
         "name": "The Many Faces of Death",
@@ -10624,6 +11376,11 @@ module.exports=[
         "name": "Phra Buddha Dhammacakra",
         "src": "files/General/buddhadhammacakra.pdf",
         "description": "This is an account of the process of casting a Buddha statue: a case study of the making of Phra Buddha Dhammacakra. The process of casting explained and illustrated. An Introduction of Buddhism. Rudiments of Mental-collectiveness. Dhammacakra Mudra: the meaning. Chanting for the Phra Buddha Dhammacakra. The placement and inauguration ceremony of the Phra Buddha statue."
+      },
+      {
+        "name": "The Position of Women in Buddhism",
+        "src": "files/General/women-buddhism6.pdf",
+        "description": "Today, when the role of Women in Society is an issue of worldwide interest it is opportune that we should pause to look at it from a Buddhist perspective. In the recent past, a number of books have been written on the changing status of women in Hindu and Islamic societies, but with regard to women in Buddhism, ever since the distinguished Pali scholar, Miss I.B. Horner, wrote her book on Women under Primitive Buddhism, as far back as 1930, very little interest has been taken in the subject. It seems, therefore, justified to raise again the question whether the position of women in Buddhist societies was better than that in non-Buddhist societies of Asia. We will look briefly into the position in Sri Lanka, Thailand, Burma and Tibet, at a time before the impact of the West was ever felt."
       },
       {
         "name": "Preparing for Death and Helping the Dying",
@@ -10681,24 +11438,19 @@ module.exports=[
         "description": "In this life of the Buddha's personal attendant, Venerable Ananda, we see that in his character and outlook, Ananda was touchingly and movingly human. This was partly because of his simple and charming behaviour, and his ever-present readiness to help anyone who was in distress or difficulty. In spite of his administrative and organisational responsibilities as the Buddha's attendant, Ananda displayed a deep intellectuality and a profound grasp of abstruse philosophic concepts."
       },
       {
-        "name": "What Buddhists Believe",
+        "name": "What Buddhists Believe (Expanded 4th edition)",
         "src": "files/General/whatbelieve.pdf",
-        "description": "A description for this title is coming soon."
+        "description": "This expanded 4th edition of \"What Buddhists Believe\" answers many questions which are asked about Buddhism by Buddhists and non-Buddhists alike. There are so many misconceptions regarding superstitions and misinterpretations which are associated with this noble religion that it has become imperative to explain the Teachings in a manner which has contemporary relevance."
       },
       {
-        "name": "Wind In The Forest",
+        "name": "Wind in the Forest",
         "src": "files/General/sujivapoems.pdf",
-        "description": "A description for this title is coming soon."
+        "description": "This book is a unique collection of poems, write-ups, illustrations and photos. In Venerable Sujiva's sincere and heartfelt writings, readers may find many touching incidents related by him in his many years of teaching. They will also come to understand him, his compassion and loving-kindness as well as the Dhamma by simply flowing with his pen."
       },
       {
         "name": "Women in Buddhism",
         "src": "files/General/qanda-women.pdf",
         "description": "Ven. Chatsumarn Kabilsingh provides answers to questions often asked about women and the ordination issue and related topics. She responds to such questions as: In the Buddha's time what role did women play in Buddhism? Why cannot women become buddhas? What is the Buddhist attitude towards prostitution? What is an attitude of a Buddhist towards abortion? What is the unique characteristic in American Buddhism which might interest a feminist?"
-      },
-      {
-        "name": "The position of Women in Buddhism",
-        "src": "files/General/women-buddhism6.pdf",
-        "description": "A description for this title is coming soon."
       }
     ]
   },
@@ -10731,9 +11483,9 @@ module.exports=[
         "description": "This is a study of the development of Art and Architecture in Thailand with Buddhism. The Culture of Thailand has two important sources of origin  indigenous and foreign. The indigenous source comes directly from the ideas and inspiration of the people while the foreign sources came through its cultural contact with other great civilized nations such as India and China. In the field of art, it mainly deals with religions such as Buddhism and the cultural and artistic relationship with India, and other countries. Thai art served religion, which formed the national ideal and conception of life."
       },
       {
-        "name": "Buddhist Arts of Thailand",
+        "name": "Buddhist Arts in Thailand",
         "src": "files/History/budartthai2.pdf",
-        "description": "A description for this title is coming soon."
+        "description": "This is a study of the development of Art and Architecture in Thailand with Buddhism. The Culture of Thailand has two important sources of origin  indigenous and foreign. The indigenous source comes directly from the ideas and inspiration of the people while the foreign sources came through its cultural contact with other great civilized nations such as India and China. In the field of art, it mainly deals with religions such as Buddhism and the cultural and artistic relationship with India, and other countries. Thai art served religion, which formed the national ideal and conception of life."
       },
       {
         "name": "Buddhist Ceremonies of Sri Lanka",
@@ -10753,7 +11505,7 @@ module.exports=[
       {
         "name": "A Guide to Japanese Buddhism",
         "src": "files/History/guidejapanbuddhismbm6.pdf",
-        "description": "A description for this title is coming soon."
+        "description": "Foreigners visiting Japan for the first time are likely to think that it is a completely secularized country. It appears to be so because the majority of Japanese seem to be indifferent to religious matters, except on special occasions such as festivals or funeral services. Particularly when young Japanese are asked about their religious beliefs or commitment, they tend to reply with an expression of astonishment or to smile uncomprehendingly. The older generation understands religion primarily as means of social unity or as an aid in life or suffering."
       },
       {
         "name": "Honour Thy Fathers",
@@ -10761,14 +11513,14 @@ module.exports=[
         "description": "This book is intended primarily as a tribute to the late Venerable Kapilavaddho Bhikkhu (William August Purfurst, known later as Richard Randall) for whom the English Sangha Trust was formed. He stands out as a man who started and developed the founding of the first English Theravada Sangha in the Western world. For the sake of context it includes a very brief history of the development of Theravada Buddhism in the UK. Only the major steps of this development have been recorded here, though many other groups have contributed to the spreading of Buddhism in the UK."
       },
       {
-        "name": "Iconography of Nepalse Buddhism",
-        "src": "files/History/icon_nepbud.pdf",
+        "name": "The Iconography of Nepalese Buddhism",
+        "src": "files/History/icon_nepbud_txt.pdf",
         "description": "The illustrated version of \"The Iconography of Nepalese Buddhism\"."
       },
       {
-        "name": "Iconography of Nepalse Buddhism: Text",
-        "src": "files/History/icon_nepbud_txt.pdf",
-        "description": "A description for this title is coming soon."
+        "name": "Iconography of Nepalse Buddhism",
+        "src": "files/History/icon_nepbud.pdf",
+        "description": ""
       },
       {
         "name": "King Asoka and Buddhism",
@@ -10778,7 +11530,7 @@ module.exports=[
       {
         "name": "MASKS: Anthropology on the Sinhalese Belief System",
         "src": "files/History/MASKSbm6.pdf",
-        "description": "A description for this title is coming soon."
+        "description": "In this book the reader is guided by three Sinhalese individuals who have dealt with their belief system as religious practitioners. All are natives of the Sinhalese rural society; yet they work and live in variant dimensions of that society. As a matter of ethnographic method and ethical respect, the entire endeavor of this research displays the values of the individuals who related their stories to me. Since feedback to the ethnography is very important for the final analysis of the work, the research participants reviewed the recorded and presented material. Response was an essential assessment to the success or failure of the presented material - as the presentations were made for the Sinhalese participants and their community."
       },
       {
         "name": "Record of Buddhistic Kingdoms",
@@ -10818,7 +11570,7 @@ module.exports=[
       {
         "name": "Cloud and Water",
         "src": "files/Mahayana/cloudwater6.pdf",
-        "description": "A description for this title is coming soon."
+        "description": "I n this book we have a collection of Ch’an poems; Cloud and Water. What do we mean by cloud and water? Clouds float by water flows on. In movement there is no grasping, in Ch’an there is no settling. The cloud and water life is a life of living in the moment, always fresh and ready to experience. These poems have been grouped together because of the tone and feeling that they share. Many of these poems were set down by celebrated masters, while for others their authors remain unknown."
       },
       {
         "name": "The Diamond Sutra",
@@ -10877,12 +11629,12 @@ module.exports=[
       },
       {
         "name": "The Sutra of the Master of Healing",
-        "src": "files/Mahayana/meritsutra.pdf",
+        "src": "files/Mahayana/mstrhealing.pdf",
         "description": "Sutra on the Merits of the Fundamental Vows of the Master of Healing, The Lapis Lazuli Radiance Tathagata; Sutra of the Sacred Formula of the Binding Vows of the Twelve Deva Generals to Enrich All Sentient Beings; Sutra of Tearing Away All Karma Veils. From the Chinese version of the Tripitaka Master Hsuan-tsang (T'ang, 650 C.E.) T. XIV, 450."
       },
       {
         "name": "The Sutra of the Master of Healing",
-        "src": "files/Mahayana/mstrhealing.pdf",
+        "src": "files/Mahayana/meritsutra.pdf",
         "description": "Sutra on the Merits of the Fundamental Vows of the Master of Healing, The Lapis Lazuli Radiance Tathagata; Sutra of the Sacred Formula of the Binding Vows of the Twelve Deva Generals to Enrich All Sentient Beings; Sutra of Tearing Away All Karma Veils. From the Chinese version of the Tripitaka Master Hsuan-tsang (T'ang, 650 C.E.) T. XIV, 450."
       },
       {
@@ -10911,9 +11663,9 @@ module.exports=[
         "description": "Tenzin Palmo's Teachings on Retreat, Mahamudra and Mindfulness are a delight to read. Transcribed from talks she gave in Singapore in May 1999, the teachings are delivered in plain language, seasoned with plenty of audience participation. Each subject is discussed with humour, liveliness and compassion. She has the great gift of showing how to put the Dharma into every part of our everyday lives. Born in London in 1993, Tenzin Palmo traveled to India and was ordained as a Buddhist nun in 1964. Her 12-year retreat in a cave high in the Himalayas, described in the book 'Cave in the Snow', focused international attention on the role of women and their spirituality in the Buddhist context."
       },
       {
-        "name": "Transforming Problems into The Dharma Path",
+        "name": "Transforming Problems Into the Dharma Path",
         "src": "files/Mahayana/transprobs6.pdf",
-        "description": "A description for this title is coming soon."
+        "description": "These lessons will help us to understand how to transform both adverse and happy situations into the Dharma Path with skill, to make them worthwhile and beneficial to ourselves and others. The whole Path, all of the teachings of Shakyamuni Buddha, leads towards the understanding of our situation in the world, by which I mean understanding how we relate to others. Especially knowing we have a great connection with each other, that in previous lives we have been very close to each other. We have experienced kindness from all other living beings, in so many ways  when others have been our parents, our husbands and wives, our teachers. They have looked after us so much. Each individual is merely part of the great universal family of sentient beings  living beings with minds.<end of file>"
       },
       {
         "name": "Virtue and Reality",
@@ -10963,12 +11715,12 @@ module.exports=[
       {
         "name": "A Critical Analysis of the Jhanas",
         "src": "files/Meditation/scrnguna.pdf",
-        "description": "A description for this title is coming soon."
+        "description": "This work, by Ven. Henepola Gunaratana, provides an analytical study of the Jh�nas, as they are an important set of meditative attainments in the contemplative discipline of Therav�da Buddhism. Despite their frequent appearance in the texts, the exact role of the Jh�nas in the Buddhist path has not been settled with unanimity by Therav�da scholars, who are still divided over the question as to whether they are necessary for attaining Nibbana. The primary purpose of this dissertation is to determine the precise role of the Jh�nas in the Therav�da Buddhist presentation of the way to liberation.For source material the work relies upon the three principal classes of authoritative Therav�da texts: the Pali Tipitaka, its commentaries, and its sub-commentaries. To traditional canonical investigations modern methods of philosophical and psychological analysis are applied in order to clarify the meanings implicit in the original sources. The examination covers two major areas: first the dynamics of Jh�na attainment, and second, the function of the Jh�nas in realizing the ultimate goal of Buddhism, Nibbana or final liberation from suffering.Print version only (1,387KB, PDF) This print version is suitable for people who can print the pages duplex and they will have 2 A5 size pages on every Landscape oriented A4 page.xxxx"
       },
       {
-        "name": "A Critical Analysis of the Jhonas in Theravoda Buddhist Meditation",
+        "name": "A Critical Analysis of the Jhanas (PF)",
         "src": "files/Meditation/printguna.pdf",
-        "description": "This work, by Ven. Henepola Gunaratana, provides an analytical study of the Jh�nas, as they are an important set of meditative attainments in the contemplative discipline of Therav�da Buddhism. Despite their frequent appearance in the texts, the exact role of the Jh�nas in the Buddhist path has not been settled with unanimity by Therav�da scholars, who are still divided over the question as to whether they are necessary for attaining Nibbana. The primary purpose of this dissertation is to determine the precise role of the Jh�nas in the Therav�da Buddhist presentation of the way to liberation.For source material the work relies upon the three principal classes of authoritative Therav�da texts: the Pali Tipitaka, its commentaries, and its sub-commentaries. To traditional canonical investigations modern methods of philosophical and psychological analysis are applied in order to clarify the meanings implicit in the original sources. The examination covers two major areas: first the dynamics of Jh�na attainment, and second, the function of the Jh�nas in realizing the ultimate goal of Buddhism, Nibbana or final liberation from suffering.Print version only (1,387KB, PDF) This print version is suitable for people who can print the pages duplex and they will have 2 A5 size pages on every Landscape oriented A4 page.xxxx"
+        "description": ""
       },
       {
         "name": "Dhamma Discourses on Vipassana Meditation",
@@ -11016,9 +11768,9 @@ module.exports=[
         "description": "This is a series of guided meditations with instruction for teachers for primary students. This file is part of BuddhaNet's Buddhist Studies for Schools. It has seven guided meditations for students, with detailed instructions for teachers."
       },
       {
-        "name": "Hello - With Love & Other Meditations",
+        "name": "Hello - with Love & Other Meditations",
         "src": "files/Meditation/hello_with_love.pdf",
-        "description": "A description for this title is coming soon."
+        "description": "The three most important things in life are love, kindness and wisdom. If we have made these three values the priorities of our life, then our life will have been well-lived. When we die we can only have happiness when we look back and not regrets. Wealth, fame, power, status, worldly success and pleasures  these are insignificant compared to love, kindness and wisdom. Cultivate the latter. If we spend our life cultivating this trio, our birth and life will have been worthwhile; it will not have been in vain. In this booklet, Ven. Visuddh�c�ra shares his understanding of this practice of mindfulness and loving-kindness with a view to encourage all of us to walk the path."
       },
       {
         "name": "Insight Meditation Workshop Online",
@@ -11053,12 +11805,12 @@ module.exports=[
       {
         "name": "A Map of the Journey",
         "src": "files/Meditation/mapjourney6.pdf",
-        "description": "A description for this title is coming soon."
+        "description": "As I see most of you are in your thirty’s, forty’s and fifty’s. You have done and experienced quite a lot in your life, you have had your own successes and disappointments. Now, I think you are ready for something better. In fact you have been doing this for quite a while, developing your inner qualities and spiritual nature. As today is our first day it is going to be an introduction."
       },
       {
         "name": "Meditation Centers in Sri Lanka",
         "src": "files/Meditation/Info-Meditation-Centers-Sri-Lanka2013.pdf",
-        "description": "A description for this title is coming soon."
+        "description": "There are many monasteries and meditation centers in Sri Lanka, but only few of these are suitable for foreigners who are new to Sri Lanka and only stay for a short time. The following information is specifically intended for them. Both males and females can stay in all of these places, albeit separate."
       },
       {
         "name": "Metta Bhavana, Loving-kindness Meditation",
@@ -11078,7 +11830,7 @@ module.exports=[
       {
         "name": "Monastries and Meditation Centres in Sri Lanka",
         "src": "files/Meditation/Monasteries-Meditation-Sri-Lanka2013.pdf",
-        "description": "A description for this title is coming soon."
+        "description": ""
       },
       {
         "name": "On The Path To Freedom",
@@ -11098,7 +11850,7 @@ module.exports=[
       {
         "name": "The Practice Which Leads to Nibbana",
         "src": "files/Meditation/nibbana1.pdf",
-        "description": "A description for this title is coming soon."
+        "description": ""
       },
       {
         "name": "Seeding the Heart",
@@ -11116,7 +11868,7 @@ module.exports=[
         "description": "A guide to the progressive stages of Buddhist meditation. The seven stages of purification provide the framework for the practising disciples gradual progress from the cultivation of virtue up to the attainment of the final goal. Integral to the higher stages of purification are the nine types of insight-knowledge, by which the disciple breaks through the delusions covering his mental vision and penetrates through to the real nature of phenomena."
       },
       {
-        "name": "Sri Lakan Monasteries-Monastics.",
+        "name": "Sri Lakan Monasteries and Monastics",
         "src": "files/Meditation/sri-lanka-monasteries.pdf",
         "description": "Information about Meditation Centres and other important places in Sri Lanka for visiting Western Buddhist lay practitioners. Also Information about Meditation Centers, Forest Monasteries, and other important places in Sri Lanka for Western bhikkhus and serious lay practitioners. Updated: January 2005.<end of file>"
       },
@@ -11131,9 +11883,9 @@ module.exports=[
         "description": "\"Taming the Monkey Mind\" is a guide to Pure Land practice. It deals specifically with the main practice of the Pure Land School - Buddha Recitation - and covers both the noumenal and phenomenal aspects of that practice. The treatise is accompanied by the detailed commentary of an Elder Master of the Zen and Pure Land lineages. Readers not familiar with Pure Land theory may wish to begin with Dr. J.C. Cleary's introduction."
       },
       {
-        "name": "Teaching and Training: Pa-Auk Monastery",
+        "name": "Teaching and Training",
         "src": "files/Meditation/teach-train3rd.pdf",
-        "description": "A description for this title is coming soon."
+        "description": "I started this book in May of 2004, as a six-page letter to my mother, who currently lives in Armidale, Australia. Earlier that same month, she had received a copy of Knowing and Seeing from our abbot, and I was concerned that, without a background in Theravāda Buddhism, she would have difficulty understanding the Sayadaw’s book."
       },
       {
         "name": "The Vipassana Retreat",
@@ -11143,7 +11895,7 @@ module.exports=[
       {
         "name": "فن الإنتباه",
         "src": "files/Meditation/artofatt_arabic.pdf",
-        "description": "A description for this title is coming soon."
+        "description": ""
       }
     ]
   },
@@ -11171,9 +11923,9 @@ module.exports=[
         "description": "\u001cAll the chapters are enlightening and sociologically important. Particularly the discussion on Dhamma, medicine and sociology deserves special praise, for the novel and refreshing interpretation offered.\u001d Prof. Chandima Wijebandara. \u001cEarly Buddhist redefinition of womans social role is well documented and discussed, shedding light on the subject, so it can be viewed in a broader perspective.\u001d Senarat Wijavasundara Lecturer in Philosophy Buddhist and Pali College of Singapore"
       },
       {
-        "name": "Bhavana Vanda",
+        "name": "Bhavana Vandana - Book of Devotion",
         "src": "files/Theravada/vandana.pdf",
-        "description": "A description for this title is coming soon."
+        "description": "The purpose of this book is manifold. One is to teach the users of this Vandana book how to pronounce Pali words correctly. By the daily repetition of these Pali verses and Suttas people can learn the Pali pronunciation without much effort. Secondly we intend to teach people the Pali language without much toil. Therefore we made one half of our chanting in English, so people learn the meaning of what they chant in Pali and later on they can compare the English with the Pali. Thirdly, we intend to teach people Dhamma through devotional service. In order to fulfill all these purposes we decided to include certain Suttas which are not normally used in Viharas for vandana service."
       },
       {
         "name": "The Bhikkhuni Patismokkha of the Six Schools",
@@ -11211,9 +11963,9 @@ module.exports=[
         "description": "Taking a different perspective from the usual biographies of the Buddha, the author retells the great man's story using the society of the time as the backdrop and the Buddha's interactions with his contemporaries as the main theme. We discover what the Buddha was like as a person, how he taught and how he changed the lives of all who were blessed enough to come into contact with him."
       },
       {
-        "name": "The Buddha and his Teachings",
+        "name": "The Buddha and His Teachings",
         "src": "files/Theravada/buddha-teachingsurw6.pdf",
-        "description": "A description for this title is coming soon."
+        "description": "Many valuable books have been written by Eastern and Western scholars, Buddhists and non-Buddhists alike, to present the life and teachings of the Buddha to those who are interested in Buddhism. This treatise is another humble attempt made by a member of the Order of the Sangha, based on the Pali Texts, commentaries, and traditions prevailing in Buddhist countries, especially in Sri Lanka. The first part of the book deals with the Life of the Buddha, the second with the Dhamma, the Pali term for His Doctrine."
       },
       {
         "name": "Buddhist Women at the Time of the Buddha",
@@ -11223,7 +11975,12 @@ module.exports=[
       {
         "name": "Chanting Book",
         "src": "files/Theravada/bookchant.pdf",
-        "description": "Pali Devotional Chanting and Hymns - It is beneficial for every Buddhist to recite daily at least a few verses from the Vandana, recalling to mind the sublime qualities of the Buddha, Dhamma and the Sangha. Contemplation on these great qualities will make our minds calm, peaceful and serene.Audio files of the chanting are available in BuddhaNet's Audio section."
+        "description": "This is the standard Morning and Evening Chanting Book, with Protective Discourses, commonly chanted in many Theravadin temples and monasteries. The text is in both Pali and English."
+      },
+      {
+        "name": "Clearing the Path",
+        "src": "files/Theravada/ctp_book-2up_v1.pdf",
+        "description": "NOTE: The primary book version was made for printing as a book so it was not optimised for onscreen viewing or personal printout. This version \"2upbookctpv1.PDF\" has been reprinted (Distilled) via Acrobat so that there are now 2 pages per A4 page in Landscape orientation (rather than usual Portrait orientation) so as to make personal printouts for reading much easier. The same effect could be obtained by using the original \"CtPbookv1.pdf\" and printing that via your desktop printer driver so as to have 2 pages per page (if possible)."
       },
       {
         "name": "Clearing the Path",
@@ -11233,12 +11990,7 @@ module.exports=[
       {
         "name": "Clearing the Path (rev 1)",
         "src": "files/Theravada/ctp_book_v1.pdf",
-        "description": "A description for this title is coming soon."
-      },
-      {
-        "name": "Clearing the Path (rev 2)",
-        "src": "files/Theravada/ctp_book-2up_v1.pdf",
-        "description": "A description for this title is coming soon."
+        "description": ""
       },
       {
         "name": "Daily Readings from the Buddha's WOW",
@@ -11261,14 +12013,14 @@ module.exports=[
         "description": "Translated from the Pali by Acharya Buddharakkhita and with an introduction by Bhikkhu Bodhi. The Dhammapada is the best known and most widely esteemed text in the Pali Tipitaka, the sacred scriptures of Theravada Buddhism. The work is included in the Khuddaka Nikaya (\"Minor Collection\") of the Sutta Pitaka, but its popularity has raised it far above the single niche it occupies in the scriptures to the ranks of a world religious classic. Composed in the ancient Pali language, this slim anthology of verses constitutes a perfect compendium of the Buddha's teaching, comprising between its covers all the essential principles elaborated at length in the forty-odd volumes of the Pali Canon.�� Print Version Only (176KB)"
       },
       {
+        "name": "The Dhammapada, Buddha's Path of Wisdom",
+        "src": "files/Theravada/prn1dhamma.pdf",
+        "description": "Translated from the Pali by Acharya Buddharakkhita and with an introduction by Bhikkhu Bodhi. The Dhammapada is the best known and most widely esteemed text in the Pali Tipitaka, the sacred scriptures of Theravada Buddhism. The work is included in the Khuddaka Nikaya (\"Minor Collection\") of the Sutta Pitaka, but its popularity has raised it far above the single niche it occupies in the scriptures to the ranks of a world religious classic. Composed in the ancient Pali language, this slim anthology of verses constitutes a perfect compendium of the Buddha's teaching, comprising between its covers all the essential principles elaborated at length in the forty-odd volumes of the Pali Canon.�� Print Version Only (176KB)"
+      },
+      {
         "name": "Dhammapada: A Translation",
         "src": "files/Theravada/damapada.pdf",
         "description": "The Dhammapada, an anthology of verses attributed to the Buddha, has long been recognized as one of the masterpieces of early Buddhist literature. Only more recently have scholars realized that it is also one of the early masterpieces of the Indian tradition of Kavya, or belles lettres. This translation is an attempt to render the verses into English in a way that does justice to both of the traditions to which the text belongs. Although it is tempting to view these traditions as distinct, dealing with form (Kavya) and content (Buddhism), the ideals of Kavya aimed at combining form and content into a seamless whole."
-      },
-      {
-        "name": "The Dhammapada: TBPOW (PF)",
-        "src": "files/Theravada/prn1dhamma.pdf",
-        "description": "A description for this title is coming soon."
       },
       {
         "name": "Dhammapada: Treasury of Truth",
@@ -11366,14 +12118,14 @@ module.exports=[
         "description": "Greed, hatred, and delusion - these are the three bad roots in us. Conversely the good ones are non-greed (i.e generosity), non-hatred (love), and non-delusion (wisdom). All our troubles and suffering stem essentially from the bad roots while our joy and happiness comes from the good ones. It is important to know and understand these roots if we are going to make an end of suffering and attain true peace and happiness. This book explains in a penetrative way the nature of these six roots. It contains discourses of the Buddha on the subject together with traditional commentarial explanations."
       },
       {
-        "name": "SUTTA-NIPATA",
-        "src": "files/Theravada/Sutta-nipataBM6.pdf",
-        "description": "A description for this title is coming soon."
-      },
-      {
         "name": "The Sigalovada in Pictures",
         "src": "files/Theravada/sigalovada.pdf",
         "description": "The Sigalovada in Pictures. A Pictorial presentation of the Buddha's advice to the layman, Sigala on the duties of the householder. Compiled by Venerable K. Dhammasiri. Artwork by K. W. Janaranjana."
+      },
+      {
+        "name": "Sutta-Nipata",
+        "src": "files/Theravada/Sutta-nipataBM6.pdf",
+        "description": "The Sutta Nipata ('The Sutta Collection'), the fifth book of the Khuddaka Nikaya, consists of 71 short suttas divided into five vaggas (chapters)."
       },
       {
         "name": "A Taste of Freedom",
@@ -11393,7 +12145,7 @@ module.exports=[
       {
         "name": "Three Texts",
         "src": "files/Theravada/Three-Texts-5.pdf",
-        "description": "A description for this title is coming soon."
+        "description": "Know a description for title? Contact your local admin today. "
       },
       {
         "name": "Transcendental Dependant Arising",
@@ -11401,9 +12153,9 @@ module.exports=[
         "description": "An Exposition of the Upanisa Sutta. Dependent Arising (paticcasamuppada) is the central principle of the Buddha's teaching, constituting both the objective content of its liberating insight and the germinative source for its vast network of doctrines and disciplines. So crucial is this principle to the body of the Buddhas doctrine that an insight into dependent arising is held to be sufficient to yield an understanding of the entire teaching. In the words of the Buddha: \"He who sees dependent arising sees the Dhamma; he who sees the Dhamma sees dependent arising.\""
       },
       {
-        "name": "Vandana",
+        "name": "Vandana: Pali Devotional Chanting",
         "src": "files/Theravada/vandana02.pdf",
-        "description": "A description for this title is coming soon."
+        "description": "Pali Devotional Chanting and Hymns - It is beneficial for every Buddhist to recite daily at least a few verses from the Vandana, recalling to mind the sublime qualities of the Buddha, Dhamma and the Sangha. Contemplation on these great qualities will make our minds calm, peaceful and serene.Audio files of the chanting are available in BuddhaNet's Audio section."
       },
       {
         "name": "Volition: An Introduction to KAMMA",
@@ -11418,8 +12170,7 @@ module.exports=[
     ]
   }
 ]
-
-},{}],5:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 
 // Extend an objects prototype with fluxmitter
 // Returns an empty object with fluxmitter as prototype if root===null
@@ -11515,7 +12266,7 @@ fluxmitter.strict = false;
 module.exports = fluxmitter;
 
 
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 var Fluxmitter = require("./fluxmitter");
 
 function Fluxview(attributes)
@@ -11602,7 +12353,7 @@ Fluxview.ready = function(window)
 
 module.exports = Fluxview;
 
-},{"./fluxmitter":5}],7:[function(require,module,exports){
+},{"./fluxmitter":6}],8:[function(require,module,exports){
 (function (global){
 /*!
  * Vue.js v2.2.6
@@ -20922,7 +21673,7 @@ return Vue$3;
 })));
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],8:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 var Vue         = require("../lib/vue");
 var fluxview    = require("../lib/fluxview");
 
@@ -20953,7 +21704,7 @@ var Reader_View = fluxview({
 module.exports = Reader_View;
 
 
-},{"../lib/fluxview":6,"../lib/vue":7}],9:[function(require,module,exports){
+},{"../lib/fluxview":7,"../lib/vue":8}],10:[function(require,module,exports){
 var Vue         = require("../lib/vue");
 var fluxview    = require("../lib/fluxview");
 
@@ -21045,4 +21796,4 @@ var Titlelist_View = fluxview({
 });
 module.exports = Titlelist_View;
 
-},{"../lib/fluxview":6,"../lib/vue":7}]},{},[3])
+},{"../lib/fluxview":7,"../lib/vue":8}]},{},[4])
