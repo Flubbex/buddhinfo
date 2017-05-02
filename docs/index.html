@@ -37,7 +37,13 @@
 </head>
 
 <body>
-  <h3 id="header" class="row">BuddhaNet Books</h3>
+  <img src="images/favicon.png" id="favicon"/>
+
+  <div id="header" class="row">
+   <h3>BuddhaNet Books</h3>
+   <input type="text" id="search" placeholder="Search.."/>
+  </div>
+
   <div id="content">
     <div class="row" id="titlelist">
       <div class="linktab"
@@ -105,10 +111,6 @@
           Back
           </button>
         </div>
-    </div>
-
-    <div class="row">
-      <input type="text" id="search" placeholder="Search.."/>
     </div>
 
     <div id="readercontainer" v-show="title!==null">

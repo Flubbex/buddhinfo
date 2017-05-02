@@ -14,8 +14,13 @@ $(document).ready(function(){
 
     fluxview.ready(window);
     buddhinfo.start();
-    $("#header,#footer").fadeIn()
-    $("#content").fadeIn('slow');
+    window.setTimeout(function(){
+        $("#header").slideDown(300,function(){
+            $("#footer").fadeIn();
+            $("#search").slideDown(300);
+            $("#content").fadeIn(250);
+            });
+    },500);
 
 });
 

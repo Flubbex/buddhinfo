@@ -8,6 +8,10 @@ html
   background-color: rgba(255,255,255,0.5);
 }
 
+#header h3
+{
+    margin: 0;
+}
 #footer
 {
  position: fixed;
@@ -25,11 +29,16 @@ html
 
 #search
 {
+  position: inline;
   background-color: rgba(255,255,255,0.75);
-  width: 100%;
-  position: absolute;
-  top: -18px;
   border-radius: 45px;
+  margin-bottom: 5px;
+  width: 100%;
+
+}
+#search:hover
+{
+  background-color: rgba(255,255,255,1);
 }
 
 .linktab
@@ -37,11 +46,11 @@ html
  cursor: pointer;
  background-color: rgba(255,255,255,0.5);
 }
-.linktab:hover
+.linktab h4:hover
 {
  background-color: rgba(255,255,255,0.75);
 }
-.linktab:active
+.linktab h4:active
 {
  background-color: rgba(255,255,255,1);
 }
@@ -53,14 +62,12 @@ html
 
 .linktab h4 span
 {
- float: right;
+ position: absolute;
+ right: 0;
  margin-right: 10px;
 }
 
-#search:hover
-{
-  background-color: rgba(255,255,255,1);
-}
+
 button
 {
  font-size: 1.05em;
@@ -127,6 +134,52 @@ background-color: rgba(255,255,255,0.5);
   font-family: times new roman;
 }
 
+@keyframes insight {
+    0%
+    {
+        -webkit-filter: blur(6px);
+        -moz-filter: blur(6px);
+        -o-filter: blur(6px);
+        -ms-filter: blur(6px);
+        filter: blur(6px);
+        opacity: 0;
+    }
+    50%
+    {
+        -webkit-filter: blur(0);
+        -moz-filter: blur(0);
+        -o-filter: blur(0);
+        -ms-filter: blur(0);
+        filter: blur(0);
+        opacity: 0.75;
+    }
+    100%
+    {
+        -webkit-filter: blur(6px);
+        -moz-filter: blur(6px);
+        -o-filter: blur(6px);
+        -ms-filter: blur(6px);
+        filter: blur(6px);
+        opacity: 0;
+    }
+}
+
+#favicon
+{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    width: 400px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -200px;
+    opacity: 0;
+    animation-name: insight;
+    animation-delay: 0.5s;
+    animation-duration: 3s;
+}
+
+
 #titleinfo h5
 {
  text-shadow: 2px 2px 2px gray;
@@ -134,7 +187,7 @@ background-color: rgba(255,255,255,0.5);
 }
 
 
-#header,#footer,#content
+#header,#footer,#content,#search
 {
   display: none;
 }
