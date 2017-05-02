@@ -137,11 +137,11 @@ background-color: rgba(255,255,255,0.5);
 @keyframes insight {
     0%
     {
-        -webkit-filter: blur(6px);
-        -moz-filter: blur(6px);
-        -o-filter: blur(6px);
-        -ms-filter: blur(6px);
-        filter: blur(6px);
+        -webkit-filter: blur(160px);
+        -moz-filter: blur(160px);
+        -o-filter: blur(160px);
+        -ms-filter: blur(160px);
+        filter: blur(160px);
         opacity: 0;
     }
     50%
@@ -151,15 +151,19 @@ background-color: rgba(255,255,255,0.5);
         -o-filter: blur(0);
         -ms-filter: blur(0);
         filter: blur(0);
-        opacity: 0.75;
+        opacity: 1;
+    }
+    75%
+    {
+        opacity: 1;
     }
     100%
     {
-        -webkit-filter: blur(6px);
-        -moz-filter: blur(6px);
-        -o-filter: blur(6px);
-        -ms-filter: blur(6px);
-        filter: blur(6px);
+        -webkit-filter: blur(16px);
+        -moz-filter: blur(16px);
+        -o-filter: blur(16px);
+        -ms-filter: blur(16px);
+        filter: blur(16px);
         opacity: 0;
     }
 }
@@ -176,8 +180,7 @@ background-color: rgba(255,255,255,0.5);
     margin-left: -200px;
     opacity: 0;
     animation-name: insight;
-    animation-delay: 0.5s;
-    animation-duration: 3s;
+    animation-duration: 1.5s;
 }
 
 
