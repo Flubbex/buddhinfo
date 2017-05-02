@@ -180,6 +180,7 @@ background-color: rgba(255,255,255,0.5);
     margin-left: -200px;
     opacity: 0;
     animation-name: insight;
+    animation-delay: 0.5s;
     animation-duration: 1.5s;
 }
 
