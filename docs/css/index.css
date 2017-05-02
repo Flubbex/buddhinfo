@@ -16,18 +16,17 @@ html,body
     position: fixed;
     left: 50%;
     top: 50%;
-    width: 400px;
-    height: 400px;
-    margin-top: -200px;
-    margin-left: -200px;
-    -webkit-filter: blur(4px);
-    -moz-filter: blur(4px);
-    -o-filter: blur(4x);
-    -ms-filter: blur(4px);
-    filter: blur(5px);
+    width: 341px;
+    height: 341px;
+    margin-top: -170px;
+    margin-left: -170px;
     opacity: 0.5;
 }
 
+#linktab ~ #favicon
+{
+    background-color: red;
+}
 #header,#footer
 {
   background-color: rgba(255,255,255,0.5);
@@ -49,7 +48,8 @@ h3,h4,h5
  position: fixed;
  bottom: 0;
  width: 100%;
- font-size: 0.8em;
+ font-size: 0.75em;
+ padding-left: 24px;
 }
 
 #content
