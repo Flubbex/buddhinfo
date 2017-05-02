@@ -187,6 +187,7 @@ background-color: rgba(255,255,255,0.5);
 {
   padding-top: 5px;
   padding-left: 40px;
+  padding-right: 20px;
   height: 125px;
   overflow-y: auto;
   background-color: rgba(255,255,255,0.5);
