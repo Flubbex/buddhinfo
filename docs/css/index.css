@@ -118,6 +118,8 @@ h3,h4,h5
 }
 button
 {
+
+ overflow: hidden;
  margin: 0;
  width: 100%;
  cursor: pointer;
