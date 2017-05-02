@@ -10292,12 +10292,13 @@ $(document).ready(function(){
     fluxview.ready(window);
     buddhinfo.start();
     window.setTimeout(function(){
-        $("#header").slideDown(300,function(){
-            $("#footer").fadeIn();
-            $("#search").slideDown(300);
-            $("#content").fadeIn(250);
+        $("#wallpaper").fadeIn(     250,function(){
+            $("#header").fadeIn(    250);
+            $("#footer").fadeIn(    250);
+            $("#search").fadeIn(    250);
+            $("#content").fadeIn(   250);
             });
-    },500);
+    },250);
 
 });
 

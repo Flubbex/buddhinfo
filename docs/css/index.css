@@ -1,8 +1,15 @@
-html
+html,body
 {
-    background: url('../images/wallpaper.jpg');
+    height: 100%;
 }
-
+#wallpaper
+{
+    position: fixed;
+    background: url('../images/concrete.jpg');
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
 #header,#footer
 {
   background-color: rgba(255,255,255,0.5);
@@ -144,7 +151,12 @@ background-color: rgba(255,255,255,0.5);
     height: 400px;
     margin-top: -200px;
     margin-left: -200px;
-    opacity: 0.25;
+    -webkit-filter: blur(4px);
+    -moz-filter: blur(4px);
+    -o-filter: blur(4x);
+    -ms-filter: blur(4px);
+    filter: blur(5px);
+opacity: 0.5;
 }
 
 
@@ -155,7 +167,7 @@ background-color: rgba(255,255,255,0.5);
 }
 
 
-#header,#footer,#content,#search
+#header,#footer,#content,#search,#wallpaper
 {
   display: none;
 }

@@ -37,13 +37,16 @@
 </head>
 
 <body>
+ <div id="wallpaper">
+  <img src="images/favicon.png" id="favicon"/>
+ </div>
   <div id="header" class="row">
    <h3>BuddhaNet Books</h3>
    <input type="text" id="search" placeholder="Search.."/>
   </div>
 
   <div id="content">
-     <img src="images/favicon.png" id="favicon"/>
+
     <div class="row" id="titlelist">
       <div class="linktab"
             v-for="category in titlelist"
