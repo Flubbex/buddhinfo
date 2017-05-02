@@ -1,5 +1,6 @@
 var Vue         = require("../lib/vue");
 var fluxview    = require("../lib/fluxview");
+var Reader_View = require("./reader");
 
 var Titlelist_View = fluxview({
     el:"titlelist",
@@ -30,9 +31,10 @@ var Titlelist_View = fluxview({
                           methods:{
                                 openInline:function(title)
                                 {
-                                    $("#reader")[0].src =
-                                      title.src;
-                                    $("#reader").parent().fadeIn();
+                                    Reader_View.vue.title = title;
+                                    //$("#reader")[0].src =
+                                    //  title.src;
+                                    //$("#reader").parent().fadeIn();
                                 },
                                 openDirect:function(title){
                                   window.location = title.src;
