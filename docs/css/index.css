@@ -1,8 +1,7 @@
-
-
-@keyframe fadein {
-    0%   {display: none;}
-    100% {display:block;}
+body
+{
+    background-color: black;
+    font-family: 'Didact Gothic',sans-serif;
 }
 #wallpaper
 {
@@ -38,21 +37,25 @@
 {
     background-color: red;
 }
-#header,#footer
+#header
 {
   background-color: rgba(255,255,255,0.5);
 }
 
+#footer
+{
+  background-color: rgba(255,255,255,1);
+}
 #header h3
 {
     float: left;
-    padding-left: 25px;
-    padding-top: 6px;
+    padding-left: 20px;
+    margin: 0;
 }
 
 h3,h4,h5
 {
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
 }
 #footer
 {
@@ -60,24 +63,27 @@ h3,h4,h5
  bottom: 0;
  width: 100%;
  font-size: 0.75em;
- padding-left: 24px;
+ padding-left: 20px;
 }
 
 #content
 {
   position: relative;
-  padding-top: 23px;
-  padding-bottom: 20px;
+  padding-top: 5px;
+  padding-bottom: 45px;
 }
 
 #search
 {
-  position: absolute;
-  right: 24px;
-  top: 12px;
-  width: 250px;
-
+  position: fixed;
+  bottom: 5px;
+  width: 100%;
+  background-color: rgba(255,255,255,0.75);
+  height: 25px;
+  font-size: 0.9em;
+  padding-left: 20px;
 }
+
 #search:hover
 {
   background-color: rgba(255,255,255,1);
@@ -87,11 +93,12 @@ h3,h4,h5
 {
  cursor: pointer;
  background-color: rgba(255,255,255,0.5);
-}
 
+}
 .linktab h4
 {
-    margin-left: 24px;
+ margin-bottom: 5px;
+ padding-left: 20px;
 }
 
 .linktab h4:hover
@@ -102,26 +109,19 @@ h3,h4,h5
 {
  background-color: rgba(255,255,255,1);
 }
-.linktab h4
-{
- margin-bottom: 5px;
- padding-left: 10px;
-}
 
 .linktab h4 span
 {
  position: absolute;
  right: 0;
- margin-right: 24px;
+ margin-right: 20px;
 }
-
-
 button
 {
- font-size: 1.05em;
  margin: 0;
  width: 100%;
  cursor: pointer;
+ text-align: left;
  background-color: rgba(255,255,255,0.5);
 }
 button:hover
@@ -167,7 +167,15 @@ background-color: rgba(255,255,255,0.5);
  height: 90%;
 }
 
-#titleinfo,#titleinfo h5,#titleinfo p
+#titleinfo h5
+{
+  background-color: rgba(255,255,255,0.75);
+  margin: 0;
+  padding-left: 20px;
+  padding-bottom: 5px;
+  text-transform: capitalize;
+}
+#titleinfo
 {
   margin: 0;
   background-color: rgba(255,255,255,0.5);
@@ -175,19 +183,24 @@ background-color: rgba(255,255,255,0.5);
 
 #titleinfo p
 {
-  padding: 15px;
-  padding-left: 50px;
+  padding-top: 5px;
+  padding-left: 40px;
   height: 125px;
   overflow-y: auto;
-  font-family: times new roman;
+  background-color: rgba(255,255,255,0.5);
+
 }
 
-#titleinfo h5
+#titleinfo p:first-letter
 {
- text-shadow: 2px 2px 2px gray;
- padding-left: 25px;
+  float: left;
+  font-weight: bold;
+  font-family: 'Bitter', serif;
+  font-size: 75px;
+  line-height: 70px;
+  padding-right: 15px;
+  text-shadow: 3px 3px 6px rgba(0,0,0,0.75);
 }
-
 
 #header,#footer,#content,#search
 {
