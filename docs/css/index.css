@@ -1,6 +1,8 @@
-html,body
-{
-    height: 100%;
+
+
+@keyframe fadein {
+    0%   {display: none;}
+    100% {display:block;}
 }
 #wallpaper
 {
@@ -10,6 +12,14 @@ html,body
     height: 100%;
     z-index: -1;
 }
+
+@keyframes rotation {
+    0%   {transform: rotate(0deg); }
+    50%   {transform: rotate(180deg); }
+    100% {transform: rotate(360deg); }
+}
+
+
 #favicon
 {
     z-index: -1000;
@@ -20,7 +30,9 @@ html,body
     height: 341px;
     margin-top: -170px;
     margin-left: -170px;
-    opacity: 0.5;
+    opacity: 0.25;
+    animation-name: rotation;
+    animation-duration: 1.5s;
 }
 
 #linktab ~ #favicon
@@ -178,7 +190,7 @@ background-color: rgba(255,255,255,0.5);
 }
 
 
-#header,#footer,#content,#search,#wallpaper
+#header,#footer,#content,#search
 {
-  display: none;
+    display: none;
 }

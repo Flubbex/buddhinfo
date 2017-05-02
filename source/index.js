@@ -14,15 +14,7 @@ $(document).ready(function(){
 
     fluxview.ready(window);
     buddhinfo.start();
-    window.setTimeout(function(){
-        $("#wallpaper").fadeIn(     250,function(){
-            $("#header").fadeIn(    250);
-            $("#footer").fadeIn(    250);
-            $("#search").fadeIn(    250);
-            $("#content").fadeIn(   250);
-            });
-    },250);
-
+    $("#header,#footer,#content,#search").fadeIn('slow');
 });
 
 module.exports = buddhinfo;
