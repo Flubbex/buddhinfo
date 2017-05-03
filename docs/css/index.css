@@ -6,37 +6,34 @@ body
 #wallpaper
 {
     position: fixed;
-    background: url('../images/concrete.jpg');
+    background: url('../images/grey_wash_wall.png');
     width: 100%;
     height: 100%;
     z-index: -1;
 }
 
 @keyframes rotation {
-    0%   {transform: rotate(0deg); }
-    50%   {transform: rotate(180deg); }
-    100% {transform: rotate(360deg); }
+    0%   {transform: rotate(0deg);      bottom: 0%;     opacity:0;    }
+    50%  {bottom: 50%;    opacity:0.25;  }
+    75%  {    opacity:0.5;  }
+    100% {transform: rotate(720deg);    bottom: 25%;    opacity:0.75; }
 }
 
-#favicon
+#loader
 {
-    z-index: -1000;
     position: fixed;
     left: 50%;
-    top: 50%;
-    width: 341px;
-    height: 341px;
-    margin-top: -170px;
-    margin-left: -170px;
-    opacity: 0.25;
+    bottom: 25%;
+    opacity: 0.75;
+    width: 150px;
+    height: 150px;
+    margin-top: -75px;
+    margin-left: -75px;
     animation-name: rotation;
     animation-duration: 1.5s;
+    animation-delay: 0s;
 }
 
-#linktab ~ #favicon
-{
-    background-color: red;
-}
 #header
 {
   background-color: rgba(255,255,255,0.5);
@@ -44,7 +41,7 @@ body
 
 #footer
 {
-  background-color: rgba(255,255,255,1);
+  background-color: rgba(255,255,255,0.75);
 }
 #header h3
 {
@@ -62,7 +59,6 @@ h3,h4,h5
  position: fixed;
  bottom: 0;
  width: 100%;
- font-size: 0.75em;
  padding-left: 20px;
 }
 
@@ -76,11 +72,10 @@ h3,h4,h5
 #search
 {
   position: fixed;
-  bottom: 5px;
+  bottom: 10px;
   width: 100%;
   background-color: rgba(255,255,255,0.75);
   height: 25px;
-  font-size: 0.9em;
   padding-left: 20px;
 }
 
@@ -92,7 +87,7 @@ h3,h4,h5
 .linktab
 {
  cursor: pointer;
- background-color: rgba(255,255,255,0.5);
+ background-color: rgba(255,255,255,0.25);
 
 }
 .linktab h4
@@ -103,11 +98,11 @@ h3,h4,h5
 
 .linktab h4:hover
 {
- background-color: rgba(255,255,255,0.75);
+ background-color: rgba(255,255,255,0.5);
 }
 .linktab h4:active
 {
- background-color: rgba(255,255,255,1);
+ background-color: rgba(255,255,255,0.75);
 }
 
 .linktab h4 span
@@ -116,15 +111,15 @@ h3,h4,h5
  right: 0;
  margin-right: 20px;
 }
+
 button
 {
-
  overflow: hidden;
  margin: 0;
  width: 100%;
  cursor: pointer;
  text-align: left;
- background-color: rgba(255,255,255,0.5);
+ background-color: rgba(255,255,255,0.25);
 }
 button:hover
 {
@@ -180,7 +175,31 @@ background-color: rgba(255,255,255,0.5);
 #titleinfo
 {
   margin: 0;
+  padding-left: 20px;
+  padding-right: 20px;
   background-color: rgba(255,255,255,0.5);
+}
+
+#titlecontrols
+{
+    margin: 2.5%;
+}
+
+#titleinfo button
+{
+    display: inline-block;
+    width: 24%;
+    text-align: center;
+    font-size: 0.75em;
+    background-color: rgba(255,255,255,0.75);
+}
+
+#titleinfo button:last-child
+{
+    background-color: rgba(0,0,0,1);
+    color: white;
+    width: 97.5%;
+    margin-bottom: 2%;
 }
 
 #titleinfo p
@@ -188,10 +207,10 @@ background-color: rgba(255,255,255,0.5);
   padding-top: 5px;
   padding-left: 20px;
   padding-right: 20px;
-  height: 125px;
+  min-height: 200px;
+  max-height: 250px;
   overflow-y: auto;
   background-color: rgba(255,255,255,0.5);
-
 }
 
 #titleinfo p:first-letter
@@ -205,7 +224,7 @@ background-color: rgba(255,255,255,0.5);
   text-shadow: 3px 3px 6px rgba(0,0,0,0.75);
 }
 
-#header,#footer,#content,#search
+#header,#footer,#content,#search,#wallpaper
 {
     display: none;
 }

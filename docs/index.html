@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <!-- Basic Page Needs
@@ -15,7 +16,8 @@
 
     <!-- Fonts
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <link href="https://fonts.googleapis.com/css?family=Bitter|Didact+Gothic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css
+                ?family=Bitter|Didact+Gothic" rel="stylesheet">
 
     <!-- Skeleton CSS
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -32,107 +34,105 @@
 
     <!-- JavaScript
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <script type="text/javascript" src="js/index.js">   </script>
+    <script type="text/javascript" src="js/index.js">
+    </script>
 
 </head>
 
 <body>
- <div id="wallpaper">
-  <img src="images/favicon.png" id="favicon"/>
- </div>
-  <div id="header" class="row">
-   <h3>BuddhaNet Books</h3>
-  </div>
+    <img src="images/favicon.png" id="loader" />
+    <div id="wallpaper"></div>
+    <div id="header" class="row">
+        <h3>BuddhaNet Books</h3>
+    </div>
 
-  <div id="content">
+    <div id="content">
 
-    <div class="row" id="titlelist">
-      <div class="linktab"
-            v-for="category in titlelist"
-            v-show="opencategory === category.name
+        <div class="row" id="titlelist">
+            <div class="linktab" v-for="category in titlelist"
+                v-show="opencategory === category.name
                     || opencategory === null
                     || opencategory === 'all'">
-          <h4 v-on:click="opencategory =
+                <h4 v-on:click="opencategory =
                           opencategory === null
                                     ? category.name
                                     : opentitle = null">
-          {{category.name}}
-          <span v-show="filter === null">
+                    {{category.name}}
+                    <span v-show="filter === null">
           ({{category.content.length}} titles)
           </span>
-          <span v-show="filter !== null">
+                    <span v-show="filter !== null">
           ({{countEntries(category,filter)}} found)
           </span>
-          </h4>
-            <div class="linklist"
-                 v-show="opencategory===category.name
+                </h4>
+                <div class="linklist" v-show="opencategory===category.name
                          || opencategory==='all' ">
 
-              <button v-for="title in category.content"
-                      v-on:click="opentitle =
+                    <button v-for="title in category.content"
+                        v-on:click="opentitle =
                                    opentitle === null
                                     ? title
-                                    : null"
-                            v-show="opentitle===null
-                                    && (filter === null || title
-                                                           .name
-                                                           .toUpperCase()
-                                                           .includes(filter
-                                                           .toUpperCase()))"
-                             >
+                                    : null" v-show="opentitle===null &&
+                                    (filter === null || title
+                                                   .name
+                                                   .toUpperCase()
+                                                   .includes(filter
+                                                   .toUpperCase()))">
                {{title.name}}
                </button>
-                <button v-on:click="opencategory = null;
-                                  clearSearch();"
-                      v-show="opentitle===null && filter===null"
-                      style="background-color: black;color:white;">
+                    <button v-on:click="opencategory = null;
+                                        clearSearch();"
+                            v-show="opentitle===null && filter===null"
+                            style="background-color: black;color:white;">
                   Back
                 </button>
+                </div>
             </div>
-       </div>
 
-       <div id="titleinfo" v-show="opentitle!==null">
-          <h5>{{opentitle?opentitle.name:""}}</h5>
-          <p class="titledescription">
-            {{opentitle?opentitle.description:""}}
-          </p>
-          <button v-on:click="openInline(opentitle)">
-          Open Inline
+            <div id="titleinfo" v-show="opentitle!==null">
+                <h5>{{opentitle?opentitle.name:""}}</h5>
+                <p class="titledescription">
+                    {{opentitle?opentitle.description:""}}
+                </p>
+                <div id="titlecontrols">
+                <button v-on:click="openInline(opentitle)">
+          Open
           </button>
-          <button v-on:click="openDirect(opentitle)">
-          Download Directly
+                <button v-on:click="openDirect(opentitle)">
+          Download
           </button>
-          <button v-on:click="openTab(opentitle)">
-          Open in new Tab
+                <button v-on:click="openTab(opentitle)">
+          Tab
           </button>
-          <button v-on:click="saveTo(opentitle)">
-          Save..
+                <button v-on:click="saveTo(opentitle)">
+          Save
           </button>
-          <button v-on:click="opentitle = null">
+                <button v-on:click="opentitle = null">
           Back
           </button>
+            </div>
+            </div>
         </div>
-    </div>
 
-    <div id="readercontainer" v-show="title!==null">
-      <div id="readercontrols">
-        <button v-on:click="setBookmark()">  Set Bookmark  </button>
-        <button v-on:click="gotoBookmark()"> Goto bookmark </button>
-        <button v-on:click="title=null">  Close            </button>
-      </div>
-      <iframe id="reader" v-bind:src="title?title.src:''"></iframe>
-    </div>
+        <div id="readercontainer" v-show="title!==null">
+            <div id="readercontrols">
+                <button v-on:click="setBookmark()">Set Bookmark</button>
+                <button v-on:click="gotoBookmark()"> Goto bookmark</button>
+                <button v-on:click="title=null">Close</button>
+            </div>
+            <iframe id="reader" v-bind:src="title?title.src:''">
+            </iframe>
+        </div>
 
+        <input type="text" id="search" placeholder="Search.." />
 
-   <input type="text" id="search" placeholder="Search.."/>
-
-    <div id="footer" class="row">
-      All content owned by
-      <a href="http://www.buddhanet.net">
+        <div id="footer" class="row">
+            All content owned by
+            <a href="http://www.buddhanet.net">
       Buddhanet.net
       </a>
+        </div>
     </div>
-  </div>
 </body>
 
 </html>

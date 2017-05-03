@@ -55,3 +55,12 @@ Previous update skipped over some important changes provided by TamSanh, reincor
 
 No more missing descriptions :) (I hope). Big cleanups. UI is prettier and a lot less wonky. Next week.. sessions.
 
+**Update 2/5 12:11**
+
+CSS Overhaul and some more fixes, should look great on mobile.
+
+**Update 2/5 21:47**
+
+Sorry for those who had to suffer through some very rough and sketchy commits - everything is back to normal now and prettier then ever. Mobile browsing should be great now. Tomorrow sessions, for real. I can't look at CSS straight anymore.
+
+

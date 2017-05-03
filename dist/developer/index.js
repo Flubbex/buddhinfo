@@ -10291,7 +10291,12 @@ $(document).ready(function(){
 
     fluxview.ready(window);
     buddhinfo.start();
-    $("#header,#footer,#content,#search").fadeIn('slow');
+
+    $("#wallpaper").fadeIn('faster');
+
+    window.setTimeout(function(){
+        $("#header,#footer,#content,#search").fadeIn('slow');
+    },1000);
 });
 
 module.exports = buddhinfo;
