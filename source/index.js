@@ -16,7 +16,7 @@ $(document).ready(function(){
 
     fluxview.ready(window);
     buddhinfo.start();
-    console.log(UI);
+    //console.log(UI);
     //$("<div>Test</div>").dialog();
     $("#wallpaper").fadeIn('faster');
 
