@@ -2,6 +2,8 @@ var $
     = window.jQuery
     = window.$
     = require('jquery');
+var UI = require('jquery-ui');
+
 //Globals :(
 
 var Buddhinfo_Controller  = require("./controller/buddhinfo");
@@ -14,7 +16,8 @@ $(document).ready(function(){
 
     fluxview.ready(window);
     buddhinfo.start();
-
+    console.log(UI);
+    //$("<div>Test</div>").dialog();
     $("#wallpaper").fadeIn('faster');
 
     window.setTimeout(function(){
