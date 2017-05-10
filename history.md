@@ -63,4 +63,12 @@ CSS Overhaul and some more fixes, should look great on mobile.
 
 Sorry for those who had to suffer through some very rough and sketchy commits - everything is back to normal now and prettier then ever. Mobile browsing should be great now. Tomorrow sessions, for real. I can't look at CSS straight anymore.
 
+**Update 4/5 12:11**
+
+Sorry for the lack of iteration, currently working on a localstorage implementation and it's taking a little more than expected. I'm gonna spend a few days to really work this out properly, so updates will have to wait for a little longer. I'll have finished cleaning up the metadata too so if anything I'll commit those changes this weekend. Thanks again.
+
+**Update 4/5 20:00**
+
+Somewhat major font bug fixed. Think I've got my 'design' down for the session part of things. Going to finish cleaning metadata first since that's a bigger priority right now.
+
 

@@ -22,6 +22,7 @@
     "gulp-uglify": "^2.0.1",
     "jshint": "^2.9.4",
     "jshint-stylish": "^2.2.1",
+    "lawnchair": "^0.6.4",
     "mocha": "^3.2.0",
     "node-inspector": "^0.12.10",
     "yargs": "^7.1.0"

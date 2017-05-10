@@ -1,14 +1,13 @@
 function Title(attr)
 {
-  this.name         = "Title";
-  this.description  = "Description";
-  this.author       = "Author";
-  this.image        = null;
-  this.date         = null;
-  this.src          = null;
-  
-  for (var prop in attr)
-    this[prop] = attr[prop]
+    attr = attr.attributes ? attr.attributes : attr;
+
+  this.name         = attr.name          || "Title";
+  this.description  = attr.description  || "Description";
+  this.author       = attr.author       || "Author";
+  this.image        = attr.image        || null;
+  this.date         = attr.date         || null;
+  this.src          = attr.src          || null;
 }
 
 module.exports = Title;

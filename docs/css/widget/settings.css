@@ -1,0 +1,25 @@
+.setbox
+{
+ padding:0;
+ margin:0;
+ padding-top: 6px;
+ padding-left: 4px;
+}
+
+.setbox:nth-child(1n)
+{
+    background-color:      rgba(255,255,255,0.5);
+}
+.setbox:nth-child(2n)
+{
+     background-color:      rgba(128,128,128,0.5);
+}
+.setbox input
+{
+    width: 50px;
+}
+
+.nuke
+{
+    width: 100%;
+}

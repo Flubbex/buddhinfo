@@ -2,136 +2,263 @@
 <html lang="en">
 
 <head>
-
     <!-- Basic Page Needs
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <meta charset="utf-8">
-    <title>Buddhanet Books</title>
-    <meta name="description" content="Books from Buddhanet">
+    <title>DharmaDocs
+    </title>
+    <meta name="description" content="Learn everything">
     <meta name="author" content="Flubbex">
-
     <!-- Mobile Specific Metas
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!-- Fonts
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <link href="https://fonts.googleapis.com/css?family=Bitter|Didact+Gothic" rel="stylesheet">
-
+    <!-- Icon sets
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
     <!-- Skeleton CSS
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/skeleton.css">
-
     <!-- Custom CSS
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.structure.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.theme.min.css">
+    <link rel="stylesheet" href="css/widget/dashboard.css">
+    <link rel="stylesheet" href="css/widget/titlelist.css">
+    <link rel="stylesheet" href="css/widget/settings.css">
+    <link rel="stylesheet" href="css/widget/reader.css">
     <link rel="stylesheet" href="css/index.css">
-
     <!-- Favicon
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <link rel="icon" type="image/png" href="images/favicon.png">
-
     <!-- JavaScript
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <script type="text/javascript" src="js/index.js">
     </script>
-
 </head>
 
 <body>
+    <!-- Pre-content
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <img src="images/favicon.png" id="loader" />
-    <div id="wallpaper"></div>
-    <div id="header" class="row">
-        <h3>BuddhaNet Books</h3>
+    <div id="wallpaper">
     </div>
-
+    <!-- Header
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <div id="header">
+        <h5>DharmaDocs</h5>
+        <p>Learn Everything</hp>
+    </div>
+    <!-- Content tabset
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <div id="content">
-
-        <div class="row" id="titlelist">
-            <div class="linktab" v-for="category in titlelist"
-                v-show="opencategory === category.name
-                    || opencategory === null
-                    || opencategory === 'all'">
-                <h4 v-on:click="opencategory =
-                          opencategory === null
-                                    ? category.name
-                                    : opentitle = null">
-                    {{category.name}}
-                    <span v-show="filter === null">
-          ({{category.content.length}} titles)
-          </span>
-                    <span v-show="filter !== null">
-          ({{countEntries(category,filter)}} found)
-          </span>
-                </h4>
-                <div class="linklist" v-show="opencategory===category.name
-                         || opencategory==='all' ">
-
-                    <button v-for="title in category.content"
-                        v-on:click="opentitle =
-                                   opentitle === null
-                                    ? title
-                                    : null" v-show="opentitle===null &&
-                                    (filter === null || title
-                                                   .name
-                                                   .toUpperCase()
-                                                   .includes(filter
-                                                   .toUpperCase()))">
-               {{title.name}}
-               </button>
-                    <button v-on:click="opencategory = null;
-                                        clearSearch();"
-                            v-show="opentitle===null && filter===null"
-                            style="background-color: black;color:white;">
-                  Back
+        <ul id="tabbar">
+            <li>
+                <a href="#titlelist">   Titlelist
+          </a>
+            </li>
+            <li>
+                <a href="#dashboard">   Dashboard
+          </a>
+            </li>
+            <li>
+                <a href="#settings">   Settings
+          </a>
+            </li>
+        </ul>
+        <!-- Titlelist accordion
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <div id="titlelist">
+            <template v-if="titlelist" v-for="category in titlelist">
+          <h3 class="title header">{{category.name}}
+            <span class="titlecount">{{category.content.length}} Titles
+            </span>
+          </h3>
+          <div>
+            <div v-for="(title,titleid) in category.content" class="title info">
+              <h4 class="title header">{{title.name}}
+              </h4>
+              <p
+                 class="title description">
+                {{title.description.slice(0,title.
+                description.
+                indexOf('.')+1)}}
+                <span v-show="opentitle===title || config.expandall">
+                  {{title.description.slice(title.
+                  description.
+                  indexOf('.')+2,
+                  title.
+                  description.
+                  length)}}
+                </span>
+              </p>
+              <button v-if        ="opentitle !== title"
+                      v-on:click  ="opentitle = title">
+                <i class="fa fa-ellipsis-h" aria-hidden="true">
+                </i>
+              </button>
+              <button v-if        ="opentitle === title"
+                      v-on:click  ="opentitle = null">
+                <i class="fa fa-ellipsis-v" aria-hidden="true">
+                </i>
+              </button>
+              <span v-if="opentitle===title || config.expandall">
+                <button
+                        v-on:click="openTitle(opentitle,titleid)"
+                        >
+                        <i class="fa fa-eye" aria-hidden="true"></i>
                 </button>
-                </div>
+                <button
+                        v-on:click="openTab(opentitle)"
+                        >
+                        <i class="fa fa-download" aria-hidden="true"></i>
+                </button>
+                <button
+                        v-on:click="addToList(opentitle)"
+                        >
+                        <i class="fa fa-list" aria-hidden="true"></i>
+                </button>
+              </span>
             </div>
+          </div>
+        </template>
+        </div>
+        <!-- Dashboard
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <div id="dashboard">
+            <ul id="currentlist">
+                <li v-if="currentlist===-1">
+                    Select a list and titles will start appearing
+                    here.
+                </li>
+                <li v-if="currentlist>=0">
+                    <input type="text" id="listname" v-model="lists[currentlist].key" />
+                </li>
+                <template v-if='currentlist>=0'>
+                <li v-for="(title,index) in lists[currentlist].titlelist">
 
-            <div id="titleinfo" v-show="opentitle!==null">
-                <h5>{{opentitle?opentitle.name:""}}</h5>
-                <p class="titledescription">
-                    {{opentitle?opentitle.description:""}}
-                </p>
-                <div id="titlecontrols">
-                <button v-on:click="openInline(opentitle)">
-          Open
-          </button>
-                <button v-on:click="openDirect(opentitle)">
-          Download
-          </button>
-                <button v-on:click="openTab(opentitle)">
-          Tab
-          </button>
-                <button v-on:click="saveTo(opentitle)">
-          Save
-          </button>
-                <button v-on:click="opentitle = null">
-          Back
-          </button>
-            </div>
+                    <span>{{index+1}}     </span>
+                    <span>{{title.name}}  </span>
+                    <div
+                        class="listitemcontrols" >
+                        <button v-on:click="lists[currentlist].titlelist[index] =
+                                        lists[currentlist].titlelist.splice(
+                                        index-1,1,
+                                        lists[currentlist].titlelist[index])[0]">
+                    <i class="fa fa-arrow-up" aria-hidden="true">   </i>
+                  </button>
+                        <button v-on:click="lists[currentlist].titlelist[index] =
+                                        lists[currentlist].titlelist.splice(
+                                        index+1,1,
+                                        lists[currentlist].titlelist[index])[0]
+                                        ">
+                    <i class="fa fa-arrow-down" aria-hidden="true"> </i>
+                  </button>
+                        <button v-on:click="lists[currentlist].titlelist.pop(index)">
+                    <i class="fa fa-trash-o" aria-hidden="true"></i>
+                  </button>
+                        <button v-on:click="openTitle(title)">
+                    <i class="fa fa-eye" aria-hidden="true"></i>
+                  </button>
+                        <button v-on:click="downloadTitle(title)">
+                    <i class="fa fa-download" aria-hidden="true"></i>
+                  </button>
+                    </div>
+                </li>
+                </template>
+            </ul>
+            <ul id="userlists">
+                <li v-if="lists.length<=0">
+                    Here's where your lists will appear.
+                </li>
+                <li v-if="lists.length>0" v-for="(list,listid) in lists">
+                    <button v-on:click="currentlist = listid">{{list.key}}</button>
+                </li>
+            </ul>
+            <textarea id="listnotes" placeholder="List-specific notes go here." v-model="currentlist.note">
+        </textarea>
+            <div>
+                <button v-on:click="newList()">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+        </button>
+          <button v-if="currentlist=>0" v-on:click="destroyList(currentlist)">
+            <i class="fa fa-trash" aria-hidden="true"></i>
+        </button>
             </div>
         </div>
+        <!-- Settings
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <div id="settings">
+            <p class="setbox">
+                Theme
+                <select id="select_theme">
+                <option>Default</option>
+            </select>
+            </p>
+            <!--p class="setbox">
+                <input id="unfold_titles" disabled="true" v-model="expandall" type="checkbox" />
+                Expand titles by default
+            </p-->
+            <button class="nuke" v-on:click="nukeData()">
+            Reset Everything
+        </button>
+        </div>
+        <!-- Meta: Reader tab
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <div class="readertab">
+            <!-- Reader tab iFrame
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+            <iframe class="reader"
+                v-if="reader.title"
+                v-bind:src="reader.title.src"></iframe>
 
-        <div id="readercontainer" v-show="title!==null">
-            <div id="readercontrols">
-                <button v-on:click="setBookmark()">Set Bookmark</button>
-                <button v-on:click="gotoBookmark()"> Goto bookmark</button>
-                <button v-on:click="title=null">Close</button>
+            <!-- Reader Controls
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+            <div class="readercontrols" v-if="reader.title">
+                <!--button v-on:click="setBookmark(reader.title)">Set
+          </button>
+                <button v-on:click="gotoBookmark(reader.title)">Goto
+          </button-->
+                <button v-on:click="addToList(reader.title)">
+                    <i class="fa fa-list" aria-hidden="true"></i>
+          </button>
+                <button v-on:click="closeReader(reader.domid)">
+                    <i class="fa fa-close" aria-hidden="true"></i>
+          </button>
             </div>
-            <iframe id="reader" v-bind:src="title?title.src:''">
-            </iframe>
+            <textarea class="notes"
+                      placeholder="Title notes go here"
+                      v-model="user.notes[reader.title.name]">
+        </textarea>
         </div>
-
-        <input type="text" id="search" placeholder="Search.." />
-
-        <div id="footer" class="row">
-            All content owned by
-            <a href="http://www.buddhanet.net">
-      Buddhanet.net
-      </a>
-        </div>
+        <!-- End of content
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
     </div>
+
+    <!-- Footer
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <span id="footer">
+      <span>
+      All content owned by
+      <a href="http://www.buddhanet.net">
+        Buddhanet.net
+      </a>
+      </span>
+    <span class="fa fa-heart heart" aria-hidden="true"></span>
+    <span>
+        <a href="http://www.buddhanet.net/dana/donation_form.htm">
+            Donate today!
+        </a>
+      </span>
+    </span>
+    <!-- End Body
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
 </body>
+<!-- End Document
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
 </html>

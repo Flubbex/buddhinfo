@@ -1,231 +1,229 @@
+html,body
+{
+    height: 100%;
+
+}
 body
 {
-    background-color: black;
-    font-family: 'Didact Gothic',sans-serif;
-}
-#wallpaper
-{
-    position: fixed;
-    background: url('../images/grey_wash_wall.png');
-    width: 100%;
-    height: 100%;
-    z-index: -1;
+    height:             90%;
+    background-color:   black;
+    font-family:        'Didact Gothic',sans-serif;
 }
 
+#wallpaper
+{
+    position:       fixed;
+    background:     url('../images/grey_wash_wall.png');
+    width:          100%;
+    height:         100%;
+    z-index:        -1;
+}
+
+/*
+ * Warning: Scanners have detected a giant heap of ugly CSS
+ */
 @keyframes rotation {
-    0%   {transform: rotate(0deg);      bottom: 0%;     opacity:0;    }
-    50%  {bottom: 50%;    opacity:0.25;  }
-    75%  {    opacity:0.5;  }
-    100% {transform: rotate(720deg);    bottom: 25%;    opacity:0.75; }
+    0%
+        {
+        z-index:        10;
+        border-color:   rgba(255,255,255,0);
+        border-width:   0;
+        opacity:        0;
+        box-shadow:     0px 0px 1px 750px black;
+    }
+    50% {
+        border-width:   40px;
+        opacity:        0.75;
+        left:           calc(50% - 115px);
+        bottom:         calc(50% - 115px);
+        box-shadow:     0px 0px 1px 750px black;
+    }
+    75%{opacity:        1;}
+    100% {
+
+        left:           calc(50% - 75px);
+        bottom:         calc(50% - 75px);
+        opacity:        0.75;
+        border-width:   4px;
+        border-color:   rgba(255,255,255,1);
+        box-shadow:     1px 1px 5px 1px black;
+    }
+}
+
+@keyframes beat
+{
+    0%{ font-size: 1em;}
+    40%{ font-size: 1.40em;}
+    60%{ font-size: 1em;}
+    75%{ font-size: 1.25em;}
+    100%{ font-size: 1em;}
+}
+
+.heart
+{
+    animation-name: beat;
+    animation-duration: 1s;
+    animation-delay: 0.5s;
+    color: red;
 }
 
 #loader
 {
-    position: fixed;
-    left: 50%;
-    bottom: 25%;
-    opacity: 0.75;
-    width: 150px;
-    height: 150px;
-    margin-top: -75px;
-    margin-left: -75px;
-    animation-name: rotation;
-    animation-duration: 1.5s;
-    animation-delay: 0s;
+    border:             4px solid rgba(255,255,255,0.5);
+    border-radius:      180px;
+    position:           fixed;
+    left:               calc(50% - 75px);
+    bottom:             calc(50% - 75px);
+    opacity:            0.75;
+    width:              150px;
+    height:             150px;
+    animation-name:     rotation;
+    animation-duration: 2s;
+    animation-delay:    0s;
 }
 
 #header
 {
-  background-color: rgba(255,255,255,0.5);
+    position:           absolute;
+    z-index:            2;
+    width:              100%;
+}
+
+#header h5
+{
+    position: absolute;
+    left:65px;
+    top:4px;
+}
+
+#header p
+{
+    position: absolute;
+    right:65px;
+    top:20px;
 }
 
 #footer
 {
-  background-color: rgba(255,255,255,0.75);
-}
-#header h3
-{
-    float: left;
-    padding-left: 20px;
-    margin: 0;
+    position:           fixed;
+    z-index:            5;
+    width:              90%;
+    bottom:             4%;
+    padding:            0;
+    margin-left:        3.5%;
+    background-color:   rgba(255,255,255,0.75);
+    text-align:         center;
+    border-radius:      90px;
+    padding:            8px;
+    border:             2px outset darkgray;
+    font-size:          0.80em;
 }
 
-h3,h4,h5
+#tabbar li a
 {
-    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    border: none;
 }
-#footer
+#footer span
 {
- position: fixed;
- bottom: 0;
- width: 100%;
- padding-left: 20px;
+    margin-right: 15px;
 }
 
 #content
 {
-  position: relative;
-  padding-top: 5px;
-  padding-bottom: 45px;
+    z-index: 1;
+    height: inherit;
+    border: none;
+    border-radius: 0px 0px 45px 45px;
+    margin:0;
+    background:none;
+}
+
+#content > div
+{
+    z-index:            2;
+    padding-bottom:     45px;
+    background-color:   rgba(255,255,255,0.25);
+    border-radius:      0 0 0px 45px;
+    box-sizing:         border-box;
+    padding:            15px;
+    overflow-y:         auto;
+    margin-bottom:      5%;
+
+}
+
+#content >div::-webkit-scrollbar-button,
+#content >div::-webkit-scrollbar-thumb
+{
+    background-color: rgba(255,255,255,0.5);
+    border: 2px solid black;
+    border-radius: 45px;
+}
+#content >div::-webkit-scrollbar
+{
+    position:fixed;
+    background-color: rgba(255,255,255,0.5);
+    border: 2px solid black;
+    border-radius: 45px;
+    left: 150px;
+    margin-bottom: 150px;
+    width: 12px;  /* for vertical scrollbars */
+    height: 12px; /* for horizontal scrollbars */
+}
+
+#content > ul
+{
+    padding-left:       10px;
+    padding-top:        35px;
+    border-radius:      45px 45px 0px 0px;
+}
+#content > ul li
+{
+    margin: 0;
+    font-family: 'Didact Gothic',sans-serif;
+}
+
+#content > ul li a
+{
+    text-align: center;
 }
 
 #search
 {
-  position: fixed;
-  bottom: 10px;
-  width: 100%;
-  background-color: rgba(255,255,255,0.75);
-  height: 25px;
-  padding-left: 20px;
+    position:           fixed;
+    bottom:             10px;
+    width:              100%;
+    background-color:   rgba(255,255,255,0.75);
+    height:             25px;
+    padding-left:       20px;
 }
 
 #search:hover
 {
-  background-color: rgba(255,255,255,1);
+    background-color:   rgba(255,255,255,1);
 }
 
-.linktab
+#header,#footer,#content,#search
 {
- cursor: pointer;
- background-color: rgba(255,255,255,0.25);
-
-}
-.linktab h4
-{
- margin-bottom: 5px;
- padding-left: 20px;
+    display:            none;
 }
 
-.linktab h4:hover
+.error
 {
- background-color: rgba(255,255,255,0.5);
-}
-.linktab h4:active
-{
- background-color: rgba(255,255,255,0.75);
-}
-
-.linktab h4 span
-{
- position: absolute;
- right: 0;
- margin-right: 20px;
+    background-color:   rgba(255,255,255,0.5);
+    padding:            10px;
+    padding-left:       20px;
+    font-size:          2em;
 }
 
 button
 {
- overflow: hidden;
- margin: 0;
- width: 100%;
- cursor: pointer;
- text-align: left;
- background-color: rgba(255,255,255,0.25);
-}
+ background-color:      rgba(255,255,255,0.75);
+ }
 button:hover
 {
- background-color: rgba(255,255,255,0.75);
+ background-color:      rgba(255,255,255,0.75);
 }
-
 button:active
 {
-  background-color: rgba(255,255,255,1);
-}
-
-#readercontainer
-{
-background-color: rgba(255,255,255,0.5);
- position: absolute;
- top: 0;
- left: 0;
- resize: both;
- overflow: auto;
- border: 2px solid white;
- padding: 10px;
-}
-#readercontainer button
-{
- background-color: rgba(255,255,255,0.5);
- width: auto;
- margin:0;
- font-size: 0.9em;
-}
-#readercontainer button:hover
-{
- background-color: rgba(255,255,255,0.75);
-}
-#readercontainer button:active
-{
- background-color: rgba(255,255,255,1);
-}
-
-#reader
-{
- width: 100%;
- height: 90%;
-}
-
-#titleinfo h5
-{
-  background-color: rgba(255,255,255,0.75);
-  margin: 0;
-  padding-left: 20px;
-  padding-bottom: 5px;
-  text-transform: capitalize;
-}
-#titleinfo
-{
-  margin: 0;
-  padding-left: 20px;
-  padding-right: 20px;
-  background-color: rgba(255,255,255,0.5);
-}
-
-#titlecontrols
-{
-    margin: 2.5%;
-}
-
-#titleinfo button
-{
-    display: inline-block;
-    width: 24%;
-    text-align: center;
-    font-size: 0.75em;
-    padding: 0;
-    background-color: rgba(255,255,255,0.75);
-}
-
-#titleinfo button:last-child
-{
-    background-color: rgba(0,0,0,1);
-    color: white;
-    width: 97.5%;
-    margin-bottom: 2%;
-}
-
-#titleinfo p
-{
-  padding-top: 5px;
-  padding-left: 20px;
-  padding-right: 20px;
-  min-height: 200px;
-  max-height: 250px;
-  overflow-y: auto;
-  background-color: rgba(255,255,255,0.5);
-}
-
-#titleinfo p:first-letter
-{
-  float: left;
-  font-weight: bold;
-  font-family: 'Bitter', serif;
-  font-size: 75px;
-  line-height: 70px;
-  padding-right: 15px;
-  text-shadow: 3px 3px 6px rgba(0,0,0,0.75);
-}
-
-#header,#footer,#content,#search,#wallpaper
-{
-    display: none;
+ background-color:      rgba(255,255,255,1);
 }

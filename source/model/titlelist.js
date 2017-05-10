@@ -1,8 +1,12 @@
 var Title = require("./title");
 
-function Titlelist()
+function Titlelist(args)
 {
-  this.content = [].slice.call(arguments);
+    args = args || {};
+    this.key        = args.key       || "New Titlelist";
+    this.titlelist  = args.titlelist || [];
+    this.note       = args.note      || null;
+    this.config     = args.config    || {};
 };
 
 module.exports = Titlelist;

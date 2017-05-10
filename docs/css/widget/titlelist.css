@@ -1,0 +1,38 @@
+#titlelist
+{
+    padding:0;
+    margin:0;
+}
+
+#userlists
+{
+    margin:0;
+}
+#titlelist div
+{
+    margin-left: 2%;
+    margin-right: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
+    background:rgba(255,255,255,0.85);
+}
+
+#titlelist div p
+{
+    padding-left: 4px;
+}
+#titlelist h3
+{
+    padding-left: 40px;
+}
+.title.more
+{
+    margin: 4px;
+    font-size: 0.5em;
+}
+
+.titlecount
+{
+    float: right;
+    padding-right: 40px;
+}

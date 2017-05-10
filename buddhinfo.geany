@@ -28,10 +28,10 @@ long_line_behaviour=1
 long_line_column=72
 
 [files]
-current_page=0
-FILE_NAME_0=3662;Markdown;0;EUTF-8;0;1;0;%2Fhome%2Fmichael%2FProjects%2Factive%2Fbuddhinfo%2Fhistory.md;0;4
-FILE_NAME_1=2548;Javascript;0;EUTF-8;0;1;0;%2Fhome%2Fmichael%2FProjects%2Factive%2Fgoonto%2Fsource%2Findex.js;0;4
-FILE_NAME_2=2201;HTML;0;EUTF-8;0;1;0;%2Fhome%2Fmichael%2FProjects%2Factive%2Fgoonto%2Fdocs%2Findex.html;0;4
+current_page=2
+FILE_NAME_0=0;Javascript;0;EUTF-8;0;1;0;%2Fhome%2Fmichael%2FProjects%2Factive%2Fbuddhinfo%2Fsource%2Fcontroller%2Fbuddhinfo.js;0;4
+FILE_NAME_1=1544;Javascript;0;EUTF-8;0;1;0;%2Fhome%2Fmichael%2FProjects%2Factive%2Fbuddhinfo%2Fsource%2Fcontroller%2Fstorage.js;0;4
+FILE_NAME_2=1867;Javascript;0;EUTF-8;0;1;0;%2Fhome%2Fmichael%2FProjects%2Factive%2Fbuddhinfo%2Fsource%2Findex.js;0;4
 
 [VTE]
-last_dir=/media/michael/data/Projects/active/goonto
+last_dir=/media/michael/data/Projects/active/buddhinfo

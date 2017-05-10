@@ -93,7 +93,7 @@ gulp.task("publish",["compress"], function()
 gulp.task("reload",["publish-developer"], function()
 {
     return gulp.src("docs/index.html")
-    .pipe(open({uri:__dirname+"/docs/index.html"}))
+    .pipe(open({uri:__dirname+"/docs/index.html",app:'chromium'}))
 });
 
 gulp.task("default",        ["publish-developer"]);
